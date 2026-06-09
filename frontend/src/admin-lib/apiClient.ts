@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3003';
+const API_URL = process.env.NEXT_PUBLIC_API_URL || 'https://backend-production-e6aa.up.railway.app';
 
 export const apiClient = axios.create({
   baseURL: API_URL,
