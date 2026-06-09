@@ -14,9 +14,17 @@ import Blog from './_components/Blog';
 
 export default function UserHomePage() {
   return (
-    <div className="w-full">
-      {/* Section 1: Hero Banner */}
-      <HeroSlider />
+    <div className="w-full relative overflow-hidden bg-[#0a0a0a]">
+      {/* Ambient Light Blobs for WOW Effect */}
+      <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden">
+        <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] rounded-full bg-[#D3AE3E]/10 blur-[120px] mix-blend-screen" />
+        <div className="absolute top-[40%] right-[-10%] w-[30%] h-[50%] rounded-full bg-[#D3AE3E]/5 blur-[100px] mix-blend-screen" />
+        <div className="absolute bottom-[-10%] left-[20%] w-[50%] h-[40%] rounded-full bg-[#D3AE3E]/5 blur-[150px] mix-blend-screen" />
+      </div>
+
+      <div className="relative z-10">
+        {/* Section 1: Hero Banner */}
+        <HeroSlider />
       
       {/* Section 2: Vấn đề */}
       <Section2Problem />
@@ -50,6 +58,7 @@ export default function UserHomePage() {
       
       {/* Section 10: CTA */}
       <Section10CTA />
+      </div>
     </div>
   );
 }

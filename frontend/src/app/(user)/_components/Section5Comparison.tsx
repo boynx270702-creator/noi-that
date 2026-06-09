@@ -1,6 +1,7 @@
 'use client';
 import React from 'react';
 import ScrollReveal from './ScrollReveal';
+import SpotlightCard from './SpotlightCard';
 
 const COMPARISON_DATA = [
   {
@@ -67,9 +68,9 @@ export default function Section5Comparison() {
           {/* MOBILE VIEW (Cards) */}
           <div className="md:hidden flex flex-col gap-6">
             {COMPARISON_DATA.map((row, index) => (
-              <div key={index} className="bg-[#131313] border border-white/10 rounded-xl p-5 shadow-2xl relative overflow-hidden">
+              <SpotlightCard key={index} className="p-5">
                 {/* Decorative glow */}
-                <div className="absolute top-0 right-0 w-32 h-32 bg-[#D3AE3E]/5 blur-3xl rounded-full" />
+                <div className="absolute top-0 right-0 w-32 h-32 bg-[#D3AE3E]/5 blur-3xl rounded-full pointer-events-none" />
                 
                 <h3 className="text-white font-['Montserrat',_sans-serif] font-bold text-[16px] border-b border-white/10 pb-3 mb-4 relative z-10">
                   {row.feature}
@@ -92,7 +93,7 @@ export default function Section5Comparison() {
                     </div>
                   </div>
                 </div>
-              </div>
+              </SpotlightCard>
             ))}
           </div>
 

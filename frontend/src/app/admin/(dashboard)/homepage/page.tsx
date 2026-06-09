@@ -30,7 +30,8 @@ export default function HomepageManager() {
     try {
       setIsLoading(true);
       const res = await apiClient.get('/settings');
-      const homepageSetting = res.data.find((s: any) => s.key === 'HOMEPAGE_CONFIG');
+      const settingsList = Array.isArray(res.data) ? res.data : (res.data?.data || []);
+      const homepageSetting = settingsList.find((s: any) => s.key === 'HOMEPAGE_CONFIG');
       if (homepageSetting && homepageSetting.value) {
         setConfig(JSON.parse(homepageSetting.value));
       }
@@ -51,7 +52,8 @@ export default function HomepageManager() {
     try {
       // Find if exists
       const res = await apiClient.get('/settings');
-      const homepageSetting = res.data.find((s: any) => s.key === 'HOMEPAGE_CONFIG');
+      const settingsList = Array.isArray(res.data) ? res.data : (res.data?.data || []);
+      const homepageSetting = settingsList.find((s: any) => s.key === 'HOMEPAGE_CONFIG');
       
       const payload = {
         key: 'HOMEPAGE_CONFIG',
@@ -92,7 +94,7 @@ export default function HomepageManager() {
     setConfig({
       ...config,
       [section]: {
-        ...config[section],
+        ...(config[section] || {}),
         [field]: value
       }
     });

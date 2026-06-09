@@ -80,7 +80,10 @@ export default function Stats() {
     const fetchUnits = async () => {
       try {
         const res = await fetch('/api/units');
-        const data = await res.json();
+        if (!res.ok) throw new Error('API error');
+        const text = await res.text();
+        if (!text || text.startsWith('<')) throw new Error('Invalid JSON');
+        const data = JSON.parse(text);
         if (Array.isArray(data)) {
           const unitCount = data.length;
           setStats(prev => prev.map(s => s.id === 1 ? { ...s, value: unitCount } : s));

@@ -1,6 +1,7 @@
 'use client';
 import React, { useState } from 'react';
 import ScrollReveal from './ScrollReveal';
+import SpotlightCard from './SpotlightCard';
 
 const BENEFITS = [
   {
@@ -131,7 +132,7 @@ export default function Section4Benefits() {
           {/* Tab Content */}
           <div className="md:col-span-8 lg:col-span-8">
             <ScrollReveal animation="fade-left" delay={300} className="h-full">
-              <div className="bg-[#131313] border border-white/5 p-8 lg:p-12 h-full relative overflow-hidden group">
+              <SpotlightCard className="p-8 lg:p-12 h-full">
                 
                 {/* Decorative BG Icon */}
                 <div className="absolute -right-10 -bottom-10 opacity-5 group-hover:opacity-10 group-hover:scale-110 transition-all duration-700 pointer-events-none">
@@ -160,7 +161,7 @@ export default function Section4Benefits() {
                     ))}
                   </ul>
                 </div>
-              </div>
+              </SpotlightCard>
             </ScrollReveal>
           </div>
 

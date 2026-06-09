@@ -12,7 +12,14 @@ export default function Blog() {
     const fetchArticles = async () => {
       try {
         const res = await fetch('/api/articles');
-        const data = await res.json();
+        if (!res.ok) throw new Error('API error');
+        
+        const text = await res.text();
+        if (!text || text.startsWith('<')) {
+          throw new Error('Invalid JSON response');
+        }
+        
+        const data = JSON.parse(text);
         if (Array.isArray(data)) {
           // Map backend data to UI format
           const mappedPosts = data.slice(0, 2).map((article: any, index: number) => ({
@@ -61,7 +68,13 @@ export default function Blog() {
         {/* Blog Posts */}
         <div className="flex flex-col gap-12 md:gap-0">
           {isLoading ? (
-            <div className="text-center text-white/50 py-10">Đang tải bài viết...</div>
+            <div className="text-center text-white/50 py-10 font-['Montserrat',_sans-serif]">Đang tải bài viết...</div>
+          ) : posts.length === 0 ? (
+            <div className="text-center py-20 bg-[#1a1a1a] border border-white/5 rounded-2xl mx-auto max-w-2xl w-full">
+              <svg className="w-16 h-16 text-[#D3AE3E]/50 mx-auto mb-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10l6 6v10a2 2 0 01-2 2z"></path><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1" d="M12 11v6"></path><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1" d="M12 17h.01"></path></svg>
+              <h4 className="text-xl font-bold font-['Montserrat',_sans-serif] text-white mb-3 tracking-wide">CHƯA CÓ BÀI VIẾT NÀO</h4>
+              <p className="text-[#888] font-['Montserrat',_sans-serif] text-[15px] max-w-sm mx-auto">Nội dung cẩm nang đang được hệ sinh thái cập nhật. Bạn vui lòng quay lại sau nhé!</p>
+            </div>
           ) : posts.map((post) => (
             <div key={post.id} className="grid grid-cols-1 md:grid-cols-2">
               

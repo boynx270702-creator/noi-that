@@ -1,13 +1,15 @@
 'use client';
-import React, { useEffect, useRef, useState } from 'react';
+import React from 'react';
+import { motion, useInView } from 'framer-motion';
 
 type ScrollRevealProps = {
   children: React.ReactNode;
-  animation?: 'fade-up' | 'fade-in' | 'fade-left' | 'fade-right';
-  delay?: number;
-  duration?: number;
+  animation?: 'fade-up' | 'fade-in' | 'fade-left' | 'fade-right' | 'zoom-in';
+  delay?: number; // Delay in milliseconds
+  duration?: number; // Duration in milliseconds
   className?: string;
   threshold?: number;
+  once?: boolean;
 };
 
 export default function ScrollReveal({
@@ -16,73 +18,66 @@ export default function ScrollReveal({
   delay = 0,
   duration = 800,
   className = '',
-  threshold = 0.1,
+  threshold = 0.2,
+  once = true,
 }: ScrollRevealProps) {
-  const [isVisible, setIsVisible] = useState(false);
-  const ref = useRef<HTMLDivElement>(null);
+  
+  // Convert ms to seconds for framer-motion
+  const delaySec = delay / 1000;
+  const durationSec = duration / 1000;
 
-  useEffect(() => {
-    const currentRef = ref.current;
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-          observer.unobserve(entry.target);
-        }
-      },
-      {
-        threshold,
-        rootMargin: '0px 0px -50px 0px',
-      }
-    );
-
-    if (currentRef) {
-      observer.observe(currentRef);
-    }
-
-    return () => {
-      if (currentRef) observer.unobserve(currentRef);
-    };
-  }, [threshold]);
-
-  const getBaseStyle = () => {
+  const getVariants = () => {
     switch (animation) {
       case 'fade-up':
-        return 'translate-y-12 opacity-0';
+        return {
+          hidden: { opacity: 0, y: 50 },
+          visible: { opacity: 1, y: 0 }
+        };
       case 'fade-in':
-        return 'opacity-0';
+        return {
+          hidden: { opacity: 0 },
+          visible: { opacity: 1 }
+        };
       case 'fade-left':
-        return 'translate-x-12 opacity-0';
+        return {
+          hidden: { opacity: 0, x: 50 },
+          visible: { opacity: 1, x: 0 }
+        };
       case 'fade-right':
-        return '-translate-x-12 opacity-0';
+        return {
+          hidden: { opacity: 0, x: -50 },
+          visible: { opacity: 1, x: 0 }
+        };
+      case 'zoom-in':
+        return {
+          hidden: { opacity: 0, scale: 0.9 },
+          visible: { opacity: 1, scale: 1 }
+        };
       default:
-        return 'opacity-0';
-    }
-  };
-
-  const getActiveStyle = () => {
-    switch (animation) {
-      case 'fade-up':
-      case 'fade-left':
-      case 'fade-right':
-        return 'translate-y-0 translate-x-0 opacity-100';
-      case 'fade-in':
-      default:
-        return 'opacity-100';
+        return {
+          hidden: { opacity: 0, y: 50 },
+          visible: { opacity: 1, y: 0 }
+        };
     }
   };
 
   return (
-    <div
-      ref={ref}
-      className={`transition-all ${isVisible ? getActiveStyle() : getBaseStyle()} ${className}`}
-      style={{
-        transitionDuration: `${duration}ms`,
-        transitionDelay: `${delay}ms`,
-        transitionTimingFunction: 'cubic-bezier(0.4, 0, 0.2, 1)',
+    <motion.div
+      className={className}
+      variants={getVariants()}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: once, margin: "0px 0px -50px 0px", amount: threshold }}
+      transition={{
+        duration: durationSec,
+        delay: delaySec,
+        type: "spring",
+        bounce: 0.2, // Subtle bounce for a premium feel
+        stiffness: 100,
+        damping: 15
       }}
     >
       {children}
-    </div>
+    </motion.div>
   );
 }

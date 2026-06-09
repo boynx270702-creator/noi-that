@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import ScrollReveal from './ScrollReveal';
 import Link from 'next/link';
+import SpotlightCard from './SpotlightCard';
 
 const TIERS = [
   {
@@ -123,29 +124,29 @@ export default function Section6Ecosystem() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {TIERS.map((tier, index) => (
             <ScrollReveal key={index} animation="fade-up" delay={200 + index * 150} className="h-full">
-              <div className={`relative h-full flex flex-col transition-all duration-500 hover:-translate-y-2 rounded-sm ${tier.highlight ? 'bg-[#1a1a1a] border-2 border-[#D3AE3E] shadow-[0_0_30px_rgba(206,158,81,0.1)]' : 'bg-[#1a1a1a] border border-white/5 hover:border-[#D3AE3E]/50'}`}>
+              <SpotlightCard className={`h-full flex flex-col transition-all duration-500 hover:-translate-y-2 ${tier.highlight ? 'border-2 border-[#D3AE3E] shadow-[0_0_30px_rgba(206,158,81,0.1)]' : ''}`}>
                 
                 {tier.highlight && (
-                  <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-[#D3AE3E] text-white text-[11px] font-bold px-4 py-1.5 uppercase tracking-wider font-['Montserrat',_sans-serif] whitespace-nowrap z-20">
+                  <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-[#D3AE3E] text-white text-[11px] font-bold px-4 py-1.5 uppercase tracking-wider font-['Montserrat',_sans-serif] whitespace-nowrap z-20 shadow-[0_0_20px_rgba(206,158,81,0.5)]">
                     Phổ biến nhất
                   </div>
                 )}
 
                 {/* Header */}
-                <div className={`p-8 text-center border-b ${tier.highlight ? 'border-[#D3AE3E]/20' : 'border-white/5'} bg-[#131313]`}>
+                <div className={`p-8 text-center border-b ${tier.highlight ? 'border-[#D3AE3E]/20' : 'border-white/5'} bg-[#131313] relative z-10`}>
                   <h3 className="text-2xl lg:text-3xl font-bold text-white font-['Montserrat',_sans-serif]">
                     {tier.title}
                   </h3>
                 </div>
 
                 {/* Content */}
-                <div className="p-8 flex flex-col flex-grow">
+                <div className="p-8 flex flex-col flex-grow relative z-10">
                   
                   <CheckList title="Phù hợp với" items={tier.target} />
                   <CheckList title="Đặc điểm nổi bật" items={tier.features} />
                   <CheckList title="Dịch vụ thường có" items={tier.services} />
 
-                  <div className="mt-auto pt-6 border-t border-white/5">
+                  <div className="mt-auto pt-6 border-t border-white/5 relative z-10">
                     <Link 
                       href="#Form"
                       className={`block w-full py-4 text-center font-bold font-['Montserrat',_sans-serif] uppercase tracking-wider text-[13px] transition-colors ${
@@ -158,7 +159,7 @@ export default function Section6Ecosystem() {
                     </Link>
                   </div>
                 </div>
-              </div>
+              </SpotlightCard>
             </ScrollReveal>
           ))}
         </div>

@@ -102,6 +102,13 @@
   }
   .animate-reveal { animation: fade-in-up 0.8s ease-out forwards; }
   
+  @keyframes shimmer {
+    100% { transform: translateX(100%); }
+  }
+  .animate-shimmer {
+    animation: shimmer 2s infinite;
+  }
+
   .text-hollow {
     -webkit-text-stroke: 1px white;
     color: transparent;

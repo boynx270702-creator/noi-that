@@ -50,12 +50,11 @@ export default function Portfolio() {
   return (
     <section id="Portfolio" className="relative py-32 bg-[#131313] overflow-hidden">
       {/* Grid Pattern Background */}
-      <div
-        className="absolute inset-0 z-0 pointer-events-none opacity-100"
-        style={{
-          backgroundImage: "url('/images/common/pattern-grid.png')",
-          backgroundRepeat: 'repeat',
-          backgroundPosition: 'center'
+      <div 
+        className="absolute inset-0 opacity-[0.03] pointer-events-none" 
+        style={{ 
+          backgroundImage: "radial-gradient(#ffffff 1px, transparent 1px)",
+          backgroundSize: "30px 30px"
         }}
       />
 
