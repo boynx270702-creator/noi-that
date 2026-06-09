@@ -37,11 +37,17 @@ export default function SettingsPage() {
     facebookPixel: '',
   });
 
+  const [settingId, setSettingId] = useState<number | null>(null);
+
   const fetchSettings = async () => {
     try {
       const res = await apiClient.get('/settings');
-      if (res.data && res.data.length > 0) {
-        setFormData(res.data[0]);
+      const globalSetting = res.data.find((s: any) => s.key === 'GLOBAL_SETTINGS');
+      if (globalSetting) {
+        setSettingId(globalSetting.id);
+        if (globalSetting.value) {
+          setFormData({ ...formData, ...JSON.parse(globalSetting.value) });
+        }
       }
     } catch (error) {
       console.error('Failed to fetch settings:', error);
@@ -56,11 +62,16 @@ export default function SettingsPage() {
     setIsSaving(true);
     setSuccessMessage('');
     try {
-      if (formData.id) {
-        await apiClient.patch(`/settings/${formData.id}`, formData);
+      const payload = {
+        key: 'GLOBAL_SETTINGS',
+        value: JSON.stringify(formData)
+      };
+
+      if (settingId) {
+        await apiClient.patch(`/settings/${settingId}`, payload);
       } else {
-        const res = await apiClient.post('/settings', formData);
-        setFormData(res.data);
+        const res = await apiClient.post('/settings', payload);
+        setSettingId(res.data.id);
       }
       setSuccessMessage('Lưu cấu hình hệ thống thành công!');
       setTimeout(() => setSuccessMessage(''), 3000);
