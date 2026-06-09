@@ -59,9 +59,9 @@ export default function Section9Process() {
         </ScrollReveal>
 
         {/* Vertical Timeline */}
-        <div className="relative">
+        <div className="relative mt-12">
           {/* Central Line */}
-          <div className="absolute left-[28px] md:left-1/2 top-0 bottom-0 w-0.5 bg-white/10 md:-translate-x-1/2" />
+          <div className="absolute left-[24px] md:left-1/2 top-0 bottom-0 w-[2px] bg-gradient-to-b from-[#D3AE3E]/50 via-[#D3AE3E]/20 to-transparent md:-translate-x-1/2" />
 
           {PROCESS_STEPS.map((step, index) => {
             const isEven = index % 2 !== 0; // 0-indexed, so 0 is odd in visual
@@ -70,28 +70,29 @@ export default function Section9Process() {
                 key={step.num} 
                 animation={isEven ? "fade-left" : "fade-right"} 
                 delay={200 + index * 100}
-                className="relative mb-12 lg:mb-16 last:mb-0"
+                className="relative mb-8 lg:mb-16 last:mb-0"
               >
                 <div className={`flex flex-col md:flex-row items-start md:items-center w-full ${isEven ? 'md:flex-row-reverse' : ''}`}>
                   
                   {/* Content Box */}
-                  <div className="w-full md:w-1/2 pl-20 md:pl-0 md:pr-12 md:text-right flex flex-col justify-center">
-                    {/* For Even items, padding right on desktop becomes padding left */}
-                    <div className={`bg-[#131313] p-8 border border-white/5 hover:border-[#D3AE3E]/50 transition-colors group relative ${isEven ? 'md:ml-12 md:text-left' : ''}`}>
-                      <div className={`absolute top-4 ${isEven ? 'right-4' : 'left-4'} text-[#D3AE3E] opacity-10 text-6xl font-['Montserrat',_sans-serif] font-bold group-hover:opacity-20 transition-opacity pointer-events-none`}>
+                  <div className="w-full md:w-1/2 pl-16 md:pl-0 md:pr-16 md:text-right flex flex-col justify-center pt-2 md:pt-0">
+                    <div className={`bg-[#131313] p-6 md:p-8 border border-white/5 hover:border-[#D3AE3E]/50 transition-colors group relative rounded-xl shadow-lg ${isEven ? 'md:ml-16 md:text-left' : ''}`}>
+                      <div className={`hidden md:block absolute top-4 ${isEven ? 'right-4' : 'left-4'} text-[#D3AE3E] opacity-[0.03] text-7xl font-['Montserrat',_sans-serif] font-black group-hover:opacity-10 transition-opacity pointer-events-none`}>
                         {step.num}
                       </div>
-                      <h3 className="text-[20px] font-bold font-['Montserrat',_sans-serif] text-white mb-4 group-hover:text-[#D3AE3E] transition-colors relative z-10">
+                      <h3 className="text-[18px] md:text-[20px] font-bold font-['Montserrat',_sans-serif] text-white mb-3 group-hover:text-[#D3AE3E] transition-colors relative z-10">
                         {step.title}
                       </h3>
-                      <p className="text-[#888] font-['Montserrat',_sans-serif] leading-relaxed text-[15px] relative z-10">
+                      <p className="text-[#888] font-['Montserrat',_sans-serif] leading-relaxed text-[14px] md:text-[15px] relative z-10">
                         {step.desc}
                       </p>
                     </div>
                   </div>
 
-                  {/* Center Dot */}
-                  <div className="absolute left-[16px] md:left-1/2 top-8 md:top-1/2 w-6 h-6 rounded-full bg-[#1a1a1a] border-4 border-[#D3AE3E] md:-translate-x-1/2 md:-translate-y-1/2 z-10 shadow-[0_0_15px_rgba(206,158,81,0.5)]" />
+                  {/* Step Number Circle (Line Dot) */}
+                  <div className="absolute left-[24px] md:left-1/2 top-4 md:top-1/2 w-10 h-10 rounded-full bg-[#0a0a0a] border-2 border-[#D3AE3E] flex items-center justify-center text-[#D3AE3E] font-bold font-['Montserrat',_sans-serif] text-[15px] md:-translate-x-1/2 md:-translate-y-1/2 z-10 shadow-[0_0_20px_rgba(206,158,81,0.3)] -translate-x-1/2">
+                    {index + 1}
+                  </div>
 
                   {/* Empty space for opposite side */}
                   <div className="hidden md:block w-1/2" />
