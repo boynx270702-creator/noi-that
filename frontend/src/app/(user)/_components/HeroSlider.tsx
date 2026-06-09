@@ -171,7 +171,7 @@ export default function HeroSlider() {
                       {slide.text}
                     </p>
                     
-                    <div className="flex flex-wrap justify-center items-center">
+                    <div className="flex flex-wrap justify-center items-center gap-4">
                       <div className={`btn-relative ${actClass}swashIn`} data-animation="swashIn" data-delay="1.8s" data-animation-duration="1s" style={{ animationDelay: '1.8s' }}>
                         <Link 
                           href={slide.btn1.href} 

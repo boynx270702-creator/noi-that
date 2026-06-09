@@ -1,7 +1,11 @@
-import React from 'react';
+"use client";
+import React, { useState } from 'react';
 import Link from 'next/link';
+import { X, Menu } from 'lucide-react';
 
 export default function Header() {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
   return (
     <>
       {/* --- TOP BAR (Hidden on Mobile/Tablet) --- */}
@@ -92,13 +96,39 @@ export default function Header() {
             </Link>
 
             {/* Mobile Hamburger Menu */}
-            <button className="lg:hidden text-white hover:text-[#D3AE3E] transition-colors focus:outline-none">
-              <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16"></path>
-              </svg>
+            <button 
+              className="lg:hidden text-white hover:text-[#D3AE3E] transition-colors focus:outline-none"
+              onClick={() => setIsMobileMenuOpen(true)}
+            >
+              <Menu className="w-7 h-7" />
             </button>
           </div>
         </div>
+      </div>
+
+      {/* --- MOBILE MENU (Full Screen Glassmorphism) --- */}
+      <div 
+        className={`fixed inset-0 bg-black/95 backdrop-blur-xl z-[100] transition-all duration-300 flex flex-col justify-center items-center ${
+          isMobileMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible'
+        }`}
+      >
+        <button 
+          onClick={() => setIsMobileMenuOpen(false)}
+          className="absolute top-6 right-6 w-12 h-12 flex items-center justify-center border border-white/20 rounded-full text-white hover:bg-white hover:text-black transition-all"
+        >
+          <X className="w-6 h-6" />
+        </button>
+
+        <nav className="flex flex-col items-center gap-8 w-full px-6">
+          <Link href="/" onClick={() => setIsMobileMenuOpen(false)} className="text-2xl font-semibold uppercase tracking-widest text-white hover:text-[#D3AE3E] font-['Montserrat',_sans-serif] transition-all">Trang Chủ</Link>
+          <Link href="/he-sinh-thai" onClick={() => setIsMobileMenuOpen(false)} className="text-2xl font-semibold uppercase tracking-widest text-white hover:text-[#D3AE3E] font-['Montserrat',_sans-serif] transition-all">Hệ Sinh Thái</Link>
+          <Link href="/giam-sat" onClick={() => setIsMobileMenuOpen(false)} className="text-2xl font-semibold uppercase tracking-widest text-white hover:text-[#D3AE3E] font-['Montserrat',_sans-serif] transition-all">Giám Sát</Link>
+          <Link href="/quy-trinh" onClick={() => setIsMobileMenuOpen(false)} className="text-2xl font-semibold uppercase tracking-widest text-white hover:text-[#D3AE3E] font-['Montserrat',_sans-serif] transition-all">Quy Trình</Link>
+          <Link href="/cam-nang" onClick={() => setIsMobileMenuOpen(false)} className="text-2xl font-semibold uppercase tracking-widest text-white hover:text-[#D3AE3E] font-['Montserrat',_sans-serif] transition-all">Cẩm Nang</Link>
+          <Link href="/tu-van" onClick={() => setIsMobileMenuOpen(false)} className="mt-8 bg-[#D3AE3E] text-white px-8 py-3.5 text-sm font-bold uppercase tracking-widest w-full text-center hover:bg-white hover:text-[#131313] transition-colors font-['Montserrat',_sans-serif] rounded-sm">
+            Gửi Nhu Cầu Tư Vấn
+          </Link>
+        </nav>
       </div>
     </>
   );

@@ -62,10 +62,43 @@ export default function Section5Comparison() {
           </div>
         </ScrollReveal>
 
-        {/* Comparison Table */}
+        {/* Comparison UI */}
         <ScrollReveal animation="fade-up" delay={300}>
-          <div className="overflow-x-auto pb-6">
-            <table className="w-full min-w-[900px] border-collapse bg-[#131313] border border-white/10 rounded-lg overflow-hidden shadow-2xl">
+          {/* MOBILE VIEW (Cards) */}
+          <div className="md:hidden flex flex-col gap-6">
+            {COMPARISON_DATA.map((row, index) => (
+              <div key={index} className="bg-[#131313] border border-white/10 rounded-xl p-5 shadow-2xl relative overflow-hidden">
+                {/* Decorative glow */}
+                <div className="absolute top-0 right-0 w-32 h-32 bg-[#D3AE3E]/5 blur-3xl rounded-full" />
+                
+                <h3 className="text-white font-['Montserrat',_sans-serif] font-bold text-[16px] border-b border-white/10 pb-3 mb-4 relative z-10">
+                  {row.feature}
+                </h3>
+                
+                <div className="space-y-5 relative z-10">
+                  <div className="bg-[#0a0a0a]/50 p-4 rounded-lg border border-white/5">
+                    <span className="text-[#888] text-[11px] font-bold uppercase tracking-widest mb-2 block font-['Montserrat',_sans-serif]">Tự thuê ngoài</span>
+                    <div className="flex items-start gap-2 text-[#888] text-[14px] leading-relaxed">
+                      <svg className="w-4 h-4 text-red-500/70 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                      <span>{row.outside}</span>
+                    </div>
+                  </div>
+                  
+                  <div className="bg-[#D3AE3E]/10 p-4 rounded-lg border border-[#D3AE3E]/20">
+                    <span className="text-[#D3AE3E] text-[11px] font-bold uppercase tracking-widest mb-2 block font-['Montserrat',_sans-serif]">Qua hệ sinh thái</span>
+                    <div className="flex items-start gap-2 text-white text-[14px] font-medium leading-relaxed">
+                      <svg className="w-5 h-5 text-[#D3AE3E] shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M5 13l4 4L19 7"></path></svg>
+                      <span>{row.ecosystem}</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* DESKTOP VIEW (Table) */}
+          <div className="hidden md:block overflow-hidden pb-6">
+            <table className="w-full border-collapse bg-[#131313] border border-white/10 rounded-lg overflow-hidden shadow-2xl">
               <thead>
                 <tr>
                   <th className="w-[20%] p-6 text-left text-white font-['Montserrat',_sans-serif] font-bold text-[16px] border-b border-white/10 bg-[#0a0a0a]">
