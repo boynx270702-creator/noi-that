@@ -9,14 +9,18 @@ const montserrat = Montserrat({
   variable: '--font-montserrat',
 });
 
+import { ThemeProvider } from './_components/ThemeProvider';
+
 export default function UserLayout({ children }: { children: React.ReactNode }) {
   return (
-    <div className={`min-h-screen bg-[#131313] flex flex-col ${montserrat.variable}`}>
-      <Header />
-      <main className="flex-grow">
-        {children}
-      </main>
-      <Footer />
-    </div>
+    <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+      <div className={`min-h-screen bg-[#FAF9F8] dark:bg-[#0a0a0a] dark:bg-[#0a0a0a] flex flex-col ${montserrat.variable}`}>
+        <Header />
+        <main className="flex-grow">
+          {children}
+        </main>
+        <Footer />
+      </div>
+    </ThemeProvider>
   );
 }

@@ -48,7 +48,7 @@ export default function Blog() {
   }, []);
 
   return (
-    <section id="Blog" className="relative py-32 bg-[#131313] overflow-hidden">
+    <section id="Blog" className="relative py-32 bg-[#FAF9F8] dark:bg-[#0a0a0a] overflow-hidden">
       <div className="max-w-[1200px] mx-auto px-6">
         
         {/* Section Header */}
@@ -57,7 +57,7 @@ export default function Blog() {
             <h6 className="text-[#D3AE3E] text-[13px] font-semibold tracking-[4px] uppercase mb-4 font-['Montserrat',_sans-serif]">
               Blog & Cẩm Nang
             </h6>
-            <h3 className="text-4xl md:text-[40px] font-bold text-white mb-6 font-['Montserrat',_sans-serif] tracking-tight flex justify-center gap-[2px]">
+            <h3 className="text-4xl md:text-[40px] font-bold text-gray-900 dark:text-white mb-6 font-['Montserrat',_sans-serif] tracking-tight flex justify-center gap-[2px]">
               {'Tin tức mới nhất'.split('').map((char, index) => (
                 <span key={index} className={char === ' ' ? 'w-3' : ''}>{char}</span>
               ))}
@@ -68,12 +68,12 @@ export default function Blog() {
         {/* Blog Posts */}
         <div className="flex flex-col gap-12 md:gap-0">
           {isLoading ? (
-            <div className="text-center text-white/50 py-10 font-['Montserrat',_sans-serif]">Đang tải bài viết...</div>
+            <div className="text-center text-gray-500 dark:text-[#888] py-10 font-['Montserrat',_sans-serif]">Đang tải bài viết...</div>
           ) : posts.length === 0 ? (
-            <div className="text-center py-20 bg-[#1a1a1a] border border-white/5 rounded-2xl mx-auto max-w-2xl w-full">
+            <div className="text-center py-20 bg-white dark:bg-[#1a1a1a] shadow-sm dark:shadow-none border border-gray-100 dark:border-white/10 border border-gray-200 dark:border-white/20 rounded-2xl mx-auto max-w-2xl w-full">
               <svg className="w-16 h-16 text-[#D3AE3E]/50 mx-auto mb-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10l6 6v10a2 2 0 01-2 2z"></path><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1" d="M12 11v6"></path><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1" d="M12 17h.01"></path></svg>
-              <h4 className="text-xl font-bold font-['Montserrat',_sans-serif] text-white mb-3 tracking-wide">CHƯA CÓ BÀI VIẾT NÀO</h4>
-              <p className="text-[#888] font-['Montserrat',_sans-serif] text-[15px] max-w-sm mx-auto">Nội dung cẩm nang đang được hệ sinh thái cập nhật. Bạn vui lòng quay lại sau nhé!</p>
+              <h4 className="text-xl font-bold font-['Montserrat',_sans-serif] text-gray-900 dark:text-white mb-3 tracking-wide">CHƯA CÓ BÀI VIẾT NÀO</h4>
+              <p className="text-gray-500 dark:text-[#888] font-['Montserrat',_sans-serif] text-[15px] max-w-sm mx-auto">Nội dung cẩm nang đang được hệ sinh thái cập nhật. Bạn vui lòng quay lại sau nhé!</p>
             </div>
           ) : posts.map((post) => (
             <div key={post.id} className="grid grid-cols-1 md:grid-cols-2">
@@ -93,7 +93,7 @@ export default function Blog() {
                 <div className="absolute inset-0 bg-black/10 group-hover:bg-black/30 transition-colors duration-500" />
                 
                 {/* Date Overlay */}
-                <div className={`absolute top-6 ${post.imageLeft ? 'right-6' : 'left-6'} bg-[#D3AE3E] text-white px-4 py-2 font-['Montserrat',_sans-serif] font-bold text-[13px] uppercase tracking-wider`}>
+                <div className={`absolute top-6 ${post.imageLeft ? 'right-6' : 'left-6'} bg-[#D3AE3E] text-gray-900 dark:text-white px-4 py-2 font-['Montserrat',_sans-serif] font-bold text-[13px] uppercase tracking-wider`}>
                   {post.date}
                 </div>
               </ScrollReveal>
@@ -102,12 +102,12 @@ export default function Blog() {
               <ScrollReveal 
                 animation={post.imageLeft ? 'fade-left' : 'fade-right'} 
                 delay={300}
-                className={`flex flex-col justify-center p-8 md:p-16 lg:p-20 bg-[#1a1a1a] ${
+                className={`flex flex-col justify-center p-8 md:p-16 lg:p-20 bg-white dark:bg-[#1a1a1a] shadow-sm dark:shadow-none border border-gray-100 dark:border-white/10 ${
                   post.imageLeft ? 'order-2 md:order-2' : 'order-2 md:order-1'
                 }`}
               >
                 {/* Tags */}
-                <ul className="flex flex-wrap gap-2 text-[#888] font-['Montserrat',_sans-serif] text-[13px] mb-4">
+                <ul className="flex flex-wrap gap-2 text-gray-500 dark:text-[#888] font-['Montserrat',_sans-serif] text-[13px] mb-4">
                   <li className="flex items-center gap-2">
                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"></path></svg>
                     {post.tags.map((tag: string, i: number) => (
@@ -120,20 +120,20 @@ export default function Blog() {
                 </ul>
 
                 {/* Title */}
-                <h3 className="text-2xl lg:text-[28px] font-bold font-['Montserrat',_sans-serif] text-white mb-6 leading-snug">
+                <h3 className="text-2xl lg:text-[28px] font-bold font-['Montserrat',_sans-serif] text-gray-900 dark:text-white mb-6 leading-snug">
                   <Link href={post.link} className="hover:text-[#D3AE3E] transition-colors">
                     {post.title}
                   </Link>
                 </h3>
 
                 {/* Excerpt */}
-                <p className="text-[#888] font-['Montserrat',_sans-serif] leading-[1.8] text-[14px] md:text-[15px] mb-8">
+                <p className="text-gray-500 dark:text-[#888] font-['Montserrat',_sans-serif] leading-[1.8] text-[14px] md:text-[15px] mb-8">
                   {post.excerpt}
                 </p>
 
                 {/* Post Meta Bottom */}
-                <div className="flex flex-wrap items-center justify-between gap-4 pt-6 border-t border-white/10">
-                  <ul className="flex flex-wrap gap-4 text-[#888] font-['Montserrat',_sans-serif] text-[13px]">
+                <div className="flex flex-wrap items-center justify-between gap-4 pt-6 border-t border-gray-200 dark:border-white/20">
+                  <ul className="flex flex-wrap gap-4 text-gray-500 dark:text-[#888] font-['Montserrat',_sans-serif] text-[13px]">
                     <li className="flex items-center gap-2">
                       <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg>
                       {post.author}
@@ -150,7 +150,7 @@ export default function Blog() {
 
                   <Link 
                     href={post.link}
-                    className="flex items-center gap-2 text-[13px] font-bold font-['Montserrat',_sans-serif] tracking-widest uppercase text-[#D3AE3E] hover:text-white transition-colors"
+                    className="flex items-center gap-2 text-[13px] font-bold font-['Montserrat',_sans-serif] tracking-widest uppercase text-[#D3AE3E] hover:text-gray-900 dark:text-white transition-colors"
                   >
                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 5l7 7-7 7M5 5l7 7-7 7"></path></svg>
                     Đọc tiếp

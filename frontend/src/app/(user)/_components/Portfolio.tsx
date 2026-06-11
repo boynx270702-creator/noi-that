@@ -13,12 +13,16 @@ export default function Portfolio() {
     const fetchProjects = async () => {
       try {
         const res = await fetch('/api/projects');
-        const data = await res.json();
+        if (!res.ok) throw new Error('API error');
+        const text = await res.text();
+        if (!text || text.startsWith('<')) throw new Error('Invalid JSON response');
+        const data = JSON.parse(text);
+        
         if (Array.isArray(data)) {
           const fetchedProjects = data.map((p: any, idx: number) => ({
             id: p.id,
             title: p.name,
-            img: `/images/portfolio/project-${['culture', 'ocean', 'royal', 'cinema', 'ducts', 'hotels'][idx % 6]}.jpg`, // placeholder image
+            img: `/images/main/${['bed1', 'cafe', 'dinning', 'kitchen2', 'office', 'pen1'][idx % 6]}.jpg`, // using interior images
             categories: [p.projectType],
             categoryText: `${p.projectType} / ${p.unitName}`,
             link: '#'
@@ -48,7 +52,7 @@ export default function Portfolio() {
   );
 
   return (
-    <section id="Portfolio" className="relative py-32 bg-[#131313] overflow-hidden">
+    <section id="Portfolio" className="relative py-32 bg-[#FAF9F8] dark:bg-[#0a0a0a] overflow-hidden">
       {/* Grid Pattern Background */}
       <div 
         className="absolute inset-0 opacity-[0.03] pointer-events-none" 
@@ -66,7 +70,7 @@ export default function Portfolio() {
             <h6 className="text-[#D3AE3E] text-[13px] font-semibold tracking-[4px] uppercase mb-4 font-['Montserrat',_sans-serif]">
               Recent Work
             </h6>
-            <h3 className="text-4xl md:text-[40px] font-bold text-white mb-6 font-['Montserrat',_sans-serif] tracking-tight flex justify-center gap-[2px]">
+            <h3 className="text-4xl md:text-[40px] font-bold text-gray-900 dark:text-white mb-6 font-['Montserrat',_sans-serif] tracking-tight flex justify-center gap-[2px]">
               {'Awesome Portfolio'.split('').map((char, index) => (
                 <span key={index} className={char === ' ' ? 'w-3' : ''}>{char}</span>
               ))}
@@ -87,7 +91,7 @@ export default function Portfolio() {
                 onClick={() => setActiveFilter(filter.id)}
                 className={`text-[13px] font-bold font-['Montserrat',_sans-serif] uppercase tracking-wider transition-colors ${activeFilter === filter.id
                     ? 'text-[#D3AE3E]'
-                    : 'text-white hover:text-[#D3AE3E]'
+                    : 'text-gray-900 dark:text-white hover:text-[#D3AE3E]'
                   }`}
               >
                 {filter.label}
@@ -101,7 +105,7 @@ export default function Portfolio() {
           {filteredItems.map((item, index) => (
             <ScrollReveal key={item.id} animation="fade-up" delay={100 + index * 100}>
               <div
-                className="group relative overflow-hidden bg-[#1a1a1a] aspect-[4/3] animate-in fade-in zoom-in duration-500"
+                className="group relative overflow-hidden bg-white dark:bg-[#1a1a1a] shadow-sm dark:shadow-none border border-gray-100 dark:border-white/10 aspect-[4/3] animate-in fade-in zoom-in duration-500"
               >
                 {/* Image Background */}
                 <div
@@ -114,7 +118,7 @@ export default function Portfolio() {
 
                 {/* Content (Slides up on hover) */}
                 <div className="absolute inset-0 p-8 flex flex-col justify-end translate-y-8 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
-                  <h3 className="text-[22px] font-bold font-['Montserrat',_sans-serif] text-white mb-2">
+                  <h3 className="text-[22px] font-bold font-['Montserrat',_sans-serif] text-gray-900 dark:text-white mb-2">
                     <Link href={item.link} className="hover:text-[#D3AE3E] transition-colors">
                       {item.title}
                     </Link>
@@ -124,8 +128,8 @@ export default function Portfolio() {
                   </p>
 
                   {/* SVG Icon matching the original */}
-                  <Link href={item.link} className="absolute bottom-8 right-8 w-10 h-10 bg-white flex items-center justify-center hover:bg-[#D3AE3E] transition-colors group/icon">
-                    <svg className="w-5 h-5 text-[#333] group-hover/icon:text-white" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="square" strokeMiterlimit="10" viewBox="0 0 24 24">
+                  <Link href={item.link} className="absolute bottom-8 right-8 w-10 h-10 bg-white dark:bg-[#131313] flex items-center justify-center hover:bg-[#D3AE3E] transition-colors group/icon">
+                    <svg className="w-5 h-5 text-[#333] group-hover/icon:text-gray-900 dark:text-white" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="square" strokeMiterlimit="10" viewBox="0 0 24 24">
                       <path d="M22,22l-3-3"></path>
                       <path d="M10,7v6"></path>
                       <path d="M13,10H7"></path>

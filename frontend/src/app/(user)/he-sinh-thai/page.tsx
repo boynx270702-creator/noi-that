@@ -3,6 +3,12 @@
 import React, { useState, useRef, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import Section6Ecosystem from '../_components/Section6Ecosystem';
+import Section2Problem from '../_components/Section2Problem';
+import Section3Solution from '../_components/Section3Solution';
+import Section4Benefits from '../_components/Section4Benefits';
+import Section5Comparison from '../_components/Section5Comparison';
+import Section9Process from '../_components/Section9Process';
 
 // mockUnits removed, fetching from API
 
@@ -24,22 +30,22 @@ function CustomSelect({ label, options, value, onChange }: { label: string, opti
 
   return (
     <div className="flex-1 min-w-[200px]" ref={dropdownRef}>
-      <label className="block text-sm text-white/50 mb-2 font-medium">{label}</label>
+      <label className="block text-sm text-gray-400 dark:text-white/50 mb-2 font-medium">{label}</label>
       <div className="relative">
         <div 
-          className={`bg-[#131313] border ${isOpen ? 'border-[#ce9e51]' : 'border-white/20'} text-white p-3 rounded cursor-pointer flex justify-between items-center transition-colors hover:border-white/40`}
+          className={`bg-[#FAF9F8] dark:bg-[#131313] border ${isOpen ? 'border-[#ce9e51]' : 'border-gray-300 dark:border-white/20'} text-gray-900 dark:text-white p-3 rounded cursor-pointer flex justify-between items-center transition-colors hover:border-white/40`}
           onClick={() => setIsOpen(!isOpen)}
         >
           <span className="text-sm">{selectedLabel}</span>
-          <svg className={`w-4 h-4 transition-transform ${isOpen ? 'rotate-180 text-[#ce9e51]' : 'text-white/50'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path></svg>
+          <svg className={`w-4 h-4 transition-transform ${isOpen ? 'rotate-180 text-[#ce9e51]' : 'text-gray-400 dark:text-white/50'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path></svg>
         </div>
         
         {isOpen && (
-          <div className="absolute z-50 w-full mt-2 bg-[#1c1c1c] border border-white/10 rounded shadow-2xl py-2 animate-fadeInDown">
+          <div className="absolute z-50 w-full mt-2 bg-white dark:bg-[#1c1c1c] shadow-sm dark:shadow-none border border-gray-200 dark:border-white/10 rounded shadow-2xl py-2 animate-fadeInDown">
             {options.map((opt) => (
               <div 
                 key={opt.value}
-                className={`px-4 py-2 text-sm cursor-pointer transition-colors ${value === opt.value ? 'bg-[#ce9e51]/20 text-[#ce9e51]' : 'text-white/80 hover:bg-white/5 hover:text-white'}`}
+                className={`px-4 py-2 text-sm cursor-pointer transition-colors ${value === opt.value ? 'bg-[#ce9e51]/20 text-[#ce9e51]' : 'text-gray-700 dark:text-white/80 hover:bg-gray-100 dark:bg-white/5 hover:text-gray-900 dark:text-white'}`}
                 onClick={() => {
                   onChange(opt.value);
                   setIsOpen(false);
@@ -92,16 +98,29 @@ export default function HeSinhThaiPage() {
   }, []);
 
   return (
-    <div className="pt-[120px] pb-20 bg-[#131313] min-h-screen">
-      <div className="container mx-auto px-6 max-w-[1200px]">
-        {/* Header */}
-        <div className="text-center mb-16">
-          <h1 className="text-4xl md:text-5xl font-['Montserrat',_sans-serif] font-bold text-white mb-6">Hệ sinh thái 30 đơn vị thiết kế – thi công nội thất</h1>
-          <p className="text-white/70 max-w-3xl mx-auto text-lg">Các đơn vị được phân loại theo phân khúc, loại công trình, khu vực hoạt động, phong cách thiết kế và năng lực thi công. Khách hàng có thể tham khảo hồ sơ từng đơn vị hoặc gửi nhu cầu để được tư vấn đơn vị phù hợp nhất.</p>
-        </div>
+    <div className="bg-[#FAF9F8] dark:bg-[#131313] min-h-screen">
+      {/* Các nội dung giới thiệu hệ sinh thái */}
+      <div id="gioi-thieu"><Section6Ecosystem /></div>
+      <Section2Problem />
+      <Section3Solution />
+      <div id="loi-ich"><Section4Benefits /></div>
+      <div id="so-sanh"><Section5Comparison /></div>
+      <Section9Process />
 
-        {/* Filters Scaffold */}
-        <div className="bg-[#1c1c1c] p-6 rounded-lg mb-12 border border-white/10 flex flex-wrap gap-4 items-end">
+      {/* Danh sách Đơn vị thiết kế */}
+      <div id="don-vi-thiet-ke" className="pt-20 pb-20">
+        <div className="container mx-auto px-6 max-w-[1200px]">
+          {/* Header */}
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#D3AE3E]/10 border border-[#D3AE3E]/20 text-[#D3AE3E] text-xs font-bold uppercase tracking-wider mb-4">
+              Đơn vị thiết kế
+            </div>
+            <h2 className="text-4xl md:text-5xl font-['Montserrat',_sans-serif] font-bold text-gray-900 dark:text-white mb-6">Hệ sinh thái 30 đơn vị thiết kế – thi công</h2>
+            <p className="text-gray-600 dark:text-white/70 max-w-3xl mx-auto text-lg">Các đơn vị được phân loại theo phân khúc, loại công trình, khu vực hoạt động, phong cách thiết kế và năng lực thi công. Khách hàng có thể tham khảo hồ sơ từng đơn vị hoặc gửi nhu cầu để được tư vấn đơn vị phù hợp nhất.</p>
+          </div>
+
+          {/* Filters Scaffold */}
+          <div id="phan-khuc" className="bg-white dark:bg-[#1c1c1c] shadow-sm dark:shadow-none p-6 rounded-lg mb-12 border border-gray-200 dark:border-white/10 flex flex-wrap gap-4 items-end">
           <CustomSelect 
             label="Phân khúc" 
             value={segment} 
@@ -138,7 +157,7 @@ export default function HeSinhThaiPage() {
             ]} 
           />
           <div className="flex-1 min-w-[200px]">
-            <button className="w-full bg-[#ce9e51] hover:bg-white hover:text-[#131313] text-white font-bold py-3 px-6 rounded transition-colors uppercase tracking-wider text-sm h-[46px] mt-2">
+            <button className="w-full bg-[#ce9e51] hover:bg-white hover:text-[#131313] text-gray-900 dark:text-white font-bold py-3 px-6 rounded transition-colors uppercase tracking-wider text-sm h-[46px] mt-2">
               Lọc kết quả
             </button>
           </div>
@@ -147,32 +166,32 @@ export default function HeSinhThaiPage() {
         {/* Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {isLoading ? (
-            <div className="col-span-3 text-center text-white/50 py-10">Đang tải danh sách đơn vị...</div>
+            <div className="col-span-3 text-center text-gray-400 dark:text-white/50 py-10">Đang tải danh sách đơn vị...</div>
           ) : units.length === 0 ? (
-            <div className="col-span-1 md:col-span-2 lg:col-span-3 bg-[#1c1c1c] border border-white/5 rounded-2xl p-16 text-center flex flex-col items-center justify-center min-h-[400px]">
+            <div className="col-span-1 md:col-span-2 lg:col-span-3 bg-white dark:bg-[#1c1c1c] shadow-sm dark:shadow-none border border-gray-200 dark:border-white/5 rounded-2xl p-16 text-center flex flex-col items-center justify-center min-h-[400px]">
               <div className="w-24 h-24 bg-[#ce9e51]/10 text-[#ce9e51] rounded-full flex items-center justify-center text-4xl mb-6 shadow-[0_0_30px_rgba(206,158,81,0.15)]">
                 <i className="fa fa-building"></i>
               </div>
-              <h3 className="text-2xl font-['Montserrat',_sans-serif] font-bold text-white mb-4">Chưa có đối tác nào</h3>
-              <p className="text-white/60 max-w-md mx-auto text-lg">Hệ thống hiện đang cập nhật danh sách các đơn vị thiết kế và thi công nội thất chuyên nghiệp. Vui lòng quay lại sau!</p>
+              <h3 className="text-2xl font-['Montserrat',_sans-serif] font-bold text-gray-900 dark:text-white mb-4">Chưa có đối tác nào</h3>
+              <p className="text-gray-500 dark:text-white/60 max-w-md mx-auto text-lg">Hệ thống hiện đang cập nhật danh sách các đơn vị thiết kế và thi công nội thất chuyên nghiệp. Vui lòng quay lại sau!</p>
             </div>
           ) : units.map((unit) => (
-            <div key={unit.id} className="bg-[#1c1c1c] rounded-xl overflow-hidden group border border-white/5 hover:border-[#ce9e51]/50 transition-colors">
+            <div key={unit.id} className="bg-white dark:bg-[#1c1c1c] shadow-sm dark:shadow-none rounded-xl overflow-hidden group border border-gray-200 dark:border-white/5 hover:border-[#ce9e51]/50 transition-colors">
               <div className="h-[240px] relative overflow-hidden">
                 {/* Fallback to simple div if image is missing in actual environment, using Image component for better performance but standard img here for safe mock */}
                 <div 
                   className="absolute inset-0 bg-cover bg-center group-hover:scale-110 transition-transform duration-500"
                   style={{ backgroundImage: `url(${unit.image})` }}
                 ></div>
-                <div className="absolute top-4 left-4 bg-[#ce9e51] text-white text-xs font-bold px-3 py-1 rounded uppercase tracking-wider">
+                <div className="absolute top-4 left-4 bg-[#ce9e51] text-gray-900 dark:text-white text-xs font-bold px-3 py-1 rounded uppercase tracking-wider">
                   {unit.category}
                 </div>
               </div>
               <div className="p-6">
-                <h3 className="text-2xl font-['Montserrat',_sans-serif] font-bold text-white mb-2">{unit.name}</h3>
-                <p className="text-sm text-white/60 mb-4 line-clamp-2">{unit.description}</p>
+                <h3 className="text-2xl font-['Montserrat',_sans-serif] font-bold text-gray-900 dark:text-white mb-2">{unit.name}</h3>
+                <p className="text-sm text-gray-500 dark:text-white/60 mb-4 line-clamp-2">{unit.description}</p>
                 
-                <div className="space-y-2 mb-6 text-sm text-white/80">
+                <div className="space-y-2 mb-6 text-sm text-gray-700 dark:text-white/80">
                   <div className="flex items-start">
                     <i className="fa fa-building mt-1 w-5 text-[#ce9e51]"></i>
                     <span><strong>Thế mạnh:</strong> {unit.strengths}</span>
@@ -188,10 +207,10 @@ export default function HeSinhThaiPage() {
                 </div>
 
                 <div className="flex flex-col gap-3">
-                  <Link href={`/he-sinh-thai/${unit.id}`} className="text-center block w-full bg-transparent border border-white/30 hover:border-white text-white font-bold py-3 px-4 rounded transition-colors uppercase tracking-wider text-xs">
+                  <Link href={`/he-sinh-thai/${unit.id}`} className="text-center block w-full bg-transparent border border-gray-300 dark:border-white/30 hover:border-white text-gray-900 dark:text-white font-bold py-3 px-4 rounded transition-colors uppercase tracking-wider text-xs">
                     Xem hồ sơ chi tiết
                   </Link>
-                  <Link href={`/tu-van?unit=${unit.id}`} className="text-center block w-full bg-white/10 hover:bg-[#ce9e51] text-white font-bold py-3 px-4 rounded transition-colors uppercase tracking-wider text-xs">
+                  <Link href={`/tu-van?unit=${unit.id}`} className="text-center block w-full bg-gray-100 dark:bg-white/10 hover:bg-[#ce9e51] text-gray-900 dark:text-white font-bold py-3 px-4 rounded transition-colors uppercase tracking-wider text-xs">
                     Nhận tư vấn đơn vị này
                   </Link>
                 </div>
@@ -199,6 +218,7 @@ export default function HeSinhThaiPage() {
             </div>
           ))}
         </div>
+      </div>
       </div>
     </div>
   );

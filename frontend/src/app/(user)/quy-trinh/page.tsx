@@ -41,13 +41,13 @@ export default function QuyTrinhPage() {
   ];
 
   return (
-    <div className="pt-[120px] pb-20 bg-[#131313] min-h-screen text-white">
+    <div className="pt-[120px] pb-20 bg-[#FAF9F8] dark:bg-[#131313] min-h-screen text-gray-900 dark:text-white">
       <div className="container mx-auto px-6 max-w-[1000px]">
         
         {/* Header */}
         <div className="text-center mb-16">
-          <h1 className="text-4xl md:text-5xl font-['Montserrat',_sans-serif] font-bold text-white mb-6">Quy trình kết nối rõ ràng từ nhu cầu đến triển khai</h1>
-          <p className="text-white/70 text-lg max-w-2xl mx-auto">Chúng tôi đồng hành cùng bạn trong từng bước để tìm ra đơn vị thi công phù hợp nhất và đảm bảo dự án thành công.</p>
+          <h1 className="text-4xl md:text-5xl font-['Montserrat',_sans-serif] font-bold text-gray-900 dark:text-white mb-6">Quy trình kết nối rõ ràng từ nhu cầu đến triển khai</h1>
+          <p className="text-gray-600 dark:text-white/70 text-lg max-w-2xl mx-auto">Chúng tôi đồng hành cùng bạn trong từng bước để tìm ra đơn vị thi công phù hợp nhất và đảm bảo dự án thành công.</p>
         </div>
 
         {/* Timeline */}
@@ -63,15 +63,15 @@ export default function QuyTrinhPage() {
                   
                   {/* Content Box */}
                   <div className={`w-full md:w-1/2 pl-16 md:pl-0 ${isEven ? 'md:pl-12' : 'md:pr-12 text-left md:text-right'} pt-2 md:pt-0`}>
-                    <div className="bg-[#1c1c1c] p-6 md:p-8 rounded-2xl border border-white/5 hover:border-[#ce9e51]/50 transition-colors shadow-lg relative group">
-                      <div className={`absolute top-1/2 -translate-y-1/2 ${isEven ? '-left-3' : '-right-3'} w-6 h-6 rotate-45 bg-[#1c1c1c] border border-white/5 group-hover:border-[#ce9e51]/50 hidden md:block border-t-0 border-l-0 ${isEven ? 'border-b-0 border-r-0 border-l border-t' : ''}`}></div>
+                    <div className="bg-white dark:bg-[#1c1c1c] shadow-sm dark:shadow-none p-6 md:p-8 rounded-2xl border border-gray-200 dark:border-white/5 hover:border-[#ce9e51]/50 transition-colors shadow-lg relative group">
+                      <div className={`absolute top-1/2 -translate-y-1/2 ${isEven ? '-left-3' : '-right-3'} w-6 h-6 rotate-45 bg-white dark:bg-[#1c1c1c] shadow-sm dark:shadow-none border border-gray-200 dark:border-white/5 group-hover:border-[#ce9e51]/50 hidden md:block border-t-0 border-l-0 ${isEven ? 'border-b-0 border-r-0 border-l border-t' : ''}`}></div>
                       <h3 className="text-xl md:text-2xl font-bold font-['Montserrat',_sans-serif] mb-3 text-[#ce9e51]">{step.title}</h3>
-                      <p className="text-white/70 leading-relaxed text-sm md:text-base">{step.desc}</p>
+                      <p className="text-gray-600 dark:text-white/70 leading-relaxed text-sm md:text-base">{step.desc}</p>
                     </div>
                   </div>
                   
                   {/* Number Circle */}
-                  <div className="absolute left-[24px] md:left-1/2 top-6 md:top-1/2 -translate-x-1/2 md:-translate-y-1/2 w-10 h-10 md:w-14 md:h-14 bg-[#131313] border-2 border-[#ce9e51] rounded-full flex items-center justify-center font-bold text-[#ce9e51] text-sm md:text-lg shadow-[0_0_20px_rgba(206,158,81,0.3)]">
+                  <div className="absolute left-[24px] md:left-1/2 top-6 md:top-1/2 -translate-x-1/2 md:-translate-y-1/2 w-10 h-10 md:w-14 md:h-14 bg-[#FAF9F8] dark:bg-[#131313] border-2 border-[#ce9e51] rounded-full flex items-center justify-center font-bold text-[#ce9e51] text-sm md:text-lg shadow-[0_0_20px_rgba(206,158,81,0.3)]">
                     {step.number}
                   </div>
 
@@ -85,7 +85,7 @@ export default function QuyTrinhPage() {
 
         {/* CTA */}
         <div className="mt-20 text-center">
-          <Link href="/tu-van" className="inline-block bg-[#ce9e51] hover:bg-white hover:text-[#131313] text-white font-bold py-4 px-10 rounded transition-colors uppercase tracking-wider">
+          <Link href="/tu-van" className="inline-block bg-[#ce9e51] hover:bg-white hover:text-[#131313] text-gray-900 dark:text-white font-bold py-4 px-10 rounded transition-colors uppercase tracking-wider">
             Gửi nhu cầu công trình ngay
           </Link>
         </div>

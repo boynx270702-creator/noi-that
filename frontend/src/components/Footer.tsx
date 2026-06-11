@@ -44,7 +44,7 @@ export default function Footer() {
             <div className="space-y-6">
               <div className="flex gap-4 group">
                 <div className="w-[80px] h-[60px] flex-shrink-0 overflow-hidden rounded">
-                  <img src="/images/v2/03-2.jpg" alt="Post" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" />
+                  <img src="/images/main/25.jpg" alt="Post" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" />
                 </div>
                 <div>
                   <Link href="#" className="text-sm text-gray-300 hover:text-[#D3AE3E] transition-colors line-clamp-2 leading-snug">
@@ -55,7 +55,7 @@ export default function Footer() {
               </div>
               <div className="flex gap-4 group">
                 <div className="w-[80px] h-[60px] flex-shrink-0 overflow-hidden rounded">
-                  <img src="/images/v2/02.jpg" alt="Post" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" />
+                  <img src="/images/main/26.jpg" alt="Post" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" />
                 </div>
                 <div>
                   <Link href="#" className="text-sm text-gray-300 hover:text-[#D3AE3E] transition-colors line-clamp-2 leading-snug">
@@ -108,19 +108,19 @@ export default function Footer() {
             <div className="grid grid-cols-3 gap-2">
               <div className="aspect-square overflow-hidden rounded group cursor-pointer relative">
                 <div className="absolute inset-0 bg-black/40 group-hover:bg-transparent transition-colors z-10" />
-                <img src="/images/v2/03-1-150x150.jpg" alt="Gallery 1" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" />
+                <img src="/images/main/19.jpg" alt="Gallery 1" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" />
               </div>
               <div className="aspect-square overflow-hidden rounded group cursor-pointer relative">
                 <div className="absolute inset-0 bg-black/40 group-hover:bg-transparent transition-colors z-10" />
-                <img src="/images/v2/01-1-150x150.jpg" alt="Gallery 2" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" />
+                <img src="/images/main/20.jpg" alt="Gallery 2" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" />
               </div>
               <div className="aspect-square overflow-hidden rounded group cursor-pointer relative">
                 <div className="absolute inset-0 bg-black/40 group-hover:bg-transparent transition-colors z-10" />
-                <img src="/images/v2/slide-4-150x150.jpg" alt="Gallery 3" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" />
+                <img src="/images/main/21.jpg" alt="Gallery 3" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" />
               </div>
               <div className="aspect-square overflow-hidden rounded group cursor-pointer relative">
                 <div className="absolute inset-0 bg-black/40 group-hover:bg-transparent transition-colors z-10" />
-                <img src="/images/gallery/thumb-6.jpg" alt="Gallery 4" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" />
+                <img src="/images/main/22.jpg" alt="Gallery 4" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" />
               </div>
             </div>
           </div>
@@ -130,7 +130,7 @@ export default function Footer() {
         {/* Bottom Footer Area */}
         <div className="mt-16 pt-8 border-t border-gray-800 flex flex-col md:flex-row items-center justify-between gap-6">
           <Link href="/">
-            <img src="/images/logo-main.png" alt="Footer Logo" className="h-10 opacity-90 hover:opacity-100 transition-opacity" />
+            <img src="/images/logo-main2.png" alt="Footer Logo" className="h-10 opacity-90 hover:opacity-100 transition-opacity" />
           </Link>
           <div className="text-sm text-gray-500 font-medium tracking-wide flex flex-wrap justify-center gap-2">
             <Link href="#" className="hover:text-[#D3AE3E] transition-colors">Terms of use</Link>

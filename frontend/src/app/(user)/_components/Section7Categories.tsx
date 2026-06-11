@@ -4,23 +4,24 @@ import ScrollReveal from './ScrollReveal';
 
 // Reusing some high quality images for the categories
 const CATEGORIES = [
-  { name: 'Chung cư', img: '/images/portfolio/project-culture.jpg', size: 'md:col-span-2 md:row-span-2 aspect-square md:aspect-auto' },
-  { name: 'Nhà phố', img: '/images/portfolio/project-ocean.jpg', size: 'aspect-square' },
-  { name: 'Nhà đất', img: '/images/portfolio/project-royal.jpg', size: 'aspect-square' },
-  { name: 'Villa', img: '/images/blog/post-1.jpg', size: 'md:col-span-2 aspect-[2/1] md:aspect-auto' },
-  { name: 'Biệt thự', img: '/images/blog/post-2.jpg', size: 'aspect-square' },
-  { name: 'Penthouse', img: '/images/portfolio/project-cinema.jpg', size: 'md:col-span-2 aspect-[2/1] md:aspect-auto' },
-  { name: 'Văn phòng', img: '/images/portfolio/project-ducts.jpg', size: 'aspect-square' },
-  { name: 'Showroom', img: '/images/portfolio/project-hotels.jpg', size: 'aspect-square' },
-  { name: 'Cửa hàng bán lẻ', img: '/images/categories/cat-retail.jpg', size: 'aspect-square' },
-  { name: 'Spa, salon, phòng khám', img: '/images/services/service-design.jpg', size: 'md:col-span-2 aspect-[2/1] md:aspect-auto' },
-  { name: 'Nhà hàng, quán cafe', img: '/images/services/service-interior.jpg', size: 'aspect-square' },
-  { name: 'Công trình nghỉ dưỡng nhỏ', img: '/images/services/service-landscape.jpg', size: 'md:col-span-2 aspect-[2/1] md:aspect-auto' }
+  { name: 'Chung cư', img: '/images/main/bed1.jpg', size: 'md:col-span-2 md:row-span-2 aspect-square md:aspect-auto' },
+  { name: 'Nhà phố', img: '/images/main/pen1.jpg', size: 'aspect-square' },
+  { name: 'Nhà đất', img: '/images/main/villa3.jpg', size: 'aspect-square' },
+  { name: 'Villa', img: '/images/main/villa1.jpg', size: 'md:col-span-2 aspect-[2/1] md:aspect-auto' },
+  { name: 'Biệt thự', img: '/images/main/villa2.jpg', size: 'aspect-square' },
+  { name: 'Penthouse', img: '/images/main/pen3.jpg', size: 'md:col-span-2 aspect-[2/1] md:aspect-auto' },
+  { name: 'Văn phòng', img: '/images/main/office.jpg', size: 'aspect-square' },
+  { name: 'Showroom', img: '/images/main/spa2.jpg', size: 'aspect-square' },
+  { name: 'Cửa hàng bán lẻ', img: '/images/main/store.jpg', size: 'aspect-square' },
+  { name: 'Spa, salon, phòng khám', img: '/images/main/spa1.jpg', size: 'md:col-span-2 aspect-[2/1] md:aspect-auto' },
+  { name: 'Nhà hàng, quán cafe', img: '/images/main/cafe.jpg', size: 'aspect-square' },
+  { name: 'Công trình nghỉ dưỡng nhỏ', img: '/images/main/rancho-cp-weber-arquitectos_25.jpg', size: 'md:col-span-2 aspect-[2/1] md:aspect-auto' },
+  { name: 'Khách sạn', img: '/images/main/sofa.jpg', size: 'aspect-square' }
 ];
 
 export default function Section7Categories() {
   return (
-    <section id="Categories" className="relative py-32 bg-[#0a0a0a] overflow-hidden border-t border-white/5">
+    <section id="Categories" className="relative py-32 bg-[#FAF9F8] dark:bg-[#0a0a0a] overflow-hidden border-t border-gray-200 dark:border-white/20">
       {/* Grid Pattern Background */}
       <div 
         className="absolute inset-0 opacity-[0.03] pointer-events-none" 
@@ -38,7 +39,7 @@ export default function Section7Categories() {
             <h6 className="text-[#D3AE3E] text-[13px] font-semibold tracking-[4px] uppercase mb-4 font-['Montserrat',_sans-serif]">
               Các Loại Công Trình Hỗ Trợ
             </h6>
-            <h2 className="text-3xl md:text-5xl font-bold text-white mb-6 font-['Montserrat',_sans-serif]">
+            <h2 className="text-3xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6 font-['Montserrat',_sans-serif]">
               Phù hợp với <span className="text-[#D3AE3E]">nhiều loại công trình</span> khác nhau
             </h2>
             <div className="w-16 h-[2px] bg-[#D3AE3E] mx-auto mb-6" />
@@ -57,7 +58,7 @@ export default function Section7Categories() {
               delay={100 + (index % 4) * 100} 
               className={`${cat.size} h-full w-full`}
             >
-              <div className="group relative w-full h-full overflow-hidden bg-[#1a1a1a] rounded-sm cursor-pointer">
+              <div className="group relative w-full h-full overflow-hidden bg-white dark:bg-[#1a1a1a] shadow-sm dark:shadow-none border border-gray-100 dark:border-white/10 rounded-sm cursor-pointer">
                 {/* Background Image */}
                 <div
                   className="absolute inset-0 bg-cover bg-center transition-transform duration-1000 group-hover:scale-110"
@@ -66,11 +67,11 @@ export default function Section7Categories() {
 
                 {/* Dark Overlays */}
                 <div className="absolute inset-0 bg-black/40 group-hover:bg-black/60 transition-colors duration-500" />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-80 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#FAF9F8]/90 dark:from-[#0a0a0a]/90 via-black/20 to-transparent opacity-80 group-hover:opacity-100 transition-opacity duration-500" />
 
                 {/* Text Content */}
                 <div className="absolute inset-0 p-6 flex flex-col justify-end">
-                  <h3 className="text-xl md:text-2xl font-bold font-['Montserrat',_sans-serif] text-white translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                  <h3 className="text-xl md:text-2xl font-bold font-['Montserrat',_sans-serif] text-gray-900 dark:text-white translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
                     {cat.name}
                   </h3>
                   <div className="h-1 w-8 bg-[#D3AE3E] mt-4 opacity-0 group-hover:opacity-100 transition-all duration-500 delay-100 transform -translate-x-4 group-hover:translate-x-0" />

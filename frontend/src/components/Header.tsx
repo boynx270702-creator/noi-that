@@ -52,7 +52,7 @@ export default function Header() {
           {/* Logo */}
           <Link href="/" className="flex-shrink-0">
             <img 
-              src="/images/logo-main.png" 
+              src="/images/logo-header.png" 
               alt="Logo" 
               className="h-[55px] object-contain transition-all duration-300" 
             />
@@ -155,7 +155,7 @@ export default function Header() {
             <X className="w-6 h-6" />
           </button>
 
-          <img src="/images/logo-main.png" alt="Logo" className="w-[150px] mb-10" />
+          <img src="/images/logo-main2.png" alt="Logo" className="w-[150px] mb-10" />
 
           <h2 className="text-2xl font-bold text-white mb-4 font-['Montserrat',_sans-serif]">Về Chúng Tôi</h2>
           <p className="text-gray-400 text-[15px] leading-relaxed mb-8">
@@ -168,12 +168,12 @@ export default function Header() {
 
           <h2 className="text-2xl font-bold text-white mb-6 font-['Montserrat',_sans-serif]">Thư Viện</h2>
           <div className="grid grid-cols-3 gap-2 mb-12">
-            <img src="/images/gallery/thumb-1.jpg" alt="Gallery" className="w-full aspect-square object-cover opacity-70 hover:opacity-100 transition-opacity cursor-pointer" />
-            <img src="/images/gallery/thumb-2.jpg" alt="Gallery" className="w-full aspect-square object-cover opacity-70 hover:opacity-100 transition-opacity cursor-pointer" />
-            <img src="/images/gallery/thumb-3.jpg" alt="Gallery" className="w-full aspect-square object-cover opacity-70 hover:opacity-100 transition-opacity cursor-pointer" />
-            <img src="/images/gallery/thumb-4.jpg" alt="Gallery" className="w-full aspect-square object-cover opacity-70 hover:opacity-100 transition-opacity cursor-pointer" />
-            <img src="/images/gallery/thumb-5.jpg" alt="Gallery" className="w-full aspect-square object-cover opacity-70 hover:opacity-100 transition-opacity cursor-pointer" />
-            <img src="/images/gallery/thumb-6.jpg" alt="Gallery" className="w-full aspect-square object-cover opacity-70 hover:opacity-100 transition-opacity cursor-pointer" />
+            <img src="/images/main/13.jpg" alt="Gallery" className="w-full aspect-square object-cover opacity-70 hover:opacity-100 transition-opacity cursor-pointer" />
+            <img src="/images/main/14.jpg" alt="Gallery" className="w-full aspect-square object-cover opacity-70 hover:opacity-100 transition-opacity cursor-pointer" />
+            <img src="/images/main/15.jpg" alt="Gallery" className="w-full aspect-square object-cover opacity-70 hover:opacity-100 transition-opacity cursor-pointer" />
+            <img src="/images/main/16.jpg" alt="Gallery" className="w-full aspect-square object-cover opacity-70 hover:opacity-100 transition-opacity cursor-pointer" />
+            <img src="/images/main/17.jpg" alt="Gallery" className="w-full aspect-square object-cover opacity-70 hover:opacity-100 transition-opacity cursor-pointer" />
+            <img src="/images/main/18.jpg" alt="Gallery" className="w-full aspect-square object-cover opacity-70 hover:opacity-100 transition-opacity cursor-pointer" />
           </div>
         </div>
       </div>
