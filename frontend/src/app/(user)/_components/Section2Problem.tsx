@@ -64,15 +64,15 @@ export default function Section2Problem() {
         </ScrollReveal>
 
         {/* Bento Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-2">
           {PROBLEMS.map((problem, index) => (
             <ScrollReveal 
               key={problem.num} 
               animation="fade-up" 
               delay={200 + index * 100}
-              className={`relative group overflow-hidden ${problem.colSpan}`}
+              className={`relative group overflow-hidden rounded-2xl ${problem.colSpan}`}
             >
-              <div className="h-full card dark:bg-[#131313] border border-[#ECE7DE] dark:border-white/5 hover:border-[#C7A25C]/50 transition-all duration-500 p-8 md:p-10 flex flex-col justify-between min-h-[300px]">
+              <div className="h-full card rounded-2xl dark:bg-[#131313] border border-[#ECE7DE] dark:border-white/5 hover:border-[#C7A25C]/50 transition-all duration-500 p-8 md:p-10 flex flex-col justify-between min-h-[300px]">
                 
                 {/* Optional Background Image for some blocks */}
                 {problem.bgImg && (
@@ -86,7 +86,7 @@ export default function Section2Problem() {
                 )}
 
                 <div className="relative z-10">
-                  <div className="text-[#C7A25C] text-6xl font-bold opacity-20 mb-6 group-hover:opacity-40 group-hover:-translate-y-2 transition-all duration-500 inline-block">
+                  <div className="text-[#C7A25C] text-6xl font-bold opacity-40 mb-6 group-hover:opacity-100 group-hover:-translate-y-2 transition-all duration-500 inline-block">
                     {problem.num}
                   </div>
                   <h3 className="font-heading text-xl md:text-2xl font-bold text-[#1F1F1F] dark:text-white mb-4 group-hover:text-[#C7A25C] transition-colors leading-snug">

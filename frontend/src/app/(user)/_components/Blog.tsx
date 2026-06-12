@@ -11,8 +11,14 @@ export default function Blog() {
   useEffect(() => {
     const fetchArticles = async () => {
       try {
-        const res = await fetch('/api/articles');
-        if (!res.ok) throw new Error('API error');
+        const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3001/api/v1';
+        const res = await fetch(`${apiUrl}/articles`);
+        if (!res.ok) {
+          console.error('API error status:', res.status, res.statusText);
+          const errorText = await res.text();
+          console.error('API error text:', errorText);
+          throw new Error('API error');
+        }
         
         const text = await res.text();
         if (!text || text.startsWith('<')) {
