@@ -13,7 +13,7 @@ export default function Section10CTA() {
       />
       <div className="absolute inset-0 bg-gradient-to-t from-[#F8F6F2] via-[#F8F6F2]/90 dark:from-[#0a0a0a] dark:via-[#1a1a1a]/80 to-transparent" />
 
-      <div className="relative z-10 max-w-[900px] mx-auto px-6 text-center">
+      <div className="relative z-10 max-w-[1400px] mx-auto px-6 text-center">
         <ScrollReveal animation="fade-up" delay={100}>
           <h2 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-8 leading-[1.2]">
             Bắt đầu với một tư vấn <span className="text-[#D3AE3E]">đúng</span> ngay từ đầu

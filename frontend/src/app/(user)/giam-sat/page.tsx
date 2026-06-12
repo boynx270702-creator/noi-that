@@ -25,7 +25,7 @@ export default function GiamSatPage() {
 
   return (
     <div className="pt-[120px] pb-20 bg-[#FAF9F8] dark:bg-[#131313] min-h-screen text-gray-900 dark:text-white">
-      <div className="container mx-auto px-6 max-w-[1200px]">
+      <div className="container mx-auto px-6 max-w-[1400px]">
         {/* Header */}
         <div className="text-center mb-20 max-w-4xl mx-auto">
           <h1 className="font-heading text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">Dịch vụ giám sát thi công nội thất</h1>

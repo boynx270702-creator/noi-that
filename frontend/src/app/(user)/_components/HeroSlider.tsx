@@ -97,7 +97,7 @@ export default function HeroSlider() {
 
       {/* ── Caption Content (Centered) ── */}
       <div className="absolute inset-0 z-20 flex items-center justify-center">
-        <div className="container mx-auto px-6 md:px-20 max-w-[1200px]">
+        <div className="container mx-auto px-6 md:px-20 max-w-[1400px]">
           <AnimatePresence mode="wait">
             <motion.div 
               key={current}
@@ -105,7 +105,7 @@ export default function HeroSlider() {
               initial="hidden"
               animate="show"
               exit="exit"
-              className="max-w-[1000px] mx-auto text-center flex flex-col items-center justify-center"
+              className="max-w-[1400px] mx-auto text-center flex flex-col items-center justify-center"
             >
               
               <motion.p variants={itemVariants} className="text-[#D3AE3E] text-[12px] md:text-[14px] font-bold tracking-[0.3em] uppercase mb-6">

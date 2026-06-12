@@ -38,7 +38,7 @@ const GALLERY = [
 export default function Footer() {
   return (
     <footer className="bg-white dark:bg-[#131313] pt-24 pb-8 border-t border-gray-200 dark:border-white/20">
-      <div className="max-w-[1200px] mx-auto px-6">
+      <div className="max-w-[1400px] mx-auto px-6">
         
         {/* Top Section: 4 Columns */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">

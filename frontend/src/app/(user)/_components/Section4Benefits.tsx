@@ -86,7 +86,7 @@ export default function Section4Benefits() {
 
   return (
     <section className="relative py-32 bg-[#F8F6F2] dark:bg-[#0a0a0a] overflow-hidden">
-      <div className="relative z-10 max-w-[1200px] mx-auto px-6">
+      <div className="relative z-10 max-w-[1400px] mx-auto px-6">
         
         {/* Section Header */}
         <ScrollReveal animation="fade-up" delay={100}>

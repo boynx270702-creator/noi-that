@@ -88,7 +88,7 @@ export default function Services() {
       {/* Background Overlay */}
       <div className="absolute inset-0 bg-[url('/images/common/bg-pattern.jpg')] bg-cover bg-center opacity-5" />
 
-      <div className="relative z-10 max-w-[1200px] mx-auto px-6">
+      <div className="relative z-10 max-w-[1400px] mx-auto px-6">
         
         {/* Section Header */}
         <ScrollReveal animation="fade-up" delay={100}>

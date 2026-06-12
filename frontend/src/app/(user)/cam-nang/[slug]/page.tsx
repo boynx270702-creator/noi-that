@@ -69,7 +69,7 @@ export default function ArticleDetail() {
   if (error || !article) {
     return (
       <div className="pt-32 pb-24 bg-[#FAF9F8] dark:bg-[#0a0a0a] min-h-screen">
-        <div className="max-w-[800px] mx-auto px-6 text-center pt-20">
+        <div className="max-w-[1400px] mx-auto px-6 text-center pt-20">
           <h1 className="text-4xl font-bold mb-4 text-gray-900 dark:text-white">Không tìm thấy bài viết</h1>
           <p className="text-gray-500 mb-8">{error || 'Bài viết có thể đã bị xóa hoặc đường dẫn không hợp lệ.'}</p>
           <Link href="/cam-nang" className="bg-[#D3AE3E] text-white px-8 py-3 rounded-[8px] font-bold uppercase tracking-wider inline-flex items-center gap-2">
@@ -86,7 +86,7 @@ export default function ArticleDetail() {
 
   return (
     <div className="pt-32 pb-24 bg-[#FAF9F8] dark:bg-[#0a0a0a] min-h-screen">
-      <div className="max-w-[900px] mx-auto px-6">
+      <div className="max-w-[1400px] mx-auto px-6">
 
         {/* Breadcrumb */}
         <div className="flex items-center gap-2 text-[13px] text-gray-500 dark:text-[#888] uppercase tracking-wider font-semibold mb-8">
@@ -165,7 +165,7 @@ export default function ArticleDetail() {
       {/* Related Articles */}
       {relatedArticles.length > 0 && (
         <div className="mt-24 pt-20 bg-white dark:bg-[#131313] border-t border-gray-200 dark:border-white/5">
-          <div className="max-w-[1200px] mx-auto px-6">
+          <div className="max-w-[1400px] mx-auto px-6">
             <h3 className="font-heading text-3xl font-bold text-gray-900 dark:text-white mb-10 uppercase tracking-wider text-center">
               Bài viết <span className="text-[#D3AE3E]">Liên quan</span>
             </h3>

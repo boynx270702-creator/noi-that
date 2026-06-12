@@ -30,7 +30,7 @@ const POLICIES = [
 export default function SectionPolicies() {
   return (
     <section className="py-24 bg-[#F8F6F2] dark:bg-[#0a0a0a] relative border-t border-[#ECE7DE] dark:border-white/20">
-      <div className="max-w-[1200px] mx-auto px-6">
+      <div className="max-w-[1400px] mx-auto px-6">
         <div className="text-center mb-16">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#C7A25C]/10 border border-[#C7A25C]/20 text-[#C7A25C] text-xs font-bold uppercase tracking-wider mb-4">
             Cam kết chất lượng

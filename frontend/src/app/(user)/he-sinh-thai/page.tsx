@@ -22,7 +22,7 @@ export default function HeSinhThaiPage() {
 
       {/* CTA Chuyển sang trang Đơn vị thiết kế */}
       <section className="relative py-32 bg-[#F8F6F2] dark:bg-[#131313] overflow-hidden border-t border-[#ECE7DE] dark:border-white/5">
-        <div className="relative z-10 max-w-[1000px] mx-auto px-6 text-center">
+        <div className="relative z-10 max-w-[1400px] mx-auto px-6 text-center">
           <h2 className="font-heading text-3xl md:text-5xl font-bold text-[#1F1F1F] dark:text-white mb-6">
             Khám phá Hệ sinh thái <span className="text-[#C7A25C]">30+ Đơn vị</span>
           </h2>

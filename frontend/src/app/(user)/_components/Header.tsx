@@ -12,7 +12,7 @@ export default function Header() {
     <>
       {/* --- TOP BAR (Hidden on Mobile/Tablet) --- */}
       <div className="hidden lg:flex border-b border-gray-200 dark:border-white/20 py-3 bg-[#FAF9F8] dark:bg-[#0a0a0a]">
-        <div className="max-w-[1200px] mx-auto px-6 w-full flex items-center justify-start gap-12">
+        <div className="max-w-[1400px] mx-auto px-6 w-full flex items-center justify-start gap-12">
           {/* Email */}
           <div className="flex items-center gap-3">
             <svg className="w-4 h-4 text-[#D3AE3E]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -39,7 +39,7 @@ export default function Header() {
 
       {/* --- MAIN HEADER --- */}
       <div className="w-full sticky top-0 z-50 bg-white/95 dark:bg-[#131313]/95 backdrop-blur-sm border-b border-gray-100 dark:border-white/10 transition-all duration-300">
-        <div className="max-w-[1200px] mx-auto px-6 w-full flex items-center justify-between h-[80px]">
+        <div className="max-w-[1400px] mx-auto px-6 w-full flex items-center justify-between h-[80px]">
           {/* Logo */}
           <div className="flex-shrink-0">
             <Link href="/">

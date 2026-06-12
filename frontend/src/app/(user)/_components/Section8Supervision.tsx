@@ -96,7 +96,7 @@ export default function Section8Supervision() {
 
   return (
     <section id="Supervision" className="relative py-32 bg-[#F8F6F2] dark:bg-[#131313] overflow-hidden border-t border-[#ECE7DE] dark:border-white/5">
-      <div className="max-w-[1200px] mx-auto px-6">
+      <div className="max-w-[1400px] mx-auto px-6">
         
         {/* Section Header */}
         <ScrollReveal animation="fade-up" delay={100}>

@@ -90,7 +90,7 @@ export default function DonViThietKePage() {
 
   return (
     <div className="bg-[#F8F6F2] dark:bg-[#131313] min-h-screen pt-[120px] pb-20">
-      <div className="container mx-auto px-6 max-w-[1200px]">
+      <div className="container mx-auto px-6 max-w-[1400px]">
         {/* Header */}
         <div className="text-center mb-16">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#C7A25C]/10 border border-[#C7A25C]/20 text-[#C7A25C] text-xs font-bold uppercase tracking-wider mb-4">

@@ -68,7 +68,7 @@ export default function UnitDetailPage({ params }: { params: { id: string } }) {
 
   return (
     <div className="pt-[120px] pb-20 bg-[#F8F6F2] dark:bg-[#131313] min-h-screen text-[#1F1F1F] dark:text-white">
-      <div className="container mx-auto px-6 max-w-[1000px]">
+      <div className="container mx-auto px-6 max-w-[1400px]">
         {/* Section 1: Tổng quan đơn vị */}
         <div className="mb-16 pb-12 border-b border-[#ECE7DE] dark:border-white/10">
           <div className="flex flex-col md:flex-row gap-8 items-start">

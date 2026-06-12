@@ -115,7 +115,7 @@ export default function TuVanPage() {
 
   return (
     <div className="pt-[120px] pb-20 bg-[#FAF9F8] dark:bg-[#131313] min-h-screen text-gray-900 dark:text-white">
-      <div className="container mx-auto px-6 max-w-[800px]">
+      <div className="container mx-auto px-6 max-w-[1400px]">
         
         {/* Header */}
         <div className="text-center mb-16">

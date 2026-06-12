@@ -53,7 +53,7 @@ export default function SanPhamPage() {
 
   return (
     <div className="pt-[120px] pb-20 bg-[#F9F8F6] dark:bg-[#0a0a0a] min-h-screen text-gray-900 dark:text-white transition-colors duration-300">
-      <div className="container mx-auto px-6 max-w-[1200px]">
+      <div className="container mx-auto px-6 max-w-[1400px]">
         <div className="text-center mb-16">
           <h1 className="font-heading text-4xl md:text-5xl font-bold mb-6">Tất cả sản phẩm</h1>
           <p className="text-gray-600 dark:text-white/70 text-lg max-w-3xl mx-auto">

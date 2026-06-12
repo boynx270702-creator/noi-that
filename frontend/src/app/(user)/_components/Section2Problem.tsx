@@ -46,7 +46,7 @@ export default function Section2Problem() {
       {/* Background Decor */}
       <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-[#ECE7DE]/50 dark:from-[#1a1a1a] to-transparent opacity-50 pointer-events-none" />
 
-      <div className="relative z-10 max-w-[1200px] mx-auto px-6">
+      <div className="relative z-10 max-w-[1400px] mx-auto px-6">
         {/* Section Header */}
         <ScrollReveal animation="fade-up" delay={100}>
           <div className="max-w-4xl mb-20">

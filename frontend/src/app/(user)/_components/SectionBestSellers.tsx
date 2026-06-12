@@ -55,7 +55,7 @@ const BEST_SELLERS = [
 export default function SectionBestSellers() {
   return (
     <section className="py-24 bg-[#FAF9F8] dark:bg-[#0a0a0a] relative border-t border-gray-200 dark:border-white/20">
-      <div className="max-w-[1200px] mx-auto px-6">
+      <div className="max-w-[1400px] mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="font-heading text-3xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">
             Sản Phẩm <span className="text-[#D3AE3E]">Bán Chạy</span>
