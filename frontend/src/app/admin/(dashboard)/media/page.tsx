@@ -41,7 +41,7 @@ export default function MediaLibraryPage() {
     <div className="h-full flex flex-col space-y-5 animate-in fade-in slide-in-from-bottom-4 duration-500">
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 flex-shrink-0">
         <div>
-          <h2 className="text-xl font-medium tracking-tight text-gray-900 dark:text-white flex items-center gap-2">
+          <h2 className="font-heading text-xl font-medium tracking-tight text-gray-900 dark:text-white flex items-center gap-2">
             <ImageIcon className="w-5 h-5 text-[#5865f2]" />
             Thư viện Media
           </h2>
@@ -49,9 +49,9 @@ export default function MediaLibraryPage() {
         </div>
       </div>
 
-      <div className="flex-1 flex flex-col min-h-0 bg-white dark:bg-[#14151a] rounded-xl border border-gray-200 dark:border-gray-800 overflow-hidden">
+      <div className="flex-1 flex flex-col min-h-0 bg-white dark:bg-[#14151a] rounded-[8px] border border-gray-200 dark:border-gray-800 overflow-hidden">
         <div className="p-6 border-b border-gray-200 dark:border-gray-800 bg-white dark:bg-[#14151a] flex-shrink-0">
-          <h3 className="text-sm font-medium text-gray-900 dark:text-white uppercase tracking-wider mb-4 flex items-center gap-2">
+          <h3 className="font-heading text-sm font-medium text-gray-900 dark:text-white uppercase tracking-wider mb-4 flex items-center gap-2">
             <UploadCloud className="w-4 h-4 text-[#5865f2]" />
             Upload hình ảnh mới
           </h3>
@@ -73,7 +73,7 @@ export default function MediaLibraryPage() {
               placeholder="Tìm kiếm theo tên file..." 
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
-              className="w-full pl-9 pr-4 py-2 bg-white dark:bg-[#14151a] border border-gray-200 dark:border-gray-800 rounded-lg text-sm focus:outline-none focus:ring-[3px] focus:ring-[#5865f2]/20 text-gray-900 dark:text-white transition-all"
+              className="w-full pl-9 pr-4 py-2 bg-white dark:bg-[#14151a] border border-gray-200 dark:border-gray-800 rounded-[8px] text-sm focus:outline-none focus:ring-[3px] focus:ring-[#5865f2]/20 text-gray-900 dark:text-white transition-all"
             />
           </div>
         </div>
@@ -82,7 +82,7 @@ export default function MediaLibraryPage() {
           {filteredMedia.length > 0 ? (
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
               {filteredMedia.map((file) => (
-                <div key={file.id} className="group flex flex-col rounded-xl overflow-hidden border border-gray-200 dark:border-gray-800 bg-white dark:bg-[#14151a] hover:border-[#5865f2]/50 transition-all">
+                <div key={file.id} className="group flex flex-col rounded-[8px] overflow-hidden border border-gray-200 dark:border-gray-800 bg-white dark:bg-[#14151a] hover:border-[#5865f2]/50 transition-all">
                   <div className="aspect-square relative overflow-hidden bg-gray-50 dark:bg-[#1a1b23] border-b border-gray-200 dark:border-gray-800">
                     <img 
                       src={file.url} 

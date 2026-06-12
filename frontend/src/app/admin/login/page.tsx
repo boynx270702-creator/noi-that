@@ -93,13 +93,13 @@ export default function LoginPage() {
       <div className="w-full max-w-md animate-in fade-in zoom-in-95 duration-700 relative z-10">
         
         {/* Minimalist Card */}
-        <Card className="border border-white/60 dark:border-white/10 bg-white/70 dark:bg-[#181b22]/70 backdrop-blur-xl text-gray-900 dark:text-gray-100 rounded-xl shadow-none overflow-hidden">
+        <Card className="border border-white/60 dark:border-white/10 bg-white/70 dark:bg-[#181b22]/70 backdrop-blur-xl text-gray-900 dark:text-gray-100 rounded-[8px] shadow-none overflow-hidden">
           <CardContent className="p-8">
             <div className="flex flex-col items-center justify-center mb-8">
-              <div className="w-12 h-12 bg-white dark:bg-[#181b22] border border-gray-100 dark:border-gray-800 rounded-xl flex items-center justify-center mb-4">
+              <div className="w-12 h-12 bg-white dark:bg-[#181b22] border border-gray-100 dark:border-gray-800 rounded-[8px] flex items-center justify-center mb-4">
                 <Lock className="w-6 h-6 text-[#5865f2]" />
               </div>
-              <h2 className="text-2xl font-medium tracking-tight text-gray-900 dark:text-white">
+              <h2 className="font-heading text-2xl font-medium tracking-tight text-gray-900 dark:text-white">
                 ARCVIET LIVING <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#ce9e51] to-[#e4c27a]">NEXUS</span>
               </h2>
               <p className="text-xs text-gray-500 dark:text-gray-400 mt-1 uppercase tracking-widest font-medium">Login to Dashboard</p>
@@ -115,7 +115,7 @@ export default function LoginPage() {
                   <Input
                     {...register('username')}
                     placeholder="Nhập tên đăng nhập"
-                    className="pl-11 h-11 bg-white/50 dark:bg-black/20 border-gray-200/60 dark:border-white/10 text-sm rounded-xl focus:border-[#5865f2] focus:ring-1 focus:ring-[#5865f2]/20 placeholder:text-gray-400 dark:placeholder:text-gray-600 text-gray-900 dark:text-gray-100 transition-all hover:bg-white/80 dark:hover:bg-black/30 shadow-none"
+                    className="pl-11 h-11 bg-white/50 dark:bg-black/20 border-gray-200/60 dark:border-white/10 text-sm rounded-[8px] focus:border-[#5865f2] focus:ring-1 focus:ring-[#5865f2]/20 placeholder:text-gray-400 dark:placeholder:text-gray-600 text-gray-900 dark:text-gray-100 transition-all hover:bg-white/80 dark:hover:bg-black/30 shadow-none"
                   />
                 </div>
                 {errors.username && <p className="text-xs text-red-500 dark:text-red-400 font-normal ml-1">{errors.username.message}</p>}
@@ -130,14 +130,14 @@ export default function LoginPage() {
                     {...register('password')}
                     type="password"
                     placeholder="Nhập mật khẩu"
-                    className="pl-11 h-11 bg-white/50 dark:bg-black/20 border-gray-200/60 dark:border-white/10 text-sm rounded-xl focus:border-[#5865f2] focus:ring-1 focus:ring-[#5865f2]/20 placeholder:text-gray-400 dark:placeholder:text-gray-600 text-gray-900 dark:text-gray-100 transition-all hover:bg-white/80 dark:hover:bg-black/30 shadow-none"
+                    className="pl-11 h-11 bg-white/50 dark:bg-black/20 border-gray-200/60 dark:border-white/10 text-sm rounded-[8px] focus:border-[#5865f2] focus:ring-1 focus:ring-[#5865f2]/20 placeholder:text-gray-400 dark:placeholder:text-gray-600 text-gray-900 dark:text-gray-100 transition-all hover:bg-white/80 dark:hover:bg-black/30 shadow-none"
                   />
                 </div>
                 {errors.password && <p className="text-xs text-red-500 dark:text-red-400 font-normal ml-1">{errors.password.message}</p>}
               </div>
 
               {error && (
-                <div className="text-sm text-red-600 dark:text-red-400 p-3 bg-red-50/80 dark:bg-red-500/10 rounded-xl border border-red-100 dark:border-red-500/20 flex items-center gap-2 backdrop-blur-md">
+                <div className="text-sm text-red-600 dark:text-red-400 p-3 bg-red-50/80 dark:bg-red-500/10 rounded-[8px] border border-red-100 dark:border-red-500/20 flex items-center gap-2 backdrop-blur-md">
                   <AlertTriangle className="w-5 h-5 shrink-0" />
                   <p>{error}</p>
                 </div>
@@ -145,7 +145,7 @@ export default function LoginPage() {
 
               <Button 
                 type="submit" 
-                className="w-full h-11 bg-gradient-to-r from-[#5865f2] to-indigo-600 hover:from-indigo-600 hover:to-[#5865f2] text-white font-medium rounded-xl transition-all border-0 mt-4 text-sm shadow-none" 
+                className="w-full h-11 bg-gradient-to-r from-[#5865f2] to-indigo-600 hover:from-indigo-600 hover:to-[#5865f2] text-white font-medium rounded-[8px] transition-all border-0 mt-4 text-sm shadow-none" 
                 disabled={isLoading}
               >
                 {isLoading ? 'Đang xác thực...' : 'Đăng nhập'}

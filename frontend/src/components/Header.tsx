@@ -43,7 +43,7 @@ export default function Header() {
       <header
         className={`w-full z-40 transition-all duration-300 ${
           isScrolled
-            ? 'fixed top-0 bg-white/95 backdrop-blur-md shadow-md py-3'
+            ? 'fixed top-0 bg-white/95 backdrop-blur-md shadow-sm py-3'
             : 'absolute top-auto bg-transparent py-5'
         }`}
       >
@@ -69,7 +69,7 @@ export default function Header() {
                 Đơn Vị <ChevronDown className="w-4 h-4" />
               </button>
               {/* Dropdown */}
-              <div className="absolute top-full left-0 mt-4 w-48 bg-white shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 flex flex-col py-2 border-t-2 border-[#D3AE3E]">
+              <div className="absolute top-full left-0 mt-4 w-48 bg-white shadow-sm opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 flex flex-col py-2 border-t-2 border-[#D3AE3E]">
                 <Link href="/he-sinh-thai" className="px-4 py-2 text-sm text-gray-700 hover:text-[#D3AE3E] hover:bg-gray-50">
                   Hệ Sinh Thái Đơn Vị
                 </Link>
@@ -103,7 +103,7 @@ export default function Header() {
             </button>
             <Link 
               href="/tu-van" 
-              className="flex items-center gap-2 bg-[#D3AE3E] text-white px-6 py-2.5 rounded hover:bg-[#b88c45] transition-colors font-medium text-sm"
+              className="flex items-center gap-2 bg-[#D3AE3E] text-white px-6 py-2.5 rounded-[8px] hover:bg-[#b88c45] transition-colors font-medium text-sm"
             >
               <Circle className="w-4 h-4" />
               Liên hệ cho tôi
@@ -157,7 +157,7 @@ export default function Header() {
 
           <img src="/images/logo-main2.png" alt="Logo" className="w-[150px] mb-10" />
 
-          <h2 className="text-2xl font-bold text-white mb-4 font-['Montserrat',_sans-serif]">Về Chúng Tôi</h2>
+          <h2 className="font-heading text-2xl font-bold text-white mb-4">Về Chúng Tôi</h2>
           <p className="text-gray-400 text-[15px] leading-relaxed mb-8">
             Hệ sinh thái hơn 30 đơn vị thiết kế – thi công nội thất đã được phân loại theo phân khúc. Chúng tôi giúp bạn kết nối đúng đơn vị, tiết kiệm thời gian và tối ưu chi phí.
           </p>
@@ -166,7 +166,7 @@ export default function Header() {
             Tìm Hiểu Thêm
           </button>
 
-          <h2 className="text-2xl font-bold text-white mb-6 font-['Montserrat',_sans-serif]">Thư Viện</h2>
+          <h2 className="font-heading text-2xl font-bold text-white mb-6">Thư Viện</h2>
           <div className="grid grid-cols-3 gap-2 mb-12">
             <img src="/images/main/13.jpg" alt="Gallery" className="w-full aspect-square object-cover opacity-70 hover:opacity-100 transition-opacity cursor-pointer" />
             <img src="/images/main/14.jpg" alt="Gallery" className="w-full aspect-square object-cover opacity-70 hover:opacity-100 transition-opacity cursor-pointer" />

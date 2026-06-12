@@ -30,11 +30,11 @@ export default function Layout({ children }: { children: React.ReactNode }) {
     return (
       <div className="min-h-screen flex flex-col items-center justify-center bg-[#f4f5f7] dark:bg-[#0b0c10] text-[#111827] dark:text-[#f3f4f6]">
         <div className="flex flex-col items-center gap-4 animate-in fade-in zoom-in-95 duration-500">
-          <div className="w-16 h-16 bg-white dark:bg-[#1a1b23] border border-gray-200 dark:border-gray-800 rounded-2xl shadow-sm flex items-center justify-center">
+          <div className="w-16 h-16 bg-white dark:bg-[#1a1b23] border border-gray-200 dark:border-gray-800 rounded-[8px] shadow-sm flex items-center justify-center">
             <Loader2 className="w-8 h-8 text-[#5865f2] animate-spin" />
           </div>
           <div className="flex flex-col items-center">
-            <h3 className="text-base font-semibold text-gray-900 dark:text-white">Xác thực tài khoản</h3>
+            <h3 className="font-heading text-base font-semibold text-gray-900 dark:text-white">Xác thực tài khoản</h3>
             <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">Đang chuyển hướng đến trang đăng nhập...</p>
           </div>
         </div>

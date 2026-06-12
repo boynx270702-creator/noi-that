@@ -66,7 +66,7 @@ function Counter({ end, suffix }: { end: number, suffix: string }) {
   }, [end]);
 
   return (
-    <span ref={ref} className="text-5xl md:text-[60px] font-bold font-['Montserrat',_sans-serif] text-white">
+    <span ref={ref} className="text-5xl md:text-[60px] font-bold text-white">
       {count}
       <span className="text-[#D3AE3E] ml-1">{suffix}</span>
     </span>
@@ -118,7 +118,7 @@ export default function Stats() {
               </div>
               
               {/* Title */}
-              <div className="text-[15px] font-['Montserrat',_sans-serif] font-medium tracking-wide text-[#888] uppercase mt-2">
+              <div className="text-[15px] font-medium tracking-wide text-[#888] uppercase mt-2">
                 {stat.title}
               </div>
             </ScrollReveal>

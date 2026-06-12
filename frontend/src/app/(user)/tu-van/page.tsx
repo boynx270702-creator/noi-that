@@ -23,7 +23,7 @@ function FormSelect({ label, options, value, onChange }: { label: string, option
       <label className="block text-sm text-gray-600 dark:text-white/70 mb-2">{label}</label>
       <div className="relative">
         <div 
-          className={`w-full bg-[#FAF9F8] dark:bg-[#131313] border ${isOpen ? 'border-[#ce9e51]' : 'border-gray-300 dark:border-white/20'} text-gray-900 dark:text-white p-3 rounded cursor-pointer flex justify-between items-center transition-colors hover:border-white/40`}
+          className={`w-full bg-[#FAF9F8] dark:bg-[#131313] border ${isOpen ? 'border-[#ce9e51]' : 'border-gray-300 dark:border-white/20'} text-gray-900 dark:text-white p-3 rounded-[8px] cursor-pointer flex justify-between items-center transition-colors hover:border-white/40`}
           onClick={() => setIsOpen(!isOpen)}
         >
           <span className="text-[15px]">{selectedLabel}</span>
@@ -31,7 +31,7 @@ function FormSelect({ label, options, value, onChange }: { label: string, option
         </div>
         
         {isOpen && (
-          <div className="absolute z-50 w-full mt-2 bg-white dark:bg-[#1c1c1c] shadow-sm dark:shadow-none border border-gray-200 dark:border-white/10 rounded shadow-2xl py-2 animate-fadeInDown">
+          <div className="absolute z-50 w-full mt-2 bg-white dark:bg-[#1c1c1c] shadow-sm dark:shadow-none border border-gray-200 dark:border-white/10 rounded-[8px] shadow-sm py-2 animate-fadeInDown">
             {options.map((opt) => (
               <div 
                 key={opt.value}
@@ -119,31 +119,31 @@ export default function TuVanPage() {
         
         {/* Header */}
         <div className="text-center mb-16">
-          <h1 className="text-4xl md:text-5xl font-['Montserrat',_sans-serif] font-bold text-[#ce9e51] mb-6">Gửi nhu cầu để được tư vấn đơn vị phù hợp</h1>
+          <h1 className="font-heading text-4xl md:text-5xl font-bold text-[#ce9e51] mb-6">Gửi nhu cầu để được tư vấn đơn vị phù hợp</h1>
           <p className="text-gray-600 dark:text-white/70 text-lg">Vui lòng cung cấp thông tin cơ bản về công trình. Dựa trên nhu cầu thực tế, chúng tôi sẽ tư vấn nhóm đơn vị phù hợp trong hệ sinh thái hơn 30 đối tác thiết kế – thi công nội thất.</p>
         </div>
 
         {/* Form Container */}
-        <div className="bg-white dark:bg-[#1c1c1c] shadow-sm dark:shadow-none p-8 md:p-12 rounded-2xl border border-gray-200 dark:border-white/10 shadow-2xl">
+        <div className="bg-white dark:bg-[#1c1c1c] shadow-sm dark:shadow-none p-8 md:p-12 rounded-[8px] border border-gray-200 dark:border-white/10 shadow-sm">
           <form onSubmit={handleSubmit}>
             {/* Section 1: Thông tin khách hàng */}
             <div className="mb-10">
-              <h2 className="text-xl font-bold mb-6 flex items-center gap-3">
+              <h2 className="font-heading text-xl font-bold mb-6 flex items-center gap-3">
                 <span className="w-6 h-6 rounded-full bg-[#ce9e51] text-gray-900 dark:text-white flex items-center justify-center text-sm">1</span> 
                 Thông tin cá nhân
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
                   <label className="block text-sm text-gray-600 dark:text-white/70 mb-2">Họ và tên *</label>
-                  <input type="text" value={name} onChange={e => setName(e.target.value)} className="w-full bg-[#FAF9F8] dark:bg-[#131313] border border-gray-300 dark:border-white/20 text-gray-900 dark:text-white p-3 rounded focus:border-[#ce9e51] outline-none transition-colors hover:border-white/40" placeholder="Nhập họ tên của bạn" required />
+                  <input type="text" value={name} onChange={e => setName(e.target.value)} className="w-full bg-[#FAF9F8] dark:bg-[#131313] border border-gray-300 dark:border-white/20 text-gray-900 dark:text-white p-3 rounded-[8px] focus:border-[#ce9e51] outline-none transition-colors hover:border-white/40" placeholder="Nhập họ tên của bạn" required />
                 </div>
                 <div>
                   <label className="block text-sm text-gray-600 dark:text-white/70 mb-2">Số điện thoại *</label>
-                  <input type="tel" value={phone} onChange={e => setPhone(e.target.value)} className="w-full bg-[#FAF9F8] dark:bg-[#131313] border border-gray-300 dark:border-white/20 text-gray-900 dark:text-white p-3 rounded focus:border-[#ce9e51] outline-none transition-colors hover:border-white/40" placeholder="Nhập số điện thoại" required />
+                  <input type="tel" value={phone} onChange={e => setPhone(e.target.value)} className="w-full bg-[#FAF9F8] dark:bg-[#131313] border border-gray-300 dark:border-white/20 text-gray-900 dark:text-white p-3 rounded-[8px] focus:border-[#ce9e51] outline-none transition-colors hover:border-white/40" placeholder="Nhập số điện thoại" required />
                 </div>
                 <div>
                   <label className="block text-sm text-gray-600 dark:text-white/70 mb-2">Email (Nếu có)</label>
-                  <input type="email" value={email} onChange={e => setEmail(e.target.value)} className="w-full bg-[#FAF9F8] dark:bg-[#131313] border border-gray-300 dark:border-white/20 text-gray-900 dark:text-white p-3 rounded focus:border-[#ce9e51] outline-none transition-colors hover:border-white/40" placeholder="Nhập email" />
+                  <input type="email" value={email} onChange={e => setEmail(e.target.value)} className="w-full bg-[#FAF9F8] dark:bg-[#131313] border border-gray-300 dark:border-white/20 text-gray-900 dark:text-white p-3 rounded-[8px] focus:border-[#ce9e51] outline-none transition-colors hover:border-white/40" placeholder="Nhập email" />
                 </div>
                 <FormSelect
                   label="Khu vực công trình *"
@@ -162,7 +162,7 @@ export default function TuVanPage() {
 
             {/* Section 2: Thông tin công trình */}
             <div className="mb-10">
-              <h2 className="text-xl font-bold mb-6 flex items-center gap-3">
+              <h2 className="font-heading text-xl font-bold mb-6 flex items-center gap-3">
                 <span className="w-6 h-6 rounded-full bg-[#ce9e51] text-gray-900 dark:text-white flex items-center justify-center text-sm">2</span> 
                 Thông tin công trình
               </h2>
@@ -182,7 +182,7 @@ export default function TuVanPage() {
                 />
                 <div>
                   <label className="block text-sm text-gray-600 dark:text-white/70 mb-2">Diện tích (m2) *</label>
-                  <input type="number" className="w-full bg-[#FAF9F8] dark:bg-[#131313] border border-gray-300 dark:border-white/20 text-gray-900 dark:text-white p-3 rounded focus:border-[#ce9e51] outline-none transition-colors hover:border-white/40" placeholder="VD: 100" required />
+                  <input type="number" className="w-full bg-[#FAF9F8] dark:bg-[#131313] border border-gray-300 dark:border-white/20 text-gray-900 dark:text-white p-3 rounded-[8px] focus:border-[#ce9e51] outline-none transition-colors hover:border-white/40" placeholder="VD: 100" required />
                 </div>
                 <FormSelect
                   label="Tình trạng hiện tại *"
@@ -210,7 +210,7 @@ export default function TuVanPage() {
                 />
                 <div>
                   <label className="block text-sm text-gray-600 dark:text-white/70 mb-2">Phong cách mong muốn</label>
-                  <input type="text" value={style} onChange={e => setStyle(e.target.value)} className="w-full bg-[#FAF9F8] dark:bg-[#131313] border border-gray-300 dark:border-white/20 text-gray-900 dark:text-white p-3 rounded focus:border-[#ce9e51] outline-none transition-colors hover:border-white/40" placeholder="VD: Hiện đại, Tối giản, Indochine..." />
+                  <input type="text" value={style} onChange={e => setStyle(e.target.value)} className="w-full bg-[#FAF9F8] dark:bg-[#131313] border border-gray-300 dark:border-white/20 text-gray-900 dark:text-white p-3 rounded-[8px] focus:border-[#ce9e51] outline-none transition-colors hover:border-white/40" placeholder="VD: Hiện đại, Tối giản, Indochine..." />
                 </div>
                 <FormSelect
                   label="Thời gian muốn triển khai"
@@ -228,7 +228,7 @@ export default function TuVanPage() {
 
             {/* Section 3: Nhu cầu cụ thể */}
             <div className="mb-10">
-              <h2 className="text-xl font-bold mb-6 flex items-center gap-3">
+              <h2 className="font-heading text-xl font-bold mb-6 flex items-center gap-3">
                 <span className="w-6 h-6 rounded-full bg-[#ce9e51] text-gray-900 dark:text-white flex items-center justify-center text-sm">3</span> 
                 Nhu cầu chi tiết
               </h2>
@@ -252,11 +252,11 @@ export default function TuVanPage() {
                   <label className="block text-sm text-gray-600 dark:text-white/70 mb-3">Nhu cầu bổ sung (Có thể chọn nhiều):</label>
                   <div className="space-y-2">
                     <label className="flex items-center gap-3 cursor-pointer">
-                      <input type="checkbox" checked={needSupervision} onChange={e => setNeedSupervision(e.target.checked)} className="accent-[#ce9e51] w-4 h-4 rounded" /> 
+                      <input type="checkbox" checked={needSupervision} onChange={e => setNeedSupervision(e.target.checked)} className="accent-[#ce9e51] w-4 h-4 rounded-[8px]" /> 
                       <span>Tôi cần thêm dịch vụ Giám sát thi công độc lập</span>
                     </label>
                     <label className="flex items-center gap-3 cursor-pointer">
-                      <input type="checkbox" checked={needProjectManagement} onChange={e => setNeedProjectManagement(e.target.checked)} className="accent-[#ce9e51] w-4 h-4 rounded" /> 
+                      <input type="checkbox" checked={needProjectManagement} onChange={e => setNeedProjectManagement(e.target.checked)} className="accent-[#ce9e51] w-4 h-4 rounded-[8px]" /> 
                       <span>Tôi cần gói Quản lý toàn bộ dự án thi công</span>
                     </label>
                   </div>
@@ -264,14 +264,14 @@ export default function TuVanPage() {
 
                 <div className="pt-4">
                   <label className="block text-sm text-gray-600 dark:text-white/70 mb-2">Ghi chú thêm</label>
-                  <textarea rows={4} value={notes} onChange={e => setNotes(e.target.value)} className="w-full bg-[#FAF9F8] dark:bg-[#131313] border border-gray-300 dark:border-white/20 text-gray-900 dark:text-white p-3 rounded focus:border-[#ce9e51] outline-none transition-colors hover:border-white/40" placeholder="Hãy mô tả chi tiết hơn về mong muốn của bạn (ví dụ: cần làm phòng ngủ cho bé, cần thi công nhanh trong 1 tháng...)"></textarea>
+                  <textarea rows={4} value={notes} onChange={e => setNotes(e.target.value)} className="w-full bg-[#FAF9F8] dark:bg-[#131313] border border-gray-300 dark:border-white/20 text-gray-900 dark:text-white p-3 rounded-[8px] focus:border-[#ce9e51] outline-none transition-colors hover:border-white/40" placeholder="Hãy mô tả chi tiết hơn về mong muốn của bạn (ví dụ: cần làm phòng ngủ cho bé, cần thi công nhanh trong 1 tháng...)"></textarea>
                 </div>
               </div>
             </div>
 
             {/* Submit */}
             <div className="text-center pt-6 border-t border-gray-200 dark:border-white/10">
-              <button type="submit" className="w-full md:w-auto bg-[#ce9e51] hover:bg-white hover:text-[#131313] text-gray-900 dark:text-white font-bold py-4 px-12 rounded transition-colors uppercase tracking-wider text-sm">
+              <button type="submit" className="w-full md:w-auto bg-[#ce9e51] hover:bg-white hover:text-[#131313] text-gray-900 dark:text-white font-bold py-4 px-12 rounded-[8px] transition-colors uppercase tracking-wider text-sm">
                 Gửi nhu cầu tư vấn
               </button>
               <p className="text-white/40 text-xs mt-4">Thông tin của bạn sẽ được bảo mật và chỉ dùng để tư vấn đơn vị phù hợp.</p>

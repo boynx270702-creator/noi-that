@@ -126,7 +126,7 @@ export default function SettingsPage() {
     <div className="space-y-6 animate-in fade-in duration-500 w-full">
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
-          <h2 className="text-xl font-medium tracking-tight text-gray-900 dark:text-white flex items-center gap-2">
+          <h2 className="font-heading text-xl font-medium tracking-tight text-gray-900 dark:text-white flex items-center gap-2">
             <Settings className="w-5 h-5 text-[#5865f2]" />
             Cài đặt Hệ thống
           </h2>
@@ -135,7 +135,7 @@ export default function SettingsPage() {
         <button 
           onClick={onSubmit} 
           disabled={isSaving}
-          className="bg-[#5865f2] hover:bg-[#4752c4] text-white px-5 py-2.5 rounded-lg text-sm font-medium transition-colors flex items-center gap-2 border-0 disabled:opacity-70 h-auto shadow-none cursor-pointer"
+          className="bg-[#5865f2] hover:bg-[#4752c4] text-white px-5 py-2.5 rounded-[8px] text-sm font-medium transition-colors flex items-center gap-2 border-0 disabled:opacity-70 h-auto shadow-none cursor-pointer"
         >
           {isSaving ? <Loader2 className="w-4 h-4 animate-spin" /> : <Save className="w-4 h-4" />}
           {isSaving ? 'Đang lưu...' : 'Lưu cài đặt'}
@@ -143,14 +143,14 @@ export default function SettingsPage() {
       </div>
 
       {successMessage && (
-        <div className="bg-emerald-50 text-emerald-600 p-4 rounded-lg text-sm font-medium border border-emerald-200 flex items-center shadow-none animate-in fade-in slide-in-from-top-2">
+        <div className="bg-emerald-50 text-emerald-600 p-4 rounded-[8px] text-sm font-medium border border-emerald-200 flex items-center shadow-none animate-in fade-in slide-in-from-top-2">
           <CheckCircle2 className="w-5 h-5 mr-3" />
           {successMessage}
         </div>
       )}
 
       {resetSuccess && (
-        <div className="bg-emerald-50 text-emerald-600 p-4 rounded-lg text-sm font-medium border border-emerald-200 shadow-none animate-in fade-in slide-in-from-top-2">
+        <div className="bg-emerald-50 text-emerald-600 p-4 rounded-[8px] text-sm font-medium border border-emerald-200 shadow-none animate-in fade-in slide-in-from-top-2">
           {resetSuccess}
         </div>
       )}
@@ -162,9 +162,9 @@ export default function SettingsPage() {
             <button
               key={tab.id}
               onClick={() => setActiveTab(tab.id)}
-              className={`w-full flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-medium transition-all cursor-pointer border ${
+              className={`w-full flex items-center gap-3 px-4 py-3 rounded-[8px] text-sm font-medium transition-all cursor-pointer border ${
                 activeTab === tab.id 
-                  ? 'bg-[#5865f2] text-white border-[#5865f2] shadow-md' 
+                  ? 'bg-[#5865f2] text-white border-[#5865f2] shadow-sm' 
                   : 'bg-white dark:bg-[#1a1b23] text-gray-600 dark:text-gray-400 border-gray-200 dark:border-gray-800 hover:bg-gray-50 dark:hover:bg-[#262930] hover:text-gray-900 dark:hover:text-white shadow-sm'
               }`}
             >
@@ -178,9 +178,9 @@ export default function SettingsPage() {
         <div className="flex-1">
           
           {activeTab === 'general' && (
-            <div className="bg-white dark:bg-[#14151a] rounded-xl border border-gray-200 dark:border-gray-800 p-6 md:p-8 animate-in fade-in slide-in-from-right-4 duration-300 shadow-none">
+            <div className="bg-white dark:bg-[#14151a] rounded-[8px] border border-gray-200 dark:border-gray-800 p-6 md:p-8 animate-in fade-in slide-in-from-right-4 duration-300 shadow-none">
               <div className="space-y-6">
-                <h3 className="text-xs font-medium text-gray-900 dark:text-white uppercase tracking-wider flex items-center gap-2 border-b border-gray-100 dark:border-gray-800 pb-4">
+                <h3 className="font-heading text-xs font-medium text-gray-900 dark:text-white uppercase tracking-wider flex items-center gap-2 border-b border-gray-100 dark:border-gray-800 pb-4">
                   <span className="w-1.5 h-1.5 rounded-full bg-[#5865f2]"></span>
                   Thông tin chung
                 </h3>
@@ -190,7 +190,7 @@ export default function SettingsPage() {
                     <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5">Tên Website <span className="text-red-500">*</span></label>
                     <input 
                       type="text" value={formData.siteName} onChange={e => {setFormData({...formData, siteName: e.target.value}); if (errors.siteName) setErrors({...errors, siteName: ''});}}
-                      className={`w-full px-3 py-2 bg-white dark:bg-[#1a1b23] text-gray-900 dark:text-white border ${errors.siteName ? 'border-red-500 focus:ring-red-500/20' : 'border-gray-200 dark:border-gray-800 focus:ring-[#5865f2]/10'} rounded-lg text-sm font-medium focus:outline-none focus:border-[#5865f2]/50 focus:ring-[3px]`}
+                      className={`w-full px-3 py-2 bg-white dark:bg-[#1a1b23] text-gray-900 dark:text-white border ${errors.siteName ? 'border-red-500 focus:ring-red-500/20' : 'border-gray-200 dark:border-gray-800 focus:ring-[#5865f2]/10'} rounded-[8px] text-sm font-medium focus:outline-none focus:border-[#5865f2]/50 focus:ring-[3px]`}
                     />
                     {errors.siteName && <p className="text-red-500 text-xs mt-1">{errors.siteName}</p>}
                   </div>
@@ -198,7 +198,7 @@ export default function SettingsPage() {
                     <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5">URL Trang chủ <span className="text-red-500">*</span></label>
                     <input 
                       type="text" value={formData.siteUrl} onChange={e => {setFormData({...formData, siteUrl: e.target.value}); if (errors.siteUrl) setErrors({...errors, siteUrl: ''});}}
-                      className={`w-full px-3 py-2 bg-white dark:bg-[#1a1b23] text-gray-900 dark:text-white border ${errors.siteUrl ? 'border-red-500 focus:ring-red-500/20' : 'border-gray-200 dark:border-gray-800 focus:ring-[#5865f2]/10'} rounded-lg text-sm font-medium focus:outline-none focus:border-[#5865f2]/50 focus:ring-[3px]`}
+                      className={`w-full px-3 py-2 bg-white dark:bg-[#1a1b23] text-gray-900 dark:text-white border ${errors.siteUrl ? 'border-red-500 focus:ring-red-500/20' : 'border-gray-200 dark:border-gray-800 focus:ring-[#5865f2]/10'} rounded-[8px] text-sm font-medium focus:outline-none focus:border-[#5865f2]/50 focus:ring-[3px]`}
                     />
                     {errors.siteUrl && <p className="text-red-500 text-xs mt-1">{errors.siteUrl}</p>}
                   </div>
@@ -208,28 +208,28 @@ export default function SettingsPage() {
                       <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5">Email liên hệ</label>
                       <input 
                         type="email" value={formData.contactEmail} onChange={e => setFormData({...formData, contactEmail: e.target.value})}
-                        className="w-full px-3 py-2 bg-white dark:bg-[#1a1b23] text-gray-900 dark:text-white border border-gray-200 dark:border-gray-800 rounded-lg text-sm font-medium focus:outline-none focus:border-[#5865f2]/50 focus:ring-[3px] focus:ring-[#5865f2]/10"
+                        className="w-full px-3 py-2 bg-white dark:bg-[#1a1b23] text-gray-900 dark:text-white border border-gray-200 dark:border-gray-800 rounded-[8px] text-sm font-medium focus:outline-none focus:border-[#5865f2]/50 focus:ring-[3px] focus:ring-[#5865f2]/10"
                       />
                     </div>
                     <div>
                       <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5">Hotline</label>
                       <input 
                         type="text" value={formData.hotline} onChange={e => setFormData({...formData, hotline: e.target.value})}
-                        className="w-full px-3 py-2 bg-white dark:bg-[#1a1b23] text-gray-900 dark:text-white border border-gray-200 dark:border-gray-800 rounded-lg text-sm font-medium focus:outline-none focus:border-[#5865f2]/50 focus:ring-[3px] focus:ring-[#5865f2]/10"
+                        className="w-full px-3 py-2 bg-white dark:bg-[#1a1b23] text-gray-900 dark:text-white border border-gray-200 dark:border-gray-800 rounded-[8px] text-sm font-medium focus:outline-none focus:border-[#5865f2]/50 focus:ring-[3px] focus:ring-[#5865f2]/10"
                       />
                     </div>
                     <div>
                       <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5">Số Zalo</label>
                       <input 
                         type="text" value={formData.zalo} onChange={e => setFormData({...formData, zalo: e.target.value})}
-                        className="w-full px-3 py-2 bg-white dark:bg-[#1a1b23] text-gray-900 dark:text-white border border-gray-200 dark:border-gray-800 rounded-lg text-sm font-medium focus:outline-none focus:border-[#5865f2]/50 focus:ring-[3px] focus:ring-[#5865f2]/10"
+                        className="w-full px-3 py-2 bg-white dark:bg-[#1a1b23] text-gray-900 dark:text-white border border-gray-200 dark:border-gray-800 rounded-[8px] text-sm font-medium focus:outline-none focus:border-[#5865f2]/50 focus:ring-[3px] focus:ring-[#5865f2]/10"
                       />
                     </div>
                     <div>
                       <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5">Fanpage Facebook</label>
                       <input 
                         type="text" value={formData.facebook} onChange={e => setFormData({...formData, facebook: e.target.value})}
-                        className="w-full px-3 py-2 bg-white dark:bg-[#1a1b23] text-gray-900 dark:text-white border border-gray-200 dark:border-gray-800 rounded-lg text-sm font-medium focus:outline-none focus:border-[#5865f2]/50 focus:ring-[3px] focus:ring-[#5865f2]/10"
+                        className="w-full px-3 py-2 bg-white dark:bg-[#1a1b23] text-gray-900 dark:text-white border border-gray-200 dark:border-gray-800 rounded-[8px] text-sm font-medium focus:outline-none focus:border-[#5865f2]/50 focus:ring-[3px] focus:ring-[#5865f2]/10"
                       />
                     </div>
                   </div>
@@ -239,9 +239,9 @@ export default function SettingsPage() {
           )}
 
           {activeTab === 'seo' && (
-            <div className="bg-white dark:bg-[#14151a] rounded-xl border border-gray-200 dark:border-gray-800 p-6 md:p-8 animate-in fade-in slide-in-from-right-4 duration-300 shadow-none">
+            <div className="bg-white dark:bg-[#14151a] rounded-[8px] border border-gray-200 dark:border-gray-800 p-6 md:p-8 animate-in fade-in slide-in-from-right-4 duration-300 shadow-none">
               <div className="space-y-6">
-                <h3 className="text-xs font-medium text-gray-900 dark:text-white uppercase tracking-wider flex items-center gap-2 border-b border-gray-100 dark:border-gray-800 pb-4">
+                <h3 className="font-heading text-xs font-medium text-gray-900 dark:text-white uppercase tracking-wider flex items-center gap-2 border-b border-gray-100 dark:border-gray-800 pb-4">
                   <span className="w-1.5 h-1.5 rounded-full bg-amber-500"></span>
                   Cấu hình Global SEO
                 </h3>
@@ -251,14 +251,14 @@ export default function SettingsPage() {
                     <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5">Global Meta Title</label>
                     <input 
                       type="text" value={formData.globalMetaTitle} onChange={e => setFormData({...formData, globalMetaTitle: e.target.value})}
-                      className="w-full px-3 py-2 bg-white dark:bg-[#1a1b23] text-gray-900 dark:text-white border border-gray-200 dark:border-gray-800 rounded-lg text-sm font-medium focus:outline-none focus:border-[#5865f2]/50 focus:ring-[3px] focus:ring-[#5865f2]/10"
+                      className="w-full px-3 py-2 bg-white dark:bg-[#1a1b23] text-gray-900 dark:text-white border border-gray-200 dark:border-gray-800 rounded-[8px] text-sm font-medium focus:outline-none focus:border-[#5865f2]/50 focus:ring-[3px] focus:ring-[#5865f2]/10"
                     />
                   </div>
                   <div>
                     <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5">Global Meta Description</label>
                     <textarea 
                       rows={4} value={formData.globalMetaDesc} onChange={e => setFormData({...formData, globalMetaDesc: e.target.value})}
-                      className="w-full px-3 py-2 bg-white dark:bg-[#1a1b23] text-gray-900 dark:text-white border border-gray-200 dark:border-gray-800 rounded-lg text-sm font-medium resize-none focus:outline-none focus:border-[#5865f2]/50 focus:ring-[3px] focus:ring-[#5865f2]/10"
+                      className="w-full px-3 py-2 bg-white dark:bg-[#1a1b23] text-gray-900 dark:text-white border border-gray-200 dark:border-gray-800 rounded-[8px] text-sm font-medium resize-none focus:outline-none focus:border-[#5865f2]/50 focus:ring-[3px] focus:ring-[#5865f2]/10"
                     />
                   </div>
                 </div>
@@ -267,9 +267,9 @@ export default function SettingsPage() {
           )}
 
           {activeTab === 'tracking' && (
-            <div className="bg-white dark:bg-[#14151a] rounded-xl border border-gray-200 dark:border-gray-800 p-6 md:p-8 animate-in fade-in slide-in-from-right-4 duration-300 shadow-none">
+            <div className="bg-white dark:bg-[#14151a] rounded-[8px] border border-gray-200 dark:border-gray-800 p-6 md:p-8 animate-in fade-in slide-in-from-right-4 duration-300 shadow-none">
               <div className="space-y-6">
-                <h3 className="text-xs font-medium text-gray-900 dark:text-white uppercase tracking-wider flex items-center gap-2 border-b border-gray-100 dark:border-gray-800 pb-4">
+                <h3 className="font-heading text-xs font-medium text-gray-900 dark:text-white uppercase tracking-wider flex items-center gap-2 border-b border-gray-100 dark:border-gray-800 pb-4">
                   <span className="w-1.5 h-1.5 rounded-full bg-[#43b581]"></span>
                   Mã nhúng theo dõi (Tracking Scripts)
                 </h3>
@@ -280,7 +280,7 @@ export default function SettingsPage() {
                     <input 
                       type="text" value={formData.googleAnalytics} onChange={e => setFormData({...formData, googleAnalytics: e.target.value})}
                       placeholder="VD: G-XXXXXXXXXX"
-                      className="w-full px-3 py-2 bg-white dark:bg-[#1a1b23] text-gray-900 dark:text-white border border-gray-200 dark:border-gray-800 rounded-lg text-sm font-medium focus:outline-none focus:border-[#5865f2]/50 focus:ring-[3px] focus:ring-[#5865f2]/10"
+                      className="w-full px-3 py-2 bg-white dark:bg-[#1a1b23] text-gray-900 dark:text-white border border-gray-200 dark:border-gray-800 rounded-[8px] text-sm font-medium focus:outline-none focus:border-[#5865f2]/50 focus:ring-[3px] focus:ring-[#5865f2]/10"
                     />
                   </div>
                   <div>
@@ -288,7 +288,7 @@ export default function SettingsPage() {
                     <input 
                       type="text" value={formData.facebookPixel} onChange={e => setFormData({...formData, facebookPixel: e.target.value})}
                       placeholder="Nhập ID Pixel..."
-                      className="w-full px-3 py-2 bg-white dark:bg-[#1a1b23] text-gray-900 dark:text-white border border-gray-200 dark:border-gray-800 rounded-lg text-sm font-medium focus:outline-none focus:border-[#5865f2]/50 focus:ring-[3px] focus:ring-[#5865f2]/10"
+                      className="w-full px-3 py-2 bg-white dark:bg-[#1a1b23] text-gray-900 dark:text-white border border-gray-200 dark:border-gray-800 rounded-[8px] text-sm font-medium focus:outline-none focus:border-[#5865f2]/50 focus:ring-[3px] focus:ring-[#5865f2]/10"
                     />
                   </div>
                 </div>
@@ -297,17 +297,17 @@ export default function SettingsPage() {
           )}
 
           {activeTab === 'danger' && (
-            <div className="bg-red-50 dark:bg-red-900/10 rounded-xl border border-red-200 dark:border-red-900/30 p-6 md:p-8 animate-in fade-in slide-in-from-right-4 duration-300 shadow-none">
+            <div className="bg-red-50 dark:bg-red-900/10 rounded-[8px] border border-red-200 dark:border-red-900/30 p-6 md:p-8 animate-in fade-in slide-in-from-right-4 duration-300 shadow-none">
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                 <div>
-                  <h3 className="text-red-800 dark:text-red-400 font-medium flex items-center gap-2 mb-1 text-base">
+                  <h3 className="font-heading text-red-800 dark:text-red-400 font-medium flex items-center gap-2 mb-1 text-base">
                     <ShieldAlert className="w-5 h-5" /> Khu vực nguy hiểm
                   </h3>
                   <p className="text-red-600 dark:text-red-500/80 text-sm">Xóa toàn bộ bộ nhớ Cache và System Data trên hệ thống. Không thể hoàn tác sau khi thực hiện.</p>
                 </div>
                 <button 
                   onClick={() => setIsResetOpen(true)}
-                  className="bg-red-600 hover:bg-red-700 text-white px-5 py-2.5 rounded-lg text-sm font-medium transition-colors shadow-none border-0 cursor-pointer shrink-0"
+                  className="bg-red-600 hover:bg-red-700 text-white px-5 py-2.5 rounded-[8px] text-sm font-medium transition-colors shadow-none border-0 cursor-pointer shrink-0"
                 >
                   Reset Hệ thống
                 </button>
@@ -319,7 +319,7 @@ export default function SettingsPage() {
       </div>
 
       <Dialog open={isResetOpen} onOpenChange={setIsResetOpen}>
-        <DialogContent className="max-w-md p-6 bg-white dark:bg-[#14151a] border border-gray-200 dark:border-gray-800 rounded-xl shadow-2xl">
+        <DialogContent className="max-w-md p-6 bg-white dark:bg-[#14151a] border border-gray-200 dark:border-gray-800 rounded-[8px] shadow-sm">
           <div className="flex flex-col items-center text-center space-y-4">
             <div className="w-12 h-12 bg-red-100 dark:bg-red-900/20 text-red-600 dark:text-red-500 rounded-full flex items-center justify-center mb-2">
               <Trash2 className="w-6 h-6" />
@@ -334,7 +334,7 @@ export default function SettingsPage() {
               value={confirmText}
               onChange={e => setConfirmText(e.target.value)}
               placeholder="CONFIRM"
-              className="w-full px-3 py-2 text-center bg-gray-50 dark:bg-[#1a1b23] border border-gray-200 dark:border-gray-800 rounded-lg text-sm font-medium text-gray-900 dark:text-white outline-none focus:border-red-500 focus:ring-2 focus:ring-red-200 dark:focus:ring-red-900/40 transition-all mt-4"
+              className="w-full px-3 py-2 text-center bg-gray-50 dark:bg-[#1a1b23] border border-gray-200 dark:border-gray-800 rounded-[8px] text-sm font-medium text-gray-900 dark:text-white outline-none focus:border-red-500 focus:ring-2 focus:ring-red-200 dark:focus:ring-red-900/40 transition-all mt-4"
             />
 
             {resetError && <p className="text-red-500 text-sm">{resetError}</p>}

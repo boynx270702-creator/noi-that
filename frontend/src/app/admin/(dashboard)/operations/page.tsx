@@ -25,7 +25,7 @@ export default function OperationsPage() {
     <div className="space-y-6 animate-in fade-in duration-500 w-full">
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
-          <h2 className="text-xl font-medium tracking-tight text-gray-900 dark:text-white flex items-center gap-2">
+          <h2 className="font-heading text-xl font-medium tracking-tight text-gray-900 dark:text-white flex items-center gap-2">
             <ShieldCheck className="w-5 h-5 text-[#5865f2]" />
             Vận hành Nội bộ
           </h2>
@@ -33,22 +33,22 @@ export default function OperationsPage() {
         </div>
       </div>
 
-      <div className="bg-white dark:bg-[#14151a] rounded-xl border border-gray-200 dark:border-gray-800 overflow-hidden shadow-sm">
+      <div className="bg-white dark:bg-[#14151a] rounded-[8px] border border-gray-200 dark:border-gray-800 overflow-hidden shadow-sm">
         <div className="p-6 md:p-8 space-y-10">
           
           {/* Tài khoản nhân sự */}
           <div className="space-y-6">
             <div className="flex justify-between items-center pb-4 border-b border-gray-200 dark:border-gray-800">
               <div>
-                <h3 className="text-lg font-medium text-gray-900 dark:text-white">Danh sách Tài khoản</h3>
+                <h3 className="font-heading text-lg font-medium text-gray-900 dark:text-white">Danh sách Tài khoản</h3>
                 <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">Quản lý nhân viên và quyền truy cập vào hệ thống.</p>
               </div>
-              <button className="bg-[#5865f2] hover:bg-[#4752c4] text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors shadow-sm flex items-center gap-2 border-0 cursor-pointer">
+              <button className="bg-[#5865f2] hover:bg-[#4752c4] text-white px-4 py-2 rounded-[8px] text-sm font-medium transition-colors shadow-sm flex items-center gap-2 border-0 cursor-pointer">
                 <Plus className="w-4 h-4" /> Thêm tài khoản
               </button>
             </div>
             
-            <div className="border border-gray-200 dark:border-gray-800 rounded-lg overflow-hidden">
+            <div className="border border-gray-200 dark:border-gray-800 rounded-[8px] overflow-hidden">
               <div className="overflow-x-auto">
                 <table className="w-full text-left">
                   <thead>
@@ -69,7 +69,7 @@ export default function OperationsPage() {
                         <td className="px-6 py-4"><span className="text-sm font-medium text-gray-700 dark:text-gray-300">{u.role}</span></td>
                         <td className="px-6 py-4"><span className="text-sm text-gray-500 dark:text-gray-400">{u.lastLogin}</span></td>
                         <td className="px-6 py-4">
-                          <span className="inline-flex items-center px-2.5 py-1 rounded-md text-[11px] font-medium bg-emerald-50 dark:bg-emerald-500/10 text-emerald-700 dark:text-emerald-400 border border-emerald-200 dark:border-emerald-500/20">
+                          <span className="inline-flex items-center px-2.5 py-1 rounded-[8px] text-[11px] font-medium bg-emerald-50 dark:bg-emerald-500/10 text-emerald-700 dark:text-emerald-400 border border-emerald-200 dark:border-emerald-500/20">
                             Hoạt động
                           </span>
                         </td>
@@ -87,16 +87,16 @@ export default function OperationsPage() {
           <div className="space-y-6">
             <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pb-4 border-b border-gray-200 dark:border-gray-800">
               <div>
-                <h3 className="text-lg font-medium text-gray-900 dark:text-white">Nhật ký Hệ thống (Audit Logs)</h3>
+                <h3 className="font-heading text-lg font-medium text-gray-900 dark:text-white">Nhật ký Hệ thống (Audit Logs)</h3>
                 <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">Lịch sử mọi thao tác thay đổi dữ liệu trên hệ thống.</p>
               </div>
               <div className="relative w-full sm:w-64">
                 <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
-                <input type="text" placeholder="Tìm kiếm hành động..." className="w-full pl-9 pr-4 py-2 bg-white dark:bg-[#14151a] border border-gray-200 dark:border-gray-800 rounded-lg text-sm focus:outline-none focus:ring-[3px] focus:ring-[#5865f2]/20 transition-all text-gray-900 dark:text-white" />
+                <input type="text" placeholder="Tìm kiếm hành động..." className="w-full pl-9 pr-4 py-2 bg-white dark:bg-[#14151a] border border-gray-200 dark:border-gray-800 rounded-[8px] text-sm focus:outline-none focus:ring-[3px] focus:ring-[#5865f2]/20 transition-all text-gray-900 dark:text-white" />
               </div>
             </div>
             
-            <div className="border border-gray-200 dark:border-gray-800 rounded-lg overflow-hidden">
+            <div className="border border-gray-200 dark:border-gray-800 rounded-[8px] overflow-hidden">
               <div className="overflow-x-auto">
                 <table className="w-full text-left">
                   <thead>

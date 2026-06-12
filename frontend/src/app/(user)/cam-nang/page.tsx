@@ -49,7 +49,7 @@ export default function CamNangPage() {
         
         {/* Header */}
         <div className="text-center mb-16">
-          <h1 className="text-4xl md:text-5xl font-['Montserrat',_sans-serif] font-bold text-gray-900 dark:text-white mb-6">Cẩm nang nội thất</h1>
+          <h1 className="font-heading text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">Cẩm nang nội thất</h1>
           <p className="text-gray-600 dark:text-white/70 text-lg max-w-3xl mx-auto">Kiến thức hữu ích giúp bạn trang bị thêm kinh nghiệm trước khi quyết định làm nội thất, từ việc chọn đơn vị, quản lý ngân sách đến giám sát thi công.</p>
         </div>
 
@@ -58,16 +58,16 @@ export default function CamNangPage() {
           {isLoading ? (
             <div className="col-span-2 text-center text-gray-400 dark:text-white/50 py-10">Đang tải chuyên mục...</div>
           ) : categories.length === 0 ? (
-            <div className="col-span-1 md:col-span-2 bg-white dark:bg-[#1c1c1c] shadow-sm dark:shadow-none border border-gray-200 dark:border-white/5 rounded-2xl p-16 text-center flex flex-col items-center justify-center min-h-[400px]">
+            <div className="col-span-1 md:col-span-2 bg-white dark:bg-[#1c1c1c] shadow-sm dark:shadow-none border border-gray-200 dark:border-white/5 rounded-[8px] p-16 text-center flex flex-col items-center justify-center min-h-[400px]">
               <div className="w-24 h-24 bg-[#ce9e51]/10 text-[#ce9e51] rounded-full flex items-center justify-center text-4xl mb-6 shadow-[0_0_30px_rgba(206,158,81,0.15)]">
                 <i className="fa fa-book-open"></i>
               </div>
-              <h3 className="text-2xl font-['Montserrat',_sans-serif] font-bold text-gray-900 dark:text-white mb-4">Chưa có bài viết nào</h3>
+              <h3 className="font-heading text-2xl font-bold text-gray-900 dark:text-white mb-4">Chưa có bài viết nào</h3>
               <p className="text-gray-500 dark:text-white/60 max-w-md mx-auto text-lg">Hệ thống đang chuẩn bị những kiến thức nội thất hữu ích nhất dành cho bạn. Vui lòng quay lại sau!</p>
             </div>
           ) : categories.map((cat, idx) => (
-            <div key={idx} className="bg-white dark:bg-[#1c1c1c] shadow-sm dark:shadow-none p-8 rounded-2xl border border-gray-200 dark:border-white/5 hover:border-[#ce9e51]/30 transition-colors">
-              <h2 className="text-2xl font-['Montserrat',_sans-serif] font-bold mb-6 text-[#ce9e51] flex items-center gap-3">
+            <div key={idx} className="bg-white dark:bg-[#1c1c1c] shadow-sm dark:shadow-none p-8 rounded-[8px] border border-gray-200 dark:border-white/5 hover:border-[#ce9e51]/30 transition-colors">
+              <h2 className="font-heading text-2xl font-bold mb-6 text-[#ce9e51] flex items-center gap-3">
                 <span className="w-8 h-1 bg-[#ce9e51] inline-block"></span>
                 {cat.title}
               </h2>
@@ -87,7 +87,7 @@ export default function CamNangPage() {
 
         {/* Featured Article Layout */}
         {featuredPost && (
-          <div className="bg-gradient-to-r from-white to-[#FAF9F8] dark:from-[#1c1c1c] dark:to-[#131313] shadow-sm dark:shadow-none rounded-2xl border border-gray-200 dark:border-white/10 overflow-hidden flex flex-col md:flex-row">
+          <div className="bg-gradient-to-r from-white to-[#FAF9F8] dark:from-[#1c1c1c] dark:to-[#131313] shadow-sm dark:shadow-none rounded-[8px] border border-gray-200 dark:border-white/10 overflow-hidden flex flex-col md:flex-row">
             <div className="w-full md:w-1/2 h-[300px] md:h-auto bg-gray-100 dark:bg-white/5 relative">
               <div 
                 className="absolute inset-0 bg-cover bg-center"
@@ -95,10 +95,10 @@ export default function CamNangPage() {
               />
             </div>
             <div className="w-full md:w-1/2 p-8 md:p-12 flex flex-col justify-center">
-              <span className="inline-block bg-[#ce9e51]/20 text-[#ce9e51] text-xs font-bold px-3 py-1 rounded uppercase tracking-wider mb-4 w-max">
+              <span className="inline-block bg-[#ce9e51]/20 text-[#ce9e51] text-xs font-bold px-3 py-1 rounded-[8px] uppercase tracking-wider mb-4 w-max">
                 Bài viết nổi bật
               </span>
-              <h3 className="text-3xl font-['Montserrat',_sans-serif] font-bold mb-4">{featuredPost.title}</h3>
+              <h3 className="font-heading text-3xl font-bold mb-4">{featuredPost.title}</h3>
               <p className="text-gray-600 dark:text-white/70 mb-8 line-clamp-3">
                 {featuredPost.content ? featuredPost.content.replace(/<[^>]*>?/gm, '').substring(0, 150) + '...' : 'Đang cập nhật...'}
               </p>

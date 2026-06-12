@@ -4,13 +4,13 @@ import Link from 'next/link';
 
 export default function Footer() {
   return (
-    <footer className="bg-[#1a1a1a] text-gray-300 py-16 font-['Montserrat',_sans-serif]">
+    <footer className="bg-[#1a1a1a] text-gray-300 py-16">
       <div className="max-w-[1200px] mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           
           {/* 1. Kết Nối Với Chúng Tôi */}
           <div>
-            <h3 className="text-white text-xl font-bold mb-6 font-['Montserrat',_sans-serif] relative pb-3 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-12 after:h-[2px] after:bg-[#D3AE3E]">
+            <h3 className="font-heading text-white text-xl font-bold mb-6 relative pb-3 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-12 after:h-[2px] after:bg-[#D3AE3E]">
               Kết Nối Với Chúng Tôi
             </h3>
             <p className="text-gray-400 mb-6 text-sm">
@@ -38,12 +38,12 @@ export default function Footer() {
 
           {/* 2. Bài Viết Gần Đây */}
           <div>
-            <h3 className="text-white text-xl font-bold mb-6 font-['Montserrat',_sans-serif] relative pb-3 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-12 after:h-[2px] after:bg-[#D3AE3E]">
+            <h3 className="font-heading text-white text-xl font-bold mb-6 relative pb-3 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-12 after:h-[2px] after:bg-[#D3AE3E]">
               Bài Viết Gần Đây
             </h3>
             <div className="space-y-6">
               <div className="flex gap-4 group">
-                <div className="w-[80px] h-[60px] flex-shrink-0 overflow-hidden rounded">
+                <div className="w-[80px] h-[60px] flex-shrink-0 overflow-hidden rounded-[8px]">
                   <img src="/images/main/25.jpg" alt="Post" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" />
                 </div>
                 <div>
@@ -54,7 +54,7 @@ export default function Footer() {
                 </div>
               </div>
               <div className="flex gap-4 group">
-                <div className="w-[80px] h-[60px] flex-shrink-0 overflow-hidden rounded">
+                <div className="w-[80px] h-[60px] flex-shrink-0 overflow-hidden rounded-[8px]">
                   <img src="/images/main/26.jpg" alt="Post" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" />
                 </div>
                 <div>
@@ -69,7 +69,7 @@ export default function Footer() {
 
           {/* 3. Dịch Vụ Của Chúng Tôi */}
           <div>
-            <h3 className="text-white text-xl font-bold mb-6 font-['Montserrat',_sans-serif] relative pb-3 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-12 after:h-[2px] after:bg-[#D3AE3E]">
+            <h3 className="font-heading text-white text-xl font-bold mb-6 relative pb-3 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-12 after:h-[2px] after:bg-[#D3AE3E]">
               Dịch Vụ Của Chúng Tôi
             </h3>
             <ul className="space-y-3">
@@ -102,23 +102,23 @@ export default function Footer() {
 
           {/* 4. Thư Viện Ảnh */}
           <div>
-            <h3 className="text-white text-xl font-bold mb-6 font-['Montserrat',_sans-serif] relative pb-3 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-12 after:h-[2px] after:bg-[#D3AE3E]">
+            <h3 className="font-heading text-white text-xl font-bold mb-6 relative pb-3 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-12 after:h-[2px] after:bg-[#D3AE3E]">
               Thư Viện Ảnh
             </h3>
             <div className="grid grid-cols-3 gap-2">
-              <div className="aspect-square overflow-hidden rounded group cursor-pointer relative">
+              <div className="aspect-square overflow-hidden rounded-[8px] group cursor-pointer relative">
                 <div className="absolute inset-0 bg-black/40 group-hover:bg-transparent transition-colors z-10" />
                 <img src="/images/main/19.jpg" alt="Gallery 1" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" />
               </div>
-              <div className="aspect-square overflow-hidden rounded group cursor-pointer relative">
+              <div className="aspect-square overflow-hidden rounded-[8px] group cursor-pointer relative">
                 <div className="absolute inset-0 bg-black/40 group-hover:bg-transparent transition-colors z-10" />
                 <img src="/images/main/20.jpg" alt="Gallery 2" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" />
               </div>
-              <div className="aspect-square overflow-hidden rounded group cursor-pointer relative">
+              <div className="aspect-square overflow-hidden rounded-[8px] group cursor-pointer relative">
                 <div className="absolute inset-0 bg-black/40 group-hover:bg-transparent transition-colors z-10" />
                 <img src="/images/main/21.jpg" alt="Gallery 3" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" />
               </div>
-              <div className="aspect-square overflow-hidden rounded group cursor-pointer relative">
+              <div className="aspect-square overflow-hidden rounded-[8px] group cursor-pointer relative">
                 <div className="absolute inset-0 bg-black/40 group-hover:bg-transparent transition-colors z-10" />
                 <img src="/images/main/22.jpg" alt="Gallery 4" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" />
               </div>

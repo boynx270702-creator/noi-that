@@ -59,7 +59,7 @@ export default function UnitDetailPage({ params }: { params: { id: string } }) {
   }, [params.id]);
 
   if (isLoading) {
-    return <div className="pt-[120px] pb-20 bg-[#F8F6F2] dark:bg-[#131313] min-h-screen text-[#1F1F1F] dark:text-white text-center">Đang tải thông tin đơn vị...</div>;
+    return <div className="pt-[120px] pb-20 bg-[#F8F6F2] dark:bg-[#131313] min-h-screen text-[#1F1F1F] dark:text-white text-center">Đang tải thông margin đơn vị...</div>;
   }
 
   if (!unit) {
@@ -191,7 +191,7 @@ export default function UnitDetailPage({ params }: { params: { id: string } }) {
             <Link href={`/tu-van?unit=${unit.id}`} className="bg-[#1F1F1F] hover:bg-[#C7A25C] dark:bg-[#C7A25C] dark:hover:bg-white dark:hover:text-[#131313] text-white font-bold py-3 px-8 rounded-[8px] transition-colors uppercase tracking-wider text-sm">
               Nhận tư vấn đơn vị này
             </Link>
-            <Link href="/he-sinh-thai" className="bg-transparent border border-[#ECE7DE] dark:border-white/30 hover:border-[#1F1F1F] dark:hover:border-white text-[#1F1F1F] dark:text-white font-bold py-3 px-8 rounded-[8px] transition-colors uppercase tracking-wider text-sm">
+            <Link href="/don-vi-thiet-ke" className="bg-transparent border border-[#ECE7DE] dark:border-white/30 hover:border-[#1F1F1F] dark:hover:border-white text-[#1F1F1F] dark:text-white font-bold py-3 px-8 rounded-[8px] transition-colors uppercase tracking-wider text-sm">
               So sánh với đơn vị khác
             </Link>
           </div>

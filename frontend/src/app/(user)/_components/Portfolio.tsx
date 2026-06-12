@@ -67,15 +67,15 @@ export default function Portfolio() {
         {/* Section Header */}
         <ScrollReveal animation="fade-up" delay={100}>
           <div className="text-center mb-16">
-            <h6 className="text-[#D3AE3E] text-[13px] font-semibold tracking-[4px] uppercase mb-4 font-['Montserrat',_sans-serif]">
+            <h6 className="font-label text-[#D3AE3E] text-[13px] font-semibold tracking-[4px] uppercase mb-4">
               Recent Work
             </h6>
-            <h3 className="text-4xl md:text-[40px] font-bold text-gray-900 dark:text-white mb-6 font-['Montserrat',_sans-serif] tracking-tight flex justify-center gap-[2px]">
+            <h3 className="font-heading text-4xl md:text-[40px] font-bold text-gray-900 dark:text-white mb-6 tracking-tight flex justify-center gap-[2px]">
               {'Awesome Portfolio'.split('').map((char, index) => (
                 <span key={index} className={char === ' ' ? 'w-3' : ''}>{char}</span>
               ))}
             </h3>
-            <p className="text-[#999] font-['Montserrat',_sans-serif] max-w-3xl mx-auto leading-relaxed text-[14px] md:text-[15px]">
+            <p className="text-[#999] max-w-3xl mx-auto leading-relaxed text-[14px] md:text-[15px]">
               This including consulting multi disciplinary consulting work with design and engineering,
               our world branches giving full support for executing professional work.
             </p>
@@ -89,7 +89,7 @@ export default function Portfolio() {
               <button
                 key={filter.id}
                 onClick={() => setActiveFilter(filter.id)}
-                className={`text-[13px] font-bold font-['Montserrat',_sans-serif] uppercase tracking-wider transition-colors ${activeFilter === filter.id
+                className={`text-[13px] font-bold  uppercase tracking-wider transition-colors ${activeFilter === filter.id
                     ? 'text-[#D3AE3E]'
                     : 'text-gray-900 dark:text-white hover:text-[#D3AE3E]'
                   }`}
@@ -118,12 +118,12 @@ export default function Portfolio() {
 
                 {/* Content (Slides up on hover) */}
                 <div className="absolute inset-0 p-8 flex flex-col justify-end translate-y-8 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
-                  <h3 className="text-[22px] font-bold font-['Montserrat',_sans-serif] text-gray-900 dark:text-white mb-2">
+                  <h3 className="font-heading text-[22px] font-bold text-gray-900 dark:text-white mb-2">
                     <Link href={item.link} className="hover:text-[#D3AE3E] transition-colors">
                       {item.title}
                     </Link>
                   </h3>
-                  <p className="text-[#D3AE3E] font-['Montserrat',_sans-serif] text-[13px] uppercase tracking-wider mb-6">
+                  <p className="text-[#D3AE3E] text-[13px] uppercase tracking-wider mb-6">
                     {item.categoryText}
                   </p>
 

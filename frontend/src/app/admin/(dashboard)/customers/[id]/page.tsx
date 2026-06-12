@@ -92,7 +92,7 @@ export default function CustomerDetailPage() {
     return (
       <div className="h-full flex flex-col items-center justify-center text-gray-500">
         <User className="w-16 h-16 mb-4 text-gray-300" />
-        <h2 className="text-xl font-medium">Không tìm thấy khách hàng</h2>
+        <h2 className="font-heading text-xl font-medium">Không tìm thấy khách hàng</h2>
         <Link href="/admin/customers" className="mt-4 text-[#5865f2] hover:underline">Quay lại danh sách</Link>
       </div>
     );
@@ -133,7 +133,7 @@ export default function CustomerDetailPage() {
           <ArrowLeft className="w-5 h-5" />
         </Link>
         <div>
-          <h2 className="text-2xl font-medium tracking-tight text-gray-900 dark:text-white">Chi tiết Khách hàng</h2>
+          <h2 className="font-heading text-2xl font-medium tracking-tight text-gray-900 dark:text-white">Chi tiết Khách hàng</h2>
           <p className="text-sm text-gray-500 mt-0.5">Hồ sơ và lịch sử giao dịch toàn diện.</p>
         </div>
       </div>
@@ -141,19 +141,19 @@ export default function CustomerDetailPage() {
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         {/* Left Column - Profile & Stats */}
         <div className="lg:col-span-1 space-y-6">
-          <Card className="p-6 rounded-xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-[#14151a] shadow-none relative overflow-hidden">
+          <Card className="p-6 rounded-[8px] border border-gray-200 dark:border-gray-800 bg-white dark:bg-[#14151a] shadow-none relative overflow-hidden">
             <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-500 to-[#5865f2]"></div>
             <div className="flex flex-col items-center text-center mt-2 mb-6">
-              <div className="w-20 h-20 rounded-full bg-gradient-to-br from-blue-100 to-indigo-100 dark:from-blue-900/40 dark:to-indigo-900/40 border-2 border-white dark:border-[#14151a] shadow-md flex items-center justify-center text-blue-700 dark:text-blue-400 font-medium text-3xl mb-4">
+              <div className="w-20 h-20 rounded-full bg-gradient-to-br from-blue-100 to-indigo-100 dark:from-blue-900/40 dark:to-indigo-900/40 border-2 border-white dark:border-[#14151a] shadow-sm flex items-center justify-center text-blue-700 dark:text-blue-400 font-medium text-3xl mb-4">
                 {customer.fullName.charAt(0).toUpperCase()}
               </div>
-              <h3 className="text-xl font-medium text-gray-900 dark:text-white">{customer.fullName}</h3>
+              <h3 className="font-heading text-xl font-medium text-gray-900 dark:text-white">{customer.fullName}</h3>
               <p className="text-sm font-medium text-[#5865f2] mt-1">Khách hàng thành viên</p>
             </div>
 
             <div className="space-y-4 pt-4 border-t border-gray-100 dark:border-gray-800/50">
               <div className="flex items-center gap-3">
-                <div className="w-8 h-8 rounded bg-gray-50 dark:bg-[#1a1b23] flex items-center justify-center shrink-0">
+                <div className="w-8 h-8 rounded-[8px] bg-gray-50 dark:bg-[#1a1b23] flex items-center justify-center shrink-0">
                   <Phone className="w-4 h-4 text-gray-500" />
                 </div>
                 <div>
@@ -164,7 +164,7 @@ export default function CustomerDetailPage() {
               
               {customer.citizenId && (
                 <div className="flex items-center gap-3">
-                  <div className="w-8 h-8 rounded bg-gray-50 dark:bg-[#1a1b23] flex items-center justify-center shrink-0">
+                  <div className="w-8 h-8 rounded-[8px] bg-gray-50 dark:bg-[#1a1b23] flex items-center justify-center shrink-0">
                     <CreditCard className="w-4 h-4 text-gray-500" />
                   </div>
                   <div>
@@ -176,7 +176,7 @@ export default function CustomerDetailPage() {
 
               {customer.address && (
                 <div className="flex items-center gap-3">
-                  <div className="w-8 h-8 rounded bg-gray-50 dark:bg-[#1a1b23] flex items-center justify-center shrink-0">
+                  <div className="w-8 h-8 rounded-[8px] bg-gray-50 dark:bg-[#1a1b23] flex items-center justify-center shrink-0">
                     <MapPin className="w-4 h-4 text-gray-500" />
                   </div>
                   <div>
@@ -188,10 +188,10 @@ export default function CustomerDetailPage() {
             </div>
           </Card>
 
-          <Card className="p-6 rounded-xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-[#14151a] shadow-none">
+          <Card className="p-6 rounded-[8px] border border-gray-200 dark:border-gray-800 bg-white dark:bg-[#14151a] shadow-none">
             <h4 className="font-medium text-gray-900 dark:text-white mb-4">Tổng quan tài chính</h4>
             <div className="space-y-4">
-              <div className="flex justify-between items-center p-3 rounded-lg bg-gray-50 dark:bg-[#1a1b23]">
+              <div className="flex justify-between items-center p-3 rounded-[8px] bg-gray-50 dark:bg-[#1a1b23]">
                 <div className="flex items-center gap-2 text-sm font-medium text-gray-600 dark:text-gray-300">
                   <FileText className="w-4 h-4 text-indigo-500" />
                   Tổng hợp đồng
@@ -199,7 +199,7 @@ export default function CustomerDetailPage() {
                 <span className="font-medium text-gray-900 dark:text-white">{totalReceipts}</span>
               </div>
               
-              <div className="flex justify-between items-center p-3 rounded-lg bg-gray-50 dark:bg-[#1a1b23]">
+              <div className="flex justify-between items-center p-3 rounded-[8px] bg-gray-50 dark:bg-[#1a1b23]">
                 <div className="flex items-center gap-2 text-sm font-medium text-gray-600 dark:text-gray-300">
                   <AlertTriangle className="w-4 h-4 text-red-500" />
                   Đang vay (Active)
@@ -207,7 +207,7 @@ export default function CustomerDetailPage() {
                 <span className="font-medium text-red-600 dark:text-red-400">{activeReceipts}</span>
               </div>
 
-              <div className="flex justify-between items-center p-3 rounded-lg bg-gray-50 dark:bg-[#1a1b23]">
+              <div className="flex justify-between items-center p-3 rounded-[8px] bg-gray-50 dark:bg-[#1a1b23]">
                 <div className="flex items-center gap-2 text-sm font-medium text-gray-600 dark:text-gray-300">
                   <DollarSign className="w-4 h-4 text-blue-500" />
                   Tổng tiền đã cấp
@@ -215,7 +215,7 @@ export default function CustomerDetailPage() {
                 <span className="font-medium text-blue-600 dark:text-blue-400">{formatCurrency(totalLoan)}</span>
               </div>
 
-              <div className="flex justify-between items-center p-3 rounded-lg bg-gray-50 dark:bg-[#1a1b23]">
+              <div className="flex justify-between items-center p-3 rounded-[8px] bg-gray-50 dark:bg-[#1a1b23]">
                 <div className="flex items-center gap-2 text-sm font-medium text-gray-600 dark:text-gray-300">
                   <TrendingUp className="w-4 h-4 text-emerald-500" />
                   Lợi nhuận (Lãi thu)
@@ -228,7 +228,7 @@ export default function CustomerDetailPage() {
 
         {/* Right Column - Timeline */}
         <div className="lg:col-span-2">
-          <Card className="p-6 rounded-xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-[#14151a] shadow-none h-full min-h-[600px] flex flex-col">
+          <Card className="p-6 rounded-[8px] border border-gray-200 dark:border-gray-800 bg-white dark:bg-[#14151a] shadow-none h-full min-h-[600px] flex flex-col">
             <h4 className="font-medium text-gray-900 dark:text-white mb-6 flex items-center gap-2">
               <Clock className="w-5 h-5 text-[#5865f2]" />
               Dòng thời gian giao dịch
@@ -257,10 +257,10 @@ export default function CustomerDetailPage() {
                         isExtend ? 'bg-violet-500' : 'bg-orange-500'
                       }`}></div>
                       
-                      <div className="bg-gray-50 dark:bg-[#1a1b23] p-4 rounded-xl border border-gray-100 dark:border-gray-800/60 shadow-sm hover:shadow-md transition-shadow">
+                      <div className="bg-gray-50 dark:bg-[#1a1b23] p-4 rounded-[8px] border border-gray-100 dark:border-gray-800/60 shadow-sm hover:shadow-sm transition-shadow">
                         <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-2 mb-2">
                           <div>
-                            <span className={`inline-flex items-center px-2 py-0.5 rounded text-xs font-medium mb-2 ${
+                            <span className={`inline-flex items-center px-2 py-0.5 rounded-[8px] text-xs font-medium mb-2 ${
                               isNew ? 'bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-400' : 
                               isRedeem ? 'bg-emerald-100 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-400' : 
                               isLiquidate ? 'bg-gray-200 text-gray-700 dark:bg-gray-800 dark:text-gray-300' : 
@@ -287,7 +287,7 @@ export default function CustomerDetailPage() {
                           </div>
                         </div>
                         {tx.notes && (
-                          <div className="mt-3 text-sm text-gray-600 dark:text-gray-400 bg-white dark:bg-[#14151a] p-2.5 rounded border border-gray-100 dark:border-gray-800">
+                          <div className="mt-3 text-sm text-gray-600 dark:text-gray-400 bg-white dark:bg-[#14151a] p-2.5 rounded-[8px] border border-gray-100 dark:border-gray-800">
                             <span className="font-medium">Ghi chú:</span> {tx.notes}
                           </div>
                         )}

@@ -93,15 +93,15 @@ export default function Services() {
         {/* Section Header */}
         <ScrollReveal animation="fade-up" delay={100}>
           <div className="text-center mb-16">
-            <h6 className="text-[#D3AE3E] text-[13px] font-semibold tracking-[4px] uppercase mb-4 font-['Montserrat',_sans-serif]">
+            <h6 className="font-label text-[#D3AE3E] text-[13px] font-semibold tracking-[4px] uppercase mb-4">
               What We Do
             </h6>
-            <h3 className="text-4xl md:text-[40px] font-bold text-white mb-6 font-['Montserrat',_sans-serif] tracking-tight flex justify-center gap-[2px]">
+            <h3 className="font-heading text-4xl md:text-[40px] font-bold text-white mb-6 tracking-tight flex justify-center gap-[2px]">
               {'Our Services'.split('').map((char, index) => (
                 <span key={index} className={char === ' ' ? 'w-3' : ''}>{char}</span>
               ))}
             </h3>
-            <p className="text-[#999] font-['Montserrat',_sans-serif] max-w-3xl mx-auto leading-relaxed text-[14px] md:text-[15px]">
+            <p className="text-[#999] max-w-3xl mx-auto leading-relaxed text-[14px] md:text-[15px]">
               This including consulting multi disciplinary consulting work with design and engineering, 
               our world branches giving full support for executing professional work.
             </p>
@@ -139,18 +139,18 @@ export default function Services() {
                         <img src={item.icon} alt="Icon" className="h-12 w-auto object-contain brightness-0 invert opacity-80 group-hover:opacity-100 transition-opacity" />
                       </div>
 
-                      <h3 className="text-[22px] font-bold font-['Montserrat',_sans-serif] text-white mb-4 transition-colors">
+                      <h3 className="font-heading text-[22px] font-bold text-white mb-4 transition-colors">
                         <Link href={item.link} className="hover:text-[#D3AE3E]">{item.title}</Link>
                       </h3>
                       
-                      <p className="text-[#888] font-['Montserrat',_sans-serif] leading-[1.8] text-[14px] mb-8 flex-grow">
+                      <p className="text-[#888] leading-[1.8] text-[14px] mb-8 flex-grow">
                         {item.text}
                       </p>
 
                       {/* Feature Button */}
                       <Link 
                         href={item.link}
-                        className="inline-flex items-center text-[13px] font-bold font-['Montserrat',_sans-serif] tracking-widest uppercase text-[#D3AE3E] hover:text-white transition-colors mt-auto"
+                        className="inline-flex items-center text-[13px] font-bold tracking-widest uppercase text-[#D3AE3E] hover:text-white transition-colors mt-auto"
                       >
                         Show More
                       </Link>

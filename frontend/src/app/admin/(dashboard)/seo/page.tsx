@@ -152,7 +152,7 @@ export default function SeoPages() {
     <div className="space-y-6 animate-in fade-in duration-500">
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
-          <h2 className="text-xl font-medium tracking-tight text-gray-900 dark:text-white flex items-center gap-2">
+          <h2 className="font-heading text-xl font-medium tracking-tight text-gray-900 dark:text-white flex items-center gap-2">
             <FileSearch className="w-5 h-5 text-[#5865f2]" />
             Quản lý Trang SEO Tĩnh (Landing Pages)
           </h2>
@@ -160,14 +160,14 @@ export default function SeoPages() {
         </div>
         <button 
           onClick={openAddModal}
-          className="bg-[#5865f2] hover:bg-[#4752c4] text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors flex items-center gap-2 shadow-sm"
+          className="bg-[#5865f2] hover:bg-[#4752c4] text-white px-4 py-2 rounded-[8px] text-sm font-medium transition-colors flex items-center gap-2 shadow-sm"
         >
           <Plus className="w-4 h-4" />
           Tạo Trang SEO mới
         </button>
       </div>
 
-      <div className="bg-white dark:bg-[#14151a] rounded-xl border border-gray-200 dark:border-gray-800 overflow-hidden shadow-sm">
+      <div className="bg-white dark:bg-[#14151a] rounded-[8px] border border-gray-200 dark:border-gray-800 overflow-hidden shadow-sm">
         <div className="p-4 border-b border-gray-200 dark:border-gray-800 flex flex-col sm:flex-row sm:items-center gap-4 bg-gray-50/50 dark:bg-gray-800/10">
           <div className="relative flex-1 max-w-md">
             <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
@@ -179,7 +179,7 @@ export default function SeoPages() {
                 setSearchTerm(e.target.value);
                 setCurrentPage(1);
               }}
-              className="w-full pl-9 pr-4 py-2 bg-white dark:bg-[#1a1b23] border border-gray-200 dark:border-gray-700 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-[#5865f2]/20 text-gray-900 dark:text-white"
+              className="w-full pl-9 pr-4 py-2 bg-white dark:bg-[#1a1b23] border border-gray-200 dark:border-gray-700 rounded-[8px] text-sm focus:outline-none focus:ring-2 focus:ring-[#5865f2]/20 text-gray-900 dark:text-white"
             />
           </div>
           <div className="flex items-center gap-2 w-full sm:w-48">
@@ -231,7 +231,7 @@ export default function SeoPages() {
                     <div className="text-xs text-gray-500 dark:text-gray-400">{format(new Date(page.updatedAt), 'dd/MM/yyyy HH:mm')}</div>
                   </td>
                   <td className="px-5 py-4">
-                    <span className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-[11px] font-medium ${
+                    <span className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-[8px] text-[11px] font-medium ${
                       page.status === 'PUBLISHED' 
                         ? 'bg-emerald-50 dark:bg-emerald-500/10 text-emerald-700 dark:text-emerald-400 border border-emerald-100 dark:border-emerald-800/30 dark:bg-emerald-900/20 dark:text-emerald-400'
                         : 'bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 border border-gray-200 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400'
@@ -244,19 +244,19 @@ export default function SeoPages() {
                     <div className="flex items-center justify-end gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
                       <button 
                         onClick={() => handleQuickPublish(page)}
-                        className="p-2 text-gray-400 hover:text-emerald-600 hover:bg-emerald-50 dark:bg-emerald-500/10 dark:hover:bg-emerald-900/20 rounded-lg transition-colors" title={page.status === 'PUBLISHED' ? 'Tắt' : 'Bật'}
+                        className="p-2 text-gray-400 hover:text-emerald-600 hover:bg-emerald-50 dark:bg-emerald-500/10 dark:hover:bg-emerald-900/20 rounded-[8px] transition-colors" title={page.status === 'PUBLISHED' ? 'Tắt' : 'Bật'}
                       >
                         <CheckCircle2 className="w-4 h-4" />
                       </button>
                       <button 
                         onClick={() => openEditModal(page)}
-                        className="p-2 text-gray-400 hover:text-blue-600 dark:text-blue-400 hover:bg-blue-50 dark:hover:bg-blue-900/20 rounded-lg transition-colors" title="Chỉnh sửa"
+                        className="p-2 text-gray-400 hover:text-blue-600 dark:text-blue-400 hover:bg-blue-50 dark:hover:bg-blue-900/20 rounded-[8px] transition-colors" title="Chỉnh sửa"
                       >
                         <Edit className="w-4 h-4" />
                       </button>
                       <button 
                         onClick={() => handleDelete(page.id)}
-                        className="p-2 text-gray-400 hover:text-red-600 hover:bg-red-50 dark:hover:bg-red-900/20 rounded-lg transition-colors" title="Xóa"
+                        className="p-2 text-gray-400 hover:text-red-600 hover:bg-red-50 dark:hover:bg-red-900/20 rounded-[8px] transition-colors" title="Xóa"
                       >
                         <Trash2 className="w-4 h-4" />
                       </button>
@@ -281,9 +281,9 @@ export default function SeoPages() {
               Hiển thị {(currentPage - 1) * itemsPerPage + 1} đến {Math.min(currentPage * itemsPerPage, filteredPages.length)} trong số {filteredPages.length} kết quả
             </div>
             <div className="flex items-center gap-1">
-              <button onClick={() => setCurrentPage(prev => Math.max(1, prev - 1))} disabled={currentPage === 1} className="p-1.5 rounded-lg border border-gray-200 dark:border-gray-700 text-gray-500 dark:text-gray-400 hover:bg-white dark:bg-[#14151a] dark:hover:bg-gray-800 disabled:opacity-50 disabled:cursor-not-allowed bg-white dark:bg-[#1a1b23] shadow-sm"><ChevronLeft className="w-4 h-4" /></button>
+              <button onClick={() => setCurrentPage(prev => Math.max(1, prev - 1))} disabled={currentPage === 1} className="p-1.5 rounded-[8px] border border-gray-200 dark:border-gray-700 text-gray-500 dark:text-gray-400 hover:bg-white dark:bg-[#14151a] dark:hover:bg-gray-800 disabled:opacity-50 disabled:cursor-not-allowed bg-white dark:bg-[#1a1b23] shadow-sm"><ChevronLeft className="w-4 h-4" /></button>
               <div className="px-3 text-sm font-medium text-gray-700 dark:text-gray-300">{currentPage} / {totalPages}</div>
-              <button onClick={() => setCurrentPage(prev => Math.min(totalPages, prev + 1))} disabled={currentPage === totalPages} className="p-1.5 rounded-lg border border-gray-200 dark:border-gray-700 text-gray-500 dark:text-gray-400 hover:bg-white dark:bg-[#14151a] dark:hover:bg-gray-800 disabled:opacity-50 disabled:cursor-not-allowed bg-white dark:bg-[#1a1b23] shadow-sm"><ChevronRight className="w-4 h-4" /></button>
+              <button onClick={() => setCurrentPage(prev => Math.min(totalPages, prev + 1))} disabled={currentPage === totalPages} className="p-1.5 rounded-[8px] border border-gray-200 dark:border-gray-700 text-gray-500 dark:text-gray-400 hover:bg-white dark:bg-[#14151a] dark:hover:bg-gray-800 disabled:opacity-50 disabled:cursor-not-allowed bg-white dark:bg-[#1a1b23] shadow-sm"><ChevronRight className="w-4 h-4" /></button>
             </div>
           </div>
         )}
@@ -296,16 +296,16 @@ export default function SeoPages() {
 
             <div className="h-16 flex items-center justify-between px-6 border-b border-gray-100 dark:border-gray-800 bg-white dark:bg-[#14151a]">
               <div className="flex items-center gap-3">
-                <div className="w-8 h-8 rounded-lg bg-[#5865f2]/10 flex items-center justify-center">
+                <div className="w-8 h-8 rounded-[8px] bg-[#5865f2]/10 flex items-center justify-center">
                   <FileSearch className="w-4 h-4 text-[#5865f2]" />
                 </div>
                 <div>
-                  <h2 className="text-base font-medium text-gray-900 dark:text-white tracking-tight">
+                  <h2 className="font-heading text-base font-medium text-gray-900 dark:text-white tracking-tight">
                     {modalMode === 'add' ? 'Tạo Trang SEO Mới' : 'Cập Nhật Trang SEO'}
                   </h2>
                 </div>
               </div>
-              <button onClick={closeModal} className="p-1.5 rounded-lg hover:bg-gray-100 dark:bg-gray-800 dark:hover:bg-gray-800 text-gray-400 hover:text-gray-600 dark:text-gray-400 dark:hover:text-gray-300 transition-colors cursor-pointer">
+              <button onClick={closeModal} className="p-1.5 rounded-[8px] hover:bg-gray-100 dark:bg-gray-800 dark:hover:bg-gray-800 text-gray-400 hover:text-gray-600 dark:text-gray-400 dark:hover:text-gray-300 transition-colors cursor-pointer">
                 <X className="w-5 h-5" />
               </button>
             </div>
@@ -315,7 +315,7 @@ export default function SeoPages() {
 
                 {/* Section: Cấu hình URL & SEO */}
                 <div className="space-y-5">
-                  <h3 className="text-xs font-medium text-gray-900 dark:text-white uppercase tracking-wider flex items-center gap-2">
+                  <h3 className="font-heading text-xs font-medium text-gray-900 dark:text-white uppercase tracking-wider flex items-center gap-2">
                     <span className="w-1.5 h-1.5 rounded-full bg-[#5865f2]"></span>
                     Thông tin URL & Đường dẫn
                   </h3>
@@ -326,7 +326,7 @@ export default function SeoPages() {
                       <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                         <FileSearch className="h-4 w-4 text-gray-400 dark:text-gray-500 dark:text-gray-400" />
                       </div>
-                      <input type="text" value={formData.title} onChange={e => {setFormData({...formData, title: e.target.value}); if (errors.title) setErrors({...errors, title: ''});}} className={`pl-9 w-full bg-gray-50/50 dark:bg-[#1a1b23] border ${errors.title ? 'border-red-500 focus:ring-red-500/20' : 'border-gray-200 dark:border-gray-700 focus:ring-[#5865f2]/20'} text-sm h-10 rounded-lg text-gray-900 dark:text-white transition-all hover:bg-white dark:bg-[#14151a] dark:hover:bg-[#1a1b23] focus:outline-none focus:ring-[3px] focus:border-[#5865f2]/40`} placeholder="VD: Thiết kế nội thất chung cư Hà Nội..." />
+                      <input type="text" value={formData.title} onChange={e => {setFormData({...formData, title: e.target.value}); if (errors.title) setErrors({...errors, title: ''});}} className={`pl-9 w-full bg-gray-50/50 dark:bg-[#1a1b23] border ${errors.title ? 'border-red-500 focus:ring-red-500/20' : 'border-gray-200 dark:border-gray-700 focus:ring-[#5865f2]/20'} text-sm h-10 rounded-[8px] text-gray-900 dark:text-white transition-all hover:bg-white dark:bg-[#14151a] dark:hover:bg-[#1a1b23] focus:outline-none focus:ring-[3px] focus:border-[#5865f2]/40`} placeholder="VD: Thiết kế nội thất chung cư Hà Nội..." />
                     </div>
                     {errors.title && <p className="text-red-500 text-xs mt-1">{errors.title}</p>}
                   </div>
@@ -338,7 +338,7 @@ export default function SeoPages() {
                         <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                           <Search className="h-4 w-4 text-gray-400 dark:text-gray-500 dark:text-gray-400" />
                         </div>
-                        <input type="text" value={formData.slug} onChange={e => {setFormData({...formData, slug: e.target.value}); if (errors.slug) setErrors({...errors, slug: ''});}} className={`pl-9 w-full bg-gray-50/50 dark:bg-[#1a1b23] border ${errors.slug ? 'border-red-500 focus:ring-red-500/20' : 'border-gray-200 dark:border-gray-700 focus:ring-[#5865f2]/20'} text-sm h-10 rounded-lg text-gray-900 dark:text-white transition-all hover:bg-white dark:bg-[#14151a] dark:hover:bg-[#1a1b23] focus:outline-none focus:ring-[3px] focus:border-[#5865f2]/40`} placeholder="thiet-ke-noi-that-chung-cu-ha-noi" />
+                        <input type="text" value={formData.slug} onChange={e => {setFormData({...formData, slug: e.target.value}); if (errors.slug) setErrors({...errors, slug: ''});}} className={`pl-9 w-full bg-gray-50/50 dark:bg-[#1a1b23] border ${errors.slug ? 'border-red-500 focus:ring-red-500/20' : 'border-gray-200 dark:border-gray-700 focus:ring-[#5865f2]/20'} text-sm h-10 rounded-[8px] text-gray-900 dark:text-white transition-all hover:bg-white dark:bg-[#14151a] dark:hover:bg-[#1a1b23] focus:outline-none focus:ring-[3px] focus:border-[#5865f2]/40`} placeholder="thiet-ke-noi-that-chung-cu-ha-noi" />
                       </div>
                       {errors.slug && <p className="text-red-500 text-xs mt-1">{errors.slug}</p>}
                     </div>
@@ -353,7 +353,7 @@ export default function SeoPages() {
 
                 {/* Section: Thẻ Meta & Keyword */}
                 <div className="space-y-5">
-                  <h3 className="text-xs font-medium text-gray-900 dark:text-white uppercase tracking-wider flex items-center gap-2">
+                  <h3 className="font-heading text-xs font-medium text-gray-900 dark:text-white uppercase tracking-wider flex items-center gap-2">
                     <span className="w-1.5 h-1.5 rounded-full bg-[#43b581]"></span>
                     Thẻ Meta & Keyword
                   </h3>
@@ -364,13 +364,13 @@ export default function SeoPages() {
                       <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                         <Search className="h-4 w-4 text-gray-400 dark:text-gray-500 dark:text-gray-400" />
                       </div>
-                      <input type="text" value={formData.metaTitle} onChange={e => setFormData({...formData, metaTitle: e.target.value})} className="pl-9 w-full bg-gray-50/50 dark:bg-[#1a1b23] border border-gray-200 dark:border-gray-700 text-sm h-10 rounded-lg text-gray-900 dark:text-white transition-all hover:bg-white dark:bg-[#14151a] dark:hover:bg-[#1a1b23] focus:outline-none focus:ring-[3px] focus:ring-[#5865f2]/20 focus:border-[#5865f2]/40" placeholder="VD: Thiết kế nội thất chung cư Hà Nội | Giá tốt..." />
+                      <input type="text" value={formData.metaTitle} onChange={e => setFormData({...formData, metaTitle: e.target.value})} className="pl-9 w-full bg-gray-50/50 dark:bg-[#1a1b23] border border-gray-200 dark:border-gray-700 text-sm h-10 rounded-[8px] text-gray-900 dark:text-white transition-all hover:bg-white dark:bg-[#14151a] dark:hover:bg-[#1a1b23] focus:outline-none focus:ring-[3px] focus:ring-[#5865f2]/20 focus:border-[#5865f2]/40" placeholder="VD: Thiết kế nội thất chung cư Hà Nội | Giá tốt..." />
                     </div>
                   </div>
 
                   <div className="space-y-1.5">
                     <label className="text-sm font-medium text-gray-700 dark:text-gray-300">Mô tả SEO (Meta Description)</label>
-                    <textarea rows={3} value={formData.metaDescription} onChange={e => setFormData({...formData, metaDescription: e.target.value})} className="w-full bg-gray-50/50 dark:bg-[#1a1b23] border border-gray-200 dark:border-gray-700 text-sm rounded-lg text-gray-900 dark:text-white p-3 transition-all hover:bg-white dark:bg-[#14151a] dark:hover:bg-[#1a1b23] focus:outline-none focus:ring-[3px] focus:ring-[#5865f2]/20 focus:border-[#5865f2]/40 resize-none" placeholder="Mô tả ngắn gọn về trang này..." />
+                    <textarea rows={3} value={formData.metaDescription} onChange={e => setFormData({...formData, metaDescription: e.target.value})} className="w-full bg-gray-50/50 dark:bg-[#1a1b23] border border-gray-200 dark:border-gray-700 text-sm rounded-[8px] text-gray-900 dark:text-white p-3 transition-all hover:bg-white dark:bg-[#14151a] dark:hover:bg-[#1a1b23] focus:outline-none focus:ring-[3px] focus:ring-[#5865f2]/20 focus:border-[#5865f2]/40 resize-none" placeholder="Mô tả ngắn gọn về trang này..." />
                   </div>
 
                   <div className="grid grid-cols-2 gap-5">
@@ -380,7 +380,7 @@ export default function SeoPages() {
                         <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                           <Search className="h-4 w-4 text-gray-400 dark:text-gray-500 dark:text-gray-400" />
                         </div>
-                        <input type="text" value={formData.keyword} onChange={e => setFormData({...formData, keyword: e.target.value})} className="pl-9 w-full bg-gray-50/50 dark:bg-[#1a1b23] border border-gray-200 dark:border-gray-700 text-sm h-10 rounded-lg text-gray-900 dark:text-white transition-all hover:bg-white dark:bg-[#14151a] dark:hover:bg-[#1a1b23] focus:outline-none focus:ring-[3px] focus:ring-[#5865f2]/20 focus:border-[#5865f2]/40" placeholder="thiết kế nội thất chung cư hà nội" />
+                        <input type="text" value={formData.keyword} onChange={e => setFormData({...formData, keyword: e.target.value})} className="pl-9 w-full bg-gray-50/50 dark:bg-[#1a1b23] border border-gray-200 dark:border-gray-700 text-sm h-10 rounded-[8px] text-gray-900 dark:text-white transition-all hover:bg-white dark:bg-[#14151a] dark:hover:bg-[#1a1b23] focus:outline-none focus:ring-[3px] focus:ring-[#5865f2]/20 focus:border-[#5865f2]/40" placeholder="thiết kế nội thất chung cư hà nội" />
                       </div>
                     </div>
                     <div className="space-y-1.5">
@@ -389,7 +389,7 @@ export default function SeoPages() {
                         <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                           <Search className="h-4 w-4 text-gray-400 dark:text-gray-500 dark:text-gray-400" />
                         </div>
-                        <input type="text" value={formData.lsiKeywords} onChange={e => setFormData({...formData, lsiKeywords: e.target.value})} className="pl-9 w-full bg-gray-50/50 dark:bg-[#1a1b23] border border-gray-200 dark:border-gray-700 text-sm h-10 rounded-lg text-gray-900 dark:text-white transition-all hover:bg-white dark:bg-[#14151a] dark:hover:bg-[#1a1b23] focus:outline-none focus:ring-[3px] focus:ring-[#5865f2]/20 focus:border-[#5865f2]/40" placeholder="nội thất cao cấp, nội thất phòng khách..." />
+                        <input type="text" value={formData.lsiKeywords} onChange={e => setFormData({...formData, lsiKeywords: e.target.value})} className="pl-9 w-full bg-gray-50/50 dark:bg-[#1a1b23] border border-gray-200 dark:border-gray-700 text-sm h-10 rounded-[8px] text-gray-900 dark:text-white transition-all hover:bg-white dark:bg-[#14151a] dark:hover:bg-[#1a1b23] focus:outline-none focus:ring-[3px] focus:ring-[#5865f2]/20 focus:border-[#5865f2]/40" placeholder="nội thất cao cấp, nội thất phòng khách..." />
                       </div>
                     </div>
                   </div>
@@ -404,12 +404,12 @@ export default function SeoPages() {
 
                 {/* Section: Nội dung Landing Page */}
                 <div className="space-y-5">
-                  <h3 className="text-xs font-medium text-gray-900 dark:text-white uppercase tracking-wider flex items-center gap-2">
+                  <h3 className="font-heading text-xs font-medium text-gray-900 dark:text-white uppercase tracking-wider flex items-center gap-2">
                     <span className="w-1.5 h-1.5 rounded-full bg-amber-50 dark:bg-amber-500/100"></span>
                     Nội dung Landing Page
                   </h3>
                   <div className="space-y-1.5">
-                    <div className="border border-gray-200 dark:border-gray-700 rounded-lg overflow-hidden bg-white dark:bg-[#14151a]">
+                    <div className="border border-gray-200 dark:border-gray-700 rounded-[8px] overflow-hidden bg-white dark:bg-[#14151a]">
                       <TiptapEditor value={formData.content} onChange={(content) => setFormData({...formData, content})} />
                     </div>
                   </div>
@@ -419,10 +419,10 @@ export default function SeoPages() {
             </div>
 
             <div className="h-20 flex items-center justify-end gap-3 px-6 border-t border-gray-100 dark:border-gray-800 bg-white dark:bg-[#14151a] shrink-0">
-              <button type="button" onClick={closeModal} className="flex items-center gap-2 border border-gray-200 dark:border-gray-700 bg-white dark:bg-[#1a1b23] hover:bg-gray-50 dark:hover:bg-[#262930] dark:bg-[#1a1b23] dark:hover:bg-[#262930] text-gray-700 dark:text-gray-200 rounded-lg text-sm h-10 px-5 cursor-pointer font-medium transition-colors">
+              <button type="button" onClick={closeModal} className="flex items-center gap-2 border border-gray-200 dark:border-gray-700 bg-white dark:bg-[#1a1b23] hover:bg-gray-50 dark:hover:bg-[#262930] dark:bg-[#1a1b23] dark:hover:bg-[#262930] text-gray-700 dark:text-gray-200 rounded-[8px] text-sm h-10 px-5 cursor-pointer font-medium transition-colors">
                 <X className="w-4 h-4" /> Hủy bỏ
               </button>
-              <button form="seo-form" type="submit" className="flex items-center gap-2 bg-[#5865f2] hover:bg-[#4752c4] text-white rounded-lg font-medium text-sm h-10 px-6 border-0 cursor-pointer transition-colors">
+              <button form="seo-form" type="submit" className="flex items-center gap-2 bg-[#5865f2] hover:bg-[#4752c4] text-white rounded-[8px] font-medium text-sm h-10 px-6 border-0 cursor-pointer transition-colors">
                 <Check className="w-4 h-4" /> {modalMode === 'add' ? 'Tạo Trang SEO' : 'Lưu thay đổi'}
               </button>
             </div>

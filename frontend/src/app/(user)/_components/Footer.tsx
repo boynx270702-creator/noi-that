@@ -45,13 +45,13 @@ export default function Footer() {
           
           {/* Column 1: Let's Connect */}
           <ScrollReveal animation="fade-up" delay={100}>
-            <h3 className="text-xl font-bold font-['Montserrat',_sans-serif] text-gray-900 dark:text-white mb-6 relative pb-4 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-12 after:h-[2px] after:bg-[#D3AE3E]">
+            <h3 className="font-heading text-xl font-bold text-gray-900 dark:text-white mb-6 relative pb-4 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-12 after:h-[2px] after:bg-[#D3AE3E]">
               Let's Connect
             </h3>
-            <p className="text-gray-600 dark:text-[#ccc] text-[15px] font-['Montserrat',_sans-serif] mb-6">
+            <p className="text-gray-600 dark:text-[#ccc] text-[15px] mb-6">
               Luctus nec ullamcorper mattis:
             </p>
-            <ul className="space-y-4 text-gray-500 dark:text-[#888] font-['Montserrat',_sans-serif] text-[14px]">
+            <ul className="space-y-4 text-gray-500 dark:text-[#888] text-[14px]">
               <li className="flex items-start gap-3">
                 <svg className="w-5 h-5 text-[#D3AE3E] mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
                 <span>2659 Autostrad St, London, UK</span>
@@ -73,7 +73,7 @@ export default function Footer() {
 
           {/* Column 2: Recent Posts */}
           <ScrollReveal animation="fade-up" delay={200}>
-            <h3 className="text-xl font-bold font-['Montserrat',_sans-serif] text-gray-900 dark:text-white mb-6 relative pb-4 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-12 after:h-[2px] after:bg-[#D3AE3E]">
+            <h3 className="font-heading text-xl font-bold text-gray-900 dark:text-white mb-6 relative pb-4 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-12 after:h-[2px] after:bg-[#D3AE3E]">
               Recent Posts
             </h3>
             <div className="space-y-6">
@@ -83,10 +83,10 @@ export default function Footer() {
                     <img src={post.img} alt="Post Thumbnail" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
                   </div>
                   <div>
-                    <h4 className="text-[14px] font-bold font-['Montserrat',_sans-serif] text-gray-900 dark:text-white leading-snug mb-2 group-hover:text-[#D3AE3E] transition-colors line-clamp-2">
+                    <h4 className="text-[14px] font-bold text-gray-900 dark:text-white leading-snug mb-2 group-hover:text-[#D3AE3E] transition-colors line-clamp-2">
                       <Link href={post.link}>{post.title}</Link>
                     </h4>
-                    <p className="text-gray-500 dark:text-[#888] font-['Montserrat',_sans-serif] text-[12px] uppercase tracking-wider">
+                    <p className="font-label text-gray-500 dark:text-[#888] text-[12px] uppercase tracking-wider">
                       {post.date}
                     </p>
                   </div>
@@ -97,13 +97,13 @@ export default function Footer() {
 
           {/* Column 3: Our Services */}
           <ScrollReveal animation="fade-up" delay={300}>
-            <h3 className="text-xl font-bold font-['Montserrat',_sans-serif] text-gray-900 dark:text-white mb-6 relative pb-4 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-12 after:h-[2px] after:bg-[#D3AE3E]">
+            <h3 className="font-heading text-xl font-bold text-gray-900 dark:text-white mb-6 relative pb-4 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-12 after:h-[2px] after:bg-[#D3AE3E]">
               Our Services
             </h3>
             <ul className="space-y-3">
               {SERVICES.map((srv, index) => (
                 <li key={index}>
-                  <Link href={srv.link} className="flex items-center gap-3 text-gray-500 dark:text-[#888] hover:text-[#D3AE3E] font-['Montserrat',_sans-serif] text-[14px] transition-colors group">
+                  <Link href={srv.link} className="flex items-center gap-3 text-gray-500 dark:text-[#888] hover:text-[#D3AE3E] text-[14px] transition-colors group">
                     <svg className="w-4 h-4 text-[#D3AE3E] opacity-70 group-hover:opacity-100" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
                     {srv.name}
                   </Link>
@@ -114,7 +114,7 @@ export default function Footer() {
 
           {/* Column 4: Our Gallery */}
           <ScrollReveal animation="fade-up" delay={400}>
-            <h3 className="text-xl font-bold font-['Montserrat',_sans-serif] text-gray-900 dark:text-white mb-6 relative pb-4 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-12 after:h-[2px] after:bg-[#D3AE3E]">
+            <h3 className="font-heading text-xl font-bold text-gray-900 dark:text-white mb-6 relative pb-4 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-12 after:h-[2px] after:bg-[#D3AE3E]">
               Our Gallery
             </h3>
             <div className="grid grid-cols-3 gap-2">
@@ -141,7 +141,7 @@ export default function Footer() {
                 className="w-full h-auto transition-transform hover:scale-105" 
               />
             </div>
-            <div className="text-[13px] font-['Montserrat',_sans-serif] text-gray-500 dark:text-[#888] hover:text-gray-900 dark:text-white transition-colors cursor-pointer text-center md:text-right">
+            <div className="text-[13px] text-gray-500 dark:text-[#888] hover:text-gray-900 dark:text-white transition-colors cursor-pointer text-center md:text-right">
               Terms of use | Privacy Environmental Policy
             </div>
           </div>

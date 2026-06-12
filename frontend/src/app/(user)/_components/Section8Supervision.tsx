@@ -75,15 +75,15 @@ const PACKAGES = [
 function DetailList({ title, items }: { title: string, items: string[] }) {
   return (
     <div className="mb-8">
-      <h4 className="text-white font-['Montserrat',_sans-serif] font-bold text-[16px] mb-4 flex items-center gap-2">
-        <div className="w-1.5 h-4 bg-[#D3AE3E]"></div>
+      <h4 className="text-[#1F1F1F] dark:text-white font-bold text-[16px] mb-4 flex items-center gap-2">
+        <div className="w-1.5 h-4 bg-[#C7A25C]"></div>
         {title}
       </h4>
       <ul className="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-3">
         {items.map((item, index) => (
           <li key={index} className="flex items-start gap-2">
-            <svg className="w-4 h-4 text-[#D3AE3E] shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
-            <span className="text-[#999] font-['Montserrat',_sans-serif] text-[14px] leading-relaxed">{item}</span>
+            <svg className="w-4 h-4 text-[#C7A25C] shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
+            <span className="text-gray-600 dark:text-[#999] text-[14px] leading-relaxed">{item}</span>
           </li>
         ))}
       </ul>
@@ -95,20 +95,20 @@ export default function Section8Supervision() {
   const [activeTab, setActiveTab] = useState(PACKAGES[0]);
 
   return (
-    <section id="Supervision" className="relative py-32 bg-[#131313] overflow-hidden border-t border-white/5">
+    <section id="Supervision" className="relative py-32 bg-[#F8F6F2] dark:bg-[#131313] overflow-hidden border-t border-[#ECE7DE] dark:border-white/5">
       <div className="max-w-[1200px] mx-auto px-6">
         
         {/* Section Header */}
         <ScrollReveal animation="fade-up" delay={100}>
           <div className="text-center mb-16">
-            <h6 className="text-[#D3AE3E] text-[13px] font-semibold tracking-[4px] uppercase mb-4 font-['Montserrat',_sans-serif]">
+            <h6 className="font-label text-[#C7A25C] text-[13px] font-semibold tracking-[4px] uppercase mb-4">
               Dịch Vụ Bổ Sung
             </h6>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 font-['Montserrat',_sans-serif] leading-tight max-w-4xl mx-auto">
-              Có thêm dịch vụ <span className="text-[#D3AE3E]">giám sát thi công</span> để kiểm soát chất lượng và tiến độ
+            <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold text-[#1F1F1F] dark:text-white mb-6 leading-tight max-w-4xl mx-auto">
+              Có thêm dịch vụ <span className="text-[#C7A25C]">giám sát thi công</span> để kiểm soát chất lượng và tiến độ
             </h2>
-            <div className="w-16 h-[2px] bg-[#D3AE3E] mx-auto mb-6" />
-            <p className="text-[#999] font-['Montserrat',_sans-serif] max-w-3xl mx-auto leading-relaxed text-[15px] md:text-[16px]">
+            <div className="w-16 h-[2px] bg-[#C7A25C] mx-auto mb-6" />
+            <p className="text-gray-600 dark:text-[#999] max-w-3xl mx-auto leading-relaxed text-[15px] md:text-[16px]">
               Thi công nội thất là giai đoạn dễ phát sinh sai lệch giữa thiết kế và thực tế. Nếu khách hàng không có chuyên môn hoặc không có thời gian theo sát công trình, dịch vụ giám sát thi công sẽ giúp kiểm tra các hạng mục quan trọng, hạn chế lỗi và hỗ trợ nghiệm thu rõ ràng hơn.
             </p>
           </div>
@@ -121,10 +121,10 @@ export default function Section8Supervision() {
               <button
                 key={pkg.id}
                 onClick={() => setActiveTab(pkg)}
-                className={`px-8 py-4 font-['Montserrat',_sans-serif] font-bold text-[14px] uppercase tracking-wider transition-all duration-300 border-b-2 md:border-b-0 md:border-l-2 ${
+                className={`px-8 py-4  font-bold text-[14px] uppercase tracking-wider transition-all duration-300 border-b-2 md:border-b-0 md:border-l-2 ${
                   activeTab.id === pkg.id 
-                    ? 'border-[#D3AE3E] bg-[#D3AE3E]/10 text-[#D3AE3E]' 
-                    : 'border-white/10 text-white/50 hover:text-white hover:bg-white/5'
+                    ? 'border-[#C7A25C] bg-[#C7A25C]/10 text-[#C7A25C]' 
+                    : 'border-[#ECE7DE] dark:border-white/10 text-[#1F1F1F]/50 dark:text-white/50 hover:text-[#1F1F1F] dark:text-white hover:bg-white/5'
                 }`}
               >
                 {pkg.title}
@@ -135,7 +135,7 @@ export default function Section8Supervision() {
 
         {/* Tab Content */}
         <ScrollReveal animation="fade-up" delay={300}>
-          <div className="bg-[#1a1a1a] border border-white/5 overflow-hidden">
+          <div className="card dark:bg-[#1a1a1a] border border-[#ECE7DE] dark:border-white/5 overflow-hidden">
             <div className="grid grid-cols-1 lg:grid-cols-3">
               
               {/* Image Column */}
@@ -144,15 +144,15 @@ export default function Section8Supervision() {
                   className="absolute inset-0 bg-cover bg-center transition-all duration-1000"
                   style={{ backgroundImage: `url(${activeTab.img})` }}
                 />
-                <div className="absolute inset-0 bg-gradient-to-r from-black/50 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-r from-[#FFFFFF]/50 dark:from-black/50 to-transparent" />
               </div>
 
               {/* Info Column */}
               <div className="lg:col-span-2 p-8 md:p-12">
-                <h3 className="text-2xl md:text-3xl font-bold font-['Montserrat',_sans-serif] text-[#D3AE3E] mb-4">
+                <h3 className="font-heading text-2xl md:text-3xl font-bold text-[#C7A25C] mb-4">
                   {activeTab.title}
                 </h3>
-                <p className="text-[#e2e2e2] font-['Montserrat',_sans-serif] text-[15px] leading-relaxed mb-8 border-b border-white/10 pb-8">
+                <p className="text-gray-600 dark:text-[#e2e2e2] text-[15px] leading-relaxed mb-8 border-b border-[#ECE7DE] dark:border-white/10 pb-8">
                   {activeTab.position}
                 </p>
 
@@ -160,10 +160,10 @@ export default function Section8Supervision() {
                 <DetailList title={activeTab.scopeTitle} items={activeTab.scope} />
                 <DetailList title="Giá trị mang lại" items={activeTab.value} />
 
-                <div className="mt-10 pt-8 border-t border-white/10">
+                <div className="mt-10 pt-8 border-t border-[#ECE7DE] dark:border-white/10">
                   <Link 
                     href="#Form" 
-                    className="inline-flex items-center justify-center px-8 py-4 border-2 border-[#D3AE3E] bg-transparent text-white uppercase tracking-wider text-[13px] font-bold font-['Montserrat',_sans-serif] hover:bg-[#D3AE3E] transition-colors"
+                    className="inline-flex items-center justify-center px-8 py-4 border-2 border-[#C7A25C] bg-transparent text-[#1F1F1F] dark:text-white uppercase tracking-wider text-[13px] font-bold hover:bg-[#C7A25C] transition-colors"
                   >
                     Đăng ký tư vấn gói này
                   </Link>

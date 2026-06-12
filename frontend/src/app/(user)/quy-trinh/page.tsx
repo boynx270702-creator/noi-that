@@ -46,7 +46,7 @@ export default function QuyTrinhPage() {
         
         {/* Header */}
         <div className="text-center mb-16">
-          <h1 className="text-4xl md:text-5xl font-['Montserrat',_sans-serif] font-bold text-gray-900 dark:text-white mb-6">Quy trình kết nối rõ ràng từ nhu cầu đến triển khai</h1>
+          <h1 className="font-heading text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">Quy trình kết nối rõ ràng từ nhu cầu đến triển khai</h1>
           <p className="text-gray-600 dark:text-white/70 text-lg max-w-2xl mx-auto">Chúng tôi đồng hành cùng bạn trong từng bước để tìm ra đơn vị thi công phù hợp nhất và đảm bảo dự án thành công.</p>
         </div>
 
@@ -63,9 +63,9 @@ export default function QuyTrinhPage() {
                   
                   {/* Content Box */}
                   <div className={`w-full md:w-1/2 pl-16 md:pl-0 ${isEven ? 'md:pl-12' : 'md:pr-12 text-left md:text-right'} pt-2 md:pt-0`}>
-                    <div className="bg-white dark:bg-[#1c1c1c] shadow-sm dark:shadow-none p-6 md:p-8 rounded-2xl border border-gray-200 dark:border-white/5 hover:border-[#ce9e51]/50 transition-colors shadow-lg relative group">
+                    <div className="bg-white dark:bg-[#1c1c1c] shadow-sm dark:shadow-none p-6 md:p-8 rounded-[8px] border border-gray-200 dark:border-white/5 hover:border-[#ce9e51]/50 transition-colors shadow-sm relative group">
                       <div className={`absolute top-1/2 -translate-y-1/2 ${isEven ? '-left-3' : '-right-3'} w-6 h-6 rotate-45 bg-white dark:bg-[#1c1c1c] shadow-sm dark:shadow-none border border-gray-200 dark:border-white/5 group-hover:border-[#ce9e51]/50 hidden md:block border-t-0 border-l-0 ${isEven ? 'border-b-0 border-r-0 border-l border-t' : ''}`}></div>
-                      <h3 className="text-xl md:text-2xl font-bold font-['Montserrat',_sans-serif] mb-3 text-[#ce9e51]">{step.title}</h3>
+                      <h3 className="font-heading text-xl md:text-2xl font-bold mb-3 text-[#ce9e51]">{step.title}</h3>
                       <p className="text-gray-600 dark:text-white/70 leading-relaxed text-sm md:text-base">{step.desc}</p>
                     </div>
                   </div>
@@ -85,7 +85,7 @@ export default function QuyTrinhPage() {
 
         {/* CTA */}
         <div className="mt-20 text-center">
-          <Link href="/tu-van" className="inline-block bg-[#ce9e51] hover:bg-white hover:text-[#131313] text-gray-900 dark:text-white font-bold py-4 px-10 rounded transition-colors uppercase tracking-wider">
+          <Link href="/tu-van" className="inline-block bg-[#ce9e51] hover:bg-white hover:text-[#131313] text-gray-900 dark:text-white font-bold py-4 px-10 rounded-[8px] transition-colors uppercase tracking-wider">
             Gửi nhu cầu công trình ngay
           </Link>
         </div>

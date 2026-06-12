@@ -1,8 +1,7 @@
 'use client';
 
-import React, { useState, useRef, useEffect } from 'react';
+import React from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
 import Section6Ecosystem from '../_components/Section6Ecosystem';
 import Section2Problem from '../_components/Section2Problem';
 import Section3Solution from '../_components/Section3Solution';
@@ -10,95 +9,9 @@ import Section4Benefits from '../_components/Section4Benefits';
 import Section5Comparison from '../_components/Section5Comparison';
 import Section9Process from '../_components/Section9Process';
 
-// mockUnits removed, fetching from API
-
-function CustomSelect({ label, options, value, onChange }: { label: string, options: {value: string, label: string}[], value: string, onChange: (val: string) => void }) {
-  const [isOpen, setIsOpen] = useState(false);
-  const dropdownRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
-        setIsOpen(false);
-      }
-    };
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => document.removeEventListener('mousedown', handleClickOutside);
-  }, []);
-
-  const selectedLabel = options.find(o => o.value === value)?.label || options[0].label;
-
-  return (
-    <div className="flex-1 min-w-[200px]" ref={dropdownRef}>
-      <label className="block text-sm text-gray-400 dark:text-white/50 mb-2 font-medium">{label}</label>
-      <div className="relative">
-        <div 
-          className={`bg-[#FAF9F8] dark:bg-[#131313] border ${isOpen ? 'border-[#ce9e51]' : 'border-gray-300 dark:border-white/20'} text-gray-900 dark:text-white p-3 rounded cursor-pointer flex justify-between items-center transition-colors hover:border-white/40`}
-          onClick={() => setIsOpen(!isOpen)}
-        >
-          <span className="text-sm">{selectedLabel}</span>
-          <svg className={`w-4 h-4 transition-transform ${isOpen ? 'rotate-180 text-[#ce9e51]' : 'text-gray-400 dark:text-white/50'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path></svg>
-        </div>
-        
-        {isOpen && (
-          <div className="absolute z-50 w-full mt-2 bg-white dark:bg-[#1c1c1c] shadow-sm dark:shadow-none border border-gray-200 dark:border-white/10 rounded shadow-2xl py-2 animate-fadeInDown">
-            {options.map((opt) => (
-              <div 
-                key={opt.value}
-                className={`px-4 py-2 text-sm cursor-pointer transition-colors ${value === opt.value ? 'bg-[#ce9e51]/20 text-[#ce9e51]' : 'text-gray-700 dark:text-white/80 hover:bg-gray-100 dark:bg-white/5 hover:text-gray-900 dark:text-white'}`}
-                onClick={() => {
-                  onChange(opt.value);
-                  setIsOpen(false);
-                }}
-              >
-                {opt.label}
-              </div>
-            ))}
-          </div>
-        )}
-      </div>
-    </div>
-  );
-}
-
 export default function HeSinhThaiPage() {
-  const [segment, setSegment] = useState('');
-  const [type, setType] = useState('');
-  const [style, setStyle] = useState('');
-
-  const [units, setUnits] = useState<any[]>([]);
-  const [isLoading, setIsLoading] = useState(true);
-
-  useEffect(() => {
-    const fetchUnits = async () => {
-      try {
-        const res = await fetch('/api/units');
-        const data = await res.json();
-        if (Array.isArray(data)) {
-          // Map API data to the fields required by the UI
-          const mappedUnits = data.map((u: any, idx: number) => ({
-            id: u.id,
-            name: u.name,
-            category: u.segment,
-            strengths: u.strengths?.join(', ') || 'Đa dạng',
-            style: u.styles?.join(', ') || 'Hiện đại',
-            location: u.locations?.join(', ') || 'Toàn quốc',
-            description: u.description || 'Đơn vị thiết kế thi công nội thất chuyên nghiệp.',
-            image: u.avatar || `/images/common/bg-hero-${(idx % 2) + 1}.jpg`
-          }));
-          setUnits(mappedUnits);
-        }
-      } catch (error) {
-        console.error('Failed to fetch units:', error);
-      } finally {
-        setIsLoading(false);
-      }
-    };
-    fetchUnits();
-  }, []);
-
   return (
-    <div className="bg-[#FAF9F8] dark:bg-[#131313] min-h-screen">
+    <div className="bg-[#F8F6F2] dark:bg-[#131313] min-h-screen">
       {/* Các nội dung giới thiệu hệ sinh thái */}
       <div id="gioi-thieu"><Section6Ecosystem /></div>
       <Section2Problem />
@@ -107,119 +20,26 @@ export default function HeSinhThaiPage() {
       <div id="so-sanh"><Section5Comparison /></div>
       <Section9Process />
 
-      {/* Danh sách Đơn vị thiết kế */}
-      <div id="don-vi-thiet-ke" className="pt-20 pb-20">
-        <div className="container mx-auto px-6 max-w-[1200px]">
-          {/* Header */}
-          <div className="text-center mb-16">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#D3AE3E]/10 border border-[#D3AE3E]/20 text-[#D3AE3E] text-xs font-bold uppercase tracking-wider mb-4">
-              Đơn vị thiết kế
-            </div>
-            <h2 className="text-4xl md:text-5xl font-['Montserrat',_sans-serif] font-bold text-gray-900 dark:text-white mb-6">Hệ sinh thái 30 đơn vị thiết kế – thi công</h2>
-            <p className="text-gray-600 dark:text-white/70 max-w-3xl mx-auto text-lg">Các đơn vị được phân loại theo phân khúc, loại công trình, khu vực hoạt động, phong cách thiết kế và năng lực thi công. Khách hàng có thể tham khảo hồ sơ từng đơn vị hoặc gửi nhu cầu để được tư vấn đơn vị phù hợp nhất.</p>
-          </div>
-
-          {/* Filters Scaffold */}
-          <div id="phan-khuc" className="bg-white dark:bg-[#1c1c1c] shadow-sm dark:shadow-none p-6 rounded-lg mb-12 border border-gray-200 dark:border-white/10 flex flex-wrap gap-4 items-end">
-          <CustomSelect 
-            label="Phân khúc" 
-            value={segment} 
-            onChange={setSegment} 
-            options={[
-              { value: '', label: 'Tất cả phân khúc' },
-              { value: 'co-ban', label: 'Cơ bản' },
-              { value: 'trung-cap', label: 'Trung cấp' },
-              { value: 'cao-cap', label: 'Cao cấp' },
-            ]} 
-          />
-          <CustomSelect 
-            label="Loại công trình" 
-            value={type} 
-            onChange={setType} 
-            options={[
-              { value: '', label: 'Tất cả loại hình' },
-              { value: 'chung-cu', label: 'Chung cư' },
-              { value: 'nha-pho', label: 'Nhà phố' },
-              { value: 'villa', label: 'Villa / Biệt thự' },
-              { value: 'van-phong', label: 'Văn phòng / Showroom' },
-            ]} 
-          />
-          <CustomSelect 
-            label="Phong cách" 
-            value={style} 
-            onChange={setStyle} 
-            options={[
-              { value: '', label: 'Tất cả phong cách' },
-              { value: 'hien-dai', label: 'Hiện đại' },
-              { value: 'toi-gian', label: 'Tối giản' },
-              { value: 'luxury', label: 'Luxury' },
-              { value: 'indochine', label: 'Indochine' },
-            ]} 
-          />
-          <div className="flex-1 min-w-[200px]">
-            <button className="w-full bg-[#ce9e51] hover:bg-white hover:text-[#131313] text-gray-900 dark:text-white font-bold py-3 px-6 rounded transition-colors uppercase tracking-wider text-sm h-[46px] mt-2">
-              Lọc kết quả
-            </button>
-          </div>
+      {/* CTA Chuyển sang trang Đơn vị thiết kế */}
+      <section className="relative py-32 bg-[#F8F6F2] dark:bg-[#131313] overflow-hidden border-t border-[#ECE7DE] dark:border-white/5">
+        <div className="relative z-10 max-w-[1000px] mx-auto px-6 text-center">
+          <h2 className="font-heading text-3xl md:text-5xl font-bold text-[#1F1F1F] dark:text-white mb-6">
+            Khám phá Hệ sinh thái <span className="text-[#C7A25C]">30+ Đơn vị</span>
+          </h2>
+          <p className="text-gray-600 dark:text-[#999] text-lg mb-10 max-w-2xl mx-auto">
+            Xem hồ sơ chi tiết, so sánh năng lực và tìm kiếm đơn vị thiết kế thi công nội thất phù hợp nhất với nhu cầu của bạn.
+          </p>
+          <Link 
+            href="/don-vi-thiet-ke"
+            className="inline-flex items-center gap-2 bg-[#C7A25C] text-white px-8 py-4 font-bold uppercase tracking-wider hover:bg-[#1F1F1F] dark:hover:bg-white dark:hover:text-[#131313] transition-colors rounded-[8px]"
+          >
+            Xem danh sách đơn vị thiết kế
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+            </svg>
+          </Link>
         </div>
-
-        {/* Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {isLoading ? (
-            <div className="col-span-3 text-center text-gray-400 dark:text-white/50 py-10">Đang tải danh sách đơn vị...</div>
-          ) : units.length === 0 ? (
-            <div className="col-span-1 md:col-span-2 lg:col-span-3 bg-white dark:bg-[#1c1c1c] shadow-sm dark:shadow-none border border-gray-200 dark:border-white/5 rounded-2xl p-16 text-center flex flex-col items-center justify-center min-h-[400px]">
-              <div className="w-24 h-24 bg-[#ce9e51]/10 text-[#ce9e51] rounded-full flex items-center justify-center text-4xl mb-6 shadow-[0_0_30px_rgba(206,158,81,0.15)]">
-                <i className="fa fa-building"></i>
-              </div>
-              <h3 className="text-2xl font-['Montserrat',_sans-serif] font-bold text-gray-900 dark:text-white mb-4">Chưa có đối tác nào</h3>
-              <p className="text-gray-500 dark:text-white/60 max-w-md mx-auto text-lg">Hệ thống hiện đang cập nhật danh sách các đơn vị thiết kế và thi công nội thất chuyên nghiệp. Vui lòng quay lại sau!</p>
-            </div>
-          ) : units.map((unit) => (
-            <div key={unit.id} className="bg-white dark:bg-[#1c1c1c] shadow-sm dark:shadow-none rounded-xl overflow-hidden group border border-gray-200 dark:border-white/5 hover:border-[#ce9e51]/50 transition-colors">
-              <div className="h-[240px] relative overflow-hidden">
-                {/* Fallback to simple div if image is missing in actual environment, using Image component for better performance but standard img here for safe mock */}
-                <div 
-                  className="absolute inset-0 bg-cover bg-center group-hover:scale-110 transition-transform duration-500"
-                  style={{ backgroundImage: `url(${unit.image})` }}
-                ></div>
-                <div className="absolute top-4 left-4 bg-[#ce9e51] text-gray-900 dark:text-white text-xs font-bold px-3 py-1 rounded uppercase tracking-wider">
-                  {unit.category}
-                </div>
-              </div>
-              <div className="p-6">
-                <h3 className="text-2xl font-['Montserrat',_sans-serif] font-bold text-gray-900 dark:text-white mb-2">{unit.name}</h3>
-                <p className="text-sm text-gray-500 dark:text-white/60 mb-4 line-clamp-2">{unit.description}</p>
-                
-                <div className="space-y-2 mb-6 text-sm text-gray-700 dark:text-white/80">
-                  <div className="flex items-start">
-                    <i className="fa fa-building mt-1 w-5 text-[#ce9e51]"></i>
-                    <span><strong>Thế mạnh:</strong> {unit.strengths}</span>
-                  </div>
-                  <div className="flex items-start">
-                    <i className="fa fa-paint-brush mt-1 w-5 text-[#ce9e51]"></i>
-                    <span><strong>Phong cách:</strong> {unit.style}</span>
-                  </div>
-                  <div className="flex items-start">
-                    <i className="fa fa-map-marker-alt mt-1 w-5 text-[#ce9e51]"></i>
-                    <span><strong>Khu vực:</strong> {unit.location}</span>
-                  </div>
-                </div>
-
-                <div className="flex flex-col gap-3">
-                  <Link href={`/he-sinh-thai/${unit.id}`} className="text-center block w-full bg-transparent border border-gray-300 dark:border-white/30 hover:border-white text-gray-900 dark:text-white font-bold py-3 px-4 rounded transition-colors uppercase tracking-wider text-xs">
-                    Xem hồ sơ chi tiết
-                  </Link>
-                  <Link href={`/tu-van?unit=${unit.id}`} className="text-center block w-full bg-gray-100 dark:bg-white/10 hover:bg-[#ce9e51] text-gray-900 dark:text-white font-bold py-3 px-4 rounded transition-colors uppercase tracking-wider text-xs">
-                    Nhận tư vấn đơn vị này
-                  </Link>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-      </div>
+      </section>
     </div>
   );
 }

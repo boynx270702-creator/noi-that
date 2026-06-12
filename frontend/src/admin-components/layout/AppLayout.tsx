@@ -78,7 +78,7 @@ export default function AppLayout({ children }: { children?: React.ReactNode }) 
         {/* Header / Logo */}
         <div className="h-[72px] flex items-center justify-between px-5 border-b border-gray-100 dark:border-gray-800">
           <div className="flex items-center gap-3">
-            <div className="w-9 h-9 rounded-xl bg-[#5865f2] text-white flex items-center justify-center">
+            <div className="w-9 h-9 rounded-[8px] bg-[#5865f2] text-white flex items-center justify-center">
               <Command strokeWidth={2} className="w-5 h-5" />
             </div>
             <div className="flex flex-col">
@@ -106,7 +106,7 @@ export default function AppLayout({ children }: { children?: React.ReactNode }) 
               <Link
                 key={item.name}
                 href={item.href}
-                className={`flex items-center gap-3 px-3 py-2.5 rounded-lg text-[14px] transition-all duration-150 ${isActive
+                className={`flex items-center gap-3 px-3 py-2.5 rounded-[8px] text-[14px] transition-all duration-150 ${isActive
                     ? 'bg-[#5865f2]/10 dark:bg-[#5865f2]/10 text-[#5865f2] dark:text-[#5865f2] font-medium'
                     : 'text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-[#2a2d36] hover:text-gray-900 dark:hover:text-white font-medium'
                   }`}
@@ -128,7 +128,7 @@ export default function AppLayout({ children }: { children?: React.ReactNode }) 
               <Link
                 key={item.name}
                 href={item.href}
-                className={`flex items-center gap-3 px-3 py-2.5 rounded-lg text-[14px] transition-all duration-150 ${isActive
+                className={`flex items-center gap-3 px-3 py-2.5 rounded-[8px] text-[14px] transition-all duration-150 ${isActive
                     ? 'bg-[#5865f2]/10 dark:bg-[#5865f2]/10 text-[#5865f2] dark:text-[#5865f2] font-medium'
                     : 'text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-[#2a2d36] hover:text-gray-900 dark:hover:text-white font-medium'
                   }`}
@@ -156,7 +156,7 @@ export default function AppLayout({ children }: { children?: React.ReactNode }) 
             </div>
             <button
               onClick={() => logout()}
-              className="w-8 h-8 flex items-center justify-center text-gray-400 hover:text-red-500 dark:hover:text-red-400 hover:bg-red-50 dark:hover:bg-red-900/20 rounded-lg transition-colors cursor-pointer"
+              className="w-8 h-8 flex items-center justify-center text-gray-400 hover:text-red-500 dark:hover:text-red-400 hover:bg-red-50 dark:hover:bg-red-900/20 rounded-[8px] transition-colors cursor-pointer"
               title="Đăng xuất"
             >
               <LogOut className="w-4 h-4" />
@@ -169,7 +169,7 @@ export default function AppLayout({ children }: { children?: React.ReactNode }) 
       <main className="flex-1 flex flex-col min-w-0 overflow-hidden bg-[#fbfbfa] dark:bg-[#0b0c10]">
         {/* Header */}
         <header className="h-[72px] flex items-center justify-between px-8 border-b border-gray-200 dark:border-gray-800 bg-white dark:bg-[#14151a] transition-colors duration-300">
-          <h1 className="text-[20px] font-medium text-gray-900 dark:text-white tracking-tight flex items-center gap-2">
+          <h1 className="font-heading text-[20px] font-medium text-gray-900 dark:text-white tracking-tight flex items-center gap-2">
             {currentPage && <currentPage.icon strokeWidth={2} className="w-5 h-5 text-[#5865f2]" />}
             {currentPage?.name || 'Tổng quan'}
           </h1>
@@ -180,11 +180,11 @@ export default function AppLayout({ children }: { children?: React.ReactNode }) 
               <input
                 type="text"
                 placeholder="Tìm kiếm nhanh..."
-                className="pl-9 pr-4 py-2 w-[220px] rounded-lg border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-[#1a1b23] text-sm focus:outline-none focus:ring-[3px] focus:ring-[#5865f2]/20 focus:border-[#5865f2]/40 transition-all text-gray-900 dark:text-white placeholder:text-gray-400"
+                className="pl-9 pr-4 py-2 w-[220px] rounded-[8px] border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-[#1a1b23] text-sm focus:outline-none focus:ring-[3px] focus:ring-[#5865f2]/20 focus:border-[#5865f2]/40 transition-all text-gray-900 dark:text-white placeholder:text-gray-400"
               />
             </div>
 
-            <button className="w-9 h-9 rounded-lg border border-gray-200 dark:border-gray-700 flex items-center justify-center text-gray-500 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors relative cursor-pointer">
+            <button className="w-9 h-9 rounded-[8px] border border-gray-200 dark:border-gray-700 flex items-center justify-center text-gray-500 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors relative cursor-pointer">
               <Bell className="w-[18px] h-[18px]" />
               <span className="absolute top-1.5 right-1.5 w-2 h-2 bg-red-500 rounded-full"></span>
             </button>

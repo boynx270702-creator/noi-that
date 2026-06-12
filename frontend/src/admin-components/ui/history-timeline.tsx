@@ -83,8 +83,8 @@ export function HistoryTimeline({ data }: { data: any[] }) {
                   <span className="text-xs font-medium text-gray-500 uppercase tracking-wider">
                     {FIELD_LABELS[diff.key] || diff.key}
                   </span>
-                  <div className="flex items-center gap-3 bg-gray-50 dark:bg-[#1a1b23]/50 p-2.5 rounded-xl border border-gray-100 dark:border-gray-800/80">
-                    <div className="flex-1 bg-white dark:bg-[#14151a] px-3 py-1.5 rounded-lg border border-gray-100 dark:border-gray-800 shadow-sm text-sm text-gray-500 line-through truncate" title={formatValue(diff.key, diff.oldVal)}>
+                  <div className="flex items-center gap-3 bg-gray-50 dark:bg-[#1a1b23]/50 p-2.5 rounded-[8px] border border-gray-100 dark:border-gray-800/80">
+                    <div className="flex-1 bg-white dark:bg-[#14151a] px-3 py-1.5 rounded-[8px] border border-gray-100 dark:border-gray-800 shadow-sm text-sm text-gray-500 line-through truncate" title={formatValue(diff.key, diff.oldVal)}>
                       {formatValue(diff.key, diff.oldVal)}
                     </div>
                     
@@ -92,7 +92,7 @@ export function HistoryTimeline({ data }: { data: any[] }) {
                       <ArrowRight className="w-3.5 h-3.5 text-emerald-500" />
                     </div>
                     
-                    <div className="flex-1 bg-emerald-50 dark:bg-emerald-900/10 px-3 py-1.5 rounded-lg border border-emerald-100 dark:border-emerald-900/30 text-sm font-medium text-emerald-700 dark:text-emerald-400 truncate" title={formatValue(diff.key, diff.newVal)}>
+                    <div className="flex-1 bg-emerald-50 dark:bg-emerald-900/10 px-3 py-1.5 rounded-[8px] border border-emerald-100 dark:border-emerald-900/30 text-sm font-medium text-emerald-700 dark:text-emerald-400 truncate" title={formatValue(diff.key, diff.newVal)}>
                       {formatValue(diff.key, diff.newVal)}
                     </div>
                   </div>

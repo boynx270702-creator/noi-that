@@ -30,10 +30,10 @@ export default function WorkProcess() {
         {/* Section Header */}
         <ScrollReveal animation="fade-up" delay={100}>
           <div className="text-center mb-20">
-            <h2 className="text-4xl md:text-[40px] font-bold font-['Montserrat',_sans-serif] text-white mb-6">
+            <h2 className="font-heading text-4xl md:text-[40px] font-bold text-white mb-6">
               Smart planing of <span className="text-[#D3AE3E]">Work process</span>
             </h2>
-            <p className="text-[#999] text-[14px] md:text-[15px] max-w-3xl mx-auto font-['Montserrat',_sans-serif] leading-relaxed">
+            <p className="text-[#999] text-[14px] md:text-[15px] max-w-3xl mx-auto leading-relaxed">
               This including consulting multi disciplinary consulting work with design and engineering, 
               our world branches giving full support for executing professional work.
             </p>
@@ -60,7 +60,7 @@ export default function WorkProcess() {
                     {/* Hollow Stroke Number */}
                     <div className="absolute inset-0 flex items-center justify-center">
                       <span 
-                        className="text-6xl md:text-[80px] font-bold font-['Montserrat',_sans-serif] text-hollow tracking-tighter"
+                        className="text-6xl md:text-[80px] font-bold text-hollow tracking-tighter"
                       >
                         {step.num}
                       </span>
@@ -74,11 +74,11 @@ export default function WorkProcess() {
                     Note: The title is in the HTML but visually hidden or merged in the screenshot.
                     I will include it as requested by the DOM structure but style it to fit the dark theme. 
                   */}
-                  <h3 className="text-[18px] font-bold font-['Montserrat',_sans-serif] text-white mb-3 hidden">
+                  <h3 className="font-heading text-[18px] font-bold text-white mb-3 hidden">
                     {step.title}
                   </h3>
                   <p 
-                    className="text-[#888] font-['Montserrat',_sans-serif] leading-[1.8] text-[13px] md:text-[14px]"
+                    className="text-[#888] leading-[1.8] text-[13px] md:text-[14px]"
                     dangerouslySetInnerHTML={{ __html: step.desc }}
                   />
                 </div>

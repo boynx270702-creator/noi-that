@@ -29,14 +29,14 @@ const POLICIES = [
 
 export default function SectionPolicies() {
   return (
-    <section className="py-24 bg-[#FAF9F8] dark:bg-[#0a0a0a] relative border-t border-gray-200 dark:border-white/20">
+    <section className="py-24 bg-[#F8F6F2] dark:bg-[#0a0a0a] relative border-t border-[#ECE7DE] dark:border-white/20">
       <div className="max-w-[1200px] mx-auto px-6">
         <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#D3AE3E]/10 border border-[#D3AE3E]/20 text-[#D3AE3E] text-xs font-bold uppercase tracking-wider mb-4">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#C7A25C]/10 border border-[#C7A25C]/20 text-[#C7A25C] text-xs font-bold uppercase tracking-wider mb-4">
             Cam kết chất lượng
           </div>
-          <h2 className="text-3xl md:text-5xl font-['Montserrat',_sans-serif] font-bold text-gray-900 dark:text-white mb-6">
-            Lý Do <span className="text-[#D3AE3E]">Khách Hàng</span> Lựa Chọn
+          <h2 className="font-heading text-3xl md:text-5xl font-bold text-[#1F1F1F] dark:text-white mb-6">
+            Lý Do <span className="text-[#C7A25C]">Khách Hàng</span> Lựa Chọn
           </h2>
           <p className="text-gray-500 dark:text-[#888] max-w-2xl mx-auto text-lg">
             Chúng tôi không chỉ cung cấp sản phẩm nội thất, chúng tôi trao gửi sự an tâm và cam kết gắn bó dài lâu.
@@ -45,13 +45,13 @@ export default function SectionPolicies() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {POLICIES.map((policy) => (
-            <div key={policy.id} className="bg-white dark:bg-[#1a1a1a] shadow-sm dark:shadow-none border border-gray-100 dark:border-white/10 border border-gray-200 dark:border-white/20 p-8 rounded-2xl hover:border-[#D3AE3E]/50 hover:-translate-y-2 transition-all duration-300 group">
-              <div className="w-16 h-16 bg-[#D3AE3E]/10 rounded-2xl flex items-center justify-center mb-6 text-[#D3AE3E] group-hover:bg-[#D3AE3E] group-hover:text-black transition-colors rotate-3 group-hover:-rotate-3 duration-300">
+            <div key={policy.id} className="card dark:bg-[#1a1a1a] border border-[#ECE7DE] dark:border-white/20 p-8 hover:border-[#C7A25C]/50 hover:-translate-y-2 transition-all duration-300 group">
+              <div className="w-16 h-16 bg-[#C7A25C]/10 rounded-[8px] flex items-center justify-center mb-6 text-[#C7A25C] group-hover:bg-[#C7A25C] group-hover:text-white transition-colors rotate-3 group-hover:-rotate-3 duration-300">
                 <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d={policy.icon} />
                 </svg>
               </div>
-              <h3 className="text-xl font-['Montserrat',_sans-serif] font-bold text-gray-900 dark:text-white mb-4 group-hover:text-[#D3AE3E] transition-colors">{policy.title}</h3>
+              <h3 className="font-heading text-xl font-bold text-[#1F1F1F] dark:text-white mb-4 group-hover:text-[#C7A25C] transition-colors">{policy.title}</h3>
               <p className="text-gray-500 dark:text-[#888] leading-relaxed text-sm">
                 {policy.desc}
               </p>

@@ -186,7 +186,7 @@ export default function ArticlesPage() {
       
       {/* Top Header & Filters */}
       <div className="flex flex-col gap-3 flex-shrink-0">
-        <div className="flex flex-col md:flex-row md:items-center justify-between gap-3 bg-white dark:bg-[#14151a] p-3 rounded-lg border border-gray-200 dark:border-gray-800">
+        <div className="flex flex-col md:flex-row md:items-center justify-between gap-3 bg-white dark:bg-[#14151a] p-3 rounded-[8px] border border-gray-200 dark:border-gray-800">
           <div className="flex flex-1 items-center gap-2 max-w-xl">
             <div className="relative flex-1">
               <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
@@ -195,13 +195,13 @@ export default function ArticlesPage() {
                 value={searchQuery}
                 onChange={(e) => { setSearchQuery(e.target.value); setPage(0); }}
                 placeholder="Tìm Tên bài viết..." 
-                className="pl-9 pr-4 py-2 bg-gray-50/50 dark:bg-[#1a1b23] border border-gray-200 dark:border-gray-800 rounded-lg text-sm focus:outline-none focus:ring-[3px] focus:ring-[#5865f2]/20 w-full text-gray-900 dark:text-white transition-all"
+                className="pl-9 pr-4 py-2 bg-gray-50/50 dark:bg-[#1a1b23] border border-gray-200 dark:border-gray-800 rounded-[8px] text-sm focus:outline-none focus:ring-[3px] focus:ring-[#5865f2]/20 w-full text-gray-900 dark:text-white transition-all"
               />
             </div>
             
             <button 
               onClick={() => setIsFiltersExpanded(!isFiltersExpanded)}
-              className={`flex items-center gap-2 px-3 h-[38px] rounded-lg text-sm font-medium transition-all border cursor-pointer ${
+              className={`flex items-center gap-2 px-3 h-[38px] rounded-[8px] text-sm font-medium transition-all border cursor-pointer ${
                 isFiltersExpanded 
                   ? 'bg-[#5865f2]/10 text-[#5865f2] border-[#5865f2]/50 font-medium' 
                   : 'bg-white dark:bg-[#14151a] border-gray-200 dark:border-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-[#262930] dark:bg-[#1a1b23]'
@@ -226,7 +226,7 @@ export default function ArticlesPage() {
                 setActiveTab('basic');
                 setIsDrawerOpen(true); 
               }}
-              className="flex items-center gap-2 px-4 py-2 bg-[#5865f2] hover:bg-[#4752c4] text-white rounded-lg text-sm font-medium transition-colors border-0 cursor-pointer"
+              className="flex items-center gap-2 px-4 py-2 bg-[#5865f2] hover:bg-[#4752c4] text-white rounded-[8px] text-sm font-medium transition-colors border-0 cursor-pointer"
             >
               <Plus className="w-4 h-4" /> Viết bài mới
             </button>
@@ -234,23 +234,23 @@ export default function ArticlesPage() {
         </div>
 
         {isFiltersExpanded && (
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 p-4 bg-gray-50/50 dark:bg-[#1a1b23] border border-gray-200 dark:border-gray-800 rounded-lg animate-in slide-in-from-top-2 duration-200">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 p-4 bg-gray-50/50 dark:bg-[#1a1b23] border border-gray-200 dark:border-gray-800 rounded-[8px] animate-in slide-in-from-top-2 duration-200">
             <div className="flex flex-col gap-1.5 relative">
               <span className="text-xs font-medium text-gray-500 dark:text-gray-400">Chuyên mục</span>
-              <button onClick={() => setOpenCategoryPopover(!openCategoryPopover)} className="flex items-center justify-between w-full h-9 px-3 bg-white dark:bg-[#14151a] border border-gray-200 dark:border-gray-800 rounded-lg text-sm text-gray-900 dark:text-white hover:bg-gray-50 dark:hover:bg-[#262930] dark:bg-[#1a1b23]">
+              <button onClick={() => setOpenCategoryPopover(!openCategoryPopover)} className="flex items-center justify-between w-full h-9 px-3 bg-white dark:bg-[#14151a] border border-gray-200 dark:border-gray-800 rounded-[8px] text-sm text-gray-900 dark:text-white hover:bg-gray-50 dark:hover:bg-[#262930] dark:bg-[#1a1b23]">
                 <span className="truncate">{categoryFilter.length === 0 ? "Tất cả chuyên mục" : categoryFilter.join(', ')}</span>
                 <ChevronDown className="w-4 h-4 text-gray-500 dark:text-gray-400 shrink-0 ml-2" />
               </button>
               {openCategoryPopover && (
-                <div className="absolute top-16 left-0 z-50 w-full p-2 bg-white dark:bg-[#14151a] border border-gray-200 dark:border-gray-800 rounded-md shadow-lg">
+                <div className="absolute top-16 left-0 z-50 w-full p-2 bg-white dark:bg-[#14151a] border border-gray-200 dark:border-gray-800 rounded-[8px] shadow-sm">
                   <div className="flex flex-col gap-1">
                     {CATEGORIES.map((val) => (
-                      <label key={val} className="flex items-center gap-2.5 p-2 rounded-md hover:bg-gray-100 dark:bg-gray-800 dark:hover:bg-gray-800 cursor-pointer text-sm">
+                      <label key={val} className="flex items-center gap-2.5 p-2 rounded-[8px] hover:bg-gray-100 dark:bg-gray-800 dark:hover:bg-gray-800 cursor-pointer text-sm">
                         <input type="checkbox" checked={categoryFilter.includes(val)} onChange={(e) => {
                           if (e.target.checked) setCategoryFilter([...categoryFilter, val]);
                           else setCategoryFilter(categoryFilter.filter(s => s !== val));
                           setPage(0);
-                        }} className="w-4 h-4 text-[#5865f2] rounded border-gray-300" />
+                        }} className="w-4 h-4 text-[#5865f2] rounded-[8px] border-gray-300" />
                         <span>{val}</span>
                       </label>
                     ))}
@@ -265,23 +265,23 @@ export default function ArticlesPage() {
         <div className="flex flex-wrap items-center gap-2 mt-1">
           {hasActiveFilter && <span className="text-sm text-gray-500 dark:text-gray-400 font-medium mr-1">Đang lọc:</span>}
           {categoryFilter.length > 0 && (
-            <div className="flex items-center gap-1.5 pl-2.5 pr-1 py-1 bg-[#5865f2]/10 text-[#5865f2] border border-[#5865f2]/20 rounded-md text-sm font-medium">
+            <div className="flex items-center gap-1.5 pl-2.5 pr-1 py-1 bg-[#5865f2]/10 text-[#5865f2] border border-[#5865f2]/20 rounded-[8px] text-sm font-medium">
               Chuyên mục: {categoryFilter.join(', ')}
-              <button onClick={() => setCategoryFilter([])} className="p-0.5 hover:bg-[#5865f2]/20 rounded transition-colors ml-1"><X className="w-3.5 h-3.5" /></button>
+              <button onClick={() => setCategoryFilter([])} className="p-0.5 hover:bg-[#5865f2]/20 rounded-[8px] transition-colors ml-1"><X className="w-3.5 h-3.5" /></button>
             </div>
           )}
           {hasActiveFilter && (
-            <button onClick={() => { setCategoryFilter([]); setPage(0); }} className="flex items-center gap-1.5 px-2.5 py-1 rounded-md border border-red-500 text-xs font-medium text-red-500 hover:bg-red-50 dark:hover:bg-red-500/10 transition-colors ml-2"><RotateCcw strokeWidth={2} className="w-3.5 h-3.5" /> Đặt lại</button>
+            <button onClick={() => { setCategoryFilter([]); setPage(0); }} className="flex items-center gap-1.5 px-2.5 py-1 rounded-[8px] border border-red-500 text-xs font-medium text-red-500 hover:bg-red-50 dark:hover:bg-red-500/10 transition-colors ml-2"><RotateCcw strokeWidth={2} className="w-3.5 h-3.5" /> Đặt lại</button>
           )}
         </div>
       </div>
 
       {/* Summary Card */}
-      <div className="rounded-lg border border-gray-200 dark:border-gray-800 bg-white dark:bg-[#14151a] flex-shrink-0 transition-all duration-300">
+      <div className="rounded-[8px] border border-gray-200 dark:border-gray-800 bg-white dark:bg-[#14151a] flex-shrink-0 transition-all duration-300">
         <div className={`p-4 ${isSummaryCollapsed ? 'pb-4' : 'sm:p-5 sm:pb-5'}`}>
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-3">
-              <h3 className="font-medium text-gray-900 dark:text-white text-sm">Tổng Quan Cẩm Nang</h3>
+              <h3 className="font-heading font-medium text-gray-900 dark:text-white text-sm">Tổng Quan Cẩm Nang</h3>
               {!isSummaryCollapsed && <span className="text-xs text-gray-500 dark:text-gray-400">{summary.totalItems} bài viết</span>}
             </div>
             
@@ -294,7 +294,7 @@ export default function ArticlesPage() {
               </div>
             )}
 
-            <button onClick={() => setIsSummaryCollapsed(!isSummaryCollapsed)} className="flex items-center gap-1.5 px-3 py-1.5 bg-gray-50 dark:bg-[#1a1b23] border border-gray-200 dark:border-gray-800 rounded-md text-xs font-medium cursor-pointer">
+            <button onClick={() => setIsSummaryCollapsed(!isSummaryCollapsed)} className="flex items-center gap-1.5 px-3 py-1.5 bg-gray-50 dark:bg-[#1a1b23] border border-gray-200 dark:border-gray-800 rounded-[8px] text-xs font-medium cursor-pointer">
               {isSummaryCollapsed ? 'Mở rộng' : 'Thu gọn'}
               {isSummaryCollapsed ? <ChevronDown className="w-3.5 h-3.5" /> : <ChevronUp className="w-3.5 h-3.5" />}
             </button>
@@ -302,27 +302,27 @@ export default function ArticlesPage() {
 
           {!isSummaryCollapsed && (
             <div className="mt-4 grid grid-cols-2 lg:grid-cols-4 gap-3">
-              <div className="p-3.5 rounded-lg border border-blue-100 dark:border-blue-500/20 bg-blue-50/50 dark:bg-blue-500/10">
+              <div className="p-3.5 rounded-[8px] border border-blue-100 dark:border-blue-500/20 bg-blue-50/50 dark:bg-blue-500/10">
                 <div className="flex items-center gap-2 mb-1.5">
-                  <div className="w-2 h-2 bg-blue-500 rounded-sm"></div><span className="text-xs font-medium text-gray-700 dark:text-gray-300">Tổng bài viết</span>
+                  <div className="w-2 h-2 bg-blue-500 rounded-[8px]"></div><span className="text-xs font-medium text-gray-700 dark:text-gray-300">Tổng bài viết</span>
                 </div>
                 <div className="text-2xl font-medium text-blue-700 dark:text-blue-400">{summary.totalItems}</div>
               </div>
-              <div className="p-3.5 rounded-lg border border-emerald-100 dark:border-emerald-900/30 bg-emerald-50/50 dark:bg-emerald-500/10">
+              <div className="p-3.5 rounded-[8px] border border-emerald-100 dark:border-emerald-900/30 bg-emerald-50/50 dark:bg-emerald-500/10">
                 <div className="flex items-center gap-2 mb-1.5">
-                  <div className="w-2 h-2 bg-emerald-50 dark:bg-emerald-500/100 rounded-sm"></div><span className="text-xs font-medium text-gray-700 dark:text-gray-300">Đã xuất bản</span>
+                  <div className="w-2 h-2 bg-emerald-50 dark:bg-emerald-500/100 rounded-[8px]"></div><span className="text-xs font-medium text-gray-700 dark:text-gray-300">Đã xuất bản</span>
                 </div>
                 <div className="text-2xl font-medium text-emerald-700 dark:text-emerald-400">{summary.publishedCount}</div>
               </div>
-              <div className="p-3.5 rounded-lg border border-gray-200 dark:border-gray-800 bg-gray-50 dark:bg-[#1a1b23]">
+              <div className="p-3.5 rounded-[8px] border border-gray-200 dark:border-gray-800 bg-gray-50 dark:bg-[#1a1b23]">
                 <div className="flex items-center gap-2 mb-1.5">
-                  <div className="w-2 h-2 bg-gray-50 dark:bg-[#1a1b23]0 rounded-sm"></div><span className="text-xs font-medium text-gray-700 dark:text-gray-300">Bản nháp</span>
+                  <div className="w-2 h-2 bg-gray-50 dark:bg-[#1a1b23]0 rounded-[8px]"></div><span className="text-xs font-medium text-gray-700 dark:text-gray-300">Bản nháp</span>
                 </div>
                 <div className="text-2xl font-medium text-gray-700 dark:text-gray-300">{summary.draftCount}</div>
               </div>
-              <div className="p-3.5 rounded-lg border border-purple-100 dark:border-purple-900/30 bg-purple-50/50 dark:bg-purple-500/10">
+              <div className="p-3.5 rounded-[8px] border border-purple-100 dark:border-purple-900/30 bg-purple-50/50 dark:bg-purple-500/10">
                 <div className="flex items-center gap-2 mb-1.5">
-                  <div className="w-2 h-2 bg-purple-500 rounded-sm"></div><span className="text-xs font-medium text-gray-700 dark:text-gray-300">Tổng lượt xem</span>
+                  <div className="w-2 h-2 bg-purple-500 rounded-[8px]"></div><span className="text-xs font-medium text-gray-700 dark:text-gray-300">Tổng lượt xem</span>
                 </div>
                 <div className="text-2xl font-medium text-purple-700">{summary.totalViews.toLocaleString('vi-VN')}</div>
               </div>
@@ -332,7 +332,7 @@ export default function ArticlesPage() {
       </div>
 
       {/* Data Table */}
-      <div className="flex-1 flex flex-col min-h-0 rounded-lg border border-gray-200 dark:border-gray-800 bg-white dark:bg-[#14151a] overflow-hidden">
+      <div className="flex-1 flex flex-col min-h-0 rounded-[8px] border border-gray-200 dark:border-gray-800 bg-white dark:bg-[#14151a] overflow-hidden">
         <div className="flex-1 overflow-y-auto">
           <table className="w-full text-left border-collapse min-w-max">
             <thead className="sticky top-0 z-10 bg-gray-50 dark:bg-[#1a1b23] border-b border-gray-200 dark:border-gray-800">
@@ -340,7 +340,7 @@ export default function ArticlesPage() {
                 <th className="px-5 py-3.5 font-medium text-gray-500 dark:text-gray-400 text-xs w-[40%]">
                   <div className="flex items-center gap-4">
                     <div 
-                      className={`w-4 h-4 rounded border flex items-center justify-center cursor-pointer transition-colors ${
+                      className={`w-4 h-4 rounded-[8px] border flex items-center justify-center cursor-pointer transition-colors ${
                         selectedIds.length === currentData.length && currentData.length > 0 ? 'bg-[#5865f2] border-[#5865f2]' : 'border-gray-300'
                       }`}
                       onClick={toggleSelectAll}
@@ -372,7 +372,7 @@ export default function ArticlesPage() {
                       <div className="w-16 h-16 bg-gray-100 dark:bg-gray-800 rounded-full flex items-center justify-center mb-4 border border-gray-200 dark:border-gray-800">
                         <FileText className="w-8 h-8 text-gray-400" />
                       </div>
-                      <h3 className="text-lg font-medium text-gray-900 dark:text-white mb-2">Không tìm thấy bài viết</h3>
+                      <h3 className="font-heading text-lg font-medium text-gray-900 dark:text-white mb-2">Không tìm thấy bài viết</h3>
                     </div>
                   </td>
                 </tr>
@@ -382,7 +382,7 @@ export default function ArticlesPage() {
                     <td className="px-5 py-3.5">
                       <div className="flex items-center gap-3">
                         <div 
-                          className={`w-4 h-4 rounded border flex items-center justify-center cursor-pointer transition-colors shrink-0 ${
+                          className={`w-4 h-4 rounded-[8px] border flex items-center justify-center cursor-pointer transition-colors shrink-0 ${
                             selectedIds.includes(article.id.toString()) ? 'bg-[#5865f2] border-[#5865f2]' : 'border-gray-300'
                           }`}
                           onClick={() => toggleSelect(article.id.toString())}
@@ -390,7 +390,7 @@ export default function ArticlesPage() {
                           {selectedIds.includes(article.id.toString()) && <Check className="w-3 h-3 text-white" />}
                         </div>
                         <div className="flex items-start gap-3">
-                          <div className="w-16 h-12 rounded bg-gray-100 dark:bg-gray-800 shrink-0 overflow-hidden border border-gray-200 dark:border-gray-800 flex items-center justify-center">
+                          <div className="w-16 h-12 rounded-[8px] bg-gray-100 dark:bg-gray-800 shrink-0 overflow-hidden border border-gray-200 dark:border-gray-800 flex items-center justify-center">
                             {article.thumbnail ? <img src={article.thumbnail} alt="" className="w-full h-full object-cover" /> : <ImageIcon className="w-5 h-5 text-gray-400" />}
                           </div>
                           <div>
@@ -405,10 +405,10 @@ export default function ArticlesPage() {
                       <div className="text-xs text-gray-500 dark:text-gray-400">{article.author || 'Admin'}</div>
                     </td>
                     <td className="px-5 py-3.5 border-l border-gray-200 dark:border-gray-800">
-                      <span className="text-sm font-medium text-gray-900 dark:text-white bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded">{(article.views || 0).toLocaleString('vi-VN')}</span>
+                      <span className="text-sm font-medium text-gray-900 dark:text-white bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded-[8px]">{(article.views || 0).toLocaleString('vi-VN')}</span>
                     </td>
                     <td className="px-5 py-3.5 border-l border-gray-200 dark:border-gray-800">
-                      <span className={`inline-flex items-center px-2 py-0.5 rounded text-xs font-medium ${
+                      <span className={`inline-flex items-center px-2 py-0.5 rounded-[8px] text-xs font-medium ${
                         article.status === 'PUBLISHED' ? 'bg-emerald-50 dark:bg-emerald-500/10 text-emerald-700 dark:text-emerald-400 border border-emerald-200 dark:border-emerald-500/20' : 'bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 border border-gray-200 dark:border-gray-800'
                       }`}>
                         {STATUS_MAP[article.status] || article.status}
@@ -444,9 +444,9 @@ export default function ArticlesPage() {
               Hiển thị <span className="font-medium text-gray-900 dark:text-white">{page * itemsPerPage + 1} - {Math.min((page + 1) * itemsPerPage, filteredData.length)}</span> trong <span className="font-medium text-gray-900 dark:text-white">{filteredData.length}</span>
             </div>
             <div className="flex items-center gap-1">
-              <button onClick={() => setPage(p => Math.max(0, p - 1))} disabled={page === 0} className="p-1.5 rounded-md border border-gray-200 dark:border-gray-800 text-gray-500 dark:text-gray-400 hover:bg-white dark:bg-[#14151a] disabled:opacity-50 transition-colors bg-white dark:bg-[#14151a]"><ChevronLeft className="w-4 h-4" /></button>
+              <button onClick={() => setPage(p => Math.max(0, p - 1))} disabled={page === 0} className="p-1.5 rounded-[8px] border border-gray-200 dark:border-gray-800 text-gray-500 dark:text-gray-400 hover:bg-white dark:bg-[#14151a] disabled:opacity-50 transition-colors bg-white dark:bg-[#14151a]"><ChevronLeft className="w-4 h-4" /></button>
               <div className="px-3 text-sm font-medium text-gray-700 dark:text-gray-300">{page + 1} / {totalPages}</div>
-              <button onClick={() => setPage(p => Math.min(totalPages - 1, p + 1))} disabled={page === totalPages - 1} className="p-1.5 rounded-md border border-gray-200 dark:border-gray-800 text-gray-500 dark:text-gray-400 hover:bg-white dark:bg-[#14151a] disabled:opacity-50 transition-colors bg-white dark:bg-[#14151a]"><ChevronRight className="w-4 h-4" /></button>
+              <button onClick={() => setPage(p => Math.min(totalPages - 1, p + 1))} disabled={page === totalPages - 1} className="p-1.5 rounded-[8px] border border-gray-200 dark:border-gray-800 text-gray-500 dark:text-gray-400 hover:bg-white dark:bg-[#14151a] disabled:opacity-50 transition-colors bg-white dark:bg-[#14151a]"><ChevronRight className="w-4 h-4" /></button>
             </div>
           </div>
         )}
@@ -459,16 +459,16 @@ export default function ArticlesPage() {
           <div className="relative bg-white dark:bg-[#14151a] w-full max-w-4xl h-full flex flex-col border-l border-gray-200 dark:border-gray-800 animate-in slide-in-from-right duration-300 shadow-none z-10">
             <div className="h-16 flex items-center justify-between px-6 border-b border-gray-100 dark:border-gray-800 bg-white dark:bg-[#14151a]">
               <div className="flex items-center gap-3">
-                <div className="w-8 h-8 rounded-lg bg-[#5865f2]/10 flex items-center justify-center">
+                <div className="w-8 h-8 rounded-[8px] bg-[#5865f2]/10 flex items-center justify-center">
                   <FileText className="w-4 h-4 text-[#5865f2]" />
                 </div>
                 <div>
-                  <h2 className="text-base font-medium text-gray-900 dark:text-white tracking-tight">
+                  <h2 className="font-heading text-base font-medium text-gray-900 dark:text-white tracking-tight">
                     {modalMode === 'add' ? 'Viết Bài Mới' : 'Cập Nhật Bài Viết'}
                   </h2>
                 </div>
               </div>
-              <button onClick={() => setIsDrawerOpen(false)} className="p-1.5 rounded-lg hover:bg-gray-100 dark:bg-gray-800 dark:hover:bg-gray-800 text-gray-400 hover:text-gray-600 dark:text-gray-400 dark:hover:text-gray-300 transition-colors cursor-pointer">
+              <button onClick={() => setIsDrawerOpen(false)} className="p-1.5 rounded-[8px] hover:bg-gray-100 dark:bg-gray-800 dark:hover:bg-gray-800 text-gray-400 hover:text-gray-600 dark:text-gray-400 dark:hover:text-gray-300 transition-colors cursor-pointer">
                 <X className="w-5 h-5" />
               </button>
             </div>
@@ -479,7 +479,7 @@ export default function ArticlesPage() {
                 
                 {/* Section: Nội dung bài viết */}
                 <div className="space-y-5">
-                  <h3 className="text-xs font-medium text-gray-900 dark:text-white uppercase tracking-wider flex items-center gap-2">
+                  <h3 className="font-heading text-xs font-medium text-gray-900 dark:text-white uppercase tracking-wider flex items-center gap-2">
                       <span className="w-1.5 h-1.5 rounded-full bg-[#5865f2]"></span>
                       Nội dung bài viết
                   </h3>
@@ -490,19 +490,19 @@ export default function ArticlesPage() {
                       <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                         <FileText className="h-4 w-4 text-gray-400 dark:text-gray-500 dark:text-gray-400" />
                       </div>
-                      <input type="text" value={formData.title} onChange={e => {setFormData({...formData, title: e.target.value}); if (errors.title) setErrors({...errors, title: ''});}} className={`pl-9 w-full bg-gray-50/50 dark:bg-[#1a1b23] border ${errors.title ? 'border-red-500 focus:ring-red-500/20' : 'border-gray-200 dark:border-gray-700 focus:ring-[#5865f2]/20'} text-sm h-10 rounded-lg text-gray-900 dark:text-white transition-all hover:bg-white dark:bg-[#14151a] dark:hover:bg-[#1a1b23] focus:outline-none focus:ring-[3px] focus:border-[#5865f2]/40`} placeholder="Nhập tiêu đề bài viết..." />
+                      <input type="text" value={formData.title} onChange={e => {setFormData({...formData, title: e.target.value}); if (errors.title) setErrors({...errors, title: ''});}} className={`pl-9 w-full bg-gray-50/50 dark:bg-[#1a1b23] border ${errors.title ? 'border-red-500 focus:ring-red-500/20' : 'border-gray-200 dark:border-gray-700 focus:ring-[#5865f2]/20'} text-sm h-10 rounded-[8px] text-gray-900 dark:text-white transition-all hover:bg-white dark:bg-[#14151a] dark:hover:bg-[#1a1b23] focus:outline-none focus:ring-[3px] focus:border-[#5865f2]/40`} placeholder="Nhập tiêu đề bài viết..." />
                     </div>
                     {errors.title && <p className="text-red-500 text-xs mt-1">{errors.title}</p>}
                   </div>
 
                   <div className="space-y-1.5">
                     <label className="text-sm font-medium text-gray-700 dark:text-gray-300">Tóm tắt ngắn (Summary)</label>
-                    <textarea rows={3} value={formData.summary} onChange={e => setFormData({...formData, summary: e.target.value})} className="w-full bg-gray-50/50 dark:bg-[#1a1b23] border border-gray-200 dark:border-gray-700 text-sm rounded-lg text-gray-900 dark:text-white p-3 transition-all hover:bg-white dark:bg-[#14151a] dark:hover:bg-[#1a1b23] focus:outline-none focus:ring-[3px] focus:ring-[#5865f2]/20 focus:border-[#5865f2]/40 resize-none h-24" placeholder="Tóm tắt nội dung bài viết..." />
+                    <textarea rows={3} value={formData.summary} onChange={e => setFormData({...formData, summary: e.target.value})} className="w-full bg-gray-50/50 dark:bg-[#1a1b23] border border-gray-200 dark:border-gray-700 text-sm rounded-[8px] text-gray-900 dark:text-white p-3 transition-all hover:bg-white dark:bg-[#14151a] dark:hover:bg-[#1a1b23] focus:outline-none focus:ring-[3px] focus:ring-[#5865f2]/20 focus:border-[#5865f2]/40 resize-none h-24" placeholder="Tóm tắt nội dung bài viết..." />
                   </div>
 
                   <div className="space-y-1.5">
                     <label className="text-sm font-medium text-gray-700 dark:text-gray-300">Nội dung chi tiết <span className="text-red-500">*</span></label>
-                    <div className={`border ${errors.content ? 'border-red-500' : 'border-gray-200 dark:border-gray-700'} rounded-lg overflow-hidden bg-white dark:bg-[#14151a]`}>
+                    <div className={`border ${errors.content ? 'border-red-500' : 'border-gray-200 dark:border-gray-700'} rounded-[8px] overflow-hidden bg-white dark:bg-[#14151a]`}>
                       <TiptapEditor value={formData.content} onChange={(content) => {setFormData({...formData, content}); if (errors.content) setErrors({...errors, content: ''});}} />
                     </div>
                     {errors.content && <p className="text-red-500 text-xs mt-1">{errors.content}</p>}
@@ -513,7 +513,7 @@ export default function ArticlesPage() {
 
                 {/* Section: Phân loại */}
                 <div className="space-y-5">
-                  <h3 className="text-xs font-medium text-gray-900 dark:text-white uppercase tracking-wider flex items-center gap-2">
+                  <h3 className="font-heading text-xs font-medium text-gray-900 dark:text-white uppercase tracking-wider flex items-center gap-2">
                       <span className="w-1.5 h-1.5 rounded-full bg-[#43b581]"></span>
                       Phân loại & Thuộc tính
                   </h3>
@@ -529,7 +529,7 @@ export default function ArticlesPage() {
                         <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                           <User className="h-4 w-4 text-gray-400 dark:text-gray-500 dark:text-gray-400" />
                         </div>
-                        <input type="text" value={formData.author} onChange={e => setFormData({...formData, author: e.target.value})} className="pl-9 w-full bg-gray-50/50 dark:bg-[#1a1b23] border border-gray-200 dark:border-gray-700 text-sm h-10 rounded-lg text-gray-900 dark:text-white transition-all hover:bg-white dark:bg-[#14151a] dark:hover:bg-[#1a1b23] focus:outline-none focus:ring-[3px] focus:ring-[#5865f2]/20 focus:border-[#5865f2]/40" />
+                        <input type="text" value={formData.author} onChange={e => setFormData({...formData, author: e.target.value})} className="pl-9 w-full bg-gray-50/50 dark:bg-[#1a1b23] border border-gray-200 dark:border-gray-700 text-sm h-10 rounded-[8px] text-gray-900 dark:text-white transition-all hover:bg-white dark:bg-[#14151a] dark:hover:bg-[#1a1b23] focus:outline-none focus:ring-[3px] focus:ring-[#5865f2]/20 focus:border-[#5865f2]/40" />
                       </div>
                     </div>
                   </div>
@@ -541,7 +541,7 @@ export default function ArticlesPage() {
                         <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                           <Eye className="h-4 w-4 text-gray-400 dark:text-gray-500 dark:text-gray-400" />
                         </div>
-                        <input type="number" min="0" value={formData.views} onChange={e => setFormData({...formData, views: parseInt(e.target.value) || 0})} className="pl-9 w-full bg-gray-50/50 dark:bg-[#1a1b23] border border-gray-200 dark:border-gray-700 text-sm h-10 rounded-lg text-gray-900 dark:text-white transition-all hover:bg-white dark:bg-[#14151a] dark:hover:bg-[#1a1b23] focus:outline-none focus:ring-[3px] focus:ring-[#5865f2]/20 focus:border-[#5865f2]/40" />
+                        <input type="number" min="0" value={formData.views} onChange={e => setFormData({...formData, views: parseInt(e.target.value) || 0})} className="pl-9 w-full bg-gray-50/50 dark:bg-[#1a1b23] border border-gray-200 dark:border-gray-700 text-sm h-10 rounded-[8px] text-gray-900 dark:text-white transition-all hover:bg-white dark:bg-[#14151a] dark:hover:bg-[#1a1b23] focus:outline-none focus:ring-[3px] focus:ring-[#5865f2]/20 focus:border-[#5865f2]/40" />
                       </div>
                     </div>
                     <div className="space-y-1.5 relative z-30">
@@ -560,7 +560,7 @@ export default function ArticlesPage() {
 
                 {/* Section: SEO */}
                 <div className="space-y-5">
-                  <h3 className="text-xs font-medium text-gray-900 dark:text-white uppercase tracking-wider flex items-center gap-2">
+                  <h3 className="font-heading text-xs font-medium text-gray-900 dark:text-white uppercase tracking-wider flex items-center gap-2">
                       <span className="w-1.5 h-1.5 rounded-full bg-amber-50 dark:bg-amber-500/100"></span>
                       Cấu hình SEO
                   </h3>
@@ -571,7 +571,7 @@ export default function ArticlesPage() {
                       <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                         <Link className="h-4 w-4 text-gray-400 dark:text-gray-500 dark:text-gray-400" />
                       </div>
-                      <input type="text" value={formData.slug} onChange={e => setFormData({...formData, slug: e.target.value})} className="pl-9 w-full bg-gray-50/50 dark:bg-[#1a1b23] border border-gray-200 dark:border-gray-700 text-sm h-10 rounded-lg text-gray-900 dark:text-white transition-all hover:bg-white dark:bg-[#14151a] dark:hover:bg-[#1a1b23] focus:outline-none focus:ring-[3px] focus:ring-[#5865f2]/20 focus:border-[#5865f2]/40" />
+                      <input type="text" value={formData.slug} onChange={e => setFormData({...formData, slug: e.target.value})} className="pl-9 w-full bg-gray-50/50 dark:bg-[#1a1b23] border border-gray-200 dark:border-gray-700 text-sm h-10 rounded-[8px] text-gray-900 dark:text-white transition-all hover:bg-white dark:bg-[#14151a] dark:hover:bg-[#1a1b23] focus:outline-none focus:ring-[3px] focus:ring-[#5865f2]/20 focus:border-[#5865f2]/40" />
                     </div>
                   </div>
 
@@ -581,13 +581,13 @@ export default function ArticlesPage() {
                       <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                         <Tag className="h-4 w-4 text-gray-400 dark:text-gray-500 dark:text-gray-400" />
                       </div>
-                      <input type="text" value={formData.metaTitle} onChange={e => setFormData({...formData, metaTitle: e.target.value})} className="pl-9 w-full bg-gray-50/50 dark:bg-[#1a1b23] border border-gray-200 dark:border-gray-700 text-sm h-10 rounded-lg text-gray-900 dark:text-white transition-all hover:bg-white dark:bg-[#14151a] dark:hover:bg-[#1a1b23] focus:outline-none focus:ring-[3px] focus:ring-[#5865f2]/20 focus:border-[#5865f2]/40" />
+                      <input type="text" value={formData.metaTitle} onChange={e => setFormData({...formData, metaTitle: e.target.value})} className="pl-9 w-full bg-gray-50/50 dark:bg-[#1a1b23] border border-gray-200 dark:border-gray-700 text-sm h-10 rounded-[8px] text-gray-900 dark:text-white transition-all hover:bg-white dark:bg-[#14151a] dark:hover:bg-[#1a1b23] focus:outline-none focus:ring-[3px] focus:ring-[#5865f2]/20 focus:border-[#5865f2]/40" />
                     </div>
                   </div>
 
                   <div className="space-y-1.5">
                     <label className="text-sm font-medium text-gray-700 dark:text-gray-300">Mô tả SEO (Meta Description)</label>
-                    <textarea rows={3} value={formData.metaDescription} onChange={e => setFormData({...formData, metaDescription: e.target.value})} className="w-full bg-gray-50/50 dark:bg-[#1a1b23] border border-gray-200 dark:border-gray-700 text-sm rounded-lg text-gray-900 dark:text-white p-3 transition-all hover:bg-white dark:bg-[#14151a] dark:hover:bg-[#1a1b23] focus:outline-none focus:ring-[3px] focus:ring-[#5865f2]/20 focus:border-[#5865f2]/40 resize-none h-24" />
+                    <textarea rows={3} value={formData.metaDescription} onChange={e => setFormData({...formData, metaDescription: e.target.value})} className="w-full bg-gray-50/50 dark:bg-[#1a1b23] border border-gray-200 dark:border-gray-700 text-sm rounded-[8px] text-gray-900 dark:text-white p-3 transition-all hover:bg-white dark:bg-[#14151a] dark:hover:bg-[#1a1b23] focus:outline-none focus:ring-[3px] focus:ring-[#5865f2]/20 focus:border-[#5865f2]/40 resize-none h-24" />
                   </div>
 
                   <div className="space-y-1.5">
@@ -596,13 +596,13 @@ export default function ArticlesPage() {
                       <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                         <SearchCode className="h-4 w-4 text-gray-400 dark:text-gray-500 dark:text-gray-400" />
                       </div>
-                      <input type="text" value={formData.keyword} onChange={e => setFormData({...formData, keyword: e.target.value})} className="pl-9 w-full bg-gray-50/50 dark:bg-[#1a1b23] border border-gray-200 dark:border-gray-700 text-sm h-10 rounded-lg text-gray-900 dark:text-white transition-all hover:bg-white dark:bg-[#14151a] dark:hover:bg-[#1a1b23] focus:outline-none focus:ring-[3px] focus:ring-[#5865f2]/20 focus:border-[#5865f2]/40" />
+                      <input type="text" value={formData.keyword} onChange={e => setFormData({...formData, keyword: e.target.value})} className="pl-9 w-full bg-gray-50/50 dark:bg-[#1a1b23] border border-gray-200 dark:border-gray-700 text-sm h-10 rounded-[8px] text-gray-900 dark:text-white transition-all hover:bg-white dark:bg-[#14151a] dark:hover:bg-[#1a1b23] focus:outline-none focus:ring-[3px] focus:ring-[#5865f2]/20 focus:border-[#5865f2]/40" />
                     </div>
                   </div>
 
                   <div className="pt-2">
-                    <label className="flex items-center gap-3 p-3 border border-gray-200 dark:border-gray-700 rounded-lg cursor-pointer hover:bg-gray-50 dark:hover:bg-[#262930] dark:bg-[#1a1b23] dark:hover:bg-[#1a1b23] transition-colors">
-                      <input type="checkbox" checked={formData.faqSchema} onChange={e => setFormData({...formData, faqSchema: e.target.checked})} className="w-4 h-4 text-[#5865f2] rounded border-gray-300 focus:ring-[#5865f2]" />
+                    <label className="flex items-center gap-3 p-3 border border-gray-200 dark:border-gray-700 rounded-[8px] cursor-pointer hover:bg-gray-50 dark:hover:bg-[#262930] dark:bg-[#1a1b23] dark:hover:bg-[#1a1b23] transition-colors">
+                      <input type="checkbox" checked={formData.faqSchema} onChange={e => setFormData({...formData, faqSchema: e.target.checked})} className="w-4 h-4 text-[#5865f2] rounded-[8px] border-gray-300 focus:ring-[#5865f2]" />
                       <span className="text-sm font-medium text-gray-700 dark:text-gray-300">Tự động sinh FAQ Schema từ thẻ H2/H3 (Tăng SEO)</span>
                     </label>
                   </div>
@@ -611,10 +611,10 @@ export default function ArticlesPage() {
             </div>
 
             <div className="h-20 flex items-center justify-end gap-3 px-6 border-t border-gray-100 dark:border-gray-800 bg-white dark:bg-[#14151a] shrink-0">
-              <button type="button" onClick={() => setIsDrawerOpen(false)} className="flex items-center gap-2 border border-gray-200 dark:border-gray-700 bg-white dark:bg-[#1a1b23] hover:bg-gray-50 dark:hover:bg-[#262930] dark:bg-[#1a1b23] dark:hover:bg-[#262930] text-gray-700 dark:text-gray-200 rounded-lg text-sm h-10 px-5 cursor-pointer font-medium transition-colors">
+              <button type="button" onClick={() => setIsDrawerOpen(false)} className="flex items-center gap-2 border border-gray-200 dark:border-gray-700 bg-white dark:bg-[#1a1b23] hover:bg-gray-50 dark:hover:bg-[#262930] dark:bg-[#1a1b23] dark:hover:bg-[#262930] text-gray-700 dark:text-gray-200 rounded-[8px] text-sm h-10 px-5 cursor-pointer font-medium transition-colors">
                 <X className="w-4 h-4" /> Hủy bỏ
               </button>
-              <button type="submit" form="article-form" className="flex items-center gap-2 bg-[#5865f2] hover:bg-[#4752c4] text-white rounded-lg font-medium text-sm h-10 px-6 border-0 cursor-pointer transition-colors">
+              <button type="submit" form="article-form" className="flex items-center gap-2 bg-[#5865f2] hover:bg-[#4752c4] text-white rounded-[8px] font-medium text-sm h-10 px-6 border-0 cursor-pointer transition-colors">
                 <Check className="w-4 h-4" /> {modalMode === 'add' ? 'Thêm bài viết' : 'Lưu thay đổi'}
               </button>
             </div>

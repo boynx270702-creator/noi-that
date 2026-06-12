@@ -108,12 +108,12 @@ export default function HeroSlider() {
               className="max-w-[1000px] mx-auto text-center flex flex-col items-center justify-center"
             >
               
-              <motion.p variants={itemVariants} className="text-[#D3AE3E] text-[12px] md:text-[14px] font-bold tracking-[0.3em] uppercase mb-6 font-['Montserrat',_sans-serif]">
+              <motion.p variants={itemVariants} className="text-[#D3AE3E] text-[12px] md:text-[14px] font-bold tracking-[0.3em] uppercase mb-6">
                 {SLIDES[current].subtitle}
               </motion.p>
               
               <motion.div variants={itemVariants} className="w-full flex flex-col items-center justify-center mb-8">
-                <h3 className="text-4xl md:text-5xl lg:text-[72px] font-['Montserrat',_sans-serif] leading-[1.25] md:leading-[1.15] tracking-tight">
+                <h3 className="font-heading text-4xl md:text-5xl lg:text-[72px] leading-[1.25] md:leading-[1.15] tracking-tight">
                   <span className="font-bold text-gray-900 dark:text-white drop-shadow-sm mr-4">
                     {SLIDES[current].titleNormal}
                   </span>
@@ -129,14 +129,14 @@ export default function HeroSlider() {
               
               <motion.div variants={itemVariants} className="w-24 h-[2px] bg-gradient-to-r from-transparent via-[#D3AE3E] to-transparent mb-8" />
               
-              <motion.p variants={itemVariants} className="text-gray-600 dark:text-[#ccc] font-['Montserrat',_sans-serif] text-[16px] md:text-[18px] leading-[1.8] max-w-3xl mb-12">
+              <motion.p variants={itemVariants} className="text-gray-600 dark:text-[#ccc] text-[16px] md:text-[18px] leading-[1.8] max-w-3xl mb-12">
                 {SLIDES[current].text}
               </motion.p>
               
               <motion.div variants={itemVariants} className="flex flex-wrap justify-center items-center gap-6">
                 <Link 
                   href={SLIDES[current].btn1.href} 
-                  className="relative overflow-hidden group bg-[#D3AE3E] text-[#131313] font-bold font-['Montserrat',_sans-serif] text-[13px] uppercase tracking-[2px] py-4 px-8 rounded-sm hover:scale-105 transition-all duration-300 shadow-[0_0_20px_rgba(211,174,62,0.4)]"
+                  className="relative overflow-hidden group bg-[#D3AE3E] text-[#131313] font-bold text-[13px] uppercase tracking-[2px] py-4 px-8 rounded-[8px] hover:scale-105 transition-all duration-300 shadow-[0_0_20px_rgba(211,174,62,0.4)]"
                 >
                   <span className="relative z-10">{SLIDES[current].btn1.label}</span>
                   <div className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/40 to-transparent group-hover:animate-shimmer" />
@@ -144,7 +144,7 @@ export default function HeroSlider() {
                 
                 <Link 
                   href={SLIDES[current].btn2.href} 
-                  className="relative overflow-hidden group bg-transparent text-gray-900 dark:text-white border border-white/30 font-bold font-['Montserrat',_sans-serif] text-[13px] uppercase tracking-[2px] py-4 px-8 rounded-sm hover:bg-white dark:bg-[#131313] hover:text-[#131313] transition-all duration-300"
+                  className="relative overflow-hidden group bg-transparent text-gray-900 dark:text-white border border-white/30 font-bold text-[13px] uppercase tracking-[2px] py-4 px-8 rounded-[8px] hover:bg-white dark:bg-[#131313] hover:text-[#131313] transition-all duration-300"
                 >
                   <span className="relative z-10">{SLIDES[current].btn2.label}</span>
                 </Link>

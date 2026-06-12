@@ -25,28 +25,28 @@ export default function SpotlightCard({
 
   return (
     <div
-      className={`relative group rounded-2xl border border-white/5 bg-[#131313] overflow-hidden ${className}`}
+      className={`relative group rounded-[8px] border border-[#ECE7DE] dark:border-white/5 card dark:bg-[#131313] overflow-hidden ${className}`}
       onMouseMove={handleMouseMove}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
       <motion.div
-        className="pointer-events-none absolute -inset-px rounded-2xl opacity-0 transition duration-300 group-hover:opacity-100"
+        className="pointer-events-none absolute -inset-px rounded-[8px] opacity-0 transition duration-300 group-hover:opacity-100"
         style={{
           background: useMotionTemplate`
             radial-gradient(
               600px circle at ${mouseX}px ${mouseY}px,
-              rgba(211, 174, 62, 0.1),
+              rgba(199, 162, 92, 0.15),
               transparent 80%
             )
           `,
         }}
       />
       <motion.div
-        className="pointer-events-none absolute -inset-px rounded-2xl opacity-0 transition duration-300 group-hover:opacity-100"
+        className="pointer-events-none absolute -inset-px rounded-[8px] opacity-0 transition duration-300 group-hover:opacity-100"
         style={{
           border: "1px solid",
-          borderColor: "rgba(211, 174, 62, 0.3)",
+          borderColor: "rgba(199, 162, 92, 0.3)",
           maskImage: useMotionTemplate`
             radial-gradient(
               300px circle at ${mouseX}px ${mouseY}px,

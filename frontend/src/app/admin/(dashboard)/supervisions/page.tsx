@@ -156,7 +156,7 @@ export default function SupervisionsPage() {
       
       {/* Top Header & Filters */}
       <div className="flex flex-col gap-3 flex-shrink-0">
-        <div className="flex flex-col md:flex-row md:items-center justify-between gap-3 bg-white dark:bg-[#14151a] p-3 rounded-lg border border-gray-200 dark:border-gray-800">
+        <div className="flex flex-col md:flex-row md:items-center justify-between gap-3 bg-white dark:bg-[#14151a] p-3 rounded-[8px] border border-gray-200 dark:border-gray-800">
           <div className="flex flex-1 items-center gap-2 max-w-xl">
             <div className="relative flex-1">
               <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
@@ -165,13 +165,13 @@ export default function SupervisionsPage() {
                 value={searchQuery}
                 onChange={(e) => { setSearchQuery(e.target.value); setPage(0); }}
                 placeholder="Tìm Tên gói dịch vụ..." 
-                className="pl-9 pr-4 py-2 bg-gray-50/50 dark:bg-[#1a1b23] border border-gray-200 dark:border-gray-800 rounded-lg text-sm focus:outline-none focus:ring-[3px] focus:ring-[#5865f2]/20 w-full text-gray-900 dark:text-white transition-all"
+                className="pl-9 pr-4 py-2 bg-gray-50/50 dark:bg-[#1a1b23] border border-gray-200 dark:border-gray-800 rounded-[8px] text-sm focus:outline-none focus:ring-[3px] focus:ring-[#5865f2]/20 w-full text-gray-900 dark:text-white transition-all"
               />
             </div>
             
             <button 
               onClick={() => setIsFiltersExpanded(!isFiltersExpanded)}
-              className={`flex items-center gap-2 px-3 h-[38px] rounded-lg text-sm font-medium transition-all border cursor-pointer ${
+              className={`flex items-center gap-2 px-3 h-[38px] rounded-[8px] text-sm font-medium transition-all border cursor-pointer ${
                 isFiltersExpanded 
                   ? 'bg-[#5865f2]/10 text-[#5865f2] border-[#5865f2]/50 font-medium' 
                   : 'bg-white dark:bg-[#14151a] border-gray-200 dark:border-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-[#262930] dark:bg-[#1a1b23]'
@@ -196,7 +196,7 @@ export default function SupervisionsPage() {
                 setErrors({});
                 setIsDrawerOpen(true); 
               }}
-              className="flex items-center gap-2 px-4 py-2 bg-[#5865f2] hover:bg-[#4752c4] text-white rounded-lg text-sm font-medium transition-colors border-0 cursor-pointer"
+              className="flex items-center gap-2 px-4 py-2 bg-[#5865f2] hover:bg-[#4752c4] text-white rounded-[8px] text-sm font-medium transition-colors border-0 cursor-pointer"
             >
               <Plus className="w-4 h-4" /> Tạo Gói Dịch Vụ
             </button>
@@ -204,23 +204,23 @@ export default function SupervisionsPage() {
         </div>
 
         {isFiltersExpanded && (
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 p-4 bg-gray-50/50 dark:bg-[#1a1b23] border border-gray-200 dark:border-gray-800 rounded-lg animate-in slide-in-from-top-2 duration-200">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 p-4 bg-gray-50/50 dark:bg-[#1a1b23] border border-gray-200 dark:border-gray-800 rounded-[8px] animate-in slide-in-from-top-2 duration-200">
             <div className="flex flex-col gap-1.5 relative">
               <span className="text-xs font-medium text-gray-500 dark:text-gray-400">Trạng thái</span>
-              <button onClick={() => setOpenStatusPopover(!openStatusPopover)} className="flex items-center justify-between w-full h-9 px-3 bg-white dark:bg-[#14151a] border border-gray-200 dark:border-gray-800 rounded-lg text-sm text-gray-900 dark:text-white hover:bg-gray-50 dark:hover:bg-[#262930] dark:bg-[#1a1b23]">
+              <button onClick={() => setOpenStatusPopover(!openStatusPopover)} className="flex items-center justify-between w-full h-9 px-3 bg-white dark:bg-[#14151a] border border-gray-200 dark:border-gray-800 rounded-[8px] text-sm text-gray-900 dark:text-white hover:bg-gray-50 dark:hover:bg-[#262930] dark:bg-[#1a1b23]">
                 <span className="truncate">{statusFilter.length === 0 ? "Tất cả trạng thái" : statusFilter.map(s => STATUS_MAP[s]).join(', ')}</span>
                 <ChevronDown className="w-4 h-4 text-gray-500 dark:text-gray-400 shrink-0 ml-2" />
               </button>
               {openStatusPopover && (
-                <div className="absolute top-16 left-0 z-50 w-full p-2 bg-white dark:bg-[#14151a] border border-gray-200 dark:border-gray-800 rounded-md shadow-lg">
+                <div className="absolute top-16 left-0 z-50 w-full p-2 bg-white dark:bg-[#14151a] border border-gray-200 dark:border-gray-800 rounded-[8px] shadow-sm">
                   <div className="flex flex-col gap-1">
                     {Object.entries(STATUS_MAP).map(([val, label]) => (
-                      <label key={val} className="flex items-center gap-2.5 p-2 rounded-md hover:bg-gray-100 dark:bg-gray-800 dark:hover:bg-gray-800 cursor-pointer text-sm">
+                      <label key={val} className="flex items-center gap-2.5 p-2 rounded-[8px] hover:bg-gray-100 dark:bg-gray-800 dark:hover:bg-gray-800 cursor-pointer text-sm">
                         <input type="checkbox" checked={statusFilter.includes(val)} onChange={(e) => {
                           if (e.target.checked) setStatusFilter([...statusFilter, val]);
                           else setStatusFilter(statusFilter.filter(s => s !== val));
                           setPage(0);
-                        }} className="w-4 h-4 text-[#5865f2] rounded border-gray-300" />
+                        }} className="w-4 h-4 text-[#5865f2] rounded-[8px] border-gray-300" />
                         <span>{label}</span>
                       </label>
                     ))}
@@ -235,23 +235,23 @@ export default function SupervisionsPage() {
         <div className="flex flex-wrap items-center gap-2 mt-1">
           {hasActiveFilter && <span className="text-sm text-gray-500 dark:text-gray-400 font-medium mr-1">Đang lọc:</span>}
           {statusFilter.length > 0 && (
-            <div className="flex items-center gap-1.5 pl-2.5 pr-1 py-1 bg-[#5865f2]/10 text-[#5865f2] border border-[#5865f2]/20 rounded-md text-sm font-medium">
+            <div className="flex items-center gap-1.5 pl-2.5 pr-1 py-1 bg-[#5865f2]/10 text-[#5865f2] border border-[#5865f2]/20 rounded-[8px] text-sm font-medium">
               Trạng thái: {statusFilter.map(s => STATUS_MAP[s]).join(', ')}
-              <button onClick={() => setStatusFilter([])} className="p-0.5 hover:bg-[#5865f2]/20 rounded transition-colors ml-1"><X className="w-3.5 h-3.5" /></button>
+              <button onClick={() => setStatusFilter([])} className="p-0.5 hover:bg-[#5865f2]/20 rounded-[8px] transition-colors ml-1"><X className="w-3.5 h-3.5" /></button>
             </div>
           )}
           {hasActiveFilter && (
-            <button onClick={() => { setStatusFilter([]); setPage(0); }} className="flex items-center gap-1.5 px-2.5 py-1 rounded-md border border-red-500 text-xs font-medium text-red-500 hover:bg-red-50 dark:hover:bg-red-500/10 transition-colors ml-2"><RotateCcw strokeWidth={2} className="w-3.5 h-3.5" /> Đặt lại</button>
+            <button onClick={() => { setStatusFilter([]); setPage(0); }} className="flex items-center gap-1.5 px-2.5 py-1 rounded-[8px] border border-red-500 text-xs font-medium text-red-500 hover:bg-red-50 dark:hover:bg-red-500/10 transition-colors ml-2"><RotateCcw strokeWidth={2} className="w-3.5 h-3.5" /> Đặt lại</button>
           )}
         </div>
       </div>
 
       {/* Summary Card */}
-      <div className="rounded-lg border border-gray-200 dark:border-gray-800 bg-white dark:bg-[#14151a] flex-shrink-0 transition-all duration-300">
+      <div className="rounded-[8px] border border-gray-200 dark:border-gray-800 bg-white dark:bg-[#14151a] flex-shrink-0 transition-all duration-300">
         <div className={`p-4 ${isSummaryCollapsed ? 'pb-4' : 'sm:p-5 sm:pb-5'}`}>
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-3">
-              <h3 className="font-medium text-gray-900 dark:text-white text-sm">Tổng Quan Gói Giám Sát</h3>
+              <h3 className="font-heading font-medium text-gray-900 dark:text-white text-sm">Tổng Quan Gói Giám Sát</h3>
               {!isSummaryCollapsed && <span className="text-xs text-gray-500 dark:text-gray-400">{summary.totalItems} gói</span>}
             </div>
             
@@ -264,7 +264,7 @@ export default function SupervisionsPage() {
               </div>
             )}
 
-            <button onClick={() => setIsSummaryCollapsed(!isSummaryCollapsed)} className="flex items-center gap-1.5 px-3 py-1.5 bg-gray-50 dark:bg-[#1a1b23] border border-gray-200 dark:border-gray-800 rounded-md text-xs font-medium cursor-pointer">
+            <button onClick={() => setIsSummaryCollapsed(!isSummaryCollapsed)} className="flex items-center gap-1.5 px-3 py-1.5 bg-gray-50 dark:bg-[#1a1b23] border border-gray-200 dark:border-gray-800 rounded-[8px] text-xs font-medium cursor-pointer">
               {isSummaryCollapsed ? 'Mở rộng' : 'Thu gọn'}
               {isSummaryCollapsed ? <ChevronDown className="w-3.5 h-3.5" /> : <ChevronUp className="w-3.5 h-3.5" />}
             </button>
@@ -272,15 +272,15 @@ export default function SupervisionsPage() {
 
           {!isSummaryCollapsed && (
             <div className="mt-4 grid grid-cols-2 gap-3">
-              <div className="p-3.5 rounded-lg border border-emerald-100 dark:border-emerald-900/30 bg-emerald-50/50 dark:bg-emerald-500/10">
+              <div className="p-3.5 rounded-[8px] border border-emerald-100 dark:border-emerald-900/30 bg-emerald-50/50 dark:bg-emerald-500/10">
                 <div className="flex items-center gap-2 mb-1.5">
-                  <div className="w-2 h-2 bg-emerald-50 dark:bg-emerald-500/100 rounded-sm"></div><span className="text-xs font-medium text-gray-700 dark:text-gray-300">Hoạt động</span>
+                  <div className="w-2 h-2 bg-emerald-50 dark:bg-emerald-500/100 rounded-[8px]"></div><span className="text-xs font-medium text-gray-700 dark:text-gray-300">Hoạt động</span>
                 </div>
                 <div className="text-2xl font-medium text-emerald-700 dark:text-emerald-400">{summary.activeCount}</div>
               </div>
-              <div className="p-3.5 rounded-lg border border-gray-200 dark:border-gray-800 bg-gray-50 dark:bg-[#1a1b23]">
+              <div className="p-3.5 rounded-[8px] border border-gray-200 dark:border-gray-800 bg-gray-50 dark:bg-[#1a1b23]">
                 <div className="flex items-center gap-2 mb-1.5">
-                  <div className="w-2 h-2 bg-gray-50 dark:bg-[#1a1b23]0 rounded-sm"></div><span className="text-xs font-medium text-gray-700 dark:text-gray-300">Đang ẩn</span>
+                  <div className="w-2 h-2 bg-gray-50 dark:bg-[#1a1b23]0 rounded-[8px]"></div><span className="text-xs font-medium text-gray-700 dark:text-gray-300">Đang ẩn</span>
                 </div>
                 <div className="text-2xl font-medium text-gray-700 dark:text-gray-300">{summary.hiddenCount}</div>
               </div>
@@ -290,7 +290,7 @@ export default function SupervisionsPage() {
       </div>
 
       {/* Data Table */}
-      <div className="flex-1 flex flex-col min-h-0 rounded-lg border border-gray-200 dark:border-gray-800 bg-white dark:bg-[#14151a] overflow-hidden">
+      <div className="flex-1 flex flex-col min-h-0 rounded-[8px] border border-gray-200 dark:border-gray-800 bg-white dark:bg-[#14151a] overflow-hidden">
         <div className="flex-1 overflow-y-auto">
           <table className="w-full text-left border-collapse min-w-max">
             <thead className="sticky top-0 z-10 bg-gray-50 dark:bg-[#1a1b23] border-b border-gray-200 dark:border-gray-800">
@@ -298,7 +298,7 @@ export default function SupervisionsPage() {
                 <th className="px-5 py-3.5 font-medium text-gray-500 dark:text-gray-400 text-xs w-[40%]">
                   <div className="flex items-center gap-4">
                     <div 
-                      className={`w-4 h-4 rounded border flex items-center justify-center cursor-pointer transition-colors ${
+                      className={`w-4 h-4 rounded-[8px] border flex items-center justify-center cursor-pointer transition-colors ${
                         selectedIds.length === currentData.length && currentData.length > 0 ? 'bg-[#5865f2] border-[#5865f2]' : 'border-gray-300'
                       }`}
                       onClick={toggleSelectAll}
@@ -327,7 +327,7 @@ export default function SupervisionsPage() {
                       <div className="w-16 h-16 bg-gray-100 dark:bg-gray-800 rounded-full flex items-center justify-center mb-4 border border-gray-200 dark:border-gray-800">
                         <ShieldCheck className="w-8 h-8 text-gray-400" />
                       </div>
-                      <h3 className="text-lg font-medium text-gray-900 dark:text-white mb-2">Không tìm thấy gói giám sát</h3>
+                      <h3 className="font-heading text-lg font-medium text-gray-900 dark:text-white mb-2">Không tìm thấy gói giám sát</h3>
                     </div>
                   </td>
                 </tr>
@@ -337,7 +337,7 @@ export default function SupervisionsPage() {
                     <td className="px-5 py-3.5">
                       <div className="flex items-center gap-3">
                         <div 
-                          className={`w-4 h-4 rounded border flex items-center justify-center cursor-pointer transition-colors shrink-0 ${
+                          className={`w-4 h-4 rounded-[8px] border flex items-center justify-center cursor-pointer transition-colors shrink-0 ${
                             selectedIds.includes(sup.id.toString()) ? 'bg-[#5865f2] border-[#5865f2]' : 'border-gray-300'
                           }`}
                           onClick={() => toggleSelect(sup.id.toString())}
@@ -347,7 +347,7 @@ export default function SupervisionsPage() {
                         <div>
                           <div className="flex items-center gap-2 mb-1">
                             <span className="font-medium text-sm text-gray-900 dark:text-white">{sup.packageName}</span>
-                            <span className="px-2 py-0.5 rounded text-[10px] font-medium bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400 border border-gray-200 dark:border-gray-800">{sup.packageType}</span>
+                            <span className="px-2 py-0.5 rounded-[8px] text-[10px] font-medium bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400 border border-gray-200 dark:border-gray-800">{sup.packageType}</span>
                           </div>
                           <div className="text-xs text-gray-500 dark:text-gray-400 line-clamp-2">{sup.shortDescription}</div>
                         </div>
@@ -358,7 +358,7 @@ export default function SupervisionsPage() {
                       <div className="text-xs text-gray-500 dark:text-gray-400">{sup.duration}</div>
                     </td>
                     <td className="px-5 py-3.5 border-l border-gray-200 dark:border-gray-800">
-                      <span className={`inline-flex items-center px-2 py-0.5 rounded text-xs font-medium ${
+                      <span className={`inline-flex items-center px-2 py-0.5 rounded-[8px] text-xs font-medium ${
                         sup.status === 'ACTIVE' ? 'bg-emerald-50 dark:bg-emerald-500/10 text-emerald-700 dark:text-emerald-400 border border-emerald-200 dark:border-emerald-500/20' : 'bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 border border-gray-200 dark:border-gray-800'
                       }`}>
                         {STATUS_MAP[sup.status] || sup.status}
@@ -394,9 +394,9 @@ export default function SupervisionsPage() {
               Hiển thị <span className="font-medium text-gray-900 dark:text-white">{page * itemsPerPage + 1} - {Math.min((page + 1) * itemsPerPage, filteredData.length)}</span> trong <span className="font-medium text-gray-900 dark:text-white">{filteredData.length}</span>
             </div>
             <div className="flex items-center gap-1">
-              <button onClick={() => setPage(p => Math.max(0, p - 1))} disabled={page === 0} className="p-1.5 rounded-md border border-gray-200 dark:border-gray-800 text-gray-500 dark:text-gray-400 hover:bg-white dark:bg-[#14151a] disabled:opacity-50 transition-colors bg-white dark:bg-[#14151a]"><ChevronLeft className="w-4 h-4" /></button>
+              <button onClick={() => setPage(p => Math.max(0, p - 1))} disabled={page === 0} className="p-1.5 rounded-[8px] border border-gray-200 dark:border-gray-800 text-gray-500 dark:text-gray-400 hover:bg-white dark:bg-[#14151a] disabled:opacity-50 transition-colors bg-white dark:bg-[#14151a]"><ChevronLeft className="w-4 h-4" /></button>
               <div className="px-3 text-sm font-medium text-gray-700 dark:text-gray-300">{page + 1} / {totalPages}</div>
-              <button onClick={() => setPage(p => Math.min(totalPages - 1, p + 1))} disabled={page === totalPages - 1} className="p-1.5 rounded-md border border-gray-200 dark:border-gray-800 text-gray-500 dark:text-gray-400 hover:bg-white dark:bg-[#14151a] disabled:opacity-50 transition-colors bg-white dark:bg-[#14151a]"><ChevronRight className="w-4 h-4" /></button>
+              <button onClick={() => setPage(p => Math.min(totalPages - 1, p + 1))} disabled={page === totalPages - 1} className="p-1.5 rounded-[8px] border border-gray-200 dark:border-gray-800 text-gray-500 dark:text-gray-400 hover:bg-white dark:bg-[#14151a] disabled:opacity-50 transition-colors bg-white dark:bg-[#14151a]"><ChevronRight className="w-4 h-4" /></button>
             </div>
           </div>
         )}
@@ -408,16 +408,16 @@ export default function SupervisionsPage() {
           <div className="relative bg-white dark:bg-[#14151a] w-full max-w-2xl h-full flex flex-col border-l border-gray-200 dark:border-gray-800 animate-in slide-in-from-right duration-300 shadow-none z-10">
             <div className="h-16 flex items-center justify-between px-6 border-b border-gray-100 dark:border-gray-800 bg-white dark:bg-[#14151a]">
               <div className="flex items-center gap-3">
-                <div className="w-8 h-8 rounded-lg bg-[#5865f2]/10 flex items-center justify-center">
+                <div className="w-8 h-8 rounded-[8px] bg-[#5865f2]/10 flex items-center justify-center">
                   <ShieldCheck className="w-4 h-4 text-[#5865f2]" />
                 </div>
                 <div>
-                  <h2 className="text-base font-medium text-gray-900 dark:text-white tracking-tight">
+                  <h2 className="font-heading text-base font-medium text-gray-900 dark:text-white tracking-tight">
                     {modalMode === 'add' ? 'Thêm Gói Giám Sát' : 'Cập Nhật Gói'}
                   </h2>
                 </div>
               </div>
-              <button onClick={() => setIsDrawerOpen(false)} className="p-1.5 rounded-lg hover:bg-gray-100 dark:bg-gray-800 dark:hover:bg-gray-800 text-gray-400 hover:text-gray-600 dark:text-gray-400 dark:hover:text-gray-300 transition-colors cursor-pointer">
+              <button onClick={() => setIsDrawerOpen(false)} className="p-1.5 rounded-[8px] hover:bg-gray-100 dark:bg-gray-800 dark:hover:bg-gray-800 text-gray-400 hover:text-gray-600 dark:text-gray-400 dark:hover:text-gray-300 transition-colors cursor-pointer">
                 <X className="w-5 h-5" />
               </button>
             </div>
@@ -426,7 +426,7 @@ export default function SupervisionsPage() {
                <form id="supervision-form" onSubmit={handleSave} className="p-6 space-y-8">
                 {/* Section: Thông tin gói */}
                 <div className="space-y-5">
-                  <h3 className="text-xs font-medium text-gray-900 dark:text-white uppercase tracking-wider flex items-center gap-2">
+                  <h3 className="font-heading text-xs font-medium text-gray-900 dark:text-white uppercase tracking-wider flex items-center gap-2">
                       <span className="w-1.5 h-1.5 rounded-full bg-[#5865f2]"></span>
                       Thông tin gói
                   </h3>
@@ -438,7 +438,7 @@ export default function SupervisionsPage() {
                         <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                           <FileText className="h-4 w-4 text-gray-400 dark:text-gray-500 dark:text-gray-400" />
                         </div>
-                        <input type="text" value={formData.packageName} onChange={e => {setFormData({...formData, packageName: e.target.value}); if (errors.packageName) setErrors({...errors, packageName: ''});}} className={`pl-9 w-full bg-gray-50/50 dark:bg-[#1a1b23] border ${errors.packageName ? 'border-red-500 focus:ring-red-500/20' : 'border-gray-200 dark:border-gray-700 focus:ring-[#5865f2]/20'} text-sm h-10 rounded-lg text-gray-900 dark:text-white transition-all hover:bg-white dark:bg-[#14151a] dark:hover:bg-[#1a1b23] focus:outline-none focus:ring-[3px] focus:border-[#5865f2]/40`} placeholder="VD: Gói Giám Sát Toàn Diện..." />
+                        <input type="text" value={formData.packageName} onChange={e => {setFormData({...formData, packageName: e.target.value}); if (errors.packageName) setErrors({...errors, packageName: ''});}} className={`pl-9 w-full bg-gray-50/50 dark:bg-[#1a1b23] border ${errors.packageName ? 'border-red-500 focus:ring-red-500/20' : 'border-gray-200 dark:border-gray-700 focus:ring-[#5865f2]/20'} text-sm h-10 rounded-[8px] text-gray-900 dark:text-white transition-all hover:bg-white dark:bg-[#14151a] dark:hover:bg-[#1a1b23] focus:outline-none focus:ring-[3px] focus:border-[#5865f2]/40`} placeholder="VD: Gói Giám Sát Toàn Diện..." />
                       </div>
                       {errors.packageName && <p className="text-red-500 text-xs mt-1">{errors.packageName}</p>}
                     </div>
@@ -450,7 +450,7 @@ export default function SupervisionsPage() {
 
                   <div className="space-y-1.5">
                     <label className="text-sm font-medium text-gray-700 dark:text-gray-300">Mô tả ngắn</label>
-                    <textarea value={formData.shortDescription} onChange={e => setFormData({...formData, shortDescription: e.target.value})} className="w-full bg-gray-50/50 dark:bg-[#1a1b23] border border-gray-200 dark:border-gray-700 text-sm rounded-lg text-gray-900 dark:text-white p-3 transition-all hover:bg-white dark:bg-[#14151a] dark:hover:bg-[#1a1b23] focus:outline-none focus:ring-[3px] focus:ring-[#5865f2]/20 focus:border-[#5865f2]/40 resize-none h-20" placeholder="Mô tả về gói giám sát..." />
+                    <textarea value={formData.shortDescription} onChange={e => setFormData({...formData, shortDescription: e.target.value})} className="w-full bg-gray-50/50 dark:bg-[#1a1b23] border border-gray-200 dark:border-gray-700 text-sm rounded-[8px] text-gray-900 dark:text-white p-3 transition-all hover:bg-white dark:bg-[#14151a] dark:hover:bg-[#1a1b23] focus:outline-none focus:ring-[3px] focus:ring-[#5865f2]/20 focus:border-[#5865f2]/40 resize-none h-20" placeholder="Mô tả về gói giám sát..." />
                   </div>
                 </div>
 
@@ -458,7 +458,7 @@ export default function SupervisionsPage() {
 
                 {/* Section: Chi phí & Phạm vi */}
                 <div className="space-y-5">
-                  <h3 className="text-xs font-medium text-gray-900 dark:text-white uppercase tracking-wider flex items-center gap-2">
+                  <h3 className="font-heading text-xs font-medium text-gray-900 dark:text-white uppercase tracking-wider flex items-center gap-2">
                       <span className="w-1.5 h-1.5 rounded-full bg-amber-50 dark:bg-amber-500/100"></span>
                       Chi phí & Phạm vi
                   </h3>
@@ -470,7 +470,7 @@ export default function SupervisionsPage() {
                         <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                           <Banknote className="h-4 w-4 text-gray-400 dark:text-gray-500 dark:text-gray-400" />
                         </div>
-                        <input type="text" value={formData.feeStructure} onChange={e => setFormData({...formData, feeStructure: e.target.value})} className="pl-9 w-full bg-gray-50/50 dark:bg-[#1a1b23] border border-gray-200 dark:border-gray-700 text-sm h-10 rounded-lg text-gray-900 dark:text-white transition-all hover:bg-white dark:bg-[#14151a] dark:hover:bg-[#1a1b23] focus:outline-none focus:ring-[3px] focus:ring-[#5865f2]/20 focus:border-[#5865f2]/40" placeholder="VD: 1.000.000đ/tháng" />
+                        <input type="text" value={formData.feeStructure} onChange={e => setFormData({...formData, feeStructure: e.target.value})} className="pl-9 w-full bg-gray-50/50 dark:bg-[#1a1b23] border border-gray-200 dark:border-gray-700 text-sm h-10 rounded-[8px] text-gray-900 dark:text-white transition-all hover:bg-white dark:bg-[#14151a] dark:hover:bg-[#1a1b23] focus:outline-none focus:ring-[3px] focus:ring-[#5865f2]/20 focus:border-[#5865f2]/40" placeholder="VD: 1.000.000đ/tháng" />
                       </div>
                     </div>
                     <div className="space-y-1.5 relative z-30">
@@ -481,17 +481,17 @@ export default function SupervisionsPage() {
 
                   <div className="space-y-1.5">
                     <label className="text-sm font-medium text-gray-700 dark:text-gray-300">Phạm vi công việc (Scope of work)</label>
-                    <textarea value={formData.scopeOfWork} onChange={e => setFormData({...formData, scopeOfWork: e.target.value})} className="w-full bg-gray-50/50 dark:bg-[#1a1b23] border border-gray-200 dark:border-gray-700 text-sm rounded-lg text-gray-900 dark:text-white p-3 transition-all hover:bg-white dark:bg-[#14151a] dark:hover:bg-[#1a1b23] focus:outline-none focus:ring-[3px] focus:ring-[#5865f2]/20 focus:border-[#5865f2]/40 resize-none h-24" placeholder="Chi tiết phạm vi công việc..." />
+                    <textarea value={formData.scopeOfWork} onChange={e => setFormData({...formData, scopeOfWork: e.target.value})} className="w-full bg-gray-50/50 dark:bg-[#1a1b23] border border-gray-200 dark:border-gray-700 text-sm rounded-[8px] text-gray-900 dark:text-white p-3 transition-all hover:bg-white dark:bg-[#14151a] dark:hover:bg-[#1a1b23] focus:outline-none focus:ring-[3px] focus:ring-[#5865f2]/20 focus:border-[#5865f2]/40 resize-none h-24" placeholder="Chi tiết phạm vi công việc..." />
                   </div>
                 </div>
               </form>
             </div>
 
             <div className="h-20 flex items-center justify-end gap-3 px-6 border-t border-gray-100 dark:border-gray-800 bg-white dark:bg-[#14151a] shrink-0">
-              <button type="button" onClick={() => setIsDrawerOpen(false)} className="flex items-center gap-2 border border-gray-200 dark:border-gray-700 bg-white dark:bg-[#1a1b23] hover:bg-gray-50 dark:hover:bg-[#262930] dark:bg-[#1a1b23] dark:hover:bg-[#262930] text-gray-700 dark:text-gray-200 rounded-lg text-sm h-10 px-5 cursor-pointer font-medium transition-colors">
+              <button type="button" onClick={() => setIsDrawerOpen(false)} className="flex items-center gap-2 border border-gray-200 dark:border-gray-700 bg-white dark:bg-[#1a1b23] hover:bg-gray-50 dark:hover:bg-[#262930] dark:bg-[#1a1b23] dark:hover:bg-[#262930] text-gray-700 dark:text-gray-200 rounded-[8px] text-sm h-10 px-5 cursor-pointer font-medium transition-colors">
                 <X className="w-4 h-4" /> Hủy bỏ
               </button>
-              <button type="submit" form="supervision-form" className="flex items-center gap-2 bg-[#5865f2] hover:bg-[#4752c4] text-white rounded-lg font-medium text-sm h-10 px-6 border-0 cursor-pointer transition-colors">
+              <button type="submit" form="supervision-form" className="flex items-center gap-2 bg-[#5865f2] hover:bg-[#4752c4] text-white rounded-[8px] font-medium text-sm h-10 px-6 border-0 cursor-pointer transition-colors">
                 <Check className="w-4 h-4" /> {modalMode === 'add' ? 'Thêm mới' : 'Lưu thay đổi'}
               </button>
             </div>

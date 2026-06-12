@@ -43,18 +43,18 @@ export function SlideOver({ isOpen, onClose, title, description, children }: Sli
       />
 
       {/* Slide-over panel */}
-      <div className="relative w-full max-w-md h-full bg-card shadow-2xl border-l border-border flex flex-col animate-slide-in transform transition-transform duration-300">
+      <div className="relative w-full max-w-md h-full bg-card shadow-sm border-l border-border flex flex-col animate-slide-in transform transition-transform duration-300">
         {/* Header */}
         <div className="flex items-start justify-between px-6 py-5 border-b border-border">
           <div>
-            <h2 className="text-lg font-medium tracking-tight text-foreground">{title}</h2>
+            <h2 className="font-heading text-lg font-medium tracking-tight text-foreground">{title}</h2>
             {description && (
               <p className="mt-1 text-sm text-muted-foreground">{description}</p>
             )}
           </div>
           <button
             onClick={onClose}
-            className="rounded-md p-2 text-muted-foreground hover:bg-secondary hover:text-foreground transition-colors"
+            className="rounded-[8px] p-2 text-muted-foreground hover:bg-secondary hover:text-foreground transition-colors"
           >
             <X className="w-5 h-5" />
           </button>

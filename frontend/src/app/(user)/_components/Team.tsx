@@ -65,10 +65,10 @@ export default function Team() {
         {/* Section Header */}
         <ScrollReveal animation="fade-up" delay={100}>
           <div className="text-center mb-16">
-            <h6 className="text-[#D3AE3E] text-[13px] font-semibold tracking-[4px] uppercase mb-4 font-['Montserrat',_sans-serif]">
+            <h6 className="font-label text-[#D3AE3E] text-[13px] font-semibold tracking-[4px] uppercase mb-4">
               Creative Team
             </h6>
-            <h3 className="text-4xl md:text-[40px] font-bold text-white mb-6 font-['Montserrat',_sans-serif] tracking-tight flex justify-center gap-[2px]">
+            <h3 className="font-heading text-4xl md:text-[40px] font-bold text-white mb-6 tracking-tight flex justify-center gap-[2px]">
               {'Meet Our team.'.split('').map((char, index) => (
                 <span key={index} className={char === ' ' ? 'w-3' : ''}>{char}</span>
               ))}
@@ -93,10 +93,10 @@ export default function Team() {
 
                 {/* Info Box */}
                 <div className="text-center">
-                  <h5 className="text-[22px] font-bold font-['Montserrat',_sans-serif] text-white mb-1 group-hover:text-[#D3AE3E] transition-colors">
+                  <h5 className="text-[22px] font-bold text-white mb-1 group-hover:text-[#D3AE3E] transition-colors">
                     {member.name}
                   </h5>
-                  <p className="text-[#888] font-['Montserrat',_sans-serif] text-[13px] uppercase tracking-wider mb-4">
+                  <p className="text-[#888] text-[13px] uppercase tracking-wider mb-4">
                     {member.role}
                   </p>
                   

@@ -48,18 +48,18 @@ const COMPARISON_DATA = [
 
 export default function Section5Comparison() {
   return (
-    <section className="relative py-32 bg-[#1a1a1a] overflow-hidden border-y border-white/5">
+    <section className="relative py-32 bg-[#F8F6F2] dark:bg-[#1a1a1a] overflow-hidden border-y border-[#ECE7DE] dark:border-white/5">
       <div className="relative z-10 max-w-[1200px] mx-auto px-6">
         {/* Section Header */}
         <ScrollReveal animation="fade-up" delay={100}>
           <div className="text-center mb-16">
-            <h6 className="text-[#D3AE3E] text-[13px] font-semibold tracking-[4px] uppercase mb-4 font-['Montserrat',_sans-serif]">
+            <h6 className="font-label text-[#C7A25C] text-[13px] font-semibold tracking-[4px] uppercase mb-4">
               Tạo Sự Khác Biệt
             </h6>
-            <h2 className="text-3xl md:text-5xl font-bold text-white mb-6 font-['Montserrat',_sans-serif] max-w-4xl mx-auto">
-              Làm qua hệ sinh thái <span className="text-[#D3AE3E]">khác gì</span> so với tự thuê ngoài?
+            <h2 className="font-heading text-3xl md:text-5xl font-bold text-[#1F1F1F] dark:text-white mb-6 max-w-4xl mx-auto">
+              Làm qua hệ sinh thái <span className="text-[#C7A25C]">khác gì</span> so với tự thuê ngoài?
             </h2>
-            <div className="w-16 h-[2px] bg-[#D3AE3E] mx-auto mb-6" />
+            <div className="w-16 h-[2px] bg-[#C7A25C] mx-auto mb-6" />
           </div>
         </ScrollReveal>
 
@@ -70,25 +70,25 @@ export default function Section5Comparison() {
             {COMPARISON_DATA.map((row, index) => (
               <SpotlightCard key={index} className="p-5">
                 {/* Decorative glow */}
-                <div className="absolute top-0 right-0 w-32 h-32 bg-[#D3AE3E]/5 blur-3xl rounded-full pointer-events-none" />
+                <div className="absolute top-0 right-0 w-32 h-32 bg-[#C7A25C]/5 blur-3xl rounded-full pointer-events-none" />
                 
-                <h3 className="text-white font-['Montserrat',_sans-serif] font-bold text-[16px] border-b border-white/10 pb-3 mb-4 relative z-10">
+                <h3 className="font-heading text-[#1F1F1F] dark:text-white font-bold text-[16px] border-b border-[#ECE7DE] dark:border-white/10 pb-3 mb-4 relative z-10">
                   {row.feature}
                 </h3>
                 
                 <div className="space-y-5 relative z-10">
-                  <div className="bg-[#0a0a0a]/50 p-4 rounded-lg border border-white/5">
-                    <span className="text-[#888] text-[11px] font-bold uppercase tracking-widest mb-2 block font-['Montserrat',_sans-serif]">Tự thuê ngoài</span>
-                    <div className="flex items-start gap-2 text-[#888] text-[14px] leading-relaxed">
+                  <div className="bg-[#FFFFFF] dark:bg-[#0a0a0a]/50 p-4 rounded-[8px] border border-[#ECE7DE] dark:border-white/5">
+                    <span className="text-gray-500 dark:text-[#888] text-[11px] font-bold uppercase tracking-widest mb-2 block">Tự thuê ngoài</span>
+                    <div className="flex items-start gap-2 text-gray-500 dark:text-[#888] text-[14px] leading-relaxed">
                       <svg className="w-4 h-4 text-red-500/70 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path></svg>
                       <span>{row.outside}</span>
                     </div>
                   </div>
                   
-                  <div className="bg-[#D3AE3E]/10 p-4 rounded-lg border border-[#D3AE3E]/20">
-                    <span className="text-[#D3AE3E] text-[11px] font-bold uppercase tracking-widest mb-2 block font-['Montserrat',_sans-serif]">Qua hệ sinh thái</span>
-                    <div className="flex items-start gap-2 text-white text-[14px] font-medium leading-relaxed">
-                      <svg className="w-5 h-5 text-[#D3AE3E] shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M5 13l4 4L19 7"></path></svg>
+                  <div className="bg-[#C7A25C]/10 p-4 rounded-[8px] border border-[#C7A25C]/20">
+                    <span className="text-[#C7A25C] text-[11px] font-bold uppercase tracking-widest mb-2 block">Qua hệ sinh thái</span>
+                    <div className="flex items-start gap-2 text-[#1F1F1F] dark:text-white text-[14px] font-medium leading-relaxed">
+                      <svg className="w-5 h-5 text-[#C7A25C] shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M5 13l4 4L19 7"></path></svg>
                       <span>{row.ecosystem}</span>
                     </div>
                   </div>
@@ -99,16 +99,16 @@ export default function Section5Comparison() {
 
           {/* DESKTOP VIEW (Table) */}
           <div className="hidden md:block overflow-hidden pb-6">
-            <table className="w-full border-collapse bg-[#131313] border border-white/10 rounded-lg overflow-hidden shadow-2xl">
+            <table className="w-full border-collapse bg-[#FFFFFF] dark:bg-[#131313] border border-[#ECE7DE] dark:border-white/10 rounded-[8px] overflow-hidden shadow-[0_10px_40px_-10px_rgba(0,0,0,0.08)] dark:shadow-none">
               <thead>
                 <tr>
-                  <th className="w-[20%] p-6 text-left text-white font-['Montserrat',_sans-serif] font-bold text-[16px] border-b border-white/10 bg-[#0a0a0a]">
+                  <th className="w-[20%] p-6 text-left text-[#1F1F1F] dark:text-white font-bold text-[16px] border-b border-[#ECE7DE] dark:border-white/10 bg-[#F8F6F2] dark:bg-[#0a0a0a]">
                     Tiêu chí
                   </th>
-                  <th className="w-[40%] p-6 text-center text-[#888] font-['Montserrat',_sans-serif] font-bold text-[16px] border-b border-white/10 bg-[#0a0a0a]/50">
+                  <th className="w-[40%] p-6 text-center text-gray-500 dark:text-[#888] font-bold text-[16px] border-b border-[#ECE7DE] dark:border-white/10 bg-[#FFFFFF] dark:bg-[#0a0a0a]/50">
                     Tự thuê ngoài
                   </th>
-                  <th className="w-[40%] p-6 text-center text-[#D3AE3E] font-['Montserrat',_sans-serif] font-bold text-[18px] border-b-2 border-[#D3AE3E] bg-[#D3AE3E]/10">
+                  <th className="w-[40%] p-6 text-center text-[#C7A25C] font-bold text-[18px] border-b-2 border-[#C7A25C] bg-[#C7A25C]/10">
                     Qua hệ sinh thái của chúng tôi
                   </th>
                 </tr>
@@ -116,18 +116,18 @@ export default function Section5Comparison() {
               <tbody>
                 {COMPARISON_DATA.map((row, index) => (
                   <tr key={index} className="group transition-colors">
-                    <td className="p-6 text-white/90 font-['Montserrat',_sans-serif] text-[15px] font-semibold border-b border-white/5 bg-[#0a0a0a] group-hover:bg-[#1a1a1a]">
+                    <td className="p-6 text-[#1F1F1F]/90 dark:text-white/90 text-[15px] font-semibold border-b border-[#ECE7DE] dark:border-white/5 bg-[#FFFFFF] dark:bg-[#0a0a0a] group-hover:bg-[#F8F6F2] dark:group-hover:bg-[#1a1a1a]">
                       {row.feature}
                     </td>
-                    <td className="p-6 text-center text-[#888] font-['Montserrat',_sans-serif] text-[15px] border-b border-white/5 bg-[#0a0a0a]/50 group-hover:bg-[#131313] leading-relaxed">
+                    <td className="p-6 text-center text-gray-500 dark:text-[#888] text-[15px] border-b border-[#ECE7DE] dark:border-white/5 bg-[#FFFFFF] dark:bg-[#0a0a0a]/50 group-hover:bg-[#F8F6F2] dark:group-hover:bg-[#131313] leading-relaxed">
                       <div className="flex items-center justify-center gap-2">
                         <svg className="w-4 h-4 text-red-500/70 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path></svg>
                         <span>{row.outside}</span>
                       </div>
                     </td>
-                    <td className="p-6 text-center text-white font-['Montserrat',_sans-serif] text-[16px] border-b border-white/5 bg-[#D3AE3E]/5 group-hover:bg-[#D3AE3E]/20 transition-colors leading-relaxed font-medium">
+                    <td className="p-6 text-center text-[#1F1F1F] dark:text-white text-[16px] border-b border-[#ECE7DE] dark:border-white/5 bg-[#C7A25C]/5 group-hover:bg-[#C7A25C]/20 transition-colors leading-relaxed font-medium">
                       <div className="flex items-center justify-center gap-2">
-                        <svg className="w-5 h-5 text-[#D3AE3E] shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M5 13l4 4L19 7"></path></svg>
+                        <svg className="w-5 h-5 text-[#C7A25C] shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M5 13l4 4L19 7"></path></svg>
                         <span>{row.ecosystem}</span>
                       </div>
                     </td>

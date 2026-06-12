@@ -25,7 +25,7 @@ interface ActionMenuProps {
 export function ActionMenu({ items }: ActionMenuProps) {
   return (
     <DropdownMenu>
-      <DropdownMenuTrigger className="p-1.5 text-gray-400 hover:text-gray-900 hover:bg-gray-100 rounded-md transition-colors cursor-pointer data-[state=open]:bg-gray-100 data-[state=open]:text-gray-900 focus:outline-none">
+      <DropdownMenuTrigger className="p-1.5 text-gray-400 hover:text-gray-900 hover:bg-gray-100 rounded-[8px] transition-colors cursor-pointer data-[state=open]:bg-gray-100 data-[state=open]:text-gray-900 focus:outline-none">
         <MoreHorizontal className="w-5 h-5" />
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end" className="w-48 p-1">
@@ -41,7 +41,7 @@ export function ActionMenu({ items }: ActionMenuProps) {
               {item.separatorBefore && <DropdownMenuSeparator className="my-1 border-gray-100" />}
               <DropdownMenuItem 
                 onClick={item.onClick}
-                className={`flex items-center gap-2 px-2.5 py-2 text-sm font-medium rounded-md cursor-pointer outline-none transition-colors ${colorClass}`}
+                className={`flex items-center gap-2 px-2.5 py-2 text-sm font-medium rounded-[8px] cursor-pointer outline-none transition-colors ${colorClass}`}
               >
                 {item.icon && <item.icon className="w-4 h-4" />}
                 {item.label}
