@@ -22,29 +22,30 @@ export default function ArticleDetail() {
       try {
         const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3001/api/v1';
         
-        // Fetch article by slug
-        const res = await fetch(`${apiUrl}/articles/slug/${slug}`);
+        // The backend doesn't have a /slug endpoint, so we fetch all and find
+        const res = await fetch(`${apiUrl}/articles`);
         if (!res.ok) {
+          throw new Error('Không thể tải bài viết');
+        }
+        
+        const allArticles = await res.json();
+        
+        // Find the article by slug or id
+        const foundArticle = allArticles.find((a: any) => a.slug === slug || a.id.toString() === slug);
+        
+        if (!foundArticle) {
           throw new Error('Không tìm thấy bài viết');
         }
         
-        const data = await res.json();
-        setArticle(data);
+        setArticle(foundArticle);
 
-        // Fetch related articles (same category or just latest)
-        const resRelated = await fetch(`${apiUrl}/articles`);
-        if (resRelated.ok) {
-          const allArticles = await resRelated.json();
-          if (Array.isArray(allArticles)) {
-            // Filter out current, match category if possible
-            let related = allArticles.filter(a => a.id !== data.id);
-            const sameCat = related.filter(a => a.category === data.category);
-            if (sameCat.length > 0) {
-              related = sameCat;
-            }
-            setRelatedArticles(related.slice(0, 3));
-          }
+        // Filter out current, match category if possible
+        let related = allArticles.filter((a: any) => a.id !== foundArticle.id);
+        const sameCat = related.filter((a: any) => a.category === foundArticle.category);
+        if (sameCat.length > 0) {
+          related = sameCat;
         }
+        setRelatedArticles(related.slice(0, 3));
 
       } catch (err: any) {
         console.error("Failed to fetch article:", err);
