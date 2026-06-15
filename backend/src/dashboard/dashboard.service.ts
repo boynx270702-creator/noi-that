@@ -30,6 +30,8 @@ export class DashboardService {
     const totalSupervisions = await this.prisma.supervision.count();
     const totalArticles = await this.prisma.article.count();
     const publishedArticles = await this.prisma.article.count({ where: { status: 'PUBLISHED' } });
+    const articleViewsAgg = await this.prisma.article.aggregate({ _sum: { views: true } });
+    const totalArticleViews = articleViewsAgg._sum.views || 0;
     
     const indexedSeoPages = await this.prisma.seoPage.count();
     const processingProjects = await this.prisma.project.count({ where: { status: 'IN_PROGRESS' } });
@@ -55,11 +57,20 @@ export class DashboardService {
         }
       });
       
+      const viewsCount = await this.prisma.articleViewLog.count({
+        where: {
+          createdAt: {
+            gte: startOfDay,
+            lte: endOfDay,
+          }
+        }
+      });
+      
       const formatNumber = (num: number) => num < 10 ? `0${num}` : num;
       chartData.push({
         date: `${formatNumber(startOfDay.getDate())}/${formatNumber(startOfDay.getMonth() + 1)}`,
         leads: leadsCount,
-        supervisions: 0 // Mocking supervision as we don't have dynamic creation dates easily queryable if it's small, but we could do it similarly.
+        views: viewsCount
       });
     }
 
@@ -69,7 +80,7 @@ export class DashboardService {
         totalLeads, pendingLeads, processingLeads,
         leadsToday, leadsThisWeek, leadsThisMonth,
         conversionRate: '15.5%',
-        totalSupervisions, totalArticles, publishedArticles,
+        totalSupervisions, totalArticleViews, totalArticles, publishedArticles,
         indexedSeoPages, processingProjects
       },
       recentLeads,

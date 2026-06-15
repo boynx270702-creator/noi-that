@@ -24,7 +24,12 @@ export class ArticlesService {
     });
   }
 
-  incrementView(id: number) {
+  async incrementView(id: number) {
+    // Log view for chart data
+    await this.prisma.articleViewLog.create({
+      data: { articleId: id }
+    });
+
     return this.prisma.article.update({
       where: { id },
       data: {

@@ -1,7 +1,7 @@
 "use client";
 import React, { useState, useEffect } from 'react';
 import {
-  Building2, ShieldCheck, Newspaper, Globe, EyeOff,
+  Building2, ShieldCheck, Newspaper, Globe, EyeOff, Eye,
   CalendarDays, X, Activity, MessageSquare, Clock, TrendingUp, TrendingDown, MoreHorizontal, FileText, BarChart2, ChevronLeft, ChevronRight, CheckCircle2
 } from 'lucide-react';
 import { Popover, PopoverContent, PopoverTrigger } from '@/admin-components/ui/popover';
@@ -202,7 +202,7 @@ export default function DashboardPage() {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
         <MetricCard title="Đơn vị Đối tác" value={stats?.totalUnits || 0} icon={Building2} trend="+12% tháng trước" isPositive={true} baseColor="blue" />
         <MetricCard title="Yêu cầu Tư vấn" value={stats?.totalLeads || 0} icon={MessageSquare} trend="+24% tháng trước" isPositive={true} baseColor="emerald" />
-        <MetricCard title="Gói Giám sát" value={stats?.totalSupervisions || 0} icon={ShieldCheck} trend="-5% tháng trước" isPositive={false} baseColor="rose" />
+        <MetricCard title="Lượt xem Bài viết" value={stats?.totalArticleViews || 0} icon={Eye} trend="+18% tháng trước" isPositive={true} baseColor="rose" />
         <MetricCard title="Hệ thống Nội dung" value={stats?.totalArticles || 0} icon={Newspaper} trend="+8% tháng trước" isPositive={true} baseColor="amber" />
       </div>
 
@@ -241,7 +241,7 @@ export default function DashboardPage() {
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-4">
             <div>
               <h3 className="text-base font-medium text-gray-900 dark:text-white">Biểu đồ Tăng trưởng</h3>
-              <p className="text-[13px] font-normal text-gray-500 dark:text-gray-400 mt-0.5">So sánh lượng Yêu cầu và Giám sát theo thời gian.</p>
+              <p className="text-[13px] font-normal text-gray-500 dark:text-gray-400 mt-0.5">So sánh lượng Yêu cầu và Lượt xem theo thời gian.</p>
             </div>
             <div className="flex bg-gray-50 dark:bg-[#14151a] p-1 rounded-[4px] border border-gray-100 dark:border-gray-800">
               <button onClick={() => setChartTab('overview')} className={`px-3 py-1 rounded-[4px] text-xs font-medium transition-all cursor-pointer ${chartTab === 'overview' ? 'bg-white dark:bg-gray-800 text-gray-900 dark:text-white shadow-sm border border-gray-200 dark:border-gray-700' : 'text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300'}`}>
@@ -249,6 +249,9 @@ export default function DashboardPage() {
               </button>
               <button onClick={() => setChartTab('leads')} className={`px-3 py-1 rounded-[4px] text-xs font-medium transition-all cursor-pointer ${chartTab === 'leads' ? 'bg-white dark:bg-gray-800 text-gray-900 dark:text-white shadow-sm border border-gray-200 dark:border-gray-700' : 'text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300'}`}>
                 Yêu cầu
+              </button>
+              <button onClick={() => setChartTab('views')} className={`px-3 py-1 rounded-[4px] text-xs font-medium transition-all cursor-pointer ${chartTab === 'views' ? 'bg-white dark:bg-gray-800 text-gray-900 dark:text-white shadow-sm border border-gray-200 dark:border-gray-700' : 'text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300'}`}>
+                Lượt xem
               </button>
             </div>
           </div>
@@ -269,7 +272,7 @@ export default function DashboardPage() {
                       <stop offset="5%" stopColor="#10b981" stopOpacity={0.2} />
                       <stop offset="95%" stopColor="#10b981" stopOpacity={0} />
                     </linearGradient>
-                    <linearGradient id="colorSupervisions" x1="0" y1="0" x2="0" y2="1">
+                    <linearGradient id="colorViews" x1="0" y1="0" x2="0" y2="1">
                       <stop offset="5%" stopColor="#5865f2" stopOpacity={0.2} />
                       <stop offset="95%" stopColor="#5865f2" stopOpacity={0} />
                     </linearGradient>
@@ -289,7 +292,7 @@ export default function DashboardPage() {
                                 <div key={index} className="flex items-center justify-between gap-3">
                                   <div className="flex items-center gap-1.5">
                                     <span className="w-2 h-2 rounded-full" style={{ backgroundColor: entry.color }}></span>
-                                    <span className="text-[13px] font-normal text-gray-600 dark:text-gray-300">{entry.name === 'leads' ? 'Yêu cầu' : 'Giám sát'}</span>
+                                    <span className="text-[13px] font-normal text-gray-600 dark:text-gray-300">{entry.name === 'leads' ? 'Yêu cầu' : 'Lượt xem'}</span>
                                   </div>
                                   <span className="text-[13px] font-medium text-gray-900 dark:text-white">{entry.value}</span>
                                 </div>
@@ -304,8 +307,8 @@ export default function DashboardPage() {
                   {(chartTab === 'overview' || chartTab === 'leads') && (
                     <Area type="monotone" dataKey="leads" name="leads" stroke="#10b981" strokeWidth={2} fill="url(#colorLeads)" activeDot={{ r: 4, strokeWidth: 0, fill: '#10b981' }} />
                   )}
-                  {(chartTab === 'overview' || chartTab === 'supervisions') && (
-                    <Area type="monotone" dataKey="supervisions" name="supervisions" stroke="#5865f2" strokeWidth={2} fill="url(#colorSupervisions)" activeDot={{ r: 4, strokeWidth: 0, fill: '#5865f2' }} />
+                  {(chartTab === 'overview' || chartTab === 'views') && (
+                    <Area type="monotone" dataKey="views" name="views" stroke="#5865f2" strokeWidth={2} fill="url(#colorViews)" activeDot={{ r: 4, strokeWidth: 0, fill: '#5865f2' }} />
                   )}
                 </AreaChart>
               </ResponsiveContainer>

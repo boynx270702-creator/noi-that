@@ -217,3 +217,10 @@ model AuditLog {
   module    String
   createdAt DateTime @default(now())
 }
+
+model ArticleViewLog {
+  id        Int      @id @default(autoincrement())
+  articleId Int
+  ip        String?
+  createdAt DateTime @default(now())
+}
