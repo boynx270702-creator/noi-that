@@ -611,8 +611,8 @@ export default function ArticlesPage() {
                           } catch (error) {
                             console.error(error);
                             // Rollback on error
-                            setFormData(prev => ({ ...prev, category: prevVal }));
-                            setCategories(prev => prev.filter(c => c !== newVal));
+                            setFormData((prev: any) => ({ ...prev, category: prevVal }));
+                            setCategories((prev: string[]) => prev.filter(c => c !== newVal));
                             toast.error('Lỗi khi tạo danh mục mới');
                           }
                         } else {
