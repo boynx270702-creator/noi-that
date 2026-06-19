@@ -124,6 +124,10 @@ export default function HeroSlider() {
               className="max-w-[1400px] mx-auto text-center flex flex-col items-center justify-center"
             >
 
+              <motion.div variants={itemVariants} className="mb-4">
+                <span className="inline-block px-4 py-1.5 border border-[#D3AE3E]/40 rounded-full text-[#D3AE3E] text-xs md:text-sm font-medium tracking-widest uppercase bg-black/20 backdrop-blur-sm luxury-glow">Một kết nối – Vạn giá trị</span>
+              </motion.div>
+
               <motion.p variants={itemVariants} className="text-[#D3AE3E] text-[12px] md:text-[14px] font-bold tracking-[0.3em] uppercase mb-6 drop-shadow-md">
                 {SLIDES[current].subtitle}
               </motion.p>

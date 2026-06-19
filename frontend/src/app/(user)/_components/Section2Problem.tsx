@@ -42,7 +42,7 @@ const PROBLEMS = [
 
 export default function Section2Problem() {
   return (
-    <section className="relative py-32 modern-section overflow-hidden">
+    <section className="relative py-32 bg-[#FDFCFB] dark:bg-[#131313] modern-section overflow-hidden">
       {/* Background Decor */}
       <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-[#ECE7DE]/50 dark:from-[#1a1a1a] to-transparent opacity-50 pointer-events-none" />
 

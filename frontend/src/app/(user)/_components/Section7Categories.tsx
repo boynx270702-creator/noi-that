@@ -21,7 +21,7 @@ const CATEGORIES = [
 
 export default function Section7Categories() {
   return (
-    <section id="Categories" className="relative py-32 modern-section overflow-hidden border-t border-[#ECE7DE] dark:border-white/20">
+    <section id="Categories" className="relative py-32 bg-[#FCFBF8] dark:bg-[#131313] modern-section overflow-hidden border-t border-[#ECE7DE] dark:border-white/20">
       {/* Grid Pattern Background */}
       <div
         className="absolute inset-0 opacity-[0.03] pointer-events-none"

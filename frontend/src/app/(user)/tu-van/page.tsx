@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect, use } from 'react';
 import { toast } from 'sonner';
 
 function FormSelect({ label, options, value, onChange }: { label: string, options: { value: string, label: string }[], value: string, onChange: (val: string) => void }) {
@@ -52,7 +52,29 @@ function FormSelect({ label, options, value, onChange }: { label: string, option
   );
 }
 
-export default function TuVanPage() {
+export default function TuVanPage({ searchParams }: { searchParams: Promise<{ unit?: string }> }) {
+  const resolvedSearchParams = use(searchParams);
+  const unitId = resolvedSearchParams.unit;
+  
+  const [targetUnitName, setTargetUnitName] = useState<string>('');
+
+  useEffect(() => {
+    if (unitId) {
+      const fetchUnit = async () => {
+        try {
+          const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3001/api/v1'}/units`);
+          const data = await res.json();
+          if (Array.isArray(data)) {
+            const found = data.find((u: any) => u.id.toString() === unitId.toString());
+            if (found) setTargetUnitName(found.name);
+          }
+        } catch (error) {
+          console.error(error);
+        }
+      };
+      fetchUnit();
+    }
+  }, [unitId]);
   const [name, setName] = useState('');
   const [phone, setPhone] = useState('');
   const [email, setEmail] = useState('');
@@ -120,8 +142,17 @@ export default function TuVanPage() {
 
         {/* Header */}
         <div className="text-center mb-16">
-          <h1 className="font-heading text-4xl md:text-5xl font-bold text-[#ce9e51] mb-6">Gửi nhu cầu để được tư vấn đơn vị phù hợp</h1>
-          <p className="text-gray-600 dark:text-white/70 text-lg">Vui lòng cung cấp thông tin cơ bản về công trình. Dựa trên nhu cầu thực tế, chúng tôi sẽ tư vấn nhóm đơn vị phù hợp trong hệ sinh thái hơn 30 đối tác thiết kế – thi công nội thất.</p>
+          <h1 className="font-heading text-4xl md:text-5xl font-bold text-[#ce9e51] mb-6">
+            {targetUnitName ? 'Nhận tư vấn với đơn vị chỉ định' : 'Gửi nhu cầu để được tư vấn đơn vị phù hợp'}
+          </h1>
+          {targetUnitName ? (
+            <div className="bg-[#C7A25C]/10 border border-[#C7A25C]/30 text-[#C7A25C] px-6 py-4 rounded-[4px] inline-flex items-center gap-3 text-lg font-bold mb-4">
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path></svg>
+              <span>Đối tác: {targetUnitName}</span>
+            </div>
+          ) : (
+            <p className="text-gray-600 dark:text-white/70 text-lg">Vui lòng cung cấp thông tin cơ bản về công trình. Dựa trên nhu cầu thực tế, chúng tôi sẽ tư vấn nhóm đơn vị phù hợp trong hệ sinh thái hơn 30 đối tác thiết kế – thi công nội thất.</p>
+          )}
         </div>
 
         {/* Form Container */}

@@ -54,7 +54,7 @@ export default function Blog() {
   }, []);
 
   return (
-    <section id="Blog" className="relative py-32 modern-section overflow-hidden">
+    <section id="Blog" className="relative py-32 bg-[#F9F8F6] dark:bg-[#131313] modern-section overflow-hidden">
       <div className="max-w-[1400px] mx-auto px-6">
 
         {/* Section Header */}

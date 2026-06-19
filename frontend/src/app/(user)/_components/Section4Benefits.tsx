@@ -85,7 +85,7 @@ export default function Section4Benefits() {
   const [activeTab, setActiveTab] = useState(BENEFITS[0]);
 
   return (
-    <section className="relative py-32 modern-section overflow-hidden">
+    <section className="relative py-32 bg-[#F7F5F0] dark:bg-[#1a1a1a] modern-section overflow-hidden">
       <div className="relative z-10 max-w-[1400px] mx-auto px-6">
         
         {/* Section Header */}

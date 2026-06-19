@@ -42,7 +42,7 @@ const PROCESS_STEPS = [
 
 export default function Section9Process() {
   return (
-    <section id="Process" className="relative py-32 modern-section overflow-hidden">
+    <section id="Process" className="relative py-32 bg-[#F4F2EE] dark:bg-[#131313] modern-section overflow-hidden">
       <div className="relative z-10 max-w-[1400px] mx-auto px-6">
 
         {/* Section Header */}

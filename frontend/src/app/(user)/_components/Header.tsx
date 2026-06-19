@@ -74,7 +74,7 @@ export default function Header() {
 
             <div className="relative group cursor-pointer">
               <span className={`font-menu flex items-center gap-1 text-[13px] font-semibold uppercase tracking-widest transition-colors ${isActive('/san-pham') ? 'text-[#D3AE3E]' : 'text-gray-900 dark:text-white hover:text-[#D3AE3E]'}`}>
-                Sản phẩm
+                Đối tác/Hạng mục
                 <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path></svg>
               </span>
               {/* Dropdown Menu */}
@@ -167,7 +167,7 @@ export default function Header() {
 
         <nav className="flex flex-col items-center gap-8 w-full px-6 h-full overflow-y-auto py-20">
           <Link href="/" onClick={() => setIsMobileMenuOpen(false)} className={`font-menu text-2xl font-semibold uppercase tracking-widest transition-all ${isActive('/') ? 'text-[#D3AE3E]' : 'text-gray-900 dark:text-white hover:text-[#D3AE3E]'}`}>Trang Chủ</Link>
-          <Link href="/san-pham" onClick={() => setIsMobileMenuOpen(false)} className={`font-menu text-2xl font-semibold uppercase tracking-widest transition-all ${isActive('/san-pham') ? 'text-[#D3AE3E]' : 'text-gray-900 dark:text-white hover:text-[#D3AE3E]'}`}>Sản Phẩm</Link>
+          <Link href="/san-pham" onClick={() => setIsMobileMenuOpen(false)} className={`font-menu text-2xl font-semibold uppercase tracking-widest transition-all ${isActive('/san-pham') ? 'text-[#D3AE3E]' : 'text-gray-900 dark:text-white hover:text-[#D3AE3E]'}`}>Đối tác/Hạng mục</Link>
           <Link href="/he-sinh-thai" onClick={() => setIsMobileMenuOpen(false)} className={`font-menu text-2xl font-semibold uppercase tracking-widest transition-all ${isActive('/he-sinh-thai') ? 'text-[#D3AE3E]' : 'text-gray-900 dark:text-white hover:text-[#D3AE3E]'}`}>Hệ Sinh Thái</Link>
           <Link href="/giam-sat" onClick={() => setIsMobileMenuOpen(false)} className={`font-menu text-2xl font-semibold uppercase tracking-widest transition-all ${isActive('/dich-vu') ? 'text-[#D3AE3E]' : 'text-gray-900 dark:text-white hover:text-[#D3AE3E]'}`}>Dịch Vụ</Link>
           <Link href="/cam-nang" onClick={() => setIsMobileMenuOpen(false)} className={`font-menu text-2xl font-semibold uppercase tracking-widest transition-all ${isActive('/cam-nang') ? 'text-[#D3AE3E]' : 'text-gray-900 dark:text-white hover:text-[#D3AE3E]'}`}>Cẩm Nang</Link>

@@ -1,8 +1,9 @@
 'use client';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, use } from 'react';
 import Link from 'next/link';
 
-export default function UnitDetailPage({ params }: { params: { id: string } }) {
+export default function UnitDetailPage({ params }: { params: Promise<{ id: string }> }) {
+  const resolvedParams = use(params);
   const [unit, setUnit] = useState<any>(null);
   const [isLoading, setIsLoading] = useState(true);
 
@@ -12,27 +13,29 @@ export default function UnitDetailPage({ params }: { params: { id: string } }) {
         const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3001/api/v1'}/units`);
         const data = await res.json();
         if (Array.isArray(data)) {
-          const found = data.find((u: any) => u.id.toString() === params.id.toString());
+          const found = data.find((u: any) => u.id.toString() === resolvedParams.id.toString());
           if (found) {
             setUnit({
               id: found.id,
               name: found.name,
               category: found.segment || 'Cơ bản',
-              strengths: found.strengths?.join(', ') || 'Chung cư, Nhà phố',
-              style: found.styles?.join(', ') || 'Hiện đại',
-              location: found.locations?.join(', ') || 'Toàn quốc',
-              experience: '5 năm',
-              description: found.description || 'Chuyên thiết kế và thi công nội thất chuyên nghiệp.',
-              services: [
+              strengths: found.projectType || 'Chung cư, Nhà phố',
+              style: found.style || 'Hiện đại',
+              location: found.location || 'Toàn quốc',
+              experience: found.experience ? found.experience + ' năm' : '5 năm',
+              description: found.description || found.shortDescription || 'Chuyên thiết kế và thi công nội thất chuyên nghiệp.',
+              profile: found.profile || null,
+              fanpage: found.fanpage || null,
+              services: (found.services && found.services.length > 0) ? found.services : [
                 'Thiết kế nội thất',
                 'Thi công nội thất',
                 'Thiết kế & thi công trọn gói'
               ],
-              projects: [
+              projects: (found.products && found.products.length > 0) ? found.products.map((p: string) => ({ name: p, type: 'Dự án', area: '-', style: found.style || 'Hiện đại', time: '-' })) : [
                 { name: 'Dự án tiêu biểu 1', type: 'Chung cư', area: '75m2', style: 'Hiện đại', time: '30 ngày' },
                 { name: 'Dự án tiêu biểu 2', type: 'Nhà phố', area: '250m2', style: 'Tối giản', time: '45 ngày' }
               ],
-              advantages: found.strengths || ['Mạnh về tối ưu chi phí'],
+              advantages: found.projectType ? found.projectType.split(',') : ['Mạnh về tối ưu chi phí'],
               workflow: [
                 'Tiếp nhận nhu cầu',
                 'Khảo sát hiện trạng',
@@ -43,8 +46,8 @@ export default function UnitDetailPage({ params }: { params: { id: string } }) {
                 'Nghiệm thu'
               ],
               budget: {
-                range: '150 triệu - 500 triệu',
-                min: '100 triệu'
+                range: 'Theo thực tế',
+                min: 'Liên hệ'
               }
             });
           }
@@ -56,7 +59,7 @@ export default function UnitDetailPage({ params }: { params: { id: string } }) {
       }
     };
     fetchUnit();
-  }, [params.id]);
+  }, [resolvedParams.id]);
 
   if (isLoading) {
     return <div className="pt-[120px] pb-20 modern-section min-h-screen text-[#1F1F1F] dark:text-white text-center">Đang tải thông margin đơn vị...</div>;
@@ -108,6 +111,16 @@ export default function UnitDetailPage({ params }: { params: { id: string } }) {
                 <button className="bg-transparent border border-[#ECE7DE] dark:border-white/30 hover:border-[#1F1F1F] dark:hover:border-white text-[#1F1F1F] dark:text-white font-bold py-3 px-8 rounded-[2px] transition-colors uppercase tracking-wider text-sm">
                   Yêu cầu báo giá sơ bộ
                 </button>
+                {unit.profile && (
+                  <a href={unit.profile} target="_blank" rel="noreferrer" className="bg-[#C7A25C] hover:bg-[#b08e4f] text-white font-bold py-3 px-8 rounded-[2px] transition-colors uppercase tracking-wider text-sm flex items-center gap-2">
+                    <i className="fa fa-download"></i> Tải Hồ sơ năng lực
+                  </a>
+                )}
+                {unit.fanpage && (
+                  <a href={unit.fanpage} target="_blank" rel="noreferrer" className="bg-[#3b5998] hover:bg-[#2d4373] text-white font-bold py-3 px-6 rounded-[2px] transition-colors uppercase tracking-wider text-sm flex items-center gap-2">
+                    <i className="fa fa-facebook-f"></i> Fanpage
+                  </a>
+                )}
               </div>
             </div>
           </div>

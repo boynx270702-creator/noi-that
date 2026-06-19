@@ -85,6 +85,10 @@ export default function UnitsPage() {
     shortDescription: '',
     description: '',
     avatar: [] as string[],
+    profile: '',
+    fanpage: '',
+    services: [],
+    products: [],
     isVisible: true,
     isPinned: false
   });
@@ -239,7 +243,7 @@ export default function UnitsPage() {
               onClick={() => {
                 setModalMode('add');
                 setFormData({
-                  id: 0, unitId: '', name: '', slug: '', segment: 'trung-cap', location: '', projectType: '', style: '', experience: 0, status: 'ACTIVE', phone: '', email: '', shortDescription: '', description: '', avatar: [], isVisible: true, isPinned: false
+                  id: 0, unitId: '', name: '', slug: '', segment: 'trung-cap', location: '', projectType: '', style: '', experience: 0, status: 'ACTIVE', phone: '', email: '', shortDescription: '', description: '', avatar: [], profile: '', fanpage: '', services: [], products: [], isVisible: true, isPinned: false
                 });
                 setErrors({});
                 setActiveTab('basic');
@@ -511,7 +515,7 @@ export default function UnitsPage() {
                         onClick={() => {
                           setModalMode('add');
                           setFormData({
-                            id: 0, unitId: '', name: '', slug: '', segment: 'trung-cap', location: '', projectType: '', style: '', experience: 0, status: 'ACTIVE', phone: '', email: '', shortDescription: '', description: '', avatar: [], isVisible: true, isPinned: false
+                            id: 0, unitId: '', name: '', slug: '', segment: 'trung-cap', location: '', projectType: '', style: '', experience: 0, status: 'ACTIVE', phone: '', email: '', shortDescription: '', description: '', avatar: [], profile: '', fanpage: '', services: [], products: [], isVisible: true, isPinned: false
                           });
                           setErrors({});
                           setActiveTab('basic');
@@ -584,7 +588,11 @@ export default function UnitsPage() {
                                 setFormData({
                                   ...unit,
                                   avatar: (unit as any).avatar ? (Array.isArray((unit as any).avatar) ? (unit as any).avatar : [(unit as any).avatar]) : [],
-                                  description: (unit as any).description || ''
+                                  description: (unit as any).description || '',
+                                  profile: (unit as any).profile || '',
+                                  fanpage: (unit as any).fanpage || '',
+                                  services: (unit as any).services || [],
+                                  products: (unit as any).products || []
                                 });
                                 setErrors({});
                                 setActiveTab('basic');
@@ -715,6 +723,32 @@ export default function UnitsPage() {
                     <ImageUploader initialImages={formData.avatar} onUploadSuccess={(urls) => setFormData({ ...formData, avatar: urls })} onRemoveImage={(url) => setFormData({ ...formData, avatar: formData.avatar.filter(i => i !== url) })} maxFiles={1} />
                   </div>
                 </div>
+
+                
+                  <div className="space-y-1.5">
+                    <label className="text-sm font-medium text-gray-700 dark:text-gray-300">Link Hồ Sơ Năng Lực (Profile)</label>
+                    <div className="relative">
+                      <input type="text" value={formData.profile} onChange={e => setFormData({ ...formData, profile: e.target.value })} className="pl-3 w-full bg-gray-50/50 dark:bg-[#1a1b23] border border-gray-200 dark:border-gray-700 text-sm h-10 rounded-[4px] text-gray-900 dark:text-white transition-all hover:bg-white dark:bg-[#14151a] dark:hover:bg-[#1a1b23] focus:outline-none focus:ring-[3px] focus:ring-[#5865f2]/20 focus:border-[#5865f2]/40" placeholder="Nhập URL file PDF hoặc trang profile..." />
+                    </div>
+                  </div>
+                  
+                  <div className="space-y-1.5">
+                    <label className="text-sm font-medium text-gray-700 dark:text-gray-300">Link Fanpage Facebook</label>
+                    <div className="relative">
+                      <input type="text" value={formData.fanpage} onChange={e => setFormData({ ...formData, fanpage: e.target.value })} className="pl-3 w-full bg-gray-50/50 dark:bg-[#1a1b23] border border-gray-200 dark:border-gray-700 text-sm h-10 rounded-[4px] text-gray-900 dark:text-white transition-all hover:bg-white dark:bg-[#14151a] dark:hover:bg-[#1a1b23] focus:outline-none focus:ring-[3px] focus:ring-[#5865f2]/20 focus:border-[#5865f2]/40" placeholder="https://facebook.com/..." />
+                    </div>
+                  </div>
+
+                  <div className="space-y-1.5">
+                    <label className="text-sm font-medium text-gray-700 dark:text-gray-300">Danh sách dịch vụ (Mỗi dịch vụ 1 dòng)</label>
+                    <textarea rows={4} value={Array.isArray(formData.services) ? formData.services.join('\n') : formData.services} onChange={e => setFormData({ ...formData, services: e.target.value.split('\n') })} className="w-full bg-gray-50/50 dark:bg-[#1a1b23] border border-gray-200 dark:border-gray-700 text-sm rounded-[4px] text-gray-900 dark:text-white p-3 transition-all hover:bg-white dark:bg-[#14151a] dark:hover:bg-[#1a1b23] focus:outline-none focus:ring-[3px] focus:ring-[#5865f2]/20 focus:border-[#5865f2]/40 resize-none" placeholder="Thiết kế nội thất\nThi công nội thất..." />
+                  </div>
+
+                  <div className="space-y-1.5">
+                    <label className="text-sm font-medium text-gray-700 dark:text-gray-300">Sản phẩm / Dịch vụ tiêu biểu (Mỗi sản phẩm 1 dòng)</label>
+                    <textarea rows={4} value={Array.isArray(formData.products) ? formData.products.join('\n') : formData.products} onChange={e => setFormData({ ...formData, products: e.target.value.split('\n') })} className="w-full bg-gray-50/50 dark:bg-[#1a1b23] border border-gray-200 dark:border-gray-700 text-sm rounded-[4px] text-gray-900 dark:text-white p-3 transition-all hover:bg-white dark:bg-[#14151a] dark:hover:bg-[#1a1b23] focus:outline-none focus:ring-[3px] focus:ring-[#5865f2]/20 focus:border-[#5865f2]/40 resize-none" placeholder="Sofa phòng khách\nTủ bếp Acrylic..." />
+                  </div>
+
 
                 <div className="h-px bg-gray-100 dark:bg-gray-800/60 -mx-6"></div>
 

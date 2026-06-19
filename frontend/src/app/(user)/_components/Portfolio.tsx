@@ -52,7 +52,7 @@ export default function Portfolio() {
   );
 
   return (
-    <section id="Portfolio" className="relative py-32 modern-section overflow-hidden">
+    <section id="Portfolio" className="relative py-32 bg-[#F5F4F1] dark:bg-[#1a1a1a] modern-section overflow-hidden">
       {/* Grid Pattern Background */}
       <div
         className="absolute inset-0 opacity-[0.03] pointer-events-none"

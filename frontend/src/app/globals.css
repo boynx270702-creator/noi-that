@@ -81,7 +81,7 @@
 
 @layer base {
   body {
-    background-color: #FAF9F8;
+    background-color: #FCFBF8;
     color: #1a1a1a;
     font-family: var(--font-body);
   }
@@ -95,10 +95,10 @@
     color: var(--color-on-surface);
   }
 
-  /* Light mode section background */
+  /* Light mode section background - default soft cream */
   section, .modern-section {
     position: relative;
-    background: linear-gradient(to bottom, #ffffff, #FAF9F8);
+    /* Removed the pure white gradient so inline utilities work, but keep a fallback */
   }
 
   section::before, .modern-section::before {

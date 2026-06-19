@@ -134,12 +134,15 @@ export default function Footer() {
         {/* Bottom Section */}
         <ScrollReveal animation="fade-up" delay={500}>
           <div className="pt-8 border-t border-gray-200 dark:border-white/20 flex flex-col md:flex-row items-center justify-between gap-4">
-            <div className="w-48 opacity-90 hover:opacity-100 transition-opacity cursor-pointer">
-              <img 
-                src="/images/logo-main2.png" 
-                alt="Logo" 
-                className="w-full h-auto transition-transform hover:scale-105" 
-              />
+            <div className="flex flex-col items-center md:items-start">
+              <div className="w-48 opacity-90 hover:opacity-100 transition-opacity cursor-pointer mb-2">
+                <img 
+                  src="/images/logo-main2.png" 
+                  alt="Logo" 
+                  className="w-full h-auto transition-transform hover:scale-105" 
+                />
+              </div>
+              <p className="text-[#D3AE3E] text-xs font-bold tracking-widest uppercase">Một kết nối – Vạn giá trị</p>
             </div>
             <div className="text-[13px] text-gray-500 dark:text-[#888] hover:text-gray-900 dark:hover:text-white transition-colors cursor-pointer text-center md:text-right">
               Terms of use | Privacy Environmental Policy

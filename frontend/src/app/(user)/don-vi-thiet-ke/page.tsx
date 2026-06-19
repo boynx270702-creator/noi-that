@@ -2,6 +2,8 @@
 
 import React, { useState, useRef, useEffect } from 'react';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
+import { toast } from 'sonner';
 
 function CustomSelect({ label, options, value, onChange }: { label: string, options: { value: string, label: string }[], value: string, onChange: (val: string) => void }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -70,6 +72,7 @@ export default function DonViThietKePage() {
 
   const [units, setUnits] = useState<any[]>([]);
   const [isLoading, setIsLoading] = useState(true);
+  const router = useRouter();
 
   useEffect(() => {
     const fetchUnits = async () => {
@@ -82,11 +85,13 @@ export default function DonViThietKePage() {
             id: u.id,
             name: u.name,
             category: u.segment,
-            strengths: u.strengths?.join(', ') || 'Đa dạng',
-            style: u.styles?.join(', ') || 'Hiện đại',
-            location: u.locations?.join(', ') || 'Toàn quốc',
-            description: u.description || 'Đơn vị thiết kế thi công nội thất chuyên nghiệp.',
-            image: u.avatar || `/images/common/bg-hero-${(idx % 2) + 1}.jpg`
+            strengths: u.projectType || 'Đa dạng',
+            style: u.style || 'Hiện đại',
+            location: u.location || 'Toàn quốc',
+            description: u.shortDescription || u.description || 'Đơn vị thiết kế thi công nội thất chuyên nghiệp.',
+            image: u.avatar || `/images/common/bg-hero-${(idx % 2) + 1}.jpg`,
+            fanpage: u.fanpage || null,
+            services: u.services || []
           }));
           setUnits(mappedUnits);
         }
@@ -179,7 +184,21 @@ export default function DonViThietKePage() {
                 </div>
               </div>
               <div className="p-6">
-                <h3 className="font-heading text-2xl font-bold text-[#1F1F1F] dark:text-white mb-2">{unit.name}</h3>
+                <div className="flex justify-between items-start mb-2">
+                  <h3 className="font-heading text-2xl font-bold text-[#1F1F1F] dark:text-white">{unit.name}</h3>
+                  <button 
+                    className="flex items-center gap-2 group/cb hover:opacity-80 transition-opacity"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      router.push(`/don-vi-thiet-ke/so-sanh?ids=${unit.id}`);
+                    }}
+                  >
+                    <div className="w-5 h-5 rounded border border-[#C7A25C] flex items-center justify-center">
+                      <svg className="w-3 h-3 text-[#C7A25C]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" /></svg>
+                    </div>
+                    <span className="text-xs font-bold uppercase tracking-wider text-[#C7A25C]">So sánh</span>
+                  </button>
+                </div>
                 <p className="text-sm text-gray-500 dark:text-white/60 mb-4 line-clamp-2">{unit.description}</p>
 
                 <div className="space-y-2 mb-6 text-sm text-gray-700 dark:text-white/80">
@@ -198,11 +217,18 @@ export default function DonViThietKePage() {
                 </div>
 
                 <div className="flex flex-col gap-3">
-                  <Link href={`/don-vi-thiet-ke/${unit.id}`} className="text-center block w-full bg-transparent border border-[#ECE7DE] dark:border-white/30 hover:border-[#1F1F1F] dark:hover:border-white text-[#1F1F1F] dark:text-white font-bold py-3 px-4 rounded-[2px] transition-colors uppercase tracking-wider text-xs">
-                    Xem hồ sơ chi tiết
-                  </Link>
+                  <div className="flex gap-2">
+                    <Link href={`/don-vi-thiet-ke/${unit.id}`} className="text-center block flex-1 bg-transparent border border-[#ECE7DE] dark:border-white/30 hover:border-[#1F1F1F] dark:hover:border-white text-[#1F1F1F] dark:text-white font-bold py-3 px-4 rounded-[2px] transition-colors uppercase tracking-wider text-xs">
+                      Hồ sơ chi tiết
+                    </Link>
+                    {unit.fanpage && (
+                      <a href={unit.fanpage} target="_blank" rel="noreferrer" className="flex items-center justify-center bg-[#3b5998] hover:bg-[#2d4373] text-white px-4 rounded-[2px] transition-colors" title="Facebook Fanpage">
+                        <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.469h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.469h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                      </a>
+                    )}
+                  </div>
                   <Link href={`/tu-van?unit=${unit.id}`} className="text-center block w-full bg-[#1F1F1F] text-white dark:bg-white/10 dark:hover:bg-[#C7A25C] dark:text-white font-bold py-3 px-4 rounded-[2px] transition-colors uppercase tracking-wider text-xs hover:bg-[#C7A25C]">
-                    Nhận tư vấn đơn vị này
+                    Nhận tư vấn
                   </Link>
                 </div>
               </div>
@@ -210,6 +236,8 @@ export default function DonViThietKePage() {
           ))}
         </div>
       </div>
+
+
     </div>
   );
 }
