@@ -87,8 +87,8 @@ export default function UnitsPage() {
     avatar: [] as string[],
     profile: '',
     fanpage: '',
-    services: [],
-    products: [],
+    services: [] as string[],
+    products: [] as string[],
     isVisible: true,
     isPinned: false
   });
