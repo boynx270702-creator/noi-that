@@ -41,24 +41,37 @@ async function seed() {
     fs.mkdirSync(destDir, { recursive: true });
   }
 
+  const usedSlugs = new Set();
   console.log("Seeding new partners...");
   for (let i = 0; i < partnersData.length; i++) {
     const p = partnersData[i];
-    const slug = slugify(p.name) || `partner-${i}`;
+    let baseSlug = slugify(p.name) || `partner-${i}`;
+    let slug = baseSlug;
+    let counter = 1;
+    while (usedSlugs.has(slug)) {
+      slug = `${baseSlug}-${counter}`;
+      counter++;
+    }
+    usedSlugs.add(slug);
+    
     let avatarJson = null;
 
     if (p.logo) {
-      const ext = p.logo.includes('.png') ? '.png' : p.logo.includes('.svg') ? '.svg' : '.jpg';
-      const filename = `${slug}${ext}`;
-      const filepath = path.join(destDir, filename);
-      
-      try {
-        const success = await downloadImage(p.logo, filepath);
-        if (success) {
-          avatarJson = [{ url: `/images/partners/${filename}`, name: p.name }];
+      if (p.logo.startsWith('http')) {
+        const ext = p.logo.includes('.png') ? '.png' : p.logo.includes('.svg') ? '.svg' : '.jpg';
+        const filename = `${slug}${ext}`;
+        const filepath = path.join(destDir, filename);
+        
+        try {
+          const success = await downloadImage(p.logo, filepath);
+          if (success) {
+            avatarJson = [{ url: `/images/partners/${filename}`, name: p.name }];
+          }
+        } catch (err) {
+          console.log(`Failed to download logo for ${p.name}`);
         }
-      } catch (err) {
-        console.log(`Failed to download logo for ${p.name}`);
+      } else {
+        avatarJson = [{ url: p.logo, name: p.name }];
       }
     }
 
@@ -70,7 +83,7 @@ async function seed() {
         segment: p.segment,
         location: p.mainLocation === p.locations ? p.mainLocation : `${p.mainLocation} (Chính), ${p.locations.split(', ').filter(l => l !== p.mainLocation).join(', ')}`,
         projectType: p.category,
-        style: 'Đa dạng',
+        style: p.category,
         experience: 5,
         status: 'ACTIVE',
         profile: p.website,
