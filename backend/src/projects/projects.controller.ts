@@ -1,4 +1,4 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
+import { Controller, Get, Post, Body, Patch, Param, Delete, Query } from '@nestjs/common';
 import { ProjectsService } from './projects.service';
 
 @Controller('projects')
@@ -10,9 +10,14 @@ export class ProjectsController {
     return this.projectsService.create(createDto);
   }
 
+  @Get('meta')
+  getMeta() {
+    return this.projectsService.getMeta();
+  }
+
   @Get()
-  findAll() {
-    return this.projectsService.findAll();
+  findAll(@Query() query: any) {
+    return this.projectsService.findAll(query);
   }
 
   @Get(':id')

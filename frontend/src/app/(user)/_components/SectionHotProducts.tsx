@@ -7,14 +7,62 @@ import Autoplay from 'embla-carousel-autoplay';
 import QuoteModal from './QuoteModal';
 
 const HOT_PRODUCTS = [
-  { id: 1, name: 'Sofa Da Thật Nhập Khẩu Italia', category: 'Sofa Cao Cấp', image: '/images/main/3.jpg', price: 'Liên hệ' },
-  { id: 2, name: 'Bàn Ăn Mặt Đá Cẩm Thạch', category: 'Bàn Ghế Ăn', image: '/images/main/4.jpg', price: 'Liên hệ' },
-  { id: 3, name: 'Tủ Bếp Gỗ Óc Chó Hiện Đại', category: 'Tủ Bếp', image: '/images/main/6.jpg', price: 'Liên hệ' },
-  { id: 4, name: 'Giường Ngủ Bọc Da Hạng Sang', category: 'Phòng Ngủ', image: '/images/main/7.jpg', price: 'Liên hệ' },
-  { id: 5, name: 'Sofa Góc Chữ L Vải Nỉ Cao Cấp', category: 'Sofa Góc', image: '/images/main/10.jpg', price: 'Liên hệ' },
-  { id: 6, name: 'Bàn Trà Sofa Mặt Đá Ceramic', category: 'Bàn Trà', image: '/images/main/12.jpg', price: 'Liên hệ' },
-  { id: 7, name: 'Tủ Rượu Tân Cổ Điển', category: 'Tủ Rượu', image: '/images/main/16.jpg', price: 'Liên hệ' },
-  { id: 8, name: 'Bộ Ghế Thư Giãn Đọc Sách', category: 'Ghế Thư Giãn', image: '/images/main/18.jpg', price: 'Liên hệ' },
+  {
+    id: 1,
+    name: "ModernLife™ Bồn cầu hai khối xả nước 3/4,5L chế độ xả kép (K-78799K-0)",
+    category: "Bồn cầu",
+    image: "/images/main/3.jpg",
+    price: "Liên hệ"
+  },
+  {
+    id: 2,
+    name: "Veil™ Bồn cầu thông minh (K-5401KR-0)",
+    category: "Bồn cầu thông minh",
+    image: "/images/main/4.jpg",
+    price: "Liên hệ"
+  },
+  {
+    id: 3,
+    name: "Veil™ Bồn cầu một khối 3/4.5L (K-1381T-S-0)",
+    category: "Bồn cầu",
+    image: "/images/main/6.jpg",
+    price: "Liên hệ"
+  },
+  {
+    id: 4,
+    name: "Taut™ Single control lavatory faucet (K-74013T-4-CP)",
+    category: "Vòi lavabo",
+    image: "/images/main/7.jpg",
+    price: "Liên hệ"
+  },
+  {
+    id: 5,
+    name: "Fluence™ Bộ sen cây 3 chiều (K-36410T-4-CP)",
+    category: "Sen tắm",
+    image: "/images/main/10.jpg",
+    price: "Liên hệ"
+  },
+  {
+    id: 6,
+    name: "Reach™ Bồn tắm drop-in 1700 x 750 mm (K-72800X-0)",
+    category: "Bồn tắm",
+    image: "/images/main/12.jpg",
+    price: "Liên hệ"
+  },
+  {
+    id: 7,
+    name: "Artifacts™ Single-handle bathroom sink faucet (K-72762T-9M-CP)",
+    category: "Vòi lavabo",
+    image: "/images/main/16.jpg",
+    price: "Liên hệ"
+  },
+  {
+    id: 8,
+    name: "Statement™ Ceiling-mount rainhead arm (K-26320T-RGD)",
+    category: "Phụ kiện sen tắm",
+    image: "/images/main/18.jpg",
+    price: "Liên hệ"
+  }
 ];
 
 export default function SectionHotProducts() {
