@@ -340,7 +340,7 @@ export default function ProductsPage() {
               onClick={() => {
                 setModalMode('add');
                 setFormData({
-                  id: 0, productId: '', name: '', slug: '', segment: 'trung-cap', location: '', projectType: '', style: '', experience: 0, status: 'ACTIVE', phone: '', email: '', shortDescription: '', description: '', avatar: [], profile: '', fanpage: '', services: [], products: [], images: [], isVisible: true, isPinned: false
+                  id: 0, productId: '', name: '', slug: '', unitId: null, price: 0, promotionalPrice: 0, status: 'ACTIVE', shortDescription: '', description: '', images: [], categoryIds: []
                 });
                 setErrors({});
                 setActiveTab('basic');
@@ -612,7 +612,7 @@ export default function ProductsPage() {
                         onClick={() => {
                           setModalMode('add');
                           setFormData({
-                            id: 0, productId: '', name: '', slug: '', segment: 'trung-cap', location: '', projectType: '', style: '', experience: 0, status: 'ACTIVE', phone: '', email: '', shortDescription: '', description: '', avatar: [], profile: '', fanpage: '', services: [], products: [], images: [], isVisible: true, isPinned: false
+                            id: 0, productId: '', name: '', slug: '', unitId: null, price: 0, promotionalPrice: 0, status: 'ACTIVE', shortDescription: '', description: '', images: [], categoryIds: []
                           });
                           setErrors({});
                           setActiveTab('basic');
