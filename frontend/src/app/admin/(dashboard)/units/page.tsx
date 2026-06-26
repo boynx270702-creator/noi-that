@@ -347,7 +347,7 @@ export default function UnitsPage() {
               onClick={() => {
                 setModalMode('add');
                 setFormData({
-                  id: 0, unitId: '', name: '', slug: '', segment: 'trung-cap', location: '', projectType: '', style: '', experience: 0, status: 'ACTIVE', phone: '', email: '', shortDescription: '', description: '', avatar: [], profile: '', fanpage: '', services: [], products: [], isVisible: true, isPinned: false
+                  id: 0, unitId: '', name: '', slug: '', segment: 'trung-cap', location: '', projectType: '', style: '', experience: 0, status: 'ACTIVE', phone: '', email: '', shortDescription: '', description: '', avatar: [], profile: '', fanpage: '', services: [], products: [], categoryIds: [], isVisible: true, isPinned: false
                 });
                 setErrors({});
                 setActiveTab('basic');
@@ -619,7 +619,7 @@ export default function UnitsPage() {
                         onClick={() => {
                           setModalMode('add');
                           setFormData({
-                            id: 0, unitId: '', name: '', slug: '', segment: 'trung-cap', location: '', projectType: '', style: '', experience: 0, status: 'ACTIVE', phone: '', email: '', shortDescription: '', description: '', avatar: [], profile: '', fanpage: '', services: [], products: [], isVisible: true, isPinned: false
+                            id: 0, unitId: '', name: '', slug: '', segment: 'trung-cap', location: '', projectType: '', style: '', experience: 0, status: 'ACTIVE', phone: '', email: '', shortDescription: '', description: '', avatar: [], profile: '', fanpage: '', services: [], products: [], categoryIds: [], isVisible: true, isPinned: false
                           });
                           setErrors({});
                           setActiveTab('basic');
