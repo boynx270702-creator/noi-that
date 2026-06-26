@@ -82,15 +82,23 @@ export default function DonViThietKePage() {
   const [allUnits, setAllUnits] = useState<any[]>([]);
   const [filteredUnits, setFilteredUnits] = useState<any[]>([]);
 
+  const getCategoryDisplayName = (segment: string) => {
+    if (!segment) return 'Cơ bản';
+    if (segment.includes('cao-cap') || segment.includes('Cao cấp')) return 'Cao cấp';
+    if (segment.includes('trung-cap') || segment.includes('Trung cấp')) return 'Trung cấp';
+    if (segment.includes('co-ban') || segment.includes('Cơ bản')) return 'Cơ bản';
+    return segment;
+  };
+
   const getCategoryStyles = (category: string) => {
     const lower = category?.toLowerCase() || '';
-    if (lower.includes('cao cấp')) {
+    if (lower.includes('cao cấp') || lower.includes('cao-cap')) {
       return 'bg-gradient-to-r from-[#D3AE3E] to-[#E5C98A] text-[#131313] shadow-[0_0_15px_rgba(211,174,62,0.4)] luxury-glow';
     }
-    if (lower.includes('trung cấp')) {
-      return 'bg-[#1F1F1F] dark:bg-white/20 text-white border border-[#ECE7DE] dark:border-white/30 backdrop-blur-sm';
+    if (lower.includes('trung cấp') || lower.includes('trung-cap')) {
+      return 'bg-gradient-to-r from-[#e2e2e2] to-[#b4b5b5] text-[#131313] shadow-[0_0_15px_rgba(226,226,226,0.4)]';
     }
-    return 'bg-white/90 dark:bg-black/80 backdrop-blur-md text-[#1F1F1F] dark:text-white border border-gray-200 dark:border-white/10';
+    return 'bg-gradient-to-r from-[#cd7f32] to-[#b87333] text-white shadow-[0_0_15px_rgba(205,127,50,0.4)]';
   };
 
   const [isLoading, setIsLoading] = useState(true);
@@ -118,7 +126,7 @@ export default function DonViThietKePage() {
             const mappedUnits = data.map((u: any, idx: number) => ({
               id: u.id,
               name: u.name,
-              category: u.segment,
+              category: getCategoryDisplayName(u.segment),
               strengths: u.projectType || 'Đa dạng',
               style: u.style || 'Hiện đại',
               location: u.location || 'Toàn quốc',

@@ -29,10 +29,18 @@ export default function SoSanhPage({ searchParams }: { searchParams: Promise<{ i
         const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL || 'http://127.0.0.1:3001/api/v1'}/units`);
         const data = await res.json();
         if (Array.isArray(data)) {
-          const mapped = data.map((u: any, idx: number) => ({
+          const mapped = data.map((u: any, idx: number) => {
+            const getCategoryDisplayName = (segment: string) => {
+              if (!segment) return 'Cơ bản';
+              if (segment.includes('cao-cap') || segment.includes('Cao cấp')) return 'Cao cấp';
+              if (segment.includes('trung-cap') || segment.includes('Trung cấp')) return 'Trung cấp';
+              if (segment.includes('co-ban') || segment.includes('Cơ bản')) return 'Cơ bản';
+              return segment;
+            };
+            return {
             id: u.id.toString(),
             name: u.name,
-            category: u.segment || 'Cơ bản',
+            category: getCategoryDisplayName(u.segment),
             strengths: u.projectType || 'Đa dạng',
             style: u.style || 'Hiện đại',
             location: u.location || 'Toàn quốc',
@@ -43,7 +51,8 @@ export default function SoSanhPage({ searchParams }: { searchParams: Promise<{ i
             services: u.services || ['Thiết kế nội thất', 'Thi công nội thất'],
             fanpage: u.fanpage || null,
             profile: u.profile || null
-          }));
+          };
+          });
           setAllUnits(mapped);
           
           if (ids.length > 0) {
@@ -128,7 +137,13 @@ export default function SoSanhPage({ searchParams }: { searchParams: Promise<{ i
                 <div className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" style={{ backgroundImage: `url(${unitA.avatar})` }}></div>
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
                 <div className="absolute bottom-4 left-4 right-4">
-                  <div className="text-[#C7A25C] text-xs font-bold uppercase tracking-widest mb-1">{unitA.category}</div>
+                  <div className={`inline-block text-[10px] font-bold px-3 py-1 rounded-[2px] uppercase tracking-widest mb-2 shadow-sm ${
+                    unitA.category.includes('Cao cấp') ? 'bg-gradient-to-r from-[#D3AE3E] to-[#E5C98A] text-[#131313]' :
+                    unitA.category.includes('Trung cấp') ? 'bg-gradient-to-r from-[#e2e2e2] to-[#b4b5b5] text-[#131313]' :
+                    'bg-gradient-to-r from-[#cd7f32] to-[#b87333] text-white'
+                  }`}>
+                    {unitA.category}
+                  </div>
                   <h2 className="font-heading text-3xl font-bold text-white">{unitA.name}</h2>
                 </div>
               </div>
@@ -200,7 +215,13 @@ export default function SoSanhPage({ searchParams }: { searchParams: Promise<{ i
                 <div className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" style={{ backgroundImage: `url(${unitB.avatar})` }}></div>
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
                 <div className="absolute bottom-4 left-4 right-4">
-                  <div className="text-[#C7A25C] text-xs font-bold uppercase tracking-widest mb-1">{unitB.category}</div>
+                  <div className={`inline-block text-[10px] font-bold px-3 py-1 rounded-[2px] uppercase tracking-widest mb-2 shadow-sm ${
+                    unitB.category.includes('Cao cấp') ? 'bg-gradient-to-r from-[#D3AE3E] to-[#E5C98A] text-[#131313]' :
+                    unitB.category.includes('Trung cấp') ? 'bg-gradient-to-r from-[#e2e2e2] to-[#b4b5b5] text-[#131313]' :
+                    'bg-gradient-to-r from-[#cd7f32] to-[#b87333] text-white'
+                  }`}>
+                    {unitB.category}
+                  </div>
                   <h2 className="font-heading text-3xl font-bold text-white">{unitB.name}</h2>
                 </div>
               </div>

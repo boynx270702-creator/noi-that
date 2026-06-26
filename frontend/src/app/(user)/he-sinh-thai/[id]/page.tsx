@@ -15,10 +15,18 @@ export default function UnitDetailPage({ params }: { params: { id: string } }) {
         if (Array.isArray(data)) {
           const found = data.find((u: any) => u.id.toString() === params.id.toString());
           if (found) {
+            const getCategoryDisplayName = (segment: string) => {
+              if (!segment) return 'Cơ bản';
+              if (segment.includes('cao-cap') || segment.includes('Cao cấp')) return 'Cao cấp';
+              if (segment.includes('trung-cap') || segment.includes('Trung cấp')) return 'Trung cấp';
+              if (segment.includes('co-ban') || segment.includes('Cơ bản')) return 'Cơ bản';
+              return segment;
+            };
+
             setUnit({
               id: found.id,
               name: found.name,
-              category: found.segment || 'Cơ bản',
+              category: getCategoryDisplayName(found.segment),
               strengths: found.strengths?.join(', ') || 'Chung cư, Nhà phố',
               style: found.styles?.join(', ') || 'Hiện đại',
               location: found.locations?.join(', ') || 'Toàn quốc',
@@ -78,7 +86,11 @@ export default function UnitDetailPage({ params }: { params: { id: string } }) {
               <span className="text-4xl text-[#1F1F1F]/20 dark:text-white/20 font-bold uppercase">{unit.name.substring(0, 2)}</span>
             </div>
             <div className="w-full md:w-2/3">
-              <span className="inline-block modern-section text-white text-xs font-bold px-3 py-1 rounded-[2px] uppercase tracking-wider mb-4">
+              <span className={`inline-block text-[11px] font-bold px-4 py-1.5 rounded-[2px] uppercase tracking-widest mb-4 shadow-sm ${
+                unit.category.includes('Cao cấp') ? 'bg-gradient-to-r from-[#D3AE3E] to-[#E5C98A] text-[#131313] shadow-[0_0_15px_rgba(211,174,62,0.4)] luxury-glow' :
+                unit.category.includes('Trung cấp') ? 'bg-gradient-to-r from-[#e2e2e2] to-[#b4b5b5] text-[#131313] shadow-[0_0_15px_rgba(226,226,226,0.4)]' :
+                'bg-gradient-to-r from-[#cd7f32] to-[#b87333] text-white shadow-[0_0_15px_rgba(205,127,50,0.4)]'
+              }`}>
                 Phân khúc {unit.category}
               </span>
               <h1 className="font-heading text-4xl font-bold mb-4">{unit.name}</h1>

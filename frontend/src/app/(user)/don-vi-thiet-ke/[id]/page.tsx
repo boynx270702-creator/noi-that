@@ -28,11 +28,19 @@ export default function UnitDetailPage({ params }: { params: Promise<{ id: strin
               return avatar?.url || null;
             };
 
+            const getCategoryDisplayName = (segment: string) => {
+              if (!segment) return 'Cơ bản';
+              if (segment.includes('cao-cap') || segment.includes('Cao cấp')) return 'Cao cấp';
+              if (segment.includes('trung-cap') || segment.includes('Trung cấp')) return 'Trung cấp';
+              if (segment.includes('co-ban') || segment.includes('Cơ bản')) return 'Cơ bản';
+              return segment;
+            };
+
             setUnit({
               id: found.id,
               name: found.name,
               avatarUrl: getAvatarUrl(found.avatar),
-              category: found.segment || 'Cơ bản',
+              category: getCategoryDisplayName(found.segment),
               strengths: found.projectType || 'Chung cư, Nhà phố',
               style: found.style || 'Hiện đại',
               location: found.location || 'Toàn quốc',
@@ -107,7 +115,11 @@ export default function UnitDetailPage({ params }: { params: Promise<{ id: strin
 
             {/* Brand Content */}
             <div className="w-full md:w-2/3 pt-4 text-center md:text-left">
-              <span className="inline-block border border-[#C7A25C]/40 bg-[#C7A25C]/10 text-[#C7A25C] text-[11px] font-bold px-4 py-1.5 rounded-[2px] uppercase tracking-widest mb-6 shadow-sm">
+              <span className={`inline-block text-[11px] font-bold px-4 py-1.5 rounded-[2px] uppercase tracking-widest mb-6 shadow-sm ${
+                unit.category.includes('Cao cấp') ? 'bg-gradient-to-r from-[#D3AE3E] to-[#E5C98A] text-[#131313] shadow-[0_0_15px_rgba(211,174,62,0.4)] luxury-glow' :
+                unit.category.includes('Trung cấp') ? 'bg-gradient-to-r from-[#e2e2e2] to-[#b4b5b5] text-[#131313] shadow-[0_0_15px_rgba(226,226,226,0.4)]' :
+                'bg-gradient-to-r from-[#cd7f32] to-[#b87333] text-white shadow-[0_0_15px_rgba(205,127,50,0.4)]'
+              }`}>
                 Phân khúc {unit.category}
               </span>
               <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-[#1F1F1F] dark:text-white leading-tight tracking-tight drop-shadow-sm">{unit.name}</h1>

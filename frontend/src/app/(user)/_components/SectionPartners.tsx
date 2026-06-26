@@ -64,7 +64,17 @@ export default function SectionPartners() {
                 )}
               </div>
               <h3 className="font-heading font-bold text-[#1F1F1F] dark:text-white tracking-wider text-center line-clamp-1">{partner.name}</h3>
-              <p className="text-[10px] text-gray-400 dark:text-white/40 uppercase tracking-widest mt-1 text-center line-clamp-1" title={partner.shortDescription || partner.segment || 'Đối tác'}>{partner.shortDescription || partner.segment || 'Đối tác'}</p>
+              
+              {/* Segment Badge */}
+              <div className={`mt-2 inline-block text-[9px] font-bold px-2 py-0.5 rounded-[2px] uppercase tracking-widest shadow-sm ${
+                (partner.segment || '').includes('cao-cap') ? 'bg-gradient-to-r from-[#D3AE3E] to-[#E5C98A] text-[#131313]' :
+                (partner.segment || '').includes('trung-cap') ? 'bg-gradient-to-r from-[#e2e2e2] to-[#b4b5b5] text-[#131313]' :
+                'bg-gradient-to-r from-[#cd7f32] to-[#b87333] text-white'
+              }`}>
+                {(partner.segment || '').includes('cao-cap') ? 'Cao cấp' : (partner.segment || '').includes('trung-cap') ? 'Trung cấp' : 'Cơ bản'}
+              </div>
+              
+              <p className="text-[10px] text-gray-400 dark:text-white/40 uppercase tracking-widest mt-2 text-center line-clamp-1" title={partner.shortDescription || 'Đối tác'}>{partner.shortDescription || 'Đối tác'}</p>
             </Link>
           ))}
         </div>
