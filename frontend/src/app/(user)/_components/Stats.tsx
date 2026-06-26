@@ -1,13 +1,14 @@
 'use client';
 import SectionStarryMotif from './SectionStarryMotif';
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useEffect, useState } from 'react';
 import ScrollReveal from './ScrollReveal';
+import { useInView } from 'react-intersection-observer';
 
 const DEFAULT_STATS = [
   {
     id: 1,
     icon: '/images/stats/icon-projects.png',
-    value: 30, // Default value, will be overridden
+    value: 30,
     suffix: '+',
     title: 'Đơn vị đối tác'
   },
@@ -36,35 +37,30 @@ const DEFAULT_STATS = [
 
 function Counter({ end, suffix }: { end: number, suffix: string }) {
   const [count, setCount] = useState(0);
-  const ref = useRef<HTMLSpanElement>(null);
-  
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        if (entries[0].isIntersecting) {
-          let startTimestamp: number | null = null;
-          const duration = 2000;
-          
-          const step = (timestamp: number) => {
-            if (!startTimestamp) startTimestamp = timestamp;
-            const progress = Math.min((timestamp - startTimestamp) / duration, 1);
-            setCount(Math.floor(progress * end));
-            if (progress < 1) {
-              window.requestAnimationFrame(step);
-            } else {
-              setCount(end);
-            }
-          };
-          window.requestAnimationFrame(step);
-          observer.disconnect();
-        }
-      },
-      { threshold: 0.5 }
-    );
-    
-    if (ref.current) observer.observe(ref.current);
-    return () => observer.disconnect();
-  }, [end]);
+  const [started, setStarted] = useState(false);
+
+  const { ref } = useInView({
+    threshold: 0.5,
+    triggerOnce: true,
+    onChange: (inView) => {
+      if (inView && !started) {
+        setStarted(true);
+        let startTimestamp: number | null = null;
+        const duration = 2000;
+        const step = (timestamp: number) => {
+          if (!startTimestamp) startTimestamp = timestamp;
+          const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+          setCount(Math.floor(progress * end));
+          if (progress < 1) {
+            window.requestAnimationFrame(step);
+          } else {
+            setCount(end);
+          }
+        };
+        window.requestAnimationFrame(step);
+      }
+    },
+  });
 
   return (
     <span ref={ref} className="text-5xl md:text-[60px] font-bold text-white">
@@ -93,7 +89,6 @@ export default function Stats() {
         console.error("Failed to fetch units", error);
       }
     };
-    
     fetchUnits();
   }, []);
 

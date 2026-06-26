@@ -7,29 +7,37 @@ interface BackgroundVisualsProps {
 
 export default function BackgroundVisuals({ mouseX = 0, mouseY = 0 }: BackgroundVisualsProps) {
   const [mounted, setMounted] = useState(false);
+  // Track actual screen size to only render particles we truly need
+  const [particleCount, setParticleCount] = useState(15);
 
   useEffect(() => {
     setMounted(true);
+    const updateCount = () => {
+      if (window.innerWidth >= 1024) setParticleCount(80);       // lg: full quality
+      else if (window.innerWidth >= 768) setParticleCount(30);   // md: medium
+      else setParticleCount(15);                                   // sm: minimal
+    };
+    updateCount();
+    window.addEventListener('resize', updateCount, { passive: true });
+    return () => window.removeEventListener('resize', updateCount);
   }, []);
 
-  // Sinh random particles với các lớp chiều sâu (Parallax Z) khác nhau
+  // Sinh random particles - số lượng thực tế theo màn hình, không dùng CSS hidden
   const particles = useMemo(() => {
-    // Return empty array during SSR to avoid hydration mismatch
     if (!mounted) return [];
-    
-    return Array.from({ length: 80 }).map((_, i) => ({
+    return Array.from({ length: particleCount }).map((_, i) => ({
       id: i,
       tx: `${(Math.random() - 0.5) * 200}px`,
       ty: `${(Math.random() - 0.5) * 200 - 100}px`,
       size: Math.random() * 4 + 1.5,
-      duration: `${Math.random() * 20 + 30}s`, // 30s - 50s
+      duration: `${Math.random() * 20 + 30}s`,
       delay: `-${Math.random() * 30}s`,
       left: `${Math.random() * 100}%`,
       top: `${Math.random() * 100}%`,
-      parallaxZ: Math.random() * 120 + 30, // 30px đến 150px
-      opacity: Math.random() * 0.6 + 0.2, // 0.2 đến 0.8
+      parallaxZ: Math.random() * 120 + 30,
+      opacity: Math.random() * 0.6 + 0.2,
     }));
-  }, [mounted]);
+  }, [mounted, particleCount]);
 
   return (
     <>
@@ -63,38 +71,31 @@ export default function BackgroundVisuals({ mouseX = 0, mouseY = 0 }: Background
 
         {/* --- MULTI-DEPTH LUXURY PARTICLES (Hạt bụi ánh kim đa lớp) --- */}
         <div className="absolute inset-0 pointer-events-none">
-          {particles.map((p, i) => {
-            // Giảm số lượng hạt trên mobile và tablet bằng CSS breakpoints
-            let visibilityClass = '';
-            if (i >= 40) visibilityClass = 'hidden lg:block';
-            else if (i >= 15) visibilityClass = 'hidden md:block';
-
-            return (
+          {particles.map((p) => (
+            <div 
+              key={p.id}
+              className="absolute"
+              style={{
+                left: p.left,
+                top: p.top,
+                opacity: p.opacity,
+                transform: `translate(${mouseX * p.parallaxZ}px, ${mouseY * p.parallaxZ}px)`
+              }}
+            >
+              {/* Animation transform và parallax transform cần tách ra 2 thẻ div để không bị ghi đè */}
               <div 
-                key={p.id}
-                className={`absolute ${visibilityClass}`}
+                className="luxury-particle !relative !left-0 !top-0"
                 style={{
-                  left: p.left,
-                  top: p.top,
-                  opacity: p.opacity,
-                  transform: `translate(${mouseX * p.parallaxZ}px, ${mouseY * p.parallaxZ}px)`
-                }}
-              >
-                {/* Animation transform và parallax transform cần tách ra 2 thẻ div để không bị ghi đè */}
-                <div 
-                  className="luxury-particle !relative !left-0 !top-0"
-                  style={{
-                    width: `${p.size}px`,
-                    height: `${p.size}px`,
-                    '--tx': p.tx,
-                    '--ty': p.ty,
-                    '--duration': p.duration,
-                    '--delay': p.delay,
-                  } as React.CSSProperties}
-                />
-              </div>
-            );
-          })}
+                  width: `${p.size}px`,
+                  height: `${p.size}px`,
+                  '--tx': p.tx,
+                  '--ty': p.ty,
+                  '--duration': p.duration,
+                  '--delay': p.delay,
+                } as React.CSSProperties}
+              />
+            </div>
+          ))}
         </div>
 
         {/* Top Right: Luxury Architectural Compass / Grid Node */}
