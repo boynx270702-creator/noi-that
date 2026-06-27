@@ -129,7 +129,7 @@ export default function DonViThietKePage() {
           if (Array.isArray(data)) {
             // Map API data to the fields required by the UI
             const mappedUnits = data
-              .filter((u: any) => u.projectType && u.projectType.toLowerCase().includes('thiết kế'))
+              .filter((u: any) => u.projectType && u.projectType.toLowerCase().includes('thi công'))
               .map((u: any, idx: number) => ({
               id: u.id,
               name: u.name,
@@ -192,9 +192,9 @@ export default function DonViThietKePage() {
         <div className="text-center mb-16 relative overflow-hidden p-10 rounded-[4px] bg-[#f9f9f9] dark:bg-[#1a1a1a] border border-[#ECE7DE] dark:border-white/10 shadow-sm">
           <div className="relative z-10">
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-[2px] bg-gradient-to-r from-[#C7A25C]/20 to-transparent border-l-2 border-[#C7A25C] text-[#A67C00] dark:text-[#FFD700] text-[11px] font-bold uppercase tracking-widest mb-4 luxury-glow">
-              Đơn vị thiết kế
+              Đơn vị thi công
             </div>
-            <h1 className="font-heading text-4xl md:text-5xl font-bold text-[#1F1F1F] dark:text-white mb-6 uppercase">Hệ sinh thái đơn vị thiết kế</h1>
+            <h1 className="font-heading text-4xl md:text-5xl font-bold text-[#1F1F1F] dark:text-white mb-6 uppercase">Hệ sinh thái đơn vị thi công</h1>
             <p className="text-gray-600 dark:text-white/70 max-w-3xl mx-auto text-lg">Các đơn vị được phân loại theo phân khúc, loại công trình, khu vực hoạt động, phong cách thiết kế và năng lực thi công. Khách hàng có thể tham khảo hồ sơ từng đơn vị hoặc gửi nhu cầu để được tư vấn đơn vị phù hợp nhất.</p>
           </div>
         </div>
