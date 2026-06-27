@@ -56,19 +56,19 @@ export default function Footer() {
             <ul className="space-y-4 text-gray-500 dark:text-[#888] text-[14px]">
               <li className="flex items-start gap-3">
                 <svg className="w-5 h-5 text-[#D3AE3E] mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
-                <span>2659 Autostrad St, London, UK</span>
+                <span>TP.HCM</span>
               </li>
               <li className="flex items-start gap-3">
                 <svg className="w-5 h-5 text-[#D3AE3E] mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
-                <span>+12 3 1462 2249, 2248</span>
+                <span>096 574 39 49</span>
               </li>
               <li className="flex items-start gap-3">
                 <svg className="w-5 h-5 text-[#D3AE3E] mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
-                <span>Support@company.com</span>
+                <span>arcvietlivingnexus@gmail.com</span>
               </li>
               <li className="flex items-start gap-3">
-                <svg className="w-5 h-5 text-[#D3AE3E] mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                <span>Mon - Fri / 9:00 AM - 6:00 PM</span>
+                <svg className="w-5 h-5 text-[#D3AE3E] mt-0.5 shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M22.675 0H1.325C.593 0 0 .593 0 1.326v21.348C0 23.407.593 24 1.325 24h11.495v-9.294H9.69v-3.622h3.13V8.413c0-3.1 1.894-4.788 4.66-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.794.715-1.794 1.763v2.31h3.587l-.467 3.622h-3.12V24h6.116c.73 0 1.323-.593 1.323-1.326V1.326C24 .593 23.407 0 22.675 0z"/></svg>
+                <a href="https://www.facebook.com/profile.php?id=61591340093069" target="_blank" rel="noreferrer" className="hover:text-[#D3AE3E] transition-colors">Fanpage Facebook</a>
               </li>
             </ul>
           </ScrollReveal>
