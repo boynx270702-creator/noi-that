@@ -57,7 +57,7 @@ export default function ProductDetail({ params }: { params: Promise<{ id: string
           url += `&categoryId=${product.categoryId}`;
         }
         let res = await fetch(url);
-        let products = [];
+        let products: any[] = [];
         if (res.ok) {
           let data = await res.json();
           if (Array.isArray(data)) {
