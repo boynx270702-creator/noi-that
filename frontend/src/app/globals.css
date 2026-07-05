@@ -110,26 +110,18 @@
 
   section::before,
   .modern-section::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: radial-gradient(circle at 50% 0%, rgba(211, 174, 62, 0.08) 0%, transparent 60%);
-    pointer-events: none;
-    z-index: 0;
+    display: none;
   }
 
-  /* Dark mode section background */
+  /* Dark mode section background (removed to allow transparent sections) */
   .dark section,
   .dark .modern-section {
-    background: linear-gradient(to bottom, #131313, #0a0a0a);
+    background: transparent;
   }
 
   .dark section::before,
   .dark .modern-section::before {
-    background: radial-gradient(circle at 50% 0%, rgba(211, 174, 62, 0.15) 0%, transparent 60%);
+    display: none;
   }
 
   section>*,
@@ -587,15 +579,15 @@
 
 .luxury-particle {
   position: absolute;
-  background: radial-gradient(circle, #ce9e51 0%, rgba(206,158,81,0.5) 40%, transparent 100%);
+  background: radial-gradient(circle, #51d7c4 0%, rgba(81,215,196,0.5) 40%, transparent 100%);
   border-radius: 50%;
   pointer-events: none;
-  filter: drop-shadow(0 0 3px rgba(206,158,81,0.5));
+  filter: drop-shadow(0 0 3px rgba(81,215,196,0.5));
   animation: float-particle var(--duration) linear infinite;
   animation-delay: var(--delay);
 }
 
 .dark .luxury-particle {
-  background: radial-gradient(circle, #ffffff 0%, #D3AE3E 40%, transparent 100%);
-  filter: drop-shadow(0 0 4px #D3AE3E);
+  background: radial-gradient(circle, #a0f0e6 0%, #51d7c4 40%, transparent 100%);
+  filter: drop-shadow(0 0 5px #51d7c4);
 }

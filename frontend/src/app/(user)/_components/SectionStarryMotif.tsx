@@ -194,7 +194,7 @@ export default function SectionStarryMotif({ variant, position = 'full', particl
     <motion.div
       ref={containerRef}
       style={{ '--mx': smoothX, '--my': smoothY } as any}
-      className="absolute inset-0 pointer-events-none z-0 overflow-hidden opacity-100 dark:opacity-90 transition-opacity duration-1000 text-[#C7A25C] dark:text-[#D3AE3E] [--star-white:#ce9e51] dark:[--star-white:#ffffff]"
+      className="absolute inset-0 pointer-events-none z-0 overflow-hidden opacity-100 dark:opacity-90 transition-opacity duration-1000 text-[#51d7c4] dark:text-[#51d7c4] [--star-white:#a0f0e6] dark:[--star-white:#51d7c4]"
     >
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-currentColor/10 dark:from-currentColor/15 via-transparent to-transparent opacity-100 dark:opacity-80"></div>
 
@@ -238,7 +238,7 @@ export default function SectionStarryMotif({ variant, position = 'full', particl
               'inset-[-5%] w-[110%] h-[110%]'
           }`}
       >
-        <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" className="drop-shadow-[0_0_8px_rgba(211,174,62,0.4)]">
+        <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" className="drop-shadow-[0_0_8px_rgba(81,215,196,0.4)]">
           {CONSTELLATIONS[constellationIndex]}
         </svg>
       </div>
