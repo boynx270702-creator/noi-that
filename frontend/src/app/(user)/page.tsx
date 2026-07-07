@@ -10,10 +10,15 @@ import SectionConceptCTA from './_components/SectionConceptCTA';
 export default function UserHomePage() {
   return (
     <div className="w-full relative min-h-screen bg-transparent">
-      {/* Background image fixed position */}
+      {/* Background image scrolling with page */}
       <div 
-        className="fixed inset-0 z-0 pointer-events-none bg-cover bg-center bg-no-repeat opacity-100"
-        style={{ backgroundImage: "url('/images/backgr.png')" }}
+        className="absolute inset-0 z-0 pointer-events-none opacity-100"
+        style={{ 
+          backgroundImage: "url('/images/backgr_new.png')",
+          backgroundSize: "100% auto", /* Đảm bảo trải dài toàn trang theo tỷ lệ gốc */
+          backgroundRepeat: "repeat",
+          backgroundPosition: "top center"
+        }}
       />
       
       {/* Overlay deleted to make it brighter */}

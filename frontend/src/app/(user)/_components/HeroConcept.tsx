@@ -1,81 +1,92 @@
 import React from 'react';
 import Link from 'next/link';
+import ScrollReveal from './ScrollReveal';
 
 export default function HeroConcept() {
   return (
-    <section className="relative w-full min-h-[90vh] flex flex-col justify-center overflow-hidden">
+    <section className="relative w-full min-h-[80vh] md:min-h-[90vh] flex flex-col justify-start md:justify-center overflow-hidden">
       
       {/* Background blobs removed as requested */}
 
-      <div className="relative z-10 w-full max-w-[1440px] mx-auto px-4 md:px-8 pt-32 pb-16">
+      <div className="relative z-10 w-full max-w-[1440px] mx-auto px-4 md:px-8 pt-[110px] md:pt-32 pb-16">
         <div className="flex flex-col lg:flex-row items-center">
           
           {/* Left Content */}
-          <div className="lg:w-[55%] relative z-10">
+          <div className="w-full lg:w-[55%] relative z-10">
             
             {/* Animated Label with Sci-Fi Line and Border */}
-            <div className="mb-10 flex items-center relative w-full">
-              {/* Animated line extending to the right */}
-              <div className="absolute top-1/2 left-0 w-[150%] max-w-[800px] h-[1px] bg-gradient-to-r from-[#51d7c4]/20 via-transparent to-transparent -z-10"></div>
-              <div className="absolute top-1/2 left-0 w-[300px] h-[1px] bg-gradient-to-r from-transparent via-[#51d7c4] to-transparent -z-10 animate-[shimmer_3s_infinite_alternate]"></div>
-              
-              <div className="relative inline-flex items-center p-[1px] rounded-sm overflow-hidden group">
-                {/* Rotating border */}
-                <div className="absolute inset-0 bg-[conic-gradient(from_90deg_at_50%_50%,transparent_0%,#51d7c4_80%,transparent_100%)] animate-[spin_10s_linear_infinite]"></div>
+            <ScrollReveal animation="fade-up" delay={100} duration={800}>
+              <div className="mb-6 md:mb-10 flex items-center relative w-full">
+                {/* Animated line extending to the right */}
+                <div className="absolute top-1/2 left-0 w-[150%] max-w-[800px] h-[1px] bg-gradient-to-r from-[#51d7c4]/20 via-transparent to-transparent -z-10"></div>
+                <div className="absolute top-1/2 left-0 w-[300px] h-[1px] bg-gradient-to-r from-transparent via-[#51d7c4] to-transparent -z-10 animate-[shimmer_3s_infinite_alternate]"></div>
                 
-                <div className="relative px-6 py-2.5 bg-[#021817]/50 backdrop-blur-md flex items-center justify-center">
-                  <div className="w-2 h-2 rounded-full bg-[#51d7c4] mr-3 animate-pulse shadow-[0_0_8px_#51d7c4]"></div>
-                  <div className="overflow-hidden whitespace-nowrap animate-[typing_4s_steps(40,end)_infinite_alternate,blink-caret_.75s_step-end_infinite] border-r-2 border-[#51d7c4] pr-1">
-                    <span className="text-white drop-shadow-[0_0_8px_rgba(81,215,196,0.8)] text-[11px] md:text-[13px] font-bold tracking-[0.15em] uppercase">
-                      Kiến tạo không gian sống thông minh & bền vững
-                    </span>
+                <div className="relative inline-flex items-center p-[1px] rounded-sm overflow-hidden group max-w-full">
+                  {/* Rotating border */}
+                  <div className="absolute inset-0 bg-[conic-gradient(from_90deg_at_50%_50%,transparent_0%,#51d7c4_80%,transparent_100%)] animate-[spin_10s_linear_infinite]"></div>
+                  
+                  <div className="relative px-3 md:px-6 py-2.5 bg-[#021817]/70 backdrop-blur-md flex items-start md:items-center w-full">
+                    <div className="w-1.5 h-1.5 md:w-2 md:h-2 rounded-full bg-[#51d7c4] mr-2 md:mr-3 shrink-0 animate-pulse shadow-[0_0_8px_#51d7c4] mt-[6px] md:mt-0"></div>
+                    {/* On mobile: no typing animation, text wraps. On sm+: typing animation, nowrap */}
+                    <div className="overflow-hidden sm:animate-[typing_4s_steps(40,end)_infinite_alternate,blink-caret_.75s_step-end_infinite] sm:border-r-2 sm:border-[#51d7c4] pr-1">
+                      <span className="text-white drop-shadow-[0_0_8px_rgba(81,215,196,0.8)] text-[11px] md:text-[13px] font-bold tracking-[0.05em] md:tracking-[0.15em] uppercase whitespace-normal sm:whitespace-nowrap block leading-snug">
+                        Kiến tạo không gian sống thông minh & bền vững
+                      </span>
+                    </div>
+                    {/* Corner accents */}
+                    <div className="absolute top-0 left-0 w-2 h-2 border-t-2 border-l-2 border-[#51d7c4]"></div>
+                    <div className="absolute top-0 right-0 w-2 h-2 border-t-2 border-r-2 border-[#51d7c4]"></div>
+                    <div className="absolute bottom-0 left-0 w-2 h-2 border-b-2 border-l-2 border-[#51d7c4]"></div>
+                    <div className="absolute bottom-0 right-0 w-2 h-2 border-b-2 border-r-2 border-[#51d7c4]"></div>
                   </div>
-                  {/* Corner accents */}
-                  <div className="absolute top-0 left-0 w-2 h-2 border-t-2 border-l-2 border-[#51d7c4]"></div>
-                  <div className="absolute top-0 right-0 w-2 h-2 border-t-2 border-r-2 border-[#51d7c4]"></div>
-                  <div className="absolute bottom-0 left-0 w-2 h-2 border-b-2 border-l-2 border-[#51d7c4]"></div>
-                  <div className="absolute bottom-0 right-0 w-2 h-2 border-b-2 border-r-2 border-[#51d7c4]"></div>
                 </div>
               </div>
-            </div>
+            </ScrollReveal>
             
-            <h1 className="text-[40px] md:text-[56px] lg:text-[64px] font-bold text-white leading-[1.1] mb-6 tracking-tight drop-shadow-[0_2px_10px_rgba(0,0,0,0.5)]">
-              KẾT NỐI ĐÚNG<br />
-              <span className="inline-block text-transparent bg-clip-text bg-[linear-gradient(90deg,#008f82_0%,#51d7c4_50%,#008f82_100%)] bg-[length:200%_auto] animate-[gradientFlow_3s_linear_infinite] drop-shadow-none">
-                HỆ SINH THÁI NỘI THẤT
-              </span><br />
-              CHO CÔNG TRÌNH CỦA BẠN
-            </h1>
+            <ScrollReveal animation="fade-up" delay={200} duration={800}>
+              <h1 className="text-[28px] sm:text-[40px] md:text-[56px] lg:text-[64px] font-bold text-white leading-[1.3] md:leading-[1.1] mb-5 tracking-tight drop-shadow-[0_2px_10px_rgba(0,0,0,0.5)]">
+                KẾT NỐI ĐÚNG<br />
+                <span className="inline-block text-transparent bg-clip-text bg-[linear-gradient(90deg,#008f82_0%,#51d7c4_50%,#008f82_100%)] bg-[length:200%_auto] animate-[gradientFlow_3s_linear_infinite] drop-shadow-none pb-1">
+                  HỆ SINH THÁI NỘI THẤT
+                </span><br />
+                CHO CÔNG TRÌNH CỦA BẠN
+              </h1>
+            </ScrollReveal>
             
-            <p className="text-gray-300 text-[15px] md:text-[16px] max-w-lg mb-10 leading-[1.8] font-medium drop-shadow-[0_2px_5px_rgba(0,0,0,0.5)]">
-              ARCVIET Living Nexus quy tụ những thương hiệu nội thất hàng đầu 
-              và giải pháp công nghệ tiên tiến, mang đến trải nghiệm sống tinh tế, 
-              thông minh và bền vững cho mọi không gian.
-            </p>
+            <ScrollReveal animation="fade-up" delay={300} duration={800}>
+              <p className="text-gray-300 text-[14px] md:text-[15px] lg:text-[16px] max-w-lg mb-8 leading-[1.7] md:leading-[1.8] font-medium drop-shadow-[0_2px_5px_rgba(0,0,0,0.5)]">
+                ARCVIET Living Nexus quy tụ những thương hiệu nội thất hàng đầu 
+                và giải pháp công nghệ tiên tiến, mang đến trải nghiệm sống tinh tế, 
+                thông minh và bền vững cho mọi không gian.
+              </p>
+            </ScrollReveal>
             
-            <div className="flex flex-wrap gap-5 items-center">
-              {/* Button with running border */}
-              <div className="relative p-[2px] rounded-sm overflow-hidden group cursor-pointer inline-flex">
-                {/* Rotating conic gradient for the border */}
-                <div className="absolute inset-0 bg-[conic-gradient(from_0deg_at_50%_50%,transparent_0%,#51d7c4_30%,transparent_100%)] animate-[spin_2s_linear_infinite]"></div>
-                
-                <Link href="#he-sinh-thai" className="relative flex items-center gap-4 bg-[#012624] hover:bg-[#011a18] text-white pl-8 pr-2 py-2 transition-all duration-300 shadow-[0_0_20px_rgba(81,215,196,0.2)] rounded-[1px] h-[52px]">
-                  <span className="text-sm font-bold tracking-widest uppercase">KHÁM PHÁ HỆ SINH THÁI</span>
+            <ScrollReveal animation="fade-up" delay={400} duration={800}>
+              <div className="flex flex-col sm:flex-row gap-4 items-stretch sm:items-center w-full max-w-sm sm:max-w-none">
+                {/* Primary Button */}
+                <div className="relative p-[2px] rounded-sm overflow-hidden group cursor-pointer inline-flex w-full sm:w-auto shadow-[0_0_20px_rgba(81,215,196,0.15)]">
+                  {/* Rotating conic gradient for the border */}
+                  <div className="absolute inset-0 bg-[conic-gradient(from_0deg_at_50%_50%,transparent_0%,#51d7c4_50%,transparent_100%)] animate-[spin_2s_linear_infinite]"></div>
                   
-                  {/* Icon with dark teal bg and cyan border */}
-                  <div className="w-9 h-9 rounded-sm bg-[#00100f] border border-[#51d7c4]/50 flex items-center justify-center text-[#51d7c4] group-hover:bg-[#51d7c4] group-hover:text-[#00100f] transition-all">
-                    <svg className="transform group-hover:translate-x-1 transition-transform" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                  <Link href="#he-sinh-thai" className="relative flex items-center justify-between sm:justify-start gap-3 bg-gradient-to-r from-[#012624] to-[#013330] hover:from-[#023b37] hover:to-[#012624] text-white pl-5 pr-1.5 py-1.5 transition-all duration-300 h-[50px] w-full sm:w-auto">
+                    <span className="text-[12px] md:text-sm font-bold tracking-wider uppercase">KHÁM PHÁ HỆ SINH THÁI</span>
+                    
+                    {/* Icon */}
+                    <div className="w-9 h-9 rounded-sm bg-[#00100f]/80 border border-[#51d7c4]/50 flex items-center justify-center text-[#51d7c4] group-hover:bg-[#51d7c4] group-hover:text-[#00100f] transition-all shrink-0">
+                      <svg className="transform group-hover:translate-x-1 transition-transform" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </div>
+                  </Link>
+                </div>
+                
+                {/* Secondary Button */}
+                <Link href="#du-an" className="flex items-center justify-center gap-3 bg-white/10 hover:bg-white/20 text-white h-[50px] px-6 border border-white/20 transition-all duration-300 backdrop-blur-md rounded-sm group shadow-[0_4px_15px_rgba(0,0,0,0.1)] w-full sm:w-auto">
+                  <div className="w-4 h-4 rounded-full border-2 border-white/70 flex items-center justify-center group-hover:border-[#51d7c4] transition-colors shrink-0">
+                    <div className="w-1.5 h-1.5 rounded-full bg-white/70 group-hover:bg-[#51d7c4] group-hover:scale-110 transition-all"></div>
                   </div>
+                  <span className="text-[12px] md:text-sm font-bold tracking-wider uppercase group-hover:text-[#51d7c4] transition-colors">XEM DỰ ÁN TIÊU BIỂU</span>
                 </Link>
               </div>
-              
-              <Link href="#du-an" className="flex items-center gap-3 bg-white/40 hover:bg-white text-[#013533] h-[52px] px-8 border border-[#013533]/20 transition-all duration-300 backdrop-blur-md rounded-sm group shadow-[0_4px_15px_rgba(0,0,0,0.05)]">
-                <div className="w-5 h-5 rounded-full border-2 border-[#013533] flex items-center justify-center group-hover:border-[#008f82] transition-colors">
-                  <div className="w-1.5 h-1.5 rounded-full bg-[#013533] group-hover:bg-[#008f82] group-hover:scale-110 transition-all"></div>
-                </div>
-                <span className="text-sm font-bold tracking-widest uppercase group-hover:text-[#008f82] transition-colors">XEM DỰ ÁN TIÊU BIỂU</span>
-              </Link>
-            </div>
+            </ScrollReveal>
           </div>
 
           {/* Right Floating Elements (Sci-Fi Glass effect with running borders) */}

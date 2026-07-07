@@ -83,10 +83,12 @@
 @layer base {
   body {
     background-color: #FFFFFF;
-    background-image: radial-gradient(circle at 50% 0%, #ffffff 0%, #FFFFFF 60%, #FCFBF8 100%);
-    background-size: 100vw 100vh;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
+    background-image: url('/images/backgr_new.png');
+    /* 100% auto giữ đúng tỷ lệ ảnh (chiều rộng full), nếu bạn muốn ảnh kéo dãn đến tận cùng trang web thì đổi thành 100% 100% hoặc cover */
+    background-size: 100% auto; 
+    background-position: top center;
+    background-repeat: repeat; 
+    background-attachment: scroll;
     color: #1a1a1a;
     font-family: var(--font-body);
   }
@@ -97,7 +99,11 @@
 
   .dark body {
     background-color: var(--color-surface);
-    background-image: none;
+    background-image: url('/images/backgr_new.png');
+    background-size: 100% auto;
+    background-position: top center;
+    background-repeat: repeat;
+    background-attachment: scroll;
     color: var(--color-on-surface);
   }
 

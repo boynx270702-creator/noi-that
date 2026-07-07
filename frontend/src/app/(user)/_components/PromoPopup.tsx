@@ -21,29 +21,60 @@ export default function PromoPopup() {
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/60 backdrop-blur-sm p-4">
-      <div className="relative w-full max-w-md bg-white dark:bg-[#1a1a1a] rounded-[4px] shadow-2xl overflow-hidden border border-[#D3AE3E]/30 animate-reveal">
-        <button 
-          onClick={() => setIsOpen(false)}
-          className="absolute top-3 right-3 z-10 text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white transition-colors"
-        >
-          <X className="w-5 h-5" />
-        </button>
-        <div className="p-8 text-center">
-          <div className="w-16 h-16 mx-auto bg-[#D3AE3E]/10 rounded-full flex items-center justify-center mb-6">
-            <Gift className="w-8 h-8 text-[#D3AE3E]" />
+    <div className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/70 backdrop-blur-md p-4">
+      {/* Sci-Fi Container */}
+      <div className="relative w-full max-w-md p-[1.5px] rounded-lg overflow-hidden animate-reveal group shadow-[0_10px_50px_rgba(0,0,0,0.8)]">
+        {/* Rotating border effect */}
+        <div className="absolute inset-0 bg-[conic-gradient(from_0deg_at_50%_50%,transparent_0%,rgba(81,215,196,1)_30%,transparent_60%,transparent_100%)] animate-[spin_4s_linear_infinite]"></div>
+        
+        {/* Inner Box */}
+        <div className="relative bg-gradient-to-br from-[#021d1b] to-[#063330] rounded-lg overflow-hidden px-6 py-8 md:p-8 text-center border border-[#51d7c4]/20">
+          
+          {/* Close Button */}
+          <button 
+            onClick={() => setIsOpen(false)}
+            className="absolute top-3 right-3 z-10 text-gray-400 hover:text-[#51d7c4] transition-colors bg-[#00100f]/50 p-1.5 rounded-sm border border-transparent hover:border-[#51d7c4]/30"
+          >
+            <X className="w-4 h-4 md:w-5 md:h-5" />
+          </button>
+          
+          {/* Icon Area */}
+          <div className="relative w-16 h-16 mx-auto mb-6 flex items-center justify-center">
+            {/* Spinning dashed ring */}
+            <div className="absolute inset-0 border-2 border-[#51d7c4] border-dashed rounded-full opacity-40 animate-[spin_6s_linear_infinite]"></div>
+            <div className="absolute inset-1 rounded-full bg-[conic-gradient(from_0deg_at_50%_50%,transparent_0%,rgba(81,215,196,0.2)_100%)] animate-[spin_2s_linear_infinite]"></div>
+            <div className="relative z-10 w-11 h-11 bg-[#00100f]/90 border border-[#51d7c4]/50 rounded-full flex items-center justify-center shadow-[0_0_15px_rgba(81,215,196,0.3)]">
+              <Gift className="w-5 h-5 text-[#51d7c4]" />
+            </div>
           </div>
-          <h3 className="font-heading text-2xl font-bold text-gray-900 dark:text-white mb-4">Ưu đãi đặc biệt</h3>
-          <p className="text-gray-600 dark:text-[#e2e2e2] mb-8 leading-relaxed">
-            Nhận ngay ưu đãi giảm <span className="text-[#D3AE3E] font-bold text-lg">5%</span> khi kết nối thiết kế và thi công với các đối tác thông qua hệ sinh thái <span className="font-bold text-gray-900 dark:text-white">ArcViet</span>.
+          
+          <h3 className="text-xl md:text-2xl font-bold text-white mb-3 tracking-[0.1em] drop-shadow-[0_0_8px_rgba(81,215,196,0.5)]">ƯU ĐÃI ĐẶC BIỆT</h3>
+          
+          <div className="w-16 h-[1.5px] bg-gradient-to-r from-transparent via-[#51d7c4] to-transparent mx-auto mb-6"></div>
+          
+          <p className="text-gray-300 text-[14px] md:text-[15px] mb-8 leading-[1.8] px-2 font-medium">
+            Nhận ngay ưu đãi giảm <span className="text-transparent bg-clip-text bg-[linear-gradient(90deg,#51d7c4,#008f82)] font-bold text-lg md:text-xl drop-shadow-[0_0_5px_rgba(81,215,196,0.5)] px-1">5%</span> khi kết nối thiết kế và thi công với các đối tác thông qua hệ sinh thái <span className="font-bold text-white tracking-wide">ARCVIET</span>.
           </p>
+          
+          {/* Button */}
           <Link
             href="/tu-van"
             onClick={() => setIsOpen(false)}
-            className="block w-full bg-[#D3AE3E] text-white py-3 font-bold uppercase tracking-wider hover:bg-[#b88c45] transition-colors rounded-[2px]"
+            className="relative flex items-center justify-center gap-3 w-full bg-gradient-to-r from-[#012624] to-[#013330] hover:from-[#023b37] hover:to-[#012624] text-white py-3.5 transition-all duration-300 shadow-[0_0_15px_rgba(81,215,196,0.15)] rounded-sm group overflow-hidden border border-[#51d7c4]/30"
           >
-            Nhận ưu đãi ngay
+            {/* Button Hover Glow */}
+            <div className="absolute inset-0 bg-[#51d7c4]/10 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
+            <span className="relative text-[13px] md:text-sm font-bold uppercase tracking-widest z-10">Nhận ưu đãi ngay</span>
+            <div className="relative z-10 w-7 h-7 rounded-sm bg-[#00100f] border border-[#51d7c4]/50 flex items-center justify-center text-[#51d7c4] group-hover:bg-[#51d7c4] group-hover:text-[#00100f] transition-all">
+              <svg className="transform group-hover:translate-x-0.5 transition-transform" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </div>
           </Link>
+          
+          {/* Corner accents */}
+          <div className="absolute top-0 left-0 w-3 h-3 border-t-2 border-l-2 border-[#51d7c4]/50 rounded-tl-lg pointer-events-none"></div>
+          <div className="absolute top-0 right-0 w-3 h-3 border-t-2 border-r-2 border-[#51d7c4]/50 rounded-tr-lg pointer-events-none"></div>
+          <div className="absolute bottom-0 left-0 w-3 h-3 border-b-2 border-l-2 border-[#51d7c4]/50 rounded-bl-lg pointer-events-none"></div>
+          <div className="absolute bottom-0 right-0 w-3 h-3 border-b-2 border-r-2 border-[#51d7c4]/50 rounded-br-lg pointer-events-none"></div>
         </div>
       </div>
     </div>
