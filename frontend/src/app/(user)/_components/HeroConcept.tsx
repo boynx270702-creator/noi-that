@@ -4,11 +4,11 @@ import ScrollReveal from './ScrollReveal';
 
 export default function HeroConcept() {
   return (
-    <section className="relative w-full min-h-[80vh] md:min-h-[90vh] flex flex-col justify-start md:justify-center overflow-hidden">
+    <section className="relative w-full min-h-[auto] md:min-h-[90vh] flex flex-col justify-start md:justify-center overflow-hidden">
       
       {/* Background blobs removed as requested */}
 
-      <div className="relative z-10 w-full max-w-[1440px] mx-auto px-4 md:px-8 pt-[110px] md:pt-32 pb-16">
+      <div className="relative z-10 w-full max-w-[1440px] mx-auto px-4 md:px-8 pt-[110px] md:pt-32 pb-8 md:pb-16">
         <div className="flex flex-col lg:flex-row items-center">
           
           {/* Left Content */}
@@ -54,7 +54,7 @@ export default function HeroConcept() {
             </ScrollReveal>
             
             <ScrollReveal animation="fade-up" delay={300} duration={800}>
-              <p className="text-gray-800 text-[14px] md:text-[15px] lg:text-[16px] max-w-lg mb-8 leading-[1.7] md:leading-[1.8] font-medium drop-shadow-[0_2px_5px_rgba(255,255,255,0.5)]">
+              <p className="text-gray-100 lg:text-gray-900 text-[14px] md:text-[15px] lg:text-[16px] max-w-lg mb-8 leading-[1.7] md:leading-[1.8] font-medium drop-shadow-[0_2px_5px_rgba(0,0,0,0.5)] lg:drop-shadow-none">
                 ARCVIET Living Nexus quy tụ những thương hiệu nội thất hàng đầu 
                 và giải pháp công nghệ tiên tiến, mang đến trải nghiệm sống tinh tế, 
                 thông minh và bền vững cho mọi không gian.

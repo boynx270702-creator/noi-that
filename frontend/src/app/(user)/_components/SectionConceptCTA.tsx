@@ -4,38 +4,33 @@ import Link from 'next/link';
 const features = [
   {
     icon: (
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <circle cx="12" cy="12" r="10"/>
+        <circle cx="12" cy="12" r="6"/>
+        <circle cx="12" cy="12" r="2"/>
       </svg>
     ),
-    label: 'Tư vấn chuyên gia miễn phí',
+    label: 'Tư vấn chuyên gia\nmiễn phí',
   },
   {
     icon: (
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-        <circle cx="12" cy="12" r="3"/>
-        <path d="M19.07 4.93a10 10 0 0 1 0 14.14M4.93 4.93a10 10 0 0 0 0 14.14"/>
-        <path d="M15.54 8.46a5 5 0 0 1 0 7.07M8.46 8.46a5 5 0 0 0 0 7.07"/>
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
       </svg>
     ),
-    label: 'Giải pháp cá nhân hóa',
+    label: 'Giải pháp thiết kế\ncá nhân hóa',
   },
   {
     icon: (
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-        <polyline points="9 11 12 14 22 4"/>
-        <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+        <path d="M14 2v6h6"/>
+        <line x1="16" y1="13" x2="8" y2="13"/>
+        <line x1="16" y1="17" x2="8" y2="17"/>
+        <polyline points="10 9 9 9 8 9"/>
       </svg>
     ),
-    label: 'Báo giá minh bạch',
-  },
-  {
-    icon: (
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-      </svg>
-    ),
-    label: 'Bảo hành dài hạn',
+    label: 'Báo giá nhanh\n& minh bạch',
   },
 ];
 
@@ -43,88 +38,101 @@ export default function SectionConceptCTA() {
   return (
     <section className="relative z-10 px-4 md:px-8 max-w-[1440px] mx-auto pb-24 pt-8">
       {/* Sci-Fi CTA Wrapper */}
-      <div className="relative p-[1.5px] rounded-sm overflow-hidden">
-        {/* Rotating conic gradient border - slow */}
-        <div className="absolute inset-0 bg-[conic-gradient(from_0deg_at_50%_50%,transparent_0%,#51d7c4_40%,transparent_60%,#51d7c4_100%)] animate-[spin_14s_linear_infinite]"></div>
+      <div className="relative p-[1.5px] rounded-sm overflow-hidden group">
+        {/* Rotating conic gradient border */}
+        <div className="absolute inset-0 bg-[conic-gradient(from_0deg_at_50%_50%,transparent_0%,#51d7c4_20%,transparent_40%,#51d7c4_100%)] animate-[spin_10s_linear_infinite]"></div>
 
         {/* Inner Glass Box */}
-        <div className="relative bg-[#010d0c]/80 backdrop-blur-xl px-8 py-10 md:px-14 md:py-12 flex flex-col lg:flex-row items-center justify-between gap-10 shadow-[inset_0_0_60px_rgba(81,215,196,0.04)]">
+        <div className="relative bg-[#021817]/95 backdrop-blur-xl px-6 py-8 lg:px-10 lg:py-6 flex flex-col lg:flex-row items-center justify-between gap-8 shadow-[inset_0_0_60px_rgba(81,215,196,0.08)]">
 
           {/* Corner accents */}
-          <div className="absolute top-0 left-0 w-5 h-5 border-t-2 border-l-2 border-[#51d7c4]"></div>
-          <div className="absolute top-0 right-0 w-5 h-5 border-t-2 border-r-2 border-[#51d7c4]"></div>
-          <div className="absolute bottom-0 left-0 w-5 h-5 border-b-2 border-l-2 border-[#51d7c4]"></div>
-          <div className="absolute bottom-0 right-0 w-5 h-5 border-b-2 border-r-2 border-[#51d7c4]"></div>
+          <div className="absolute top-0 left-0 w-8 h-8 border-t-2 border-l-2 border-[#51d7c4]"></div>
+          <div className="absolute top-0 right-0 w-8 h-8 border-t-2 border-r-2 border-[#51d7c4]"></div>
+          <div className="absolute bottom-0 left-0 w-8 h-8 border-b-2 border-l-2 border-[#51d7c4]"></div>
+          <div className="absolute bottom-0 right-0 w-8 h-8 border-b-2 border-r-2 border-[#51d7c4]"></div>
 
-          {/* Scanning line animation */}
-          <div className="absolute inset-x-0 top-0 h-[1px] bg-gradient-to-r from-transparent via-[#51d7c4]/30 to-transparent animate-[shimmer_5s_ease-in-out_infinite]"></div>
+          {/* Glowing Top Line */}
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-1/3 h-[2px] bg-gradient-to-r from-transparent via-[#51d7c4] to-transparent shadow-[0_0_15px_#51d7c4]"></div>
+          {/* Glowing Bottom Line */}
+          <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-1/3 h-[2px] bg-gradient-to-r from-transparent via-[#51d7c4] to-transparent shadow-[0_0_15px_#51d7c4]"></div>
 
-          {/* Left: Text */}
-          <div className="flex-1 max-w-xl">
-            {/* Section label */}
-            <div className="flex items-center gap-2 mb-4">
-              <div className="w-1.5 h-1.5 rounded-full bg-[#51d7c4] animate-pulse shadow-[0_0_6px_#51d7c4]"></div>
-              <span className="text-[#51d7c4] text-[11px] tracking-[0.25em] uppercase font-medium">Hành trình kiến tạo</span>
-            </div>
+          {/* Content Wrapper */}
+          <div className="flex flex-col lg:flex-row items-center justify-between gap-10 lg:gap-8 w-full z-10">
+            
+            {/* Left Column: Text + Features */}
+            <div className="flex flex-col gap-8 w-full lg:flex-1 shrink-0 lg:pr-8">
+              
+              {/* Top: Text */}
+              <div className="flex flex-col shrink-0 text-center lg:text-left w-full">
+                <h2 className="text-white text-[15px] md:text-[20px] lg:text-[24px] uppercase font-bold tracking-[0.1em] md:tracking-widest mb-2 drop-shadow-[0_0_5px_rgba(255,255,255,0.3)]">
+                  Bắt đầu hành trình kiến tạo
+                </h2>
+                <h3 className="text-[#51d7c4] text-[18px] md:text-[26px] lg:text-[32px] uppercase font-black tracking-wider drop-shadow-[0_0_10px_rgba(81,215,196,0.4)] leading-snug">
+                  Không gian sống lý tưởng <br className="hidden lg:block"/><span className="text-white mt-1 md:mt-0 block lg:inline">của bạn</span>
+                </h3>
+              </div>
 
-            <h2 className="text-xl md:text-2xl lg:text-3xl font-bold text-white mb-2 uppercase tracking-wider leading-tight">
-              BẮT ĐẦU HÀNH TRÌNH KIẾN TẠO
-            </h2>
-            <h2 className="text-xl md:text-2xl lg:text-3xl font-bold uppercase tracking-wider leading-tight mb-6">
-              <span className="text-transparent bg-clip-text bg-[linear-gradient(90deg,#008f82_0%,#51d7c4_50%,#008f82_100%)] bg-[length:200%_auto] animate-[gradientFlow_4s_linear_infinite]">
-                KHÔNG GIAN SỐNG LÝ TƯỞNG CỦA BẠN
-              </span>
-            </h2>
-
-            {/* Feature pills */}
-            <div className="grid grid-cols-2 gap-3 mt-2">
-              {features.map((f, i) => (
-                <div key={i} className="flex items-center gap-2.5 group">
-                  {/* Icon container with hover spin border */}
-                  <div className="relative w-9 h-9 shrink-0">
-                    <div className="absolute inset-0 border border-[#51d7c4]/20 group-hover:border-[#51d7c4]/60 transition-colors rounded-sm bg-[#021817]/60"></div>
-                    <div className="absolute inset-0 border border-[#51d7c4] border-dashed opacity-0 group-hover:opacity-100 animate-[spin_8s_linear_infinite] rounded-sm transition-opacity"></div>
-                    <div className="absolute inset-0 flex items-center justify-center text-[#51d7c4] group-hover:scale-110 transition-transform">
-                      {f.icon}
+              {/* Bottom: 3 Features */}
+              <div className="flex justify-center lg:justify-start w-full pt-4 md:pt-0">
+                <div className="flex flex-col md:flex-row gap-5 md:gap-8 xl:gap-12 w-fit mx-auto lg:mx-0">
+                  {features.map((f, i) => (
+                    <div key={i} className="flex items-center gap-4 group/feat justify-start w-full md:w-auto">
+                      <div 
+                        className="w-12 h-12 md:w-14 md:h-14 shrink-0 flex items-center justify-center border border-[#51d7c4]/30 bg-[#51d7c4]/5 group-hover/feat:bg-[#51d7c4]/20 transition-all duration-300 group-hover/feat:shadow-[0_0_15px_rgba(81,215,196,0.3)]"
+                        style={{ clipPath: 'polygon(8px 0, calc(100% - 8px) 0, 100% 8px, 100% calc(100% - 8px), calc(100% - 8px) 100%, 8px 100%, 0 calc(100% - 8px), 0 8px)' }}
+                      >
+                        <div className="text-[#e6b971] group-hover/feat:scale-110 group-hover/feat:text-[#ffe4a0] transition-all drop-shadow-[0_0_5px_rgba(230,185,113,0.5)]">
+                          {f.icon}
+                        </div>
+                      </div>
+                      <span className="text-[13px] md:text-[14px] text-white/90 whitespace-pre-line leading-snug tracking-wide group-hover/feat:text-white transition-colors text-left font-medium">
+                        {f.label}
+                      </span>
                     </div>
-                  </div>
-                  <span className="text-[11px] md:text-[12px] text-white/70 group-hover:text-[#51d7c4] tracking-wide uppercase font-medium transition-colors leading-tight">
-                    {f.label}
-                  </span>
+                  ))}
                 </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Right: CTA */}
-          <div className="shrink-0 relative z-10 w-full lg:w-auto flex flex-col items-center gap-4">
-            {/* Decorative radar ring */}
-            <div className="relative w-32 h-32 hidden lg:flex items-center justify-center mb-2">
-              <div className="absolute inset-0 rounded-full border border-[#51d7c4]/10 animate-[pulse_3s_ease-in-out_infinite]"></div>
-              <div className="absolute inset-4 rounded-full border border-[#51d7c4]/15 animate-[pulse_3s_ease-in-out_infinite_0.5s]"></div>
-              <div className="absolute inset-8 rounded-full border border-[#51d7c4]/20 animate-[pulse_3s_ease-in-out_infinite_1s]"></div>
-              <div className="w-10 h-10 rounded-full bg-[#021817] border border-[#51d7c4]/50 flex items-center justify-center shadow-[0_0_20px_rgba(81,215,196,0.3)]">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#51d7c4" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
-                  <line x1="16" y1="2" x2="16" y2="6"/>
-                  <line x1="8" y1="2" x2="8" y2="6"/>
-                  <line x1="3" y1="10" x2="21" y2="10"/>
-                </svg>
               </div>
             </div>
 
-            {/* CTA Button */}
-            <div className="relative p-[1.5px] rounded-sm overflow-hidden cursor-pointer inline-flex w-full lg:w-auto">
-              <div className="absolute inset-0 bg-[conic-gradient(from_0deg_at_50%_50%,transparent_0%,#51d7c4_30%,transparent_100%)] animate-[spin_3s_linear_infinite]"></div>
-              <Link href="/tu-van" className="relative w-full flex items-center justify-center gap-3 bg-[#012624] hover:bg-[#021d1b] text-white pl-6 pr-2 py-2 transition-all duration-300 shadow-[0_0_20px_rgba(81,215,196,0.15)] rounded-[1px] h-[52px] group">
-                <span className="text-[12px] md:text-[13px] font-bold tracking-widest uppercase drop-shadow-[0_0_6px_rgba(81,215,196,0.4)]">ĐẶT LỊCH TƯ VẤN NGAY</span>
-                <div className="w-9 h-9 rounded-sm bg-[#00100f] border border-[#51d7c4]/50 flex items-center justify-center text-[#51d7c4] group-hover:bg-[#51d7c4] group-hover:text-[#00100f] transition-all">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            {/* Right Column: Button + Text */}
+            <div className="shrink-0 flex flex-col items-center lg:items-end justify-center w-full lg:w-auto mt-6 lg:mt-0 gap-3 lg:gap-4">
+              
+              {/* Sci-Fi Spinning Border Wrapper */}
+              <div 
+                className="relative p-[2px] flex items-center justify-center group/btn overflow-hidden transition-transform duration-500 hover:scale-[1.02] w-fit mx-auto lg:ml-auto lg:mr-0" 
+                style={{ clipPath: 'polygon(16px 0, 100% 0, 100% calc(100% - 16px), calc(100% - 16px) 100%, 0 100%, 0 16px)' }}
+              >
+                {/* Static Outline */}
+                <div className="absolute inset-0 bg-[#51d7c4]/30"></div>
+                
+                {/* Spinning Dual Rays Effect */}
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[200%] h-[500%] bg-[conic-gradient(from_0deg_at_50%_50%,transparent_0%,#ffffff_10%,transparent_20%,transparent_50%,#ffffff_60%,transparent_70%)] animate-[spin_4s_linear_infinite] opacity-70 group-hover/btn:opacity-100 transition-opacity duration-300"></div>
+
+                {/* Inner Button Box */}
+                <Link href="/tu-van" className="relative block w-full h-full bg-[#021817]" style={{ clipPath: 'polygon(15px 0, 100% 0, 100% calc(100% - 15px), calc(100% - 15px) 100%, 0 100%, 0 15px)' }}>
+                  <div 
+                    className="relative flex items-center justify-center gap-3 bg-gradient-to-r from-[#17c3b2] via-[#64f4e1] to-[#17c3b2] bg-[length:200%_auto] hover:bg-right px-6 py-3.5 md:px-8 md:py-4 text-[#010d0c] font-black transition-all duration-500 shadow-[0_0_20px_rgba(81,215,196,0.3)] group-hover/btn:shadow-[0_0_35px_rgba(81,215,196,0.6)] overflow-hidden"
+                    style={{ clipPath: 'polygon(14px 0, 100% 0, 100% calc(100% - 14px), calc(100% - 14px) 100%, 0 100%, 0 14px)' }}
+                  >
+                    <span className="text-[14px] md:text-[15px] uppercase tracking-[0.15em] relative z-10 whitespace-nowrap">Đặt lịch tư vấn ngay</span>
+                    <svg className="group-hover/btn:translate-x-1.5 transition-transform duration-300 relative z-10 shrink-0" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    
+                    {/* Sweeping light effect inside button */}
+                    <div className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/60 to-transparent group-hover/btn:animate-[shimmer_1.5s_ease-in-out_infinite] z-0"></div>
+                  </div>
+                </Link>
+              </div>
+
+              {/* Added Sci-Fi Indicator Text */}
+              <div className="flex items-center gap-2 pr-2">
+                <div className="relative flex h-2 w-2">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#51d7c4] opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-[#51d7c4] shadow-[0_0_8px_#51d7c4]"></span>
                 </div>
-              </Link>
+                <span className="text-[10px] md:text-[11px] text-[#51d7c4]/80 tracking-[0.2em] uppercase font-semibold">Tư vấn chuyên gia 24/7</span>
+              </div>
             </div>
 
-            <p className="text-[10px] text-white/30 tracking-widest uppercase text-center">Phản hồi trong vòng 24 giờ</p>
           </div>
 
         </div>

@@ -78,21 +78,7 @@ export default function Header() {
               </div>
             </div>
 
-            <div className="relative group cursor-pointer h-full flex items-center">
-              <Link href="/san-pham" className={`font-menu h-full flex items-center gap-1 text-[13px] font-semibold uppercase tracking-widest transition-colors ${isActive('/san-pham') ? 'text-[#008f82] dark:text-[#51d7c4]' : 'text-gray-900 dark:text-white hover:text-[#008f82] dark:hover:text-[#51d7c4]'}`}>
-                <span className="relative py-1 flex items-center gap-1">
-                  Quy trình
-                  <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path></svg>
-                  {isActive('/san-pham') && (
-                    <span className="absolute bottom-0 left-0 w-full h-[2px] bg-[#51d7c4] shadow-[0_0_8px_rgba(81,215,196,0.8)] animate-[pulse_2s_ease-in-out_infinite]"></span>
-                  )}
-                </span>
-              </Link>
-              {/* Dropdown Menu */}
-              <div className="absolute top-full left-0 w-56 bg-white dark:bg-[#021817] border-t-2 border-[#51d7c4] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 flex flex-col py-2 shadow-[0_10px_40px_-10px_rgba(0,0,0,0.1)]">
-                <Link href="/san-pham" className="font-menu px-5 py-2.5 text-[12px] text-gray-600 dark:text-[#ccc] hover:text-[#51d7c4] hover:bg-gray-50 dark:hover:bg-white/5 uppercase tracking-wide transition-colors">Tất cả sản phẩm</Link>
-              </div>
-            </div>
+
 
             <div className="relative group cursor-pointer h-full flex items-center">
               <Link href="/dich-vu" className={`font-menu h-full flex items-center gap-1 text-[13px] font-semibold uppercase tracking-widest transition-colors ${isActive('/dich-vu') ? 'text-[#008f82] dark:text-[#51d7c4]' : 'text-gray-900 dark:text-white hover:text-[#008f82] dark:hover:text-[#51d7c4]'}`}>
@@ -130,7 +116,7 @@ export default function Header() {
           {/* Right Action Buttons */}
           <div className="flex items-center gap-4 lg:gap-6">
 
-            <ThemeToggle />
+
 
             {/* CTA Button with animated border */}
             <div className="hidden lg:block relative p-[1px] rounded-sm overflow-hidden group">

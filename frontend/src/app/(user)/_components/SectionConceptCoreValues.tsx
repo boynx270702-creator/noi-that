@@ -33,8 +33,9 @@ const values = [
 
 export default function SectionConceptCoreValues() {
   return (
-    <section className="relative z-10 px-4 md:px-8 max-w-[1440px] mx-auto py-8">
-      {/* Sci-Fi Centered Label */}
+    <section className="relative w-full py-16 bg-gradient-to-b from-[#e6f7f5] via-[#f0fdfb] to-white z-10">
+      <div className="px-4 md:px-8 max-w-[1440px] mx-auto">
+        {/* Sci-Fi Centered Label */}
       <div className="mb-12 flex flex-col items-center justify-center relative w-full">
         {/* Animated line behind */}
         <div className="absolute top-1/2 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-[#51d7c4]/20 to-transparent -z-10"></div>
@@ -44,49 +45,50 @@ export default function SectionConceptCoreValues() {
           {/* Rotating border */}
           <div className="absolute inset-0 bg-[conic-gradient(from_90deg_at_50%_50%,transparent_0%,#51d7c4_80%,transparent_100%)] animate-[spin_10s_linear_infinite]"></div>
           
-          <div className="relative px-8 py-3 bg-gradient-to-br from-[#032926] to-[#021817] backdrop-blur-md flex flex-col items-center justify-center shadow-[inset_0_0_10px_rgba(81,215,196,0.1),0_0_15px_rgba(81,215,196,0.2)]">
-            <h2 className="text-white drop-shadow-[0_0_8px_rgba(81,215,196,0.8)] text-[18px] md:text-[22px] font-bold tracking-[0.2em] uppercase animate-[pulse_3s_ease-in-out_infinite] mb-1">
+          <div className="relative px-8 py-3 bg-white/90 backdrop-blur-md flex flex-col items-center justify-center border border-[#008f82]/20 shadow-[0_5px_20px_rgba(0,143,130,0.05)]">
+            <h2 className="text-[#006e64] text-[18px] md:text-[22px] font-bold tracking-[0.2em] uppercase mb-1">
               GIÁ TRỊ VƯỢT TRỘI DÀNH CHO BẠN
             </h2>
-            <div className="text-[#51d7c4]/60 text-[11px] font-light uppercase tracking-widest">
+            <div className="text-[#008f82]/80 text-[11px] font-bold uppercase tracking-widest">
               Lợi ích cốt lõi
             </div>
             {/* Corner accents */}
-            <div className="absolute top-0 left-0 w-2 h-2 border-t-2 border-l-2 border-[#51d7c4]"></div>
-            <div className="absolute top-0 right-0 w-2 h-2 border-t-2 border-r-2 border-[#51d7c4]"></div>
-            <div className="absolute bottom-0 left-0 w-2 h-2 border-b-2 border-l-2 border-[#51d7c4]"></div>
-            <div className="absolute bottom-0 right-0 w-2 h-2 border-b-2 border-r-2 border-[#51d7c4]"></div>
+            <div className="absolute top-0 left-0 w-2 h-2 border-t-2 border-l-2 border-[#008f82]"></div>
+            <div className="absolute top-0 right-0 w-2 h-2 border-t-2 border-r-2 border-[#008f82]"></div>
+            <div className="absolute bottom-0 left-0 w-2 h-2 border-b-2 border-l-2 border-[#008f82]"></div>
+            <div className="absolute bottom-0 right-0 w-2 h-2 border-b-2 border-r-2 border-[#008f82]"></div>
           </div>
         </div>
       </div>
       
       {/* Full width content */}
-      <div className="w-full relative bg-gradient-to-br from-[#021817]/95 to-[#032926]/95 backdrop-blur-xl border-y-2 border-x border-[#51d7c4]/60 rounded-sm shadow-[0_10px_40px_rgba(81,215,196,0.25),inset_0_0_20px_rgba(81,215,196,0.1)] p-5 md:p-8 overflow-hidden">
+      <div className="w-full relative bg-white/80 backdrop-blur-xl border-y-2 border-x border-[#008f82]/20 rounded-sm shadow-[0_15px_50px_rgba(0,143,130,0.08)] p-5 md:p-8 overflow-hidden">
         {/* Subtle top glow */}
-        <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#51d7c4]/50 to-transparent"></div>
+        <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#008f82]/30 to-transparent"></div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {values.map((val, idx) => (
-            <div key={idx} className="relative border border-[#51d7c4]/40 bg-[#011413]/70 backdrop-blur-md rounded-sm p-7 hover:border-[#51d7c4] hover:bg-[#021f1d]/90 hover:shadow-[0_0_30px_rgba(81,215,196,0.3)] hover:-translate-y-1 transition-all duration-300 group overflow-hidden">
-              <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-[#51d7c4]/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+            <div key={idx} className="relative border border-[#008f82]/10 bg-[#f0fdfb]/50 backdrop-blur-md rounded-sm p-7 hover:border-[#008f82]/40 hover:bg-white hover:shadow-[0_10px_30px_rgba(0,143,130,0.1)] hover:-translate-y-1 transition-all duration-300 group overflow-hidden">
+              <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-[#008f82]/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
               
               <div className="flex flex-col gap-5">
                 <div className="flex items-center gap-4">
-                  <div className="w-14 h-14 rounded-full border border-[#51d7c4]/30 flex items-center justify-center relative bg-[#011413]/80 shrink-0 group-hover:bg-[#002b29] transition-colors">
+                  <div className="w-14 h-14 rounded-full border border-[#008f82]/20 flex items-center justify-center relative bg-white shrink-0 group-hover:bg-[#e6f7f5] transition-colors">
                     {/* Spinning dashed ring */}
-                    <div className="absolute inset-0 border border-[#51d7c4]/80 border-dashed rounded-full opacity-0 group-hover:opacity-100 animate-[spin_6s_linear_infinite_reverse] transition-opacity duration-500"></div>
-                    <div className="absolute inset-[3px] border border-[#51d7c4]/20 rounded-full group-hover:border-[#51d7c4]/50 transition-colors duration-500"></div>
-                    <div className="relative z-10 scale-90 group-hover:scale-100 group-hover:drop-shadow-[0_0_8px_rgba(81,215,196,0.8)] transition-all duration-300">
+                    <div className="absolute inset-0 border border-[#008f82]/40 border-dashed rounded-full opacity-0 group-hover:opacity-100 animate-[spin_6s_linear_infinite_reverse] transition-opacity duration-500"></div>
+                    <div className="absolute inset-[3px] border border-[#008f82]/10 rounded-full group-hover:border-[#008f82]/30 transition-colors duration-500"></div>
+                    <div className="relative z-10 scale-90 group-hover:scale-100 group-hover:drop-shadow-[0_0_8px_rgba(0,143,130,0.3)] transition-all duration-300 text-[#008f82]">
                       {val.icon}
                     </div>
                   </div>
-                  <h3 className="text-white font-bold text-[14px] uppercase tracking-widest leading-tight drop-shadow-[0_0_5px_rgba(255,255,255,0.2)] group-hover:text-[#51d7c4] transition-colors">{val.title}</h3>
+                  <h3 className="text-[#006e64] font-bold text-[14px] uppercase tracking-widest leading-tight group-hover:text-[#004d46] transition-colors">{val.title}</h3>
                 </div>
-                <p className="text-gray-300 text-[13px] leading-[1.7] group-hover:text-white transition-colors">{val.desc}</p>
+                <p className="text-[#004d46]/80 text-[13px] leading-[1.7] group-hover:text-[#004d46] transition-colors font-medium">{val.desc}</p>
               </div>
             </div>
           ))}
         </div>
+      </div>
       </div>
     </section>
   );
