@@ -34,9 +34,9 @@ export default function Header() {
               <img
                 src="/images/logo2.png"
                 alt="logo"
-                className="h-[55px] w-auto transition-transform group-hover:scale-105"
+                className="h-[70px] w-auto transition-transform group-hover:scale-105 -ml-6"
               />
-              <div className="hidden sm:flex flex-col justify-center ml-2">
+              <div className="hidden sm:flex flex-col justify-center -ml-10">
                 <span className="font-heading text-[14px] font-bold tracking-[0.12em] uppercase text-transparent bg-clip-text bg-gradient-to-r from-[#51d7c4] via-[#008f82] to-[#013533]">
                   Arcviet Living Nexus
                 </span>
