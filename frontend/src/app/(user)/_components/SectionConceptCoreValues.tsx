@@ -44,7 +44,7 @@ export default function SectionConceptCoreValues() {
           {/* Rotating border */}
           <div className="absolute inset-0 bg-[conic-gradient(from_90deg_at_50%_50%,transparent_0%,#51d7c4_80%,transparent_100%)] animate-[spin_10s_linear_infinite]"></div>
           
-          <div className="relative px-8 py-2.5 bg-[#021817]/50 backdrop-blur-md flex flex-col items-center justify-center">
+          <div className="relative px-8 py-3 bg-gradient-to-br from-[#032926] to-[#021817] backdrop-blur-md flex flex-col items-center justify-center shadow-[inset_0_0_10px_rgba(81,215,196,0.1),0_0_15px_rgba(81,215,196,0.2)]">
             <h2 className="text-white drop-shadow-[0_0_8px_rgba(81,215,196,0.8)] text-[18px] md:text-[22px] font-bold tracking-[0.2em] uppercase animate-[pulse_3s_ease-in-out_infinite] mb-1">
               GIÁ TRỊ VƯỢT TRỘI DÀNH CHO BẠN
             </h2>
@@ -61,13 +61,13 @@ export default function SectionConceptCoreValues() {
       </div>
       
       {/* Full width content */}
-      <div className="w-full relative bg-transparent backdrop-blur-md border border-[#51d7c4]/40 rounded-sm shadow-[0_0_15px_rgba(81,215,196,0.1)] p-4 md:p-6 overflow-hidden">
+      <div className="w-full relative bg-gradient-to-br from-[#021817]/95 to-[#032926]/95 backdrop-blur-xl border-y-2 border-x border-[#51d7c4]/60 rounded-sm shadow-[0_10px_40px_rgba(81,215,196,0.25),inset_0_0_20px_rgba(81,215,196,0.1)] p-5 md:p-8 overflow-hidden">
         {/* Subtle top glow */}
         <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#51d7c4]/50 to-transparent"></div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {values.map((val, idx) => (
-            <div key={idx} className="relative border border-[#51d7c4]/30 bg-transparent backdrop-blur-md rounded-sm p-6 hover:border-[#51d7c4] hover:shadow-[0_0_25px_rgba(81,215,196,0.2)] transition-all group overflow-hidden">
+            <div key={idx} className="relative border border-[#51d7c4]/40 bg-[#011413]/70 backdrop-blur-md rounded-sm p-7 hover:border-[#51d7c4] hover:bg-[#021f1d]/90 hover:shadow-[0_0_30px_rgba(81,215,196,0.3)] hover:-translate-y-1 transition-all duration-300 group overflow-hidden">
               <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-[#51d7c4]/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
               
               <div className="flex flex-col gap-5">
@@ -80,9 +80,9 @@ export default function SectionConceptCoreValues() {
                       {val.icon}
                     </div>
                   </div>
-                  <h3 className="text-white font-bold text-[13px] uppercase tracking-widest leading-tight drop-shadow-md">{val.title}</h3>
+                  <h3 className="text-white font-bold text-[14px] uppercase tracking-widest leading-tight drop-shadow-[0_0_5px_rgba(255,255,255,0.2)] group-hover:text-[#51d7c4] transition-colors">{val.title}</h3>
                 </div>
-                <p className="text-gray-400 text-[12px] leading-[1.6]">{val.desc}</p>
+                <p className="text-gray-300 text-[13px] leading-[1.7] group-hover:text-white transition-colors">{val.desc}</p>
               </div>
             </div>
           ))}

@@ -32,7 +32,7 @@ export default function Header() {
           <div className="flex-shrink-0">
             <Link href="/" className="flex items-center group">
               <img
-                src="/images/logo-header-blue.png"
+                src="/images/logo2.png"
                 alt="logo"
                 className="h-[55px] w-auto transition-transform group-hover:scale-105"
               />

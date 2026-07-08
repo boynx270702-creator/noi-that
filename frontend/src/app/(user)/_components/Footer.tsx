@@ -170,7 +170,7 @@ export default function Footer() {
             <div className="flex flex-col items-center md:items-start">
               <div className="w-48 opacity-90 hover:opacity-100 transition-opacity cursor-pointer mb-2">
                 <img 
-                  src="/images/logo-header.png" 
+                  src="/images/logo2.png" 
                   alt="Logo" 
                   className="w-full h-auto transition-transform hover:scale-105" 
                 />

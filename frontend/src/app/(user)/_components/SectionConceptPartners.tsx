@@ -17,7 +17,7 @@ export default function SectionConceptPartners() {
           {/* Rotating border */}
           <div className="absolute inset-0 bg-[conic-gradient(from_90deg_at_50%_50%,transparent_0%,#51d7c4_80%,transparent_100%)] animate-[spin_10s_linear_infinite]"></div>
           
-          <div className="relative px-8 py-2.5 bg-[#021817]/50 backdrop-blur-md flex flex-col items-center justify-center">
+          <div className="relative px-8 py-3 bg-gradient-to-br from-[#032926] to-[#021817] backdrop-blur-md flex flex-col items-center justify-center shadow-[inset_0_0_10px_rgba(81,215,196,0.1),0_0_15px_rgba(81,215,196,0.2)]">
             <h2 className="text-white drop-shadow-[0_0_8px_rgba(81,215,196,0.8)] text-[18px] md:text-[22px] font-bold tracking-[0.2em] uppercase animate-[pulse_3s_ease-in-out_infinite] mb-1">
               ĐỐI TÁC TIN CẬY
             </h2>
@@ -34,14 +34,14 @@ export default function SectionConceptPartners() {
       </div>
       
       {/* Full width content */}
-      <div className="w-full relative bg-transparent backdrop-blur-md border border-[#51d7c4]/40 rounded-sm shadow-[0_0_15px_rgba(81,215,196,0.1)] overflow-hidden">
+      <div className="w-full relative bg-gradient-to-br from-[#021817]/95 to-[#032926]/95 backdrop-blur-xl border-y-2 border-x border-[#51d7c4]/60 rounded-sm shadow-[0_10px_40px_rgba(81,215,196,0.25),inset_0_0_20px_rgba(81,215,196,0.1)] overflow-hidden">
         {/* Subtle top glow */}
         <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#51d7c4]/50 to-transparent"></div>
         
         <div className="flex flex-row overflow-x-auto divide-x divide-[#51d7c4]/20 [&::-webkit-scrollbar]:hidden">
           {partners.map((partner, idx) => (
             <div key={idx} className="min-w-[140px] lg:flex-1 h-[80px] flex items-center justify-center hover:bg-[#51d7c4]/10 transition-colors cursor-pointer px-4">
-              <span className="text-white font-bold text-[18px] md:text-[20px] tracking-wider font-serif text-center whitespace-nowrap drop-shadow-md">{partner}</span>
+              <span className="text-white font-bold text-[18px] md:text-[20px] tracking-wider font-serif text-center whitespace-nowrap drop-shadow-[0_0_8px_rgba(255,255,255,0.3)] group-hover:drop-shadow-[0_0_12px_rgba(81,215,196,0.8)]">{partner}</span>
             </div>
           ))}
           <div className="min-w-[160px] lg:flex-1 h-[80px] flex items-center justify-center hover:bg-[#51d7c4]/10 transition-colors cursor-pointer group px-4">

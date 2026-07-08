@@ -44,7 +44,7 @@ export default function HeroConcept() {
             </ScrollReveal>
             
             <ScrollReveal animation="fade-up" delay={200} duration={800}>
-              <h1 className="text-[28px] sm:text-[40px] md:text-[56px] lg:text-[64px] font-bold text-white leading-[1.3] md:leading-[1.1] mb-5 tracking-tight drop-shadow-[0_2px_10px_rgba(0,0,0,0.5)]">
+              <h1 className="text-[28px] sm:text-[40px] md:text-[56px] lg:text-[64px] font-bold text-gray-900 leading-[1.3] md:leading-[1.1] mb-5 tracking-tight drop-shadow-[0_2px_10px_rgba(255,255,255,0.5)]">
                 KẾT NỐI ĐÚNG<br />
                 <span className="inline-block text-transparent bg-clip-text bg-[linear-gradient(90deg,#008f82_0%,#51d7c4_50%,#008f82_100%)] bg-[length:200%_auto] animate-[gradientFlow_3s_linear_infinite] drop-shadow-none pb-1">
                   HỆ SINH THÁI NỘI THẤT
@@ -54,7 +54,7 @@ export default function HeroConcept() {
             </ScrollReveal>
             
             <ScrollReveal animation="fade-up" delay={300} duration={800}>
-              <p className="text-gray-300 text-[14px] md:text-[15px] lg:text-[16px] max-w-lg mb-8 leading-[1.7] md:leading-[1.8] font-medium drop-shadow-[0_2px_5px_rgba(0,0,0,0.5)]">
+              <p className="text-gray-800 text-[14px] md:text-[15px] lg:text-[16px] max-w-lg mb-8 leading-[1.7] md:leading-[1.8] font-medium drop-shadow-[0_2px_5px_rgba(255,255,255,0.5)]">
                 ARCVIET Living Nexus quy tụ những thương hiệu nội thất hàng đầu 
                 và giải pháp công nghệ tiên tiến, mang đến trải nghiệm sống tinh tế, 
                 thông minh và bền vững cho mọi không gian.
