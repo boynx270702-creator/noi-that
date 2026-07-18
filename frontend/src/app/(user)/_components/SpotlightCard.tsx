@@ -5,9 +5,11 @@ import { motion, useMotionTemplate, useMotionValue } from "framer-motion";
 export default function SpotlightCard({
   children,
   className = "",
+  innerClassName = "",
 }: {
   children: React.ReactNode;
   className?: string;
+  innerClassName?: string;
 }) {
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
@@ -63,7 +65,7 @@ export default function SpotlightCard({
           `,
         }}
       />
-      <div className="relative h-full z-10">{children}</div>
+      <div className={`relative h-full z-10 ${innerClassName}`}>{children}</div>
     </div>
   );
 }

@@ -125,7 +125,7 @@ export default function Section6Ecosystem() {
         {/* Tiers Grid (Pricing Table Style) */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {TIERS.map((tier, index) => (
-            <ScrollReveal key={index} animation="fade-up" delay={200 + index * 150} className="h-full relative mt-4">
+            <ScrollReveal key={index} animation="fade-up" delay={200 + index * 150} className="h-full relative mt-4 flex flex-col">
 
               {tier.highlight && (
                 <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-[#C7A25C] text-white text-[11px] font-bold px-4 py-1.5 uppercase tracking-wider whitespace-nowrap z-30 shadow-[0_0_20px_rgba(206,158,81,0.5)]">
@@ -133,7 +133,10 @@ export default function Section6Ecosystem() {
                 </div>
               )}
 
-              <SpotlightCard className={`h-full flex flex-col transition-all duration-500 hover:-translate-y-2 ${tier.highlight ? 'border-2 border-[#C7A25C] shadow-[0_0_30px_rgba(206,158,81,0.1)]' : ''}`}>
+              <SpotlightCard 
+                className={`h-full flex flex-col transition-all duration-500 hover:-translate-y-2 flex-grow ${tier.highlight ? 'border-2 border-[#C7A25C] shadow-[0_0_30px_rgba(206,158,81,0.1)]' : ''}`}
+                innerClassName="flex flex-col flex-grow"
+              >
 
                 {/* Header */}
                 <div className={`p-8 text-center border-b ${tier.highlight ? 'border-[#C7A25C]/20' : 'border-[#ECE7DE] dark:border-white/5'} bg-transparent relative z-10`}>
@@ -152,7 +155,7 @@ export default function Section6Ecosystem() {
                   <div className="mt-auto pt-6 border-t border-[#ECE7DE] dark:border-white/5 relative z-10">
                     <Link
                       href="#Form"
-                      className={`block w-full py-4 text-center font-bold  uppercase tracking-wider text-[13px] transition-colors ${tier.highlight
+                      className={`block w-full py-4 text-center font-bold uppercase tracking-wider text-[13px] transition-colors ${tier.highlight
                           ? 'bg-[#C7A25C] text-white hover:bg-transparent hover:text-[#C7A25C] border-2 border-[#C7A25C]'
                           : 'bg-transparent text-[#1F1F1F] dark:text-white border border-[#ECE7DE] dark:border-white/10 hover:border-[#C7A25C] hover:text-[#C7A25C]'
                         }`}

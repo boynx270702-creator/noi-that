@@ -21,49 +21,49 @@
   --color-on-secondary-fixed-variant: #454747;
   --color-on-tertiary: #313030;
   --color-on-surface-variant: #d3c4b3;
-  --color-primary-container: #D3AE3E;
+  --color-primary-container: #008f82;
   --color-outline-variant: #4f4538;
-  --color-surface: #131313;
-  --color-surface-container: #1f1f1f;
+  --color-surface: #021817;
+  --color-surface-container: #022b26;
   --color-on-tertiary-fixed: #1c1b1b;
   --color-error-container: #93000a;
   --color-on-primary-fixed: #281800;
-  --color-background: #131313;
+  --color-background: #021817;
   --color-primary-fixed: #ffddaf;
-  --color-surface-container-lowest: #0e0e0e;
+  --color-surface-container-lowest: #010d0c;
   --color-tertiary-container: #a8a6a6;
   --color-secondary-fixed-dim: #c6c6c7;
   --color-on-background: #e2e2e2;
   --color-tertiary: #c8c6c5;
   --color-inverse-primary: #7e570e;
   --color-tertiary-fixed-dim: #c8c6c5;
-  --color-primary: #f1be6d;
+  --color-primary: #51d7c4;
   --color-outline: #9c8f7f;
   --color-secondary: #c6c6c7;
   --color-on-tertiary-fixed-variant: #474746;
   --color-secondary-fixed: #e2e2e2;
   --color-on-primary-container: #523600;
   --color-on-error-container: #ffdad6;
-  --color-surface-tint: #f1be6d;
-  --color-primary-fixed-dim: #f1be6d;
+  --color-surface-tint: #51d7c4;
+  --color-primary-fixed-dim: #51d7c4;
   --color-on-tertiary-container: #3c3c3c;
   --color-error: #ffb4ab;
   --color-on-primary: #432c00;
   --color-on-surface: #e2e2e2;
-  --color-surface-container-high: #2a2a2a;
+  --color-surface-container-high: #023b37;
   --color-on-secondary-container: #b4b5b5;
   --color-on-primary-fixed-variant: #614000;
-  --color-surface-variant: #353535;
-  --color-surface-container-low: #1b1b1b;
+  --color-surface-variant: #00453d;
+  --color-surface-container-low: #01100f;
   --color-inverse-surface: #e2e2e2;
   --color-secondary-container: #454747;
   --color-on-secondary: #2f3131;
   --color-on-error: #690005;
   --color-on-secondary-fixed: #1a1c1c;
-  --color-surface-dim: #131313;
+  --color-surface-dim: #010d0c;
   --color-tertiary-fixed: #e5e2e1;
-  --color-surface-bright: #393939;
-  --color-surface-container-highest: #353535;
+  --color-surface-bright: #005f55;
+  --color-surface-container-highest: #004f47;
 
   --spacing-margin-mobile: 24px;
   --spacing-gutter: 32px;
@@ -82,14 +82,8 @@
 
 @layer base {
   body {
-    background-color: #FFFFFF;
-    background-image: url('/images/backgr_new.png');
-    /* 100% auto giữ đúng tỷ lệ ảnh (chiều rộng full), nếu bạn muốn ảnh kéo dãn đến tận cùng trang web thì đổi thành 100% 100% hoặc cover */
-    background-size: 100% auto; 
-    background-position: top center;
-    background-repeat: repeat; 
-    background-attachment: scroll;
-    color: #1a1a1a;
+    background-color: #021817;
+    color: #ffffff;
     font-family: var(--font-body);
   }
 
@@ -98,12 +92,7 @@
   }
 
   .dark body {
-    background-color: var(--color-surface);
-    background-image: url('/images/backgr_new.png');
-    background-size: 100% auto;
-    background-position: top center;
-    background-repeat: repeat;
-    background-attachment: scroll;
+    background-color: #021817;
     color: var(--color-on-surface);
   }
 
@@ -137,14 +126,14 @@
   }
 
   .luxury-glow {
-    box-shadow: 0 0 20px rgba(211, 174, 62, 0.15);
-    border: 1px solid rgba(211, 174, 62, 0.2);
+    box-shadow: 0 0 20px rgba(81, 215, 196, 0.15);
+    border: 1px solid rgba(81, 215, 196, 0.2);
     transition: all 0.3s ease;
   }
 
   .luxury-glow:hover {
-    box-shadow: 0 0 30px rgba(211, 174, 62, 0.25);
-    border-color: rgba(211, 174, 62, 0.4);
+    box-shadow: 0 0 30px rgba(81, 215, 196, 0.25);
+    border-color: rgba(81, 215, 196, 0.4);
   }
 
   .material-symbols-outlined {
@@ -248,17 +237,18 @@
   }
 
   .card {
-    background: rgba(255, 255, 255, 0.85);
+    background: rgba(2, 24, 23, 0.4);
     backdrop-filter: blur(12px);
-    border: 1px solid #ece7de;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04), 0 1px 3px rgba(0, 0, 0, 0.02);
+    border: 1px solid rgba(81, 215, 196, 0.15);
+    box-shadow: 0 0 30px rgba(81, 215, 196, 0.05);
     border-radius: 4px;
   }
 
   .dark .card {
-    background: rgba(26, 26, 26, 0.85);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow: none;
+    background: rgba(2, 24, 23, 0.4);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(81, 215, 196, 0.15);
+    box-shadow: 0 0 30px rgba(81, 215, 196, 0.05);
   }
 }
 
@@ -545,7 +535,9 @@
 }
 
 @keyframes gold-shimmer {
-  to { background-position: 200% center; }
+  to {
+    background-position: 200% center;
+  }
 }
 
 .btn-luxury-primary {
@@ -577,23 +569,109 @@
 }
 
 @keyframes float-particle {
-  0% { transform: translate(0, 0) scale(0.5); opacity: 0; }
-  20% { opacity: 0.8; transform: translate(calc(var(--tx) * 0.2), calc(var(--ty) * 0.2)) scale(1); }
-  80% { opacity: 0.8; transform: translate(calc(var(--tx) * 0.8), calc(var(--ty) * 0.8)) scale(1); }
-  100% { transform: translate(var(--tx), var(--ty)) scale(0.5); opacity: 0; }
+  0% {
+    transform: translate(0, 0) scale(0.5);
+    opacity: 0;
+  }
+
+  20% {
+    opacity: 0.8;
+    transform: translate(calc(var(--tx) * 0.2), calc(var(--ty) * 0.2)) scale(1);
+  }
+
+  80% {
+    opacity: 0.8;
+    transform: translate(calc(var(--tx) * 0.8), calc(var(--ty) * 0.8)) scale(1);
+  }
+
+  100% {
+    transform: translate(var(--tx), var(--ty)) scale(0.5);
+    opacity: 0;
+  }
 }
 
 .luxury-particle {
   position: absolute;
-  background: radial-gradient(circle, #51d7c4 0%, rgba(81,215,196,0.5) 40%, transparent 100%);
+  background: radial-gradient(circle, #51d7c4 0%, rgba(81, 215, 196, 0.5) 40%, transparent 100%);
   border-radius: 50%;
   pointer-events: none;
-  filter: drop-shadow(0 0 3px rgba(81,215,196,0.5));
   animation: float-particle var(--duration) linear infinite;
   animation-delay: var(--delay);
 }
 
 .dark .luxury-particle {
   background: radial-gradient(circle, #a0f0e6 0%, #51d7c4 40%, transparent 100%);
-  filter: drop-shadow(0 0 5px #51d7c4);
 }
+
+/* Global Color Overrides: Map gold/yellow colors to teal/cyan */
+[class*="text-[#ce9e51]"], 
+[class*="text-[#C7A25C]"], 
+[class*="text-[#D3AE3E]"],
+[class*="text-[#A67C00]"],
+[class*="text-[#FFD700]"] {
+  color: #51d7c4 !important;
+}
+
+[class*="bg-[#ce9e51]"], 
+[class*="bg-[#C7A25C]"], 
+[class*="bg-[#D3AE3E]"] {
+  background-color: #51d7c4 !important;
+  color: #010d0c !important;
+}
+
+[class*="bg-[#ce9e51]/20"] {
+  background-color: rgba(81, 215, 196, 0.2) !important;
+}
+[class*="bg-[#C7A25C]/10"] {
+  background-color: rgba(81, 215, 196, 0.1) !important;
+}
+[class*="bg-[#C7A25C]/20"] {
+  background-color: rgba(81, 215, 196, 0.2) !important;
+}
+
+[class*="border-[#ce9e51]"], 
+[class*="border-[#C7A25C]"], 
+[class*="border-[#D3AE3E]"], 
+[class*="border-[#E5C98A]"] {
+  border-color: rgba(81, 215, 196, 0.3) !important;
+}
+
+[class*="hover:border-[#ce9e51]"]:hover, 
+[class*="hover:border-[#C7A25C]"]:hover, 
+[class*="hover:border-[#D3AE3E]"]:hover {
+  border-color: #51d7c4 !important;
+}
+
+[class*="hover:bg-[#ce9e51]"]:hover, 
+[class*="hover:bg-[#C7A25C]"]:hover, 
+[class*="hover:bg-[#D3AE3E]"]:hover {
+  background-color: #008f82 !important;
+  color: #ffffff !important;
+}
+
+[class*="focus:border-[#ce9e51]"]:focus, 
+[class*="focus:border-[#C7A25C]"]:focus {
+  border-color: #51d7c4 !important;
+}
+
+/* Gradient background gold overrides */
+[class*="from-[#C7A25C]"][class*="to-[#E5C98A]"] {
+  background-image: linear-gradient(to right, #008f82, #51d7c4) !important;
+  color: #010d0c !important;
+}
+[class*="from-[#D3AE3E]"][class*="to-[#E5C98A]"] {
+  background-image: linear-gradient(to right, #008f82, #51d7c4) !important;
+  color: #010d0c !important;
+}
+[class*="from-[#ce9e51]/10"][class*="to-[#1c1c1c]"] {
+  background-image: linear-gradient(to bottom, rgba(81, 215, 196, 0.1), #021817) !important;
+}
+[class*="from-[#C7A25C]/10"] {
+  background-image: linear-gradient(to right, rgba(81, 215, 196, 0.1), transparent) !important;
+}
+
+/* Quote button hover state */
+[class*="hover:bg-[#C7A25C]"]:hover {
+  background-color: #51d7c4 !important;
+  color: #010d0c !important;
+}

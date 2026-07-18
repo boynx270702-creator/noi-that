@@ -1,4 +1,3 @@
-import SectionStarryMotif from '../_components/SectionStarryMotif';
 import React from 'react';
 import Link from 'next/link';
 
@@ -42,20 +41,19 @@ export default function QuyTrinhPage() {
   ];
 
   return (
-    <div className="overflow-hidden relative pt-[120px] pb-20 modern-section min-h-screen text-gray-900 dark:text-white">
-      <SectionStarryMotif position="random-corner" />
+    <div className="overflow-hidden relative pt-[120px] pb-20 min-h-screen bg-transparent text-white">
       <div className="container mx-auto px-6 max-w-[1400px]">
 
         {/* Header */}
         <div className="text-center mb-16">
-          <h1 className="font-heading text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">Quy trình kết nối rõ ràng từ nhu cầu đến triển khai</h1>
-          <p className="text-gray-600 dark:text-white/70 text-lg max-w-2xl mx-auto">Chúng tôi đồng hành cùng bạn trong từng bước để tìm ra đơn vị thi công phù hợp nhất và đảm bảo dự án thành công.</p>
+          <h1 className="font-heading text-4xl md:text-5xl font-bold text-white mb-6">Quy trình kết nối rõ ràng từ nhu cầu đến triển khai</h1>
+          <p className="text-white/70 text-lg max-w-2xl mx-auto">Chúng tôi đồng hành cùng bạn trong từng bước để tìm ra đơn vị thi công phù hợp nhất và đảm bảo dự án thành công.</p>
         </div>
 
         {/* Timeline */}
         <div className="relative mt-12">
           {/* Vertical Line */}
-          <div className="absolute left-[24px] md:left-1/2 top-0 bottom-0 w-[2px] bg-gradient-to-b from-[#ce9e51]/50 via-[#ce9e51]/20 to-transparent md:-translate-x-1/2"></div>
+          <div className="absolute left-[24px] md:left-1/2 top-0 bottom-0 w-[2px] bg-gradient-to-b from-[#51d7c4]/50 via-[#51d7c4]/10 to-transparent md:-translate-x-1/2"></div>
 
           <div className="relative z-10 space-y-8 md:space-y-12">
             {steps.map((step, index) => {
@@ -65,15 +63,15 @@ export default function QuyTrinhPage() {
 
                   {/* Content Box */}
                   <div className={`w-full md:w-1/2 pl-16 md:pl-0 ${isEven ? 'md:pl-12' : 'md:pr-12 text-left md:text-right'} pt-2 md:pt-0`}>
-                    <div className="modern-section shadow-sm dark:shadow-none p-6 md:p-8 rounded-[4px] border border-gray-200 dark:border-white/5 hover:border-[#ce9e51]/50 transition-colors shadow-sm relative group">
-                      <div className={`absolute top-1/2 -translate-y-1/2 ${isEven ? '-left-3' : '-right-3'} w-6 h-6 rotate-45 modern-section shadow-sm dark:shadow-none border border-gray-200 dark:border-white/5 group-hover:border-[#ce9e51]/50 hidden md:block border-t-0 border-l-0 ${isEven ? 'border-b-0 border-r-0 border-l border-t' : ''}`}></div>
-                      <h3 className="font-heading text-xl md:text-2xl font-bold mb-3 text-[#ce9e51]">{step.title}</h3>
-                      <p className="text-gray-600 dark:text-white/70 leading-relaxed text-sm md:text-base">{step.desc}</p>
+                    <div className="bg-[#021817]/40 backdrop-blur-md p-6 md:p-8 rounded-[4px] border border-[#51d7c4]/15 hover:border-[#51d7c4]/40 transition-colors relative group shadow-[0_4px_20px_rgba(0,0,0,0.2)]">
+                      <div className={`absolute top-1/2 -translate-y-1/2 ${isEven ? '-left-3' : '-right-3'} w-6 h-6 rotate-45 bg-[#021817] border border-[#51d7c4]/15 group-hover:border-[#51d7c4]/40 hidden md:block border-t-0 border-l-0 ${isEven ? 'border-b-0 border-r-0 border-l border-t' : ''}`}></div>
+                      <h3 className="font-heading text-xl md:text-2xl font-bold mb-3 text-[#51d7c4]">{step.title}</h3>
+                      <p className="text-white/70 leading-relaxed text-sm md:text-base">{step.desc}</p>
                     </div>
                   </div>
 
                   {/* Number Circle */}
-                  <div className="absolute left-[24px] md:left-1/2 top-6 md:top-1/2 -translate-x-1/2 md:-translate-y-1/2 w-10 h-10 md:w-14 md:h-14 modern-section border-2 border-[#ce9e51] rounded-full flex items-center justify-center font-bold text-[#ce9e51] text-sm md:text-lg shadow-[0_0_20px_rgba(206,158,81,0.3)]">
+                  <div className="absolute left-[24px] md:left-1/2 top-6 md:top-1/2 -translate-x-1/2 md:-translate-y-1/2 w-10 h-10 md:w-14 md:h-14 bg-[#021817] border-2 border-[#51d7c4] rounded-full flex items-center justify-center font-bold text-[#51d7c4] text-sm md:text-lg shadow-[0_0_20px_rgba(81,215,196,0.3)] z-20">
                     {step.number}
                   </div>
 
@@ -87,7 +85,7 @@ export default function QuyTrinhPage() {
 
         {/* CTA */}
         <div className="mt-20 text-center">
-          <Link href="/tu-van" className="inline-block bg-[#ce9e51] hover:bg-white hover:text-white text-gray-900 dark:text-white font-bold py-4 px-10 rounded-[2px] transition-colors uppercase tracking-wider btn-glow-motion">
+          <Link href="/tu-van" className="inline-block bg-[#51d7c4] hover:bg-[#008f82] text-[#010d0c] font-black py-4 px-10 rounded-[2px] transition-colors uppercase tracking-wider shadow-[0_0_20px_rgba(81,215,196,0.3)]">
             Gửi nhu cầu công trình ngay
           </Link>
         </div>

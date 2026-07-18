@@ -1,5 +1,4 @@
 'use client';
-import SectionStarryMotif from '../../_components/SectionStarryMotif';
 import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 
@@ -68,16 +67,16 @@ export default function UnitDetailPage({ params }: { params: { id: string } }) {
   }, [params.id]);
 
   if (isLoading) {
-    return <div className="overflow-hidden relative pt-[120px] pb-20 modern-section min-h-screen text-[#1F1F1F] dark:text-white text-center">
-      <SectionStarryMotif position="random-corner" />Đang tải thông tin đơn vị...</div>;
+    return <div className="overflow-hidden relative pt-[120px] pb-20 min-h-screen text-white text-center bg-transparent">
+      Đang tải thông tin đơn vị...</div>;
   }
 
   if (!unit) {
-    return <div className="pt-[120px] pb-20 modern-section min-h-screen text-[#1F1F1F] dark:text-white text-center">Không tìm thấy đơn vị.</div>;
+    return <div className="pt-[120px] pb-20 min-h-screen text-white text-center bg-transparent">Không tìm thấy đơn vị.</div>;
   }
 
   return (
-    <div className="pt-[120px] pb-20 modern-section min-h-screen text-[#1F1F1F] dark:text-white">
+    <div className="pt-[120px] pb-20 min-h-screen text-white bg-transparent">
       <div className="container mx-auto px-6 max-w-[1400px]">
         {/* Section 1: Tổng quan đơn vị */}
         <div className="mb-16 pb-12 border-b border-[#ECE7DE] dark:border-white/10">
@@ -116,10 +115,10 @@ export default function UnitDetailPage({ params }: { params: { id: string } }) {
               </div>
 
               <div className="flex flex-wrap gap-4">
-                <Link href={`/tu-van?unit=${unit.id}`} className="bg-[#1F1F1F] hover:modern-section dark:hover:bg-white dark:hover:text-white text-white font-bold py-3 px-8 rounded-[2px] transition-colors uppercase tracking-wider text-sm">
+                <Link href={`/tu-van?unit=${unit.id}`} className="bg-[#51d7c4] hover:bg-[#008f82] text-[#010d0c] font-black py-3 px-8 rounded-[2px] transition-colors uppercase tracking-wider text-sm shadow-[0_0_15px_rgba(81,215,196,0.2)]">
                   Kết nối với đơn vị này
                 </Link>
-                <button className="bg-transparent border border-[#ECE7DE] dark:border-white/30 hover:border-[#1F1F1F] dark:hover:border-white text-[#1F1F1F] dark:text-white font-bold py-3 px-8 rounded-[2px] transition-colors uppercase tracking-wider text-sm">
+                <button className="bg-transparent border border-[#51d7c4]/30 hover:bg-[#51d7c4] hover:text-[#010d0c] hover:border-[#51d7c4] text-[#51d7c4] font-bold py-3 px-8 rounded-[2px] transition-colors uppercase tracking-wider text-sm">
                   Yêu cầu báo giá sơ bộ
                 </button>
               </div>
@@ -198,14 +197,14 @@ export default function UnitDetailPage({ params }: { params: { id: string } }) {
         </div>
 
         {/* Section 7: CTA */}
-        <div className="bg-gradient-to-r from-[#C7A25C]/10 to-transparent p-8 md:p-12 rounded-[4px] border border-[#C7A25C]/30 text-center">
+        <div className="bg-[#51d7c4]/5 p-8 md:p-12 rounded-[4px] border border-[#51d7c4]/30 text-center">
           <h2 className="font-heading text-2xl md:text-3xl font-bold mb-4">Bạn muốn được tư vấn xem đơn vị này có phù hợp với công trình của mình không?</h2>
-          <p className="text-[#1F1F1F]/70 dark:text-white/70 mb-8">Chúng tôi sẽ giúp bạn đánh giá và so sánh khách quan hoàn toàn miễn phí.</p>
+          <p className="text-white/70 mb-8">Chúng tôi sẽ giúp bạn đánh giá và so sánh khách quan hoàn toàn miễn phí.</p>
           <div className="flex flex-wrap justify-center gap-4">
-            <Link href={`/tu-van?unit=${unit.id}`} className="bg-[#1F1F1F] hover:modern-section dark:hover:bg-white dark:hover:text-white text-white font-bold py-3 px-8 rounded-[2px] transition-colors uppercase tracking-wider text-sm">
+            <Link href={`/tu-van?unit=${unit.id}`} className="bg-[#51d7c4] hover:bg-[#008f82] text-[#010d0c] font-black py-3 px-8 rounded-[2px] transition-colors uppercase tracking-wider text-sm shadow-[0_0_15px_rgba(81,215,196,0.2)]">
               Nhận tư vấn đơn vị này
             </Link>
-            <Link href="/he-sinh-thai" className="bg-transparent border border-[#ECE7DE] dark:border-white/30 hover:border-[#1F1F1F] dark:hover:border-white text-[#1F1F1F] dark:text-white font-bold py-3 px-8 rounded-[2px] transition-colors uppercase tracking-wider text-sm">
+            <Link href="/he-sinh-thai" className="bg-transparent border border-[#51d7c4]/30 hover:bg-[#51d7c4] hover:text-[#010d0c] hover:border-[#51d7c4] text-[#51d7c4] font-bold py-3 px-8 rounded-[2px] transition-colors uppercase tracking-wider text-sm">
               So sánh với đơn vị khác
             </Link>
           </div>

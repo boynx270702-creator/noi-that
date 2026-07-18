@@ -3,7 +3,6 @@ import React, { useState, useRef, useEffect, useMemo } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { toast } from 'sonner';
-import SectionStarryMotif from '../_components/SectionStarryMotif';
 
 function CustomSelect({ label, options, value, onChange }: { label: string, options: { value: string, label: string }[], value: string, onChange: (val: string) => void }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -29,22 +28,22 @@ function CustomSelect({ label, options, value, onChange }: { label: string, opti
 
   return (
     <div className={`flex-1 min-w-[200px] relative ${isOpen ? 'z-50' : 'z-10'}`} ref={dropdownRef}>
-      <label className="block text-sm text-gray-400 dark:text-white/50 mb-2 font-medium">{label}</label>
+      <label className="block text-sm text-white/50 mb-2 font-medium">{label}</label>
       <div className="relative">
         <div
-          className={`bg-white dark:bg-[#1c1c1c] border ${isOpen ? 'border-[#C7A25C]' : 'border-[#ECE7DE] dark:border-white/20'} text-[#1F1F1F] dark:text-white p-3 rounded-[2px] cursor-pointer flex justify-between items-center transition-colors hover:border-[#C7A25C]/50`}
+          className={`bg-[#021817]/50 border ${isOpen ? 'border-[#51d7c4]' : 'border-[#51d7c4]/20'} text-white p-3 rounded-[2px] cursor-pointer flex justify-between items-center transition-colors hover:border-[#51d7c4]/50`}
           onClick={() => { setIsOpen(!isOpen); setSearchTerm(''); }}
         >
           <span className="text-sm truncate">{selectedLabel}</span>
-          <svg className={`w-4 h-4 transition-transform ${isOpen ? 'rotate-180 text-[#C7A25C]' : 'text-[#1F1F1F]/50 dark:text-white/50'} flex-shrink-0`} fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path></svg>
+          <svg className={`w-4 h-4 transition-transform ${isOpen ? 'rotate-180 text-[#51d7c4]' : 'text-white/50'} flex-shrink-0`} fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path></svg>
         </div>
 
         {isOpen && (
-          <div className="absolute z-50 w-full mt-2 bg-white dark:bg-[#1c1c1c] shadow-lg dark:shadow-none border border-gray-200 dark:border-white/10 rounded-[2px] py-2 max-h-[300px] overflow-y-auto animate-fadeInDown">
-            <div className="px-3 pb-2 sticky top-0 bg-white dark:bg-[#1c1c1c] z-10 border-b border-gray-100 dark:border-white/5">
+          <div className="absolute z-50 w-full mt-2 bg-[#021817] shadow-lg border border-[#51d7c4]/20 rounded-[2px] py-2 max-h-[300px] overflow-y-auto animate-fadeInDown">
+            <div className="px-3 pb-2 sticky top-0 bg-[#021817] z-10 border-b border-[#51d7c4]/10">
               <input 
                 type="text" 
-                className="w-full bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-white/10 rounded-[2px] px-3 py-2 text-sm text-[#1F1F1F] dark:text-white focus:outline-none focus:border-[#C7A25C]"
+                className="w-full bg-[#021817]/50 border border-[#51d7c4]/20 rounded-[2px] px-3 py-2 text-sm text-white focus:outline-none focus:border-[#51d7c4]"
                 placeholder="Tìm kiếm..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
@@ -55,7 +54,7 @@ function CustomSelect({ label, options, value, onChange }: { label: string, opti
             {filteredOptions.length > 0 ? filteredOptions.map((opt) => (
               <div
                 key={opt.value}
-                className={`px-4 py-2 text-sm cursor-pointer transition-colors ${value === opt.value ? 'bg-[#C7A25C]/10 text-[#C7A25C] font-medium' : 'text-[#1F1F1F] dark:text-white/80 hover:bg-gray-50 dark:hover:bg-white/5 hover:text-[#C7A25C] dark:hover:text-[#C7A25C]'}`}
+                className={`px-4 py-2 text-sm cursor-pointer transition-colors ${value === opt.value ? 'bg-[#51d7c4]/10 text-[#51d7c4] font-medium' : 'text-white/80 hover:bg-white/5 hover:text-[#51d7c4]'}`}
                 onClick={() => {
                   onChange(opt.value);
                   setIsOpen(false);
@@ -65,7 +64,7 @@ function CustomSelect({ label, options, value, onChange }: { label: string, opti
                 {opt.label}
               </div>
             )) : (
-              <div className="px-4 py-3 text-sm text-gray-400 text-center">Không tìm thấy kết quả</div>
+              <div className="px-4 py-3 text-sm text-white/40 text-center">Không tìm thấy kết quả</div>
             )}
           </div>
         )}
@@ -94,12 +93,12 @@ export default function DonViThietKePage() {
   const getCategoryStyles = (category: string) => {
     const lower = category?.toLowerCase() || '';
     if (lower.includes('cao cấp') || lower.includes('cao-cap')) {
-      return 'bg-gradient-to-r from-[#D3AE3E] to-[#E5C98A] text-[#131313] shadow-[0_0_15px_rgba(211,174,62,0.4)] luxury-glow';
+      return 'bg-gradient-to-r from-[#008f82] to-[#51d7c4] text-[#010d0c] shadow-[0_0_15px_rgba(81,215,196,0.4)] luxury-glow font-bold';
     }
     if (lower.includes('trung cấp') || lower.includes('trung-cap')) {
-      return 'bg-gradient-to-r from-[#e2e2e2] to-[#b4b5b5] text-[#131313] shadow-[0_0_15px_rgba(226,226,226,0.4)]';
+      return 'bg-gradient-to-r from-[#004f47] to-[#008f82] text-white shadow-[0_0_15px_rgba(0,143,130,0.4)] font-bold';
     }
-    return 'bg-gradient-to-r from-[#cd7f32] to-[#b87333] text-white shadow-[0_0_15px_rgba(205,127,50,0.4)]';
+    return 'bg-gradient-to-r from-[#021817] to-[#004f47] text-white/90 shadow-[0_0_15px_rgba(2,24,23,0.4)] border border-[#51d7c4]/20';
   };
 
   const [isLoading, setIsLoading] = useState(true);
@@ -198,33 +197,32 @@ export default function DonViThietKePage() {
     }, [segment, projectType, style, searchQuery, allUnits]);
 
   return (
-    <div className="modern-section min-h-screen pt-[120px] pb-20 relative">
+    <div className="min-h-screen pt-[120px] pb-20 relative bg-transparent text-white">
       <div className="container mx-auto px-6 max-w-[1400px]">
         {/* Header */}
-        <SectionStarryMotif position="random-corner" />
-        <div className="text-center mb-16 relative overflow-hidden p-10 rounded-[4px] bg-[#f9f9f9] dark:bg-[#1a1a1a] border border-[#ECE7DE] dark:border-white/10 shadow-sm">
+        <div className="text-center mb-16 relative overflow-hidden p-10 rounded-[4px] bg-[#021817]/40 backdrop-blur-md border border-[#51d7c4]/20 shadow-[0_15px_40px_rgba(81,215,196,0.05)]">
           <div className="relative z-10">
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-[2px] bg-gradient-to-r from-[#C7A25C]/20 to-transparent border-l-2 border-[#C7A25C] text-[#A67C00] dark:text-[#FFD700] text-[11px] font-bold uppercase tracking-widest mb-4 luxury-glow">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-[2px] bg-gradient-to-r from-[#51d7c4]/20 to-transparent border-l-2 border-[#51d7c4] text-[#51d7c4] text-[11px] font-bold uppercase tracking-widest mb-4 drop-shadow-[0_0_8px_rgba(81,215,196,0.4)]">
               Đơn vị thi công
             </div>
-            <h1 className="font-heading text-4xl md:text-5xl font-bold text-[#1F1F1F] dark:text-white mb-6 uppercase">Hệ sinh thái đơn vị thi công</h1>
-            <p className="text-gray-600 dark:text-white/70 max-w-3xl mx-auto text-lg">Các đơn vị được phân loại theo phân khúc, loại công trình, khu vực hoạt động, phong cách thiết kế và năng lực thi công. Khách hàng có thể tham khảo hồ sơ từng đơn vị hoặc gửi nhu cầu để được tư vấn đơn vị phù hợp nhất.</p>
+            <h1 className="font-heading text-4xl md:text-5xl font-bold text-white mb-6 uppercase">Hệ sinh thái đơn vị thi công</h1>
+            <p className="text-white/70 max-w-3xl mx-auto text-lg">Các đơn vị được phân loại theo phân khúc, loại công trình, khu vực hoạt động, phong cách thiết kế và năng lực thi công. Khách hàng có thể tham khảo hồ sơ từng đơn vị hoặc gửi nhu cầu để được tư vấn đơn vị phù hợp nhất.</p>
           </div>
         </div>
 
         {/* Filters Scaffold */}
-        <div id="phan-khuc" className="card dark:bg-[#1c1c1c] shadow-sm dark:shadow-none p-6 rounded-[4px] mb-12 border border-[#ECE7DE] dark:border-white/10 flex flex-wrap gap-4 items-end relative z-[60]">
+        <div id="phan-khuc" className="bg-[#021817]/40 backdrop-blur-md p-6 rounded-[4px] mb-12 border border-[#51d7c4]/20 flex flex-wrap gap-4 items-end relative z-[60]">
           <div className="flex-1 min-w-[200px]">
-            <label className="block text-sm text-gray-400 dark:text-white/50 mb-2 font-medium">Tìm kiếm</label>
+            <label className="block text-sm text-white/50 mb-2 font-medium">Tìm kiếm</label>
             <div className="relative">
               <input 
                 type="text" 
                 placeholder="Tên đơn vị, mô tả..." 
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full bg-white dark:bg-[#1c1c1c] border border-[#ECE7DE] dark:border-white/20 text-[#1F1F1F] dark:text-white p-3 rounded-[2px] focus:outline-none focus:border-[#C7A25C] transition-colors text-sm h-[46px]"
+                className="w-full bg-[#021817]/50 border border-[#51d7c4]/20 text-white p-3 rounded-[2px] focus:outline-none focus:border-[#51d7c4] transition-colors text-sm h-[46px]"
               />
-              <svg className="absolute right-3 top-3.5 w-4 h-4 text-gray-400 dark:text-white/50" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+              <svg className="absolute right-3 top-3.5 w-4 h-4 text-white/50" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
             </div>
           </div>
           <CustomSelect
@@ -250,35 +248,35 @@ export default function DonViThietKePage() {
         {/* Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {isLoading ? (
-            <div className="col-span-3 text-center text-gray-400 dark:text-white/50 py-10">Đang tải danh sách đơn vị...</div>
+            <div className="col-span-3 text-center text-white/50 py-10">Đang tải danh sách đơn vị...</div>
           ) : filteredUnits.length === 0 ? (
-            <div className="col-span-1 md:col-span-2 lg:col-span-3 card dark:bg-[#1c1c1c] shadow-sm dark:shadow-none border border-[#ECE7DE] dark:border-white/5 rounded-[4px] p-16 text-center flex flex-col items-center justify-center min-h-[400px]">
-              <div className="w-24 h-24 bg-[#C7A25C]/10 text-[#C7A25C] rounded-full flex items-center justify-center text-4xl mb-6 shadow-[0_0_30px_rgba(206,158,81,0.15)]">
+            <div className="col-span-1 md:col-span-2 lg:col-span-3 bg-[#021817]/40 backdrop-blur-md border border-[#51d7c4]/15 rounded-[4px] p-16 text-center flex flex-col items-center justify-center min-h-[400px]">
+              <div className="w-24 h-24 bg-[#51d7c4]/10 text-[#51d7c4] rounded-full flex items-center justify-center text-4xl mb-6 shadow-[0_0_30px_rgba(81,215,196,0.15)]">
                 <i className="fa fa-building"></i>
               </div>
-              <h3 className="font-heading text-2xl font-bold text-[#1F1F1F] dark:text-white mb-4">Chưa có đối tác nào</h3>
-              <p className="text-gray-500 dark:text-white/60 max-w-md mx-auto text-lg">Không tìm thấy đơn vị nào phù hợp với bộ lọc hiện tại của bạn.</p>
+              <h3 className="font-heading text-2xl font-bold text-white mb-4">Chưa có đối tác nào</h3>
+              <p className="text-white/60 max-w-md mx-auto text-lg">Không tìm thấy đơn vị nào phù hợp với bộ lọc hiện tại của bạn.</p>
             </div>
           ) : filteredUnits.map((unit) => (
-            <div key={unit.id} className="card dark:bg-[#1c1c1c] shadow-sm dark:shadow-none rounded-[4px] overflow-hidden group border border-[#ECE7DE] dark:border-white/5 hover:border-[#C7A25C]/50 hover:-translate-y-1 transition-all luxury-glow relative">
+            <div key={unit.id} className="bg-[#021817]/40 backdrop-blur-md rounded-[4px] overflow-hidden group border border-[#51d7c4]/10 hover:border-[#51d7c4]/40 hover:-translate-y-1 transition-all shadow-[0_0_20px_rgba(81,215,196,0.05)] hover:shadow-[0_0_30px_rgba(81,215,196,0.15)] relative">
               <Link href={`/don-vi-thiet-ke/${unit.id}`} className="absolute inset-0 z-40" aria-label={`Xem chi tiết hồ sơ ${unit.name}`}></Link>
-              <div className="h-[240px] relative overflow-hidden flex items-center justify-center bg-gray-50 dark:bg-[#151515]">
+              <div className="h-[240px] relative overflow-hidden flex items-center justify-center bg-[#021817]/40 border-b border-[#51d7c4]/10">
                 {/* Subtle Grid Background */}
                 <div className="absolute inset-0 bg-[url('/images/common/noise.png')] opacity-[0.03] mix-blend-overlay pointer-events-none z-0"></div>
                 <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] z-0"></div>
                 
                 {/* Luxury Corner Accents */}
-                <div className="absolute top-0 left-0 w-8 h-8 border-t-2 border-l-2 border-[#D3AE3E] opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-30"></div>
-                <div className="absolute bottom-0 right-0 w-8 h-8 border-b-2 border-r-2 border-[#D3AE3E] opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-30"></div>
+                <div className="absolute top-0 left-0 w-8 h-8 border-t-2 border-l-2 border-[#51d7c4] opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-30"></div>
+                <div className="absolute bottom-0 right-0 w-8 h-8 border-b-2 border-r-2 border-[#51d7c4] opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-30"></div>
                 
                 {/* Avatar Display */}
                 {unit.avatarUrl ? (
-                  <div className="w-[180px] h-[120px] md:w-[220px] md:h-[140px] bg-white/60 dark:bg-[#1c1c1c]/60 backdrop-blur-sm rounded-[4px] shadow-[0_10px_30px_rgba(0,0,0,0.05)] dark:shadow-[0_10px_30px_rgba(0,0,0,0.5)] flex items-center justify-center p-4 relative z-20 group-hover:scale-105 transition-transform duration-500 border border-[#ECE7DE] dark:border-white/5">
+                  <div className="w-[180px] h-[120px] md:w-[220px] md:h-[140px] bg-[#021817]/60 backdrop-blur-sm rounded-[4px] shadow-[0_10px_30px_rgba(0,0,0,0.3)] flex items-center justify-center p-4 relative z-20 group-hover:scale-105 transition-transform duration-500 border border-[#51d7c4]/10">
                     <img src={unit.avatarUrl} alt={unit.name} className="max-w-full max-h-full object-contain drop-shadow-[0_2px_8px_rgba(0,0,0,0.15)] dark:drop-shadow-[0_0_15px_rgba(255,255,255,0.4)] transition-transform duration-500" />
                   </div>
                 ) : (
-                  <div className="w-[180px] h-[120px] md:w-[220px] md:h-[140px] bg-gradient-to-br from-[#1F1F1F] to-[#333] dark:from-[#2a2a2a] dark:to-[#1a1a1a] rounded-[4px] shadow-lg flex items-center justify-center p-6 relative z-20 group-hover:scale-105 transition-transform duration-500 border border-[#ECE7DE]/20 dark:border-white/10">
-                    <span className="text-5xl font-heading font-bold text-[#D3AE3E] tracking-widest">{unit.name.substring(0, 2).toUpperCase()}</span>
+                  <div className="w-[180px] h-[120px] md:w-[220px] md:h-[140px] bg-gradient-to-br from-[#021817] to-[#004f47] rounded-[4px] shadow-lg flex items-center justify-center p-6 relative z-20 group-hover:scale-105 transition-transform duration-500 border border-[#51d7c4]/15">
+                    <span className="text-5xl font-heading font-bold text-[#51d7c4] tracking-widest">{unit.name.substring(0, 2).toUpperCase()}</span>
                   </div>
                 )}
                 
@@ -288,21 +286,21 @@ export default function DonViThietKePage() {
               </div>
               <div className="p-6">
                 <div className="mb-2">
-                  <h3 className="font-heading text-2xl font-bold text-[#1F1F1F] dark:text-white mb-2">{unit.name}</h3>
+                  <h3 className="font-heading text-2xl font-bold text-white mb-2">{unit.name}</h3>
                 </div>
-                <div className="text-sm text-gray-500 dark:text-white/60 mb-4 line-clamp-2" dangerouslySetInnerHTML={{ __html: unit.description }} />
+                <div className="text-sm text-white/60 mb-4 line-clamp-2" dangerouslySetInnerHTML={{ __html: unit.description }} />
 
-                <div className="space-y-2 mb-6 text-sm text-gray-700 dark:text-white/80">
+                <div className="space-y-2 mb-6 text-sm text-white/80">
                   <div className="flex items-start">
-                    <i className="fa fa-building mt-1 w-5 text-[#C7A25C]"></i>
+                    <i className="fa fa-building mt-1 w-5 text-[#51d7c4]"></i>
                     <span><strong>Hạng mục:</strong> {unit.strengths}</span>
                   </div>
                   <div className="flex items-start">
-                    <i className="fa fa-paint-brush mt-1 w-5 text-[#C7A25C]"></i>
+                    <i className="fa fa-paint-brush mt-1 w-5 text-[#51d7c4]"></i>
                     <span><strong>Lĩnh vực:</strong> {unit.style}</span>
                   </div>
                   <div className="flex items-start">
-                    <i className="fa fa-map-marker-alt mt-1 w-5 text-[#C7A25C]"></i>
+                    <i className="fa fa-map-marker-alt mt-1 w-5 text-[#51d7c4]"></i>
                     <span><strong>Khu vực:</strong> {unit.location}</span>
                   </div>
                 </div>
@@ -314,9 +312,9 @@ export default function DonViThietKePage() {
                         e.preventDefault();
                         router.push(`/don-vi-thiet-ke/so-sanh?ids=${unit.id}`);
                       }}
-                      className="flex-1 flex items-center justify-center gap-2 bg-transparent border border-[#E5C98A] dark:border-white/30 hover:bg-[#C7A25C] hover:border-[#C7A25C] text-[#C7A25C] hover:text-white font-bold py-3 px-4 rounded-[2px] transition-all duration-300 uppercase tracking-wider text-xs group/cb shadow-[0_4px_15px_rgba(199,162,92,0.05)] hover:shadow-[0_4px_15px_rgba(199,162,92,0.3)]"
+                      className="flex-1 flex items-center justify-center gap-2 bg-transparent border border-[#51d7c4]/30 hover:bg-[#51d7c4] hover:border-[#51d7c4] text-[#51d7c4] hover:text-[#010d0c] font-bold py-3 px-4 rounded-[2px] transition-all duration-300 uppercase tracking-wider text-xs group/cb shadow-[0_4px_15px_rgba(81,215,196,0.05)] hover:shadow-[0_4px_15px_rgba(81,215,196,0.3)]"
                     >
-                      <svg className="w-4 h-4 text-[#C7A25C] group-hover/cb:text-white transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" /></svg>
+                      <svg className="w-4 h-4 text-[#51d7c4] group-hover/cb:text-[#010d0c] transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" /></svg>
                       So sánh
                     </button>
                     {unit.fanpage && (
@@ -325,7 +323,7 @@ export default function DonViThietKePage() {
                       </a>
                     )}
                   </div>
-                  <Link href={`/tu-van?unit=${unit.id}`} className="text-center block w-full bg-[#1F1F1F] text-white dark:bg-white/10 dark:hover:bg-[#C7A25C] dark:text-white font-bold py-3 px-4 rounded-[2px] transition-colors uppercase tracking-wider text-xs hover:bg-[#C7A25C]">
+                  <Link href={`/tu-van?unit=${unit.id}`} className="text-center block w-full bg-[#51d7c4] hover:bg-[#008f82] text-[#010d0c] font-black py-3 px-4 rounded-[2px] transition-colors uppercase tracking-wider text-xs shadow-[0_0_15px_rgba(81,215,196,0.2)]">
                     Nhận tư vấn
                   </Link>
                 </div>

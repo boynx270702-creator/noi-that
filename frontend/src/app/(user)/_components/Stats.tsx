@@ -86,7 +86,7 @@ export default function Stats() {
           setStats(prev => prev.map(s => s.id === 1 ? { ...s, value: unitCount } : s));
         }
       } catch (error) {
-        console.error("Failed to fetch units", error);
+        console.warn("Failed to fetch units", error);
       }
     };
     fetchUnits();

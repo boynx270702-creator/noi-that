@@ -22,7 +22,7 @@ export default function Header() {
 
 
       {/* --- MAIN HEADER --- */}
-      <div className="w-full sticky top-0 z-50 bg-white/[0.02] backdrop-blur-md border-b border-[#51d7c4]/20 transition-all duration-500 shadow-[0_4px_30px_rgba(81,215,196,0.05)] relative">
+      <div className="fixed top-0 left-0 w-full z-50 bg-white/[0.02] backdrop-blur-md border-b border-[#51d7c4]/20 transition-all duration-500 shadow-[0_4px_30px_rgba(81,215,196,0.05)]">
         {/* Subtle animated bottom border - cyan glow on right side only */}
         <div className="absolute inset-x-0 bottom-[-1px] h-[1px] overflow-hidden pointer-events-none">
           <div className="absolute bottom-0 right-0 w-1/2 h-full bg-gradient-to-r from-transparent via-[#51d7c4]/50 to-[#51d7c4]/80 animate-[pulse_2.5s_ease-in-out_infinite]"></div>

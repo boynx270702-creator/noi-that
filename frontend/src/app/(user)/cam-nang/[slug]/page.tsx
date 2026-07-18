@@ -1,5 +1,4 @@
 'use client';
-import SectionStarryMotif from '../../_components/SectionStarryMotif';
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'next/navigation';
 import Link from 'next/link';
@@ -80,20 +79,19 @@ export default function ArticleDetail() {
 
   if (isLoading) {
     return (
-      <div className="overflow-hidden relative pt-24 pb-12 md:pt-28 md:pb-16 lg:pt-32 lg:pb-24 modern-section min-h-screen flex justify-center">
-      <SectionStarryMotif position="random-corner" />
-        <div className="w-12 h-12 border-4 border-[#D3AE3E]/30 border-t-[#D3AE3E] rounded-full animate-spin mt-20"></div>
+      <div className="overflow-hidden relative pt-[120px] pb-20 min-h-screen flex justify-center text-white bg-transparent">
+        <div className="w-12 h-12 border-4 border-[#51d7c4]/30 border-t-[#51d7c4] rounded-full animate-spin mt-20"></div>
       </div>
     );
   }
 
   if (error || !article) {
     return (
-      <div className="pt-24 pb-12 md:pt-28 md:pb-16 lg:pt-32 lg:pb-24 modern-section min-h-screen">
+      <div className="pt-[120px] pb-20 min-h-screen text-white bg-transparent">
         <div className="max-w-[1400px] mx-auto px-6 text-center pt-20">
-          <h1 className="text-4xl font-bold mb-4 text-gray-900 dark:text-white">Không tìm thấy bài viết</h1>
-          <p className="text-gray-500 mb-8">{error || 'Bài viết có thể đã bị xóa hoặc đường dẫn không hợp lệ.'}</p>
-          <Link href="/cam-nang" className="bg-[#D3AE3E] text-white px-8 py-3 rounded-[2px] font-bold uppercase tracking-wider inline-flex items-center gap-2">
+          <h1 className="text-4xl font-bold mb-4 text-white">Không tìm thấy bài viết</h1>
+          <p className="text-white/60 mb-8">{error || 'Bài viết có thể đã bị xóa hoặc đường dẫn không hợp lệ.'}</p>
+          <Link href="/cam-nang" className="bg-[#51d7c4] text-[#010d0c] font-black px-8 py-3 rounded-[2px] uppercase tracking-wider inline-flex items-center gap-2 shadow-[0_0_15px_rgba(81,215,196,0.2)]">
             <ArrowLeft className="w-5 h-5" /> Về Cẩm Nang
           </Link>
         </div>
@@ -108,15 +106,13 @@ export default function ArticleDetail() {
   const tagsList = article.tags ? article.tags.split(',').map((t: string) => t.trim()).filter(Boolean) : [];
 
   return (
-    <div className="relative overflow-hidden pt-24 pb-12 md:pt-28 md:pb-16 lg:pt-32 lg:pb-24 modern-section min-h-screen">
+    <div className="relative overflow-hidden pt-[120px] pb-20 min-h-screen text-white bg-transparent">
       {/* Ambient Light Blobs for WOW Effect */}
       <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
-        <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] rounded-full bg-[#D3AE3E]/15 blur-[120px]" />
-        <div className="absolute top-[40%] right-[-10%] w-[30%] h-[50%] rounded-full bg-[#D3AE3E]/10 blur-[100px]" />
-        <div className="absolute bottom-[-10%] left-[20%] w-[50%] h-[40%] rounded-full bg-[#D3AE3E]/10 blur-[150px]" />
+        <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] rounded-full bg-[#51d7c4]/15 blur-[120px]" />
+        <div className="absolute top-[40%] right-[-10%] w-[30%] h-[50%] rounded-full bg-[#51d7c4]/10 blur-[100px]" />
+        <div className="absolute bottom-[-10%] left-[20%] w-[50%] h-[40%] rounded-full bg-[#51d7c4]/10 blur-[150px]" />
       </div>
-
-      <SectionStarryMotif position="full" particleCount={150} />
 
       <div className="relative z-10 max-w-[1400px] mx-auto px-6">
 

@@ -53,7 +53,7 @@ export default function Footer() {
           setRecentPosts(mappedPosts);
         }
       } catch (error) {
-        console.error('Failed to fetch recent posts for footer', error);
+        console.warn('Failed to fetch recent posts for footer', error);
       } finally {
         setIsLoadingPosts(false);
       }
@@ -64,7 +64,7 @@ export default function Footer() {
 
   return (
     <footer className="overflow-hidden bg-[#021817]/80 backdrop-blur-xl pt-24 pb-8 border-t border-[#51d7c4]/20 relative z-10 shadow-[0_-8px_30px_rgba(81,215,196,0.05)]">
-      <SectionStarryMotif />
+      <SectionStarryMotif position="sparse" particleCount={25} />
       <div className="max-w-[1400px] mx-auto px-6 relative z-10">
         
         {/* Top Section: 4 Columns */}

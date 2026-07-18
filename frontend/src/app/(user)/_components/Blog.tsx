@@ -15,7 +15,7 @@ export default function Blog() {
         const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://127.0.0.1:3001/api/v1';
         const res = await fetch(`${apiUrl}/articles`);
         if (!res.ok) {
-          console.error('API error status:', res.status, res.statusText);
+          console.warn('API error status:', res.status, res.statusText);
         }
         const text = await res.text();
         if (!text || text.startsWith('<')) {
@@ -42,7 +42,7 @@ export default function Blog() {
           setPosts(mappedPosts);
         }
       } catch (error) {
-        console.error("Failed to fetch articles", error);
+        console.warn("Failed to fetch articles", error);
       } finally {
         setIsLoading(false);
       }

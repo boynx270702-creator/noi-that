@@ -1,5 +1,4 @@
 'use client';
-import SectionStarryMotif from '../_components/SectionStarryMotif';
 import React, { useState, useRef, useEffect, use } from 'react';
 import { toast } from 'sonner';
 
@@ -21,22 +20,22 @@ function FormSelect({ label, options, value, onChange }: { label: string, option
 
   return (
     <div ref={dropdownRef} className={`relative ${isOpen ? 'z-[60]' : 'z-10'}`}>
-      <label className="block text-sm text-gray-600 dark:text-white/70 mb-2">{label}</label>
+      <label className="block text-sm text-white/70 mb-2">{label}</label>
       <div className="relative">
         <div
-          className={`w-full modern-section border ${isOpen ? 'border-[#ce9e51]' : 'border-gray-300 dark:border-white/20'} text-gray-900 dark:text-white p-3 rounded-[4px] cursor-pointer flex justify-between items-center transition-colors hover:border-[#ce9e51]/50 dark:hover:border-white/40`}
+          className={`w-full bg-[#021817]/50 border ${isOpen ? 'border-[#51d7c4]' : 'border-[#51d7c4]/20'} text-white p-3 rounded-[4px] cursor-pointer flex justify-between items-center transition-colors hover:border-[#51d7c4]/50`}
           onClick={() => setIsOpen(!isOpen)}
         >
           <span className="text-[15px]">{selectedLabel}</span>
-          <svg className={`w-4 h-4 transition-transform ${isOpen ? 'rotate-180 text-[#ce9e51]' : 'text-gray-400 dark:text-white/50'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path></svg>
+          <svg className={`w-4 h-4 transition-transform ${isOpen ? 'rotate-180 text-[#51d7c4]' : 'text-white/50'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path></svg>
         </div>
 
         {isOpen && (
-          <div className="overflow-hidden absolute z-50 w-full mt-2 modern-section shadow-lg dark:shadow-none border border-gray-200 dark:border-white/10 rounded-[4px] py-2 animate-fadeInDown">
+          <div className="overflow-hidden absolute z-50 w-full mt-2 bg-[#021817] border border-[#51d7c4]/20 rounded-[4px] py-2 animate-fadeInDown">
             {options.map((opt) => (
               <div
                 key={opt.value}
-                className={`px-4 py-2.5 text-[15px] cursor-pointer transition-colors ${value === opt.value ? 'bg-[#ce9e51]/20 text-[#ce9e51]' : 'text-gray-700 dark:text-white/80 hover:bg-gray-100 dark:bg-white/5 dark:hover:bg-white/10 hover:text-gray-900 dark:hover:text-white'}`}
+                className={`px-4 py-2.5 text-[15px] cursor-pointer transition-colors ${value === opt.value ? 'bg-[#51d7c4]/20 text-[#51d7c4]' : 'text-white/80 hover:bg-white/5 hover:text-[#51d7c4]'}`}
                 onClick={() => {
                   onChange(opt.value);
                   setIsOpen(false);
@@ -137,46 +136,45 @@ export default function TuVanPage({ searchParams }: { searchParams: Promise<{ un
   };
 
   return (
-    <div className="relative pt-[120px] pb-20 modern-section min-h-screen text-gray-900 dark:text-white overflow-hidden">
-      <SectionStarryMotif position="random-corner" />
+    <div className="relative pt-[120px] pb-20 min-h-screen text-white overflow-hidden bg-transparent">
       <div className="container mx-auto px-6 max-w-[1400px] relative z-10">
 
         {/* Header */}
         <div className="text-center mb-16">
-          <h1 className="font-heading text-4xl md:text-5xl font-bold text-[#ce9e51] mb-6">
+          <h1 className="font-heading text-4xl md:text-5xl font-bold text-[#51d7c4] mb-6 drop-shadow-[0_0_8px_rgba(81,215,196,0.4)]">
             {targetUnitName ? 'Nhận tư vấn với đơn vị chỉ định' : 'Gửi nhu cầu để được tư vấn đơn vị phù hợp'}
           </h1>
           {targetUnitName ? (
-            <div className="bg-[#C7A25C]/10 border border-[#C7A25C]/30 text-[#C7A25C] px-6 py-4 rounded-[4px] inline-flex items-center gap-3 text-lg font-bold mb-4">
+            <div className="bg-[#51d7c4]/10 border border-[#51d7c4]/30 text-[#51d7c4] px-6 py-4 rounded-[4px] inline-flex items-center gap-3 text-lg font-bold mb-4 shadow-[0_0_15px_rgba(81,215,196,0.15)]">
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path></svg>
               <span>Đối tác: {targetUnitName}</span>
             </div>
           ) : (
-            <p className="text-gray-600 dark:text-white/70 text-lg">Vui lòng cung cấp thông tin cơ bản về công trình. Dựa trên nhu cầu thực tế, chúng tôi sẽ tư vấn nhóm đơn vị phù hợp trong hệ sinh thái hơn 30 đối tác thiết kế – thi công nội thất.</p>
+            <p className="text-white/70 text-lg">Vui lòng cung cấp thông tin cơ bản về công trình. Dựa trên nhu cầu thực tế, chúng tôi sẽ tư vấn nhóm đơn vị phù hợp trong hệ sinh thái hơn 30 đối tác thiết kế – thi công nội thất.</p>
           )}
         </div>
 
         {/* Form Container */}
-        <div className="modern-section shadow-sm dark:shadow-none p-8 md:p-12 rounded-[4px] border border-gray-200 dark:border-white/10 shadow-sm">
+        <div className="bg-[#021817]/40 backdrop-blur-md p-8 md:p-12 rounded-[4px] border border-[#51d7c4]/20 shadow-[0_15px_40px_rgba(81,215,196,0.05)]">
           <form onSubmit={handleSubmit}>
             {/* Section 1: Thông tin khách hàng */}
             <div className="mb-10">
               <h2 className="font-heading text-xl font-bold mb-6 flex items-center gap-3">
-                <span className="w-6 h-6 rounded-full bg-[#ce9e51] text-gray-900 dark:text-white flex items-center justify-center text-sm">1</span>
+                <span className="w-6 h-6 rounded-full bg-[#51d7c4] text-[#010d0c] flex items-center justify-center text-sm font-bold">1</span>
                 Thông tin cá nhân
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
-                  <label className="block text-sm text-gray-600 dark:text-white/70 mb-2">Họ và tên *</label>
-                  <input type="text" value={name} onChange={e => setName(e.target.value)} className="w-full modern-section border border-gray-300 dark:border-white/20 text-gray-900 dark:text-white p-3 rounded-[4px] focus:border-[#ce9e51] outline-none transition-colors hover:border-[#ce9e51]/50 dark:hover:border-white/40" placeholder="Nhập họ tên của bạn" required />
+                  <label className="block text-sm text-white/70 mb-2">Họ và tên *</label>
+                  <input type="text" value={name} onChange={e => setName(e.target.value)} className="w-full bg-[#021817]/50 border border-[#51d7c4]/20 text-white p-3 rounded-[4px] focus:border-[#51d7c4] outline-none transition-colors hover:border-[#51d7c4]/50" placeholder="Nhập họ tên của bạn" required />
                 </div>
                 <div>
-                  <label className="block text-sm text-gray-600 dark:text-white/70 mb-2">Số điện thoại *</label>
-                  <input type="tel" value={phone} onChange={e => setPhone(e.target.value)} className="w-full modern-section border border-gray-300 dark:border-white/20 text-gray-900 dark:text-white p-3 rounded-[4px] focus:border-[#ce9e51] outline-none transition-colors hover:border-[#ce9e51]/50 dark:hover:border-white/40" placeholder="Nhập số điện thoại" required />
+                  <label className="block text-sm text-white/70 mb-2">Số điện thoại *</label>
+                  <input type="tel" value={phone} onChange={e => setPhone(e.target.value)} className="w-full bg-[#021817]/50 border border-[#51d7c4]/20 text-white p-3 rounded-[4px] focus:border-[#51d7c4] outline-none transition-colors hover:border-[#51d7c4]/50" placeholder="Nhập số điện thoại" required />
                 </div>
                 <div>
-                  <label className="block text-sm text-gray-600 dark:text-white/70 mb-2">Email (Nếu có)</label>
-                  <input type="email" value={email} onChange={e => setEmail(e.target.value)} className="w-full modern-section border border-gray-300 dark:border-white/20 text-gray-900 dark:text-white p-3 rounded-[4px] focus:border-[#ce9e51] outline-none transition-colors hover:border-[#ce9e51]/50 dark:hover:border-white/40" placeholder="Nhập email" />
+                  <label className="block text-sm text-white/70 mb-2">Email (Nếu có)</label>
+                  <input type="email" value={email} onChange={e => setEmail(e.target.value)} className="w-full bg-[#021817]/50 border border-[#51d7c4]/20 text-white p-3 rounded-[4px] focus:border-[#51d7c4] outline-none transition-colors hover:border-[#51d7c4]/50" placeholder="Nhập email" />
                 </div>
                 <FormSelect
                   label="Khu vực công trình *"
@@ -196,7 +194,7 @@ export default function TuVanPage({ searchParams }: { searchParams: Promise<{ un
             {/* Section 2: Thông tin công trình */}
             <div className="mb-10">
               <h2 className="font-heading text-xl font-bold mb-6 flex items-center gap-3">
-                <span className="w-6 h-6 rounded-full bg-[#ce9e51] text-gray-900 dark:text-white flex items-center justify-center text-sm">2</span>
+                <span className="w-6 h-6 rounded-full bg-[#51d7c4] text-[#010d0c] flex items-center justify-center text-sm font-bold">2</span>
                 Thông tin công trình
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -214,8 +212,8 @@ export default function TuVanPage({ searchParams }: { searchParams: Promise<{ un
                   ]}
                 />
                 <div>
-                  <label className="block text-sm text-gray-600 dark:text-white/70 mb-2">Diện tích (m2) *</label>
-                  <input type="number" className="w-full modern-section border border-gray-300 dark:border-white/20 text-gray-900 dark:text-white p-3 rounded-[4px] focus:border-[#ce9e51] outline-none transition-colors hover:border-[#ce9e51]/50 dark:hover:border-white/40" placeholder="VD: 100" required />
+                  <label className="block text-sm text-white/70 mb-2">Diện tích (m2) *</label>
+                  <input type="number" className="w-full bg-[#021817]/50 border border-[#51d7c4]/20 text-white p-3 rounded-[4px] focus:border-[#51d7c4] outline-none transition-colors hover:border-[#51d7c4]/50" placeholder="VD: 100" required />
                 </div>
                 <FormSelect
                   label="Tình trạng hiện tại *"
@@ -242,8 +240,8 @@ export default function TuVanPage({ searchParams }: { searchParams: Promise<{ un
                   ]}
                 />
                 <div>
-                  <label className="block text-sm text-gray-600 dark:text-white/70 mb-2">Phong cách mong muốn</label>
-                  <input type="text" value={style} onChange={e => setStyle(e.target.value)} className="w-full modern-section border border-gray-300 dark:border-white/20 text-gray-900 dark:text-white p-3 rounded-[4px] focus:border-[#ce9e51] outline-none transition-colors hover:border-[#ce9e51]/50 dark:hover:border-white/40" placeholder="VD: Hiện đại, Tối giản, Indochine..." />
+                  <label className="block text-sm text-white/70 mb-2">Phong cách mong muốn</label>
+                  <input type="text" value={style} onChange={e => setStyle(e.target.value)} className="w-full bg-[#021817]/50 border border-[#51d7c4]/20 text-white p-3 rounded-[4px] focus:border-[#51d7c4] outline-none transition-colors hover:border-[#51d7c4]/50" placeholder="VD: Hiện đại, Tối giản, Indochine..." />
                 </div>
                 <FormSelect
                   label="Thời gian muốn triển khai"
@@ -262,54 +260,54 @@ export default function TuVanPage({ searchParams }: { searchParams: Promise<{ un
             {/* Section 3: Nhu cầu cụ thể */}
             <div className="mb-10">
               <h2 className="font-heading text-xl font-bold mb-6 flex items-center gap-3">
-                <span className="w-6 h-6 rounded-full bg-[#ce9e51] text-gray-900 dark:text-white flex items-center justify-center text-sm">3</span>
+                <span className="w-6 h-6 rounded-full bg-[#51d7c4] text-[#010d0c] flex items-center justify-center text-sm font-bold">3</span>
                 Nhu cầu chi tiết
               </h2>
               <div className="space-y-4">
                 <div>
-                  <label className="block text-sm text-gray-600 dark:text-white/70 mb-3">Bạn đang cần tìm đơn vị để: *</label>
+                  <label className="block text-sm text-white/70 mb-3">Bạn đang cần tìm đơn vị để: *</label>
                   <div className="flex flex-wrap gap-4">
                     <label className="flex items-center gap-2 cursor-pointer">
-                      <input type="radio" name="service_type" value="Thiết kế nội thất" checked={serviceType === 'Thiết kế nội thất'} onChange={e => setServiceType(e.target.value)} className="accent-[#ce9e51] w-4 h-4" /> <span>Thiết kế nội thất</span>
+                      <input type="radio" name="service_type" value="Thiết kế nội thất" checked={serviceType === 'Thiết kế nội thất'} onChange={e => setServiceType(e.target.value)} className="accent-[#51d7c4] w-4 h-4" /> <span>Thiết kế nội thất</span>
                     </label>
                     <label className="flex items-center gap-2 cursor-pointer">
-                      <input type="radio" name="service_type" value="Thi công nội thất" checked={serviceType === 'Thi công nội thất'} onChange={e => setServiceType(e.target.value)} className="accent-[#ce9e51] w-4 h-4" /> <span>Thi công nội thất</span>
+                      <input type="radio" name="service_type" value="Thi công nội thất" checked={serviceType === 'Thi công nội thất'} onChange={e => setServiceType(e.target.value)} className="accent-[#51d7c4] w-4 h-4" /> <span>Thi công nội thất</span>
                     </label>
                     <label className="flex items-center gap-2 cursor-pointer">
-                      <input type="radio" name="service_type" value="Thiết kế & thi công trọn gói" checked={serviceType === 'Thiết kế & thi công trọn gói'} onChange={e => setServiceType(e.target.value)} className="accent-[#ce9e51] w-4 h-4" /> <span>Thiết kế & thi công trọn gói</span>
+                      <input type="radio" name="service_type" value="Thiết kế & thi công trọn gói" checked={serviceType === 'Thiết kế & thi công trọn gói'} onChange={e => setServiceType(e.target.value)} className="accent-[#51d7c4] w-4 h-4" /> <span>Thiết kế & thi công trọn gói</span>
                     </label>
                   </div>
                 </div>
 
                 <div className="pt-4">
-                  <label className="block text-sm text-gray-600 dark:text-white/70 mb-3">Nhu cầu bổ sung (Có thể chọn nhiều):</label>
+                  <label className="block text-sm text-white/70 mb-3">Nhu cầu bổ sung (Có thể chọn nhiều):</label>
                   <div className="space-y-2">
                     <label className="flex items-center gap-3 cursor-pointer">
-                      <input type="checkbox" checked={needSupervision} onChange={e => setNeedSupervision(e.target.checked)} className="accent-[#ce9e51] w-4 h-4 rounded-[4px]" />
+                      <input type="checkbox" checked={needSupervision} onChange={e => setNeedSupervision(e.target.checked)} className="accent-[#51d7c4] w-4 h-4 rounded-[4px]" />
                       <span>Tôi cần thêm dịch vụ Giám sát thi công độc lập</span>
                     </label>
                     <label className="flex items-center gap-3 cursor-pointer">
-                      <input type="checkbox" checked={needProjectManagement} onChange={e => setNeedProjectManagement(e.target.checked)} className="accent-[#ce9e51] w-4 h-4 rounded-[4px]" />
+                      <input type="checkbox" checked={needProjectManagement} onChange={e => setNeedProjectManagement(e.target.checked)} className="accent-[#51d7c4] w-4 h-4 rounded-[4px]" />
                       <span>Tôi cần gói Quản lý toàn bộ dự án thi công</span>
                     </label>
                   </div>
                 </div>
 
                 <div className="pt-4">
-                  <label className="block text-sm text-gray-600 dark:text-white/70 mb-2">Ghi chú thêm</label>
-                  <textarea rows={4} value={notes} onChange={e => setNotes(e.target.value)} className="w-full modern-section border border-gray-300 dark:border-white/20 text-gray-900 dark:text-white p-3 rounded-[4px] focus:border-[#ce9e51] outline-none transition-colors hover:border-[#ce9e51]/50 dark:hover:border-white/40" placeholder="Hãy mô tả chi tiết hơn về mong muốn của bạn (ví dụ: cần làm phòng ngủ cho bé, cần thi công nhanh trong 1 tháng...)"></textarea>
+                  <label className="block text-sm text-white/70 mb-2">Ghi chú thêm</label>
+                  <textarea rows={4} value={notes} onChange={e => setNotes(e.target.value)} className="w-full bg-[#021817]/50 border border-[#51d7c4]/20 text-white p-3 rounded-[4px] focus:border-[#51d7c4] outline-none transition-colors hover:border-[#51d7c4]/50" placeholder="Hãy mô tả chi tiết hơn về mong muốn của bạn (ví dụ: cần làm phòng ngủ cho bé, cần thi công nhanh trong 1 tháng...)"></textarea>
                 </div>
               </div>
             </div>
 
             {/* Submit */}
-            <div className="text-center pt-6 border-t border-gray-200 dark:border-white/10">
-              <button type="submit" disabled={isSubmitting} className="w-full md:w-auto bg-[#ce9e51] hover:bg-[#b88c45] disabled:bg-[#ce9e51]/50 text-white font-bold py-4 px-12 rounded-[2px] transition-colors uppercase tracking-wider text-sm flex items-center justify-center gap-2 mx-auto">
+            <div className="text-center pt-6 border-t border-white/10">
+              <button type="submit" disabled={isSubmitting} className="w-full md:w-auto bg-[#51d7c4] hover:bg-[#008f82] disabled:bg-[#51d7c4]/50 text-[#010d0c] font-black py-4 px-12 rounded-[2px] transition-colors uppercase tracking-wider text-sm flex items-center justify-center gap-2 mx-auto shadow-[0_0_20px_rgba(81,215,196,0.3)]">
                 {isSubmitting ? (
-                  <><svg className="animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle><path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg> Đang xử lý...</>
+                  <><svg className="animate-spin h-5 w-5 text-[#010d0c]" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle><path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg> Đang xử lý...</>
                 ) : 'Gửi nhu cầu tư vấn'}
               </button>
-              <p className="text-gray-500 dark:text-white/40 text-xs mt-4">Thông tin của bạn sẽ được bảo mật và chỉ dùng để tư vấn đơn vị phù hợp.</p>
+              <p className="text-white/40 text-xs mt-4">Thông tin của bạn sẽ được bảo mật và chỉ dùng để tư vấn đơn vị phù hợp.</p>
             </div>
           </form>
         </div>

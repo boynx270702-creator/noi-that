@@ -1,5 +1,3 @@
-'use client';
-import SectionStarryMotif from '../_components/SectionStarryMotif';
 import React from 'react';
 import Link from 'next/link';
 import Section6Ecosystem from '../_components/Section6Ecosystem';
@@ -11,8 +9,7 @@ import Section9Process from '../_components/Section9Process';
 
 export default function HeSinhThaiPage() {
   return (
-    <div className="overflow-hidden relative modern-section min-h-screen">
-      <SectionStarryMotif position="random-corner" />
+    <div className="overflow-hidden relative min-h-screen bg-transparent text-white">
       {/* Các nội dung giới thiệu hệ sinh thái */}
       <div id="gioi-thieu"><Section6Ecosystem /></div>
       <Section2Problem />
@@ -22,17 +19,17 @@ export default function HeSinhThaiPage() {
       <Section9Process />
 
       {/* CTA Chuyển sang trang Đơn vị thiết kế */}
-      <section className="relative py-32 modern-section overflow-hidden border-t border-[#ECE7DE] dark:border-white/5">
+      <section className="relative py-32 overflow-hidden border-t border-[#51d7c4]/15 bg-[#021817]/40 backdrop-blur-md">
         <div className="relative z-10 max-w-[1400px] mx-auto px-6 text-center">
-          <h2 className="font-heading text-3xl md:text-5xl font-bold text-[#1F1F1F] dark:text-white mb-6 uppercase">
-            Khám phá Hệ sinh thái <span className="text-[#C7A25C]">30+ Đơn vị</span>
+          <h2 className="font-heading text-3xl md:text-5xl font-bold text-white mb-6 uppercase">
+            Khám phá Hệ sinh thái <span className="text-[#51d7c4]">30+ Đơn vị</span>
           </h2>
-          <p className="text-gray-600 dark:text-[#999] text-lg mb-10 max-w-2xl mx-auto">
+          <p className="text-white/70 text-lg mb-10 max-w-2xl mx-auto">
             Xem hồ sơ chi tiết, so sánh năng lực và tìm kiếm đơn vị thiết kế thi công nội thất phù hợp nhất với nhu cầu của bạn.
           </p>
           <Link
             href="/don-vi-thiet-ke"
-            className="inline-flex items-center justify-center gap-2 btn-luxury-primary font-bold text-[13px] uppercase tracking-[2px] py-4 px-8 rounded-[2px]"
+            className="inline-flex items-center justify-center gap-2 bg-[#51d7c4] hover:bg-[#008f82] text-[#010d0c] font-black text-[13px] uppercase tracking-[2px] py-4 px-8 rounded-[2px] shadow-[0_0_20px_rgba(81,215,196,0.3)] transition-colors"
           >
             Xem danh sách đơn vị thiết kế
             <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">

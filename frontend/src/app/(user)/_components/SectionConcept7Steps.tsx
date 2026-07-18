@@ -1,4 +1,5 @@
 import React from 'react';
+import SectionStarryMotif from './SectionStarryMotif';
 
 const steps = [
   { 
@@ -33,8 +34,8 @@ const steps = [
 
 export default function SectionConcept7Steps() {
   return (
-    <section className="relative z-10 w-full bg-transparent py-8 md:py-12">
-      <div className="px-4 md:px-8 max-w-[1440px] mx-auto">
+    <section className="relative z-10 w-full py-8 md:py-12 bg-transparent">
+      <div className="px-4 md:px-8 max-w-[1440px] mx-auto relative z-10">
         {/* Sci-Fi Centered Label */}
         <div className="mb-10 flex flex-col items-center justify-center relative w-full">
           {/* Animated line behind */}
@@ -77,7 +78,7 @@ export default function SectionConcept7Steps() {
                   {/* The Arrow Shape using drop-shadow for border effect */}
                   <div className="relative shrink-0 filter drop-shadow-[0_0_2px_#51d7c4] group-hover:drop-shadow-[0_0_20px_rgba(81,215,196,0.8)] transition-all duration-500 group-hover:-translate-y-2 group-hover:scale-[1.02] w-full">
                     <div 
-                      className="w-full h-[100px] md:h-[110px] lg:h-[120px] bg-gradient-to-r from-[#dcf2ef]/95 to-[#e6f7f5]/95 flex items-center group-hover:from-white group-hover:to-white transition-colors cursor-default"
+                      className="w-full h-[100px] md:h-[110px] lg:h-[120px] bg-gradient-to-r from-[#003b36]/95 to-[#004f47]/95 flex items-center group-hover:from-[#021817] group-hover:to-[#022b26] transition-colors cursor-default border border-[#51d7c4]/20"
                       style={{
                         clipPath: isFirst 
                           ? 'polygon(10px 0, calc(100% - 16px) 0, 100% 50%, calc(100% - 16px) 100%, 10px 100%, 0 calc(100% - 10px), 0 10px)'
@@ -90,17 +91,17 @@ export default function SectionConcept7Steps() {
                     >
                       <div className="flex flex-row items-center justify-start gap-2 lg:gap-3 xl:gap-4 w-full pr-1">
                         {/* Circular Icon */}
-                        <div className="relative w-12 h-12 md:w-14 md:h-14 lg:w-12 lg:h-12 xl:w-14 xl:h-14 rounded-full border border-dashed border-[#008f82]/50 flex items-center justify-center shrink-0 group-hover:border-[#008f82] transition-colors group-hover:scale-110 duration-500 group-hover:shadow-[0_0_15px_rgba(0,143,130,0.3)]">
-                          <div className="text-[#006e64] scale-90 lg:scale-100">
+                        <div className="relative w-12 h-12 md:w-14 md:h-14 lg:w-12 lg:h-12 xl:w-14 xl:h-14 rounded-full border border-dashed border-[#51d7c4]/50 flex items-center justify-center shrink-0 group-hover:border-[#51d7c4] transition-colors group-hover:scale-110 duration-500 group-hover:shadow-[0_0_15px_rgba(81,215,196,0.3)] bg-[#021817]/50">
+                          <div className="text-[#51d7c4] scale-90 lg:scale-100 group-hover:drop-shadow-[0_0_8px_rgba(81,215,196,0.5)]">
                             {step.icon}
                           </div>
                         </div>
                         
                         {/* Text */}
                         <div className="flex flex-col text-left w-full">
-                          <span className="text-[#006e64] font-black text-[18px] md:text-[20px] lg:text-[18px] xl:text-[20px] leading-tight drop-shadow-sm mb-0.5 group-hover:text-[#004d46] transition-colors">{step.num}</span>
-                          <span className="text-[#004d46] font-bold text-[12px] md:text-[13px] lg:text-[12px] xl:text-[13px] uppercase leading-tight tracking-wide mb-1 line-clamp-2">{step.title}</span>
-                          <span className="text-[#004d46]/80 text-[11px] md:text-[12px] lg:text-[11px] xl:text-[12px] leading-tight font-medium pr-1 line-clamp-2">{step.desc}</span>
+                          <span className="text-[#51d7c4] font-black text-[18px] md:text-[20px] lg:text-[18px] xl:text-[20px] leading-tight drop-shadow-[0_0_5px_rgba(81,215,196,0.5)] mb-0.5 group-hover:text-white transition-colors">{step.num}</span>
+                          <span className="text-white font-bold text-[12px] md:text-[13px] lg:text-[12px] xl:text-[13px] uppercase leading-tight tracking-wide mb-1 line-clamp-2">{step.title}</span>
+                          <span className="text-white/70 text-[11px] md:text-[12px] lg:text-[11px] xl:text-[12px] leading-tight font-medium pr-1 line-clamp-2">{step.desc}</span>
                         </div>
                       </div>
                     </div>

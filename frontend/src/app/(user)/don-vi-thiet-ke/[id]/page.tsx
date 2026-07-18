@@ -1,5 +1,4 @@
 'use client';
-import SectionStarryMotif from '../../_components/SectionStarryMotif';
 import React, { useEffect, useState, use } from 'react';
 import Link from 'next/link';
 
@@ -85,19 +84,18 @@ export default function UnitDetailPage({ params }: { params: Promise<{ id: strin
   }, [resolvedParams.id]);
 
   if (isLoading) {
-    return <div className="overflow-hidden relative pt-[120px] pb-20 modern-section min-h-screen text-[#1F1F1F] dark:text-white text-center">
-      <SectionStarryMotif position="random-corner" />Đang tải thông margin đơn vị...</div>;
+    return <div className="overflow-hidden relative pt-[120px] pb-20 min-h-screen text-white text-center bg-transparent">
+      Đang tải thông tin đơn vị...</div>;
   }
 
   if (!unit) {
-    return <div className="pt-[120px] pb-20 modern-section min-h-screen text-[#1F1F1F] dark:text-white text-center">Không tìm thấy đơn vị.</div>;
+    return <div className="pt-[120px] pb-20 min-h-screen text-white text-center bg-transparent">Không tìm thấy đơn vị.</div>;
   }
 
   return (
-    <div className="pt-[120px] pb-20 modern-section min-h-screen text-[#1F1F1F] dark:text-white relative">
-      <SectionStarryMotif position="random-corner" />
+    <div className="pt-[120px] pb-20 min-h-screen text-white relative bg-transparent">
       {/* Local Background wrapper to fix flatness without touching global CSS */}
-      <div className="absolute top-0 left-0 right-0 h-[600px] bg-[radial-gradient(circle_at_top_right,rgba(199,162,92,0.1),transparent_50%)] dark:bg-[radial-gradient(circle_at_top_right,rgba(199,162,92,0.05),transparent_50%)] pointer-events-none z-0"></div>
+      <div className="absolute top-0 left-0 right-0 h-[600px] bg-[radial-gradient(circle_at_top_right,rgba(81,215,196,0.08),transparent_50%)] pointer-events-none z-0"></div>
       
       <div className="container mx-auto px-6 max-w-[1400px] relative z-10">
         {/* Section 1: Hero Section - Premium Visual Identity */}
