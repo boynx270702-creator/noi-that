@@ -109,7 +109,7 @@ export default function SectionConceptCoreValues() {
           </div>
 
           {/* Card 04 - Tall */}
-          <div className="col-span-1 lg:col-span-1 lg:row-span-2 min-h-[250px] lg:min-h-0 relative rounded-2xl overflow-hidden group border border-[#27d6ff]/20 hover:border-[#27d6ff]/60 transition-all shadow-lg p-6 flex flex-col">
+          <div className="col-span-1 lg:col-start-4 lg:row-start-1 lg:row-span-2 min-h-[250px] lg:min-h-0 relative rounded-2xl overflow-hidden group border border-[#27d6ff]/20 hover:border-[#27d6ff]/60 transition-all shadow-lg p-6 flex flex-col">
             <div className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" style={{ backgroundImage: `url(${values[3].img})` }} />
             <div className="absolute inset-0 bg-[#020b0d]/70 transition-opacity duration-700" />
             
