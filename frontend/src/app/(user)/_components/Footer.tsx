@@ -63,16 +63,15 @@ export default function Footer() {
   }, []);
 
   return (
-    <footer className="overflow-hidden bg-[#021817]/80 backdrop-blur-xl pt-24 pb-8 border-t border-[#51d7c4]/20 relative z-10 shadow-[0_-8px_30px_rgba(81,215,196,0.05)]">
-      <SectionStarryMotif position="sparse" particleCount={25} />
-      <div className="max-w-[1400px] mx-auto px-6 relative z-10">
+    <footer className="overflow-hidden bg-[#020b0d] pt-24 pb-8 border-t border-[#27d6ff]/20 relative z-10 shadow-[0_-8px_30px_rgba(39,214,255,0.05)]">
+      <div className="max-w-[1920px] mx-auto px-6 lg:px-24 relative z-10">
         
         {/* Top Section: 4 Columns */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
           
           {/* Column 1: Let's Connect */}
           <ScrollReveal animation="fade-up" delay={100}>
-            <h3 className="font-heading text-xl font-bold text-white mb-6 relative pb-4 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-12 after:h-[2px] after:bg-[#51d7c4]">
+            <h3 className="font-heading text-xl font-bold text-white mb-6 relative pb-4 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-12 after:h-[2px] after:bg-[#27d6ff]">
               Liên hệ
             </h3>
             <p className="text-gray-400 text-[15px] mb-6">
@@ -80,27 +79,27 @@ export default function Footer() {
             </p>
             <ul className="space-y-4 text-gray-400 text-[14px]">
               <li className="flex items-start gap-3">
-                <svg className="w-5 h-5 text-[#51d7c4] mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                <svg className="w-5 h-5 text-[#27d6ff] mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
                 <span>TP.HCM</span>
               </li>
               <li className="flex items-start gap-3">
-                <svg className="w-5 h-5 text-[#51d7c4] mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+                <svg className="w-5 h-5 text-[#27d6ff] mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
                 <span>096 574 39 49</span>
               </li>
               <li className="flex items-start gap-3">
-                <svg className="w-5 h-5 text-[#51d7c4] mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                <svg className="w-5 h-5 text-[#27d6ff] mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
                 <span>arcvietlivingnexus@gmail.com</span>
               </li>
               <li className="flex items-start gap-3">
-                <svg className="w-5 h-5 text-[#51d7c4] mt-0.5 shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M22.675 0H1.325C.593 0 0 .593 0 1.326v21.348C0 23.407.593 24 1.325 24h11.495v-9.294H9.69v-3.622h3.13V8.413c0-3.1 1.894-4.788 4.66-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.794.715-1.794 1.763v2.31h3.587l-.467 3.622h-3.12V24h6.116c.73 0 1.323-.593 1.323-1.326V1.326C24 .593 23.407 0 22.675 0z"/></svg>
-                <a href="https://www.facebook.com/profile.php?id=61591340093069" target="_blank" rel="noreferrer" className="hover:text-[#51d7c4] transition-colors">Fanpage Facebook</a>
+                <svg className="w-5 h-5 text-[#27d6ff] mt-0.5 shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M22.675 0H1.325C.593 0 0 .593 0 1.326v21.348C0 23.407.593 24 1.325 24h11.495v-9.294H9.69v-3.622h3.13V8.413c0-3.1 1.894-4.788 4.66-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.794.715-1.794 1.763v2.31h3.587l-.467 3.622h-3.12V24h6.116c.73 0 1.323-.593 1.323-1.326V1.326C24 .593 23.407 0 22.675 0z"/></svg>
+                <a href="https://www.facebook.com/profile.php?id=61591340093069" target="_blank" rel="noreferrer" className="hover:text-[#27d6ff] transition-colors">Fanpage Facebook</a>
               </li>
             </ul>
           </ScrollReveal>
 
           {/* Column 2: Recent Posts */}
           <ScrollReveal animation="fade-up" delay={200}>
-            <h3 className="font-heading text-xl font-bold text-white mb-6 relative pb-4 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-12 after:h-[2px] after:bg-[#51d7c4]">
+            <h3 className="font-heading text-xl font-bold text-white mb-6 relative pb-4 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-12 after:h-[2px] after:bg-[#27d6ff]">
               Bài viết mới nhất
             </h3>
             <div className="space-y-6">
@@ -109,11 +108,11 @@ export default function Footer() {
               ) : recentPosts.length > 0 ? (
                 recentPosts.map(post => (
                   <div key={post.id} className="flex gap-4 group cursor-pointer">
-                    <div className="w-20 h-20 shrink-0 overflow-hidden bg-[#021d1b] border border-[#51d7c4]/20 rounded-sm">
+                    <div className="w-20 h-20 shrink-0 overflow-hidden bg-[#020b0d] border border-[#27d6ff]/20 rounded-sm">
                       <img src={post.img} alt="Post Thumbnail" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
                     </div>
                     <div>
-                      <h4 className="text-[14px] font-bold text-white leading-snug mb-2 group-hover:text-[#51d7c4] transition-colors line-clamp-2">
+                      <h4 className="text-[14px] font-bold text-white leading-snug mb-2 group-hover:text-[#27d6ff] transition-colors line-clamp-2">
                         <Link href={post.link}>{post.title}</Link>
                       </h4>
                       <p className="font-label text-gray-500 text-[12px] uppercase tracking-wider">
@@ -130,14 +129,14 @@ export default function Footer() {
 
           {/* Column 3: Our Services */}
           <ScrollReveal animation="fade-up" delay={300}>
-            <h3 className="font-heading text-xl font-bold text-white mb-6 relative pb-4 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-12 after:h-[2px] after:bg-[#51d7c4]">
+            <h3 className="font-heading text-xl font-bold text-white mb-6 relative pb-4 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-12 after:h-[2px] after:bg-[#27d6ff]">
               Dịch vụ của chúng tôi
             </h3>
             <ul className="space-y-3">
               {SERVICES.map((srv, index) => (
                 <li key={index}>
-                  <Link href={srv.link} className="flex items-center gap-3 text-gray-400 hover:text-[#51d7c4] text-[14px] transition-colors group">
-                    <svg className="w-4 h-4 text-[#51d7c4] opacity-70 group-hover:opacity-100" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                  <Link href={srv.link} className="flex items-center gap-3 text-gray-400 hover:text-[#27d6ff] text-[14px] transition-colors group">
+                    <svg className="w-4 h-4 text-[#27d6ff] opacity-70 group-hover:opacity-100" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
                     {srv.name}
                   </Link>
                 </li>
@@ -147,14 +146,14 @@ export default function Footer() {
 
           {/* Column 4: Our Gallery */}
           <ScrollReveal animation="fade-up" delay={400}>
-            <h3 className="font-heading text-xl font-bold text-white mb-6 relative pb-4 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-12 after:h-[2px] after:bg-[#51d7c4]">
+            <h3 className="font-heading text-xl font-bold text-white mb-6 relative pb-4 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-12 after:h-[2px] after:bg-[#27d6ff]">
               Thư viện ảnh
             </h3>
             <div className="grid grid-cols-3 gap-2">
               {GALLERY.map((imgUrl, idx) => (
-                <div key={idx} className="relative aspect-square overflow-hidden bg-[#021d1b] border border-[#51d7c4]/20 rounded-sm cursor-pointer group">
+                <div key={idx} className="relative aspect-square overflow-hidden bg-[#020b0d] border border-[#27d6ff]/20 rounded-sm cursor-pointer group">
                   <img src={imgUrl} alt="Gallery item" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 opacity-80 group-hover:opacity-100" />
-                  <div className="absolute inset-0 bg-[#008f82]/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                  <div className="absolute inset-0 bg-[#1bbce0]/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                     <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"></path></svg>
                   </div>
                 </div>
@@ -166,7 +165,7 @@ export default function Footer() {
 
         {/* Bottom Section */}
         <ScrollReveal animation="fade-up" delay={500}>
-          <div className="pt-8 border-t border-[#51d7c4]/20 flex flex-col md:flex-row items-center justify-between gap-4">
+          <div className="pt-8 border-t border-[#27d6ff]/20 flex flex-col md:flex-row items-center justify-between gap-4">
             <div className="flex flex-col items-center md:items-start">
               <div className="w-48 opacity-90 hover:opacity-100 transition-opacity cursor-pointer mb-2">
                 <img 
@@ -175,7 +174,7 @@ export default function Footer() {
                   className="w-full h-auto transition-transform hover:scale-105" 
                 />
               </div>
-              <p className="text-[#51d7c4] text-[10px] font-bold tracking-widest uppercase ml-2">Một kết nối – Vạn giá trị</p>
+              <p className="text-[#27d6ff] text-[10px] font-bold tracking-widest uppercase ml-2">Một kết nối – Vạn giá trị</p>
             </div>
             <div className="text-[13px] text-gray-500 hover:text-white transition-colors cursor-pointer text-center md:text-right">
               Điều khoản sử dụng | Chính sách bảo mật
@@ -187,3 +186,4 @@ export default function Footer() {
     </footer>
   );
 }
+

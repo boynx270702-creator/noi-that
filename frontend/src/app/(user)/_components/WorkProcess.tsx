@@ -27,13 +27,13 @@ export default function WorkProcess() {
   return (
     <section className="relative py-32 bg-black overflow-hidden">
       <SectionStarryMotif />
-      <div className="relative z-10 max-w-[1400px] mx-auto px-6">
+      <div className="relative z-10 max-w-[1920px] mx-auto px-6">
         
         {/* Section Header */}
         <ScrollReveal animation="fade-up" delay={100}>
           <div className="text-center mb-20">
             <h2 className="font-heading text-4xl md:text-[40px] font-bold text-white mb-6">
-              Smart planing of <span className="text-[#D3AE3E]">Work process</span>
+              Smart planing of <span className="text-[#27d6ff]">Work process</span>
             </h2>
             <p className="text-[#999] text-[14px] md:text-[15px] max-w-3xl mx-auto leading-relaxed">
               This including consulting multi disciplinary consulting work with design and engineering, 
@@ -49,7 +49,7 @@ export default function WorkProcess() {
               <div className="flex flex-col items-center text-center group">
                 
                 {/* Circular Image Box */}
-                <div className="relative w-48 h-48 md:w-[220px] md:h-[220px] mb-8 rounded-full overflow-hidden p-3 bg-gradient-to-tr from-[#D3AE3E]/20 via-white/40 to-white/10 shadow-[0_0_30px_rgba(255,255,255,0.05)]">
+                <div className="relative w-48 h-48 md:w-[220px] md:h-[220px] mb-8 rounded-full overflow-hidden p-3 bg-gradient-to-tr from-[#27d6ff]/20 via-white/40 to-white/10 shadow-[0_0_30px_rgba(255,255,255,0.05)]">
                   {/* Inner Image Wrapper */}
                   <div className="relative w-full h-full rounded-full overflow-hidden">
                     <div 

@@ -71,12 +71,12 @@ export default function QuoteModal({ isOpen, onClose, productName, productImage 
         
         {/* Left/Top Side: Product Info */}
         <div className="bg-[#FAF8F2] dark:bg-[#0a0a0a] border-b md:border-b-0 md:border-r border-[#ECE7DE] dark:border-white/5 p-6 md:w-[40%] flex flex-col items-center justify-center text-center relative overflow-hidden">
-          <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[#C7A25C] to-transparent opacity-50"></div>
+          <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[#1bbce0] to-transparent opacity-50"></div>
           
-          <h2 className="font-heading text-xl font-bold text-[#C7A25C] mb-6 tracking-wide uppercase">Yêu cầu báo giá</h2>
+          <h2 className="font-heading text-xl font-bold text-[#1bbce0] mb-6 tracking-wide uppercase">Yêu cầu báo giá</h2>
           
           {productImage && (
-            <div className="w-32 h-32 rounded-full overflow-hidden border-2 border-[#C7A25C]/30 p-1 mb-4 shadow-lg luxury-glow">
+            <div className="w-32 h-32 rounded-full overflow-hidden border-2 border-[#1bbce0]/30 p-1 mb-4 shadow-lg luxury-glow">
               <div className="w-full h-full rounded-full overflow-hidden bg-gray-100 dark:bg-white/5">
                 <img src={productImage} alt={productName} className="w-full h-full object-cover" />
               </div>
@@ -85,7 +85,7 @@ export default function QuoteModal({ isOpen, onClose, productName, productImage 
           
           <div className="space-y-2">
             <p className="text-xs text-gray-500 dark:text-[#888] uppercase tracking-widest font-bold">Sản phẩm quan tâm</p>
-            <h3 className="font-heading text-lg font-bold text-gray-900 dark:text-white leading-snug">
+            <h3 className="font-heading text-lg font-bold text-white leading-snug">
               {productName || "Sản phẩm nội thất"}
             </h3>
           </div>
@@ -99,23 +99,23 @@ export default function QuoteModal({ isOpen, onClose, productName, productImage 
           
           <form onSubmit={handleSubmit} className="space-y-5 mt-2">
             <div>
-              <label className="block text-[13px] font-medium text-gray-700 dark:text-white/70 mb-1.5">Họ và tên *</label>
-              <input type="text" required value={name} onChange={e => setName(e.target.value)} className="w-full bg-transparent border border-gray-300 dark:border-white/20 text-gray-900 dark:text-white p-3 rounded-[2px] focus:border-[#C7A25C] outline-none transition-colors" placeholder="Nhập họ tên của bạn" />
+              <label className="block text-[13px] font-medium text-gray-700 text-white/70 mb-1.5">Họ và tên *</label>
+              <input type="text" required value={name} onChange={e => setName(e.target.value)} className="w-full bg-transparent border border-gray-300 dark:border-white/20 text-white p-3 rounded-[2px] focus:border-[#1bbce0] outline-none transition-colors" placeholder="Nhập họ tên của bạn" />
             </div>
             <div>
-              <label className="block text-[13px] font-medium text-gray-700 dark:text-white/70 mb-1.5">Số điện thoại *</label>
-              <input type="tel" required value={phone} onChange={e => setPhone(e.target.value)} className="w-full bg-transparent border border-gray-300 dark:border-white/20 text-gray-900 dark:text-white p-3 rounded-[2px] focus:border-[#C7A25C] outline-none transition-colors" placeholder="Nhập số điện thoại" />
+              <label className="block text-[13px] font-medium text-gray-700 text-white/70 mb-1.5">Số điện thoại *</label>
+              <input type="tel" required value={phone} onChange={e => setPhone(e.target.value)} className="w-full bg-transparent border border-gray-300 dark:border-white/20 text-white p-3 rounded-[2px] focus:border-[#1bbce0] outline-none transition-colors" placeholder="Nhập số điện thoại" />
             </div>
             <div>
-              <label className="block text-[13px] font-medium text-gray-700 dark:text-white/70 mb-1.5">Email (Tùy chọn)</label>
-              <input type="email" value={email} onChange={e => setEmail(e.target.value)} className="w-full bg-transparent border border-gray-300 dark:border-white/20 text-gray-900 dark:text-white p-3 rounded-[2px] focus:border-[#C7A25C] outline-none transition-colors" placeholder="Nhập email của bạn" />
+              <label className="block text-[13px] font-medium text-gray-700 text-white/70 mb-1.5">Email (Tùy chọn)</label>
+              <input type="email" value={email} onChange={e => setEmail(e.target.value)} className="w-full bg-transparent border border-gray-300 dark:border-white/20 text-white p-3 rounded-[2px] focus:border-[#1bbce0] outline-none transition-colors" placeholder="Nhập email của bạn" />
             </div>
             <div>
-              <label className="block text-[13px] font-medium text-gray-700 dark:text-white/70 mb-1.5">Ghi chú thêm</label>
-              <textarea rows={2} value={notes} onChange={e => setNotes(e.target.value)} className="w-full bg-transparent border border-gray-300 dark:border-white/20 text-gray-900 dark:text-white p-3 rounded-[2px] focus:border-[#C7A25C] outline-none transition-colors text-sm" placeholder="Bạn có yêu cầu đặc biệt nào không?"></textarea>
+              <label className="block text-[13px] font-medium text-gray-700 text-white/70 mb-1.5">Ghi chú thêm</label>
+              <textarea rows={2} value={notes} onChange={e => setNotes(e.target.value)} className="w-full bg-transparent border border-gray-300 dark:border-white/20 text-white p-3 rounded-[2px] focus:border-[#1bbce0] outline-none transition-colors text-sm" placeholder="Bạn có yêu cầu đặc biệt nào không?"></textarea>
             </div>
             <div className="pt-2 mt-4">
-              <button type="submit" disabled={isSubmitting} className="w-full bg-[#C7A25C] hover:bg-[#b08e4f] disabled:bg-[#C7A25C]/50 text-white font-bold py-4 px-6 rounded-[2px] transition-colors uppercase tracking-widest text-[13px] flex justify-center items-center gap-2 shadow-lg shadow-[#C7A25C]/20">
+              <button type="submit" disabled={isSubmitting} className="w-full bg-[#1bbce0] hover:bg-[#b08e4f] disabled:bg-[#1bbce0]/50 text-white font-bold py-4 px-6 rounded-[2px] transition-colors uppercase tracking-widest text-[13px] flex justify-center items-center gap-2 shadow-lg shadow-[#1bbce0]/20">
                 {isSubmitting ? 'Đang gửi...' : 'Gửi yêu cầu'}
                 {!isSubmitting && <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>}
               </button>

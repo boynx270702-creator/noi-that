@@ -541,7 +541,7 @@
 }
 
 .btn-luxury-primary {
-  background: linear-gradient(90deg, #D3AE3E 0%, #FDF0B0 50%, #D3AE3E 100%);
+  background: linear-gradient(90deg, #27d6ff 0%, #FDF0B0 50%, #27d6ff 100%);
   background-size: 200% auto;
   color: #131313 !important;
   border: none;
@@ -556,13 +556,13 @@
 
 .btn-luxury-secondary {
   background: transparent;
-  color: #D3AE3E !important;
+  color: #27d6ff !important;
   border: 1px solid rgba(211, 174, 62, 0.5);
   transition: all 0.6s ease;
 }
 
 .btn-luxury-secondary:hover {
-  border-color: #D3AE3E;
+  border-color: #27d6ff;
   box-shadow: inset 0 0 20px rgba(211, 174, 62, 0.1), 0 0 20px rgba(211, 174, 62, 0.2);
   color: #FDF0B0 !important;
   transform: translateY(-2px);
@@ -605,16 +605,16 @@
 
 /* Global Color Overrides: Map gold/yellow colors to teal/cyan */
 [class*="text-[#ce9e51]"], 
-[class*="text-[#C7A25C]"], 
-[class*="text-[#D3AE3E]"],
+[class*="text-[#1bbce0]"], 
+[class*="text-[#27d6ff]"],
 [class*="text-[#A67C00]"],
 [class*="text-[#FFD700]"] {
   color: #51d7c4 !important;
 }
 
 [class*="bg-[#ce9e51]"], 
-[class*="bg-[#C7A25C]"], 
-[class*="bg-[#D3AE3E]"] {
+[class*="bg-[#1bbce0]"], 
+[class*="bg-[#27d6ff]"] {
   background-color: #51d7c4 !important;
   color: #010d0c !important;
 }
@@ -622,56 +622,56 @@
 [class*="bg-[#ce9e51]/20"] {
   background-color: rgba(81, 215, 196, 0.2) !important;
 }
-[class*="bg-[#C7A25C]/10"] {
+[class*="bg-[#1bbce0]/10"] {
   background-color: rgba(81, 215, 196, 0.1) !important;
 }
-[class*="bg-[#C7A25C]/20"] {
+[class*="bg-[#1bbce0]/20"] {
   background-color: rgba(81, 215, 196, 0.2) !important;
 }
 
 [class*="border-[#ce9e51]"], 
-[class*="border-[#C7A25C]"], 
-[class*="border-[#D3AE3E]"], 
+[class*="border-[#1bbce0]"], 
+[class*="border-[#27d6ff]"], 
 [class*="border-[#E5C98A]"] {
   border-color: rgba(81, 215, 196, 0.3) !important;
 }
 
 [class*="hover:border-[#ce9e51]"]:hover, 
-[class*="hover:border-[#C7A25C]"]:hover, 
-[class*="hover:border-[#D3AE3E]"]:hover {
+[class*="hover:border-[#1bbce0]"]:hover, 
+[class*="hover:border-[#27d6ff]"]:hover {
   border-color: #51d7c4 !important;
 }
 
 [class*="hover:bg-[#ce9e51]"]:hover, 
-[class*="hover:bg-[#C7A25C]"]:hover, 
-[class*="hover:bg-[#D3AE3E]"]:hover {
+[class*="hover:bg-[#1bbce0]"]:hover, 
+[class*="hover:bg-[#27d6ff]"]:hover {
   background-color: #008f82 !important;
   color: #ffffff !important;
 }
 
 [class*="focus:border-[#ce9e51]"]:focus, 
-[class*="focus:border-[#C7A25C]"]:focus {
+[class*="focus:border-[#1bbce0]"]:focus {
   border-color: #51d7c4 !important;
 }
 
 /* Gradient background gold overrides */
-[class*="from-[#C7A25C]"][class*="to-[#E5C98A]"] {
+[class*="from-[#1bbce0]"][class*="to-[#E5C98A]"] {
   background-image: linear-gradient(to right, #008f82, #51d7c4) !important;
   color: #010d0c !important;
 }
-[class*="from-[#D3AE3E]"][class*="to-[#E5C98A]"] {
+[class*="from-[#27d6ff]"][class*="to-[#E5C98A]"] {
   background-image: linear-gradient(to right, #008f82, #51d7c4) !important;
   color: #010d0c !important;
 }
 [class*="from-[#ce9e51]/10"][class*="to-[#1c1c1c]"] {
   background-image: linear-gradient(to bottom, rgba(81, 215, 196, 0.1), #021817) !important;
 }
-[class*="from-[#C7A25C]/10"] {
+[class*="from-[#1bbce0]/10"] {
   background-image: linear-gradient(to right, rgba(81, 215, 196, 0.1), transparent) !important;
 }
 
 /* Quote button hover state */
-[class*="hover:bg-[#C7A25C]"]:hover {
+[class*="hover:bg-[#1bbce0]"]:hover {
   background-color: #51d7c4 !important;
   color: #010d0c !important;
 }

@@ -54,15 +54,15 @@ export default function Blog() {
   return (
     <section id="Blog" className="relative py-32 bg-transparent dark:bg-transparent modern-section overflow-hidden">
       <SectionStarryMotif />
-      <div className="max-w-[1400px] mx-auto px-6">
+      <div className="max-w-[1920px] mx-auto px-6">
 
         {/* Section Header */}
         <ScrollReveal animation="fade-up" delay={100}>
           <div className="text-center mb-16">
-            <h6 className="font-label text-[#D3AE3E] text-[13px] font-semibold tracking-[4px] uppercase mb-4">
+            <h6 className="font-label text-[#27d6ff] text-[13px] font-semibold tracking-[4px] uppercase mb-4">
               Blog & Cẩm Nang
             </h6>
-            <h3 className="uppercase font-heading text-4xl md:text-[40px] font-bold text-gray-900 dark:text-white mb-6 tracking-tight flex justify-center gap-[2px]">
+            <h3 className="uppercase font-heading text-4xl md:text-[40px] font-bold text-white mb-6 tracking-tight flex justify-center gap-[2px]">
               {'Tin tức mới nhất'.split('').map((char, index) => (
                 <span key={index} className={char === ' ' ? 'w-3' : ''}>{char}</span>
               ))}
@@ -75,9 +75,9 @@ export default function Blog() {
           {isLoading ? (
             <div className="text-center text-gray-500 dark:text-[#888] py-10">Đang tải bài viết...</div>
           ) : posts.length === 0 ? (
-            <div className="text-center py-20 bg-white dark:bg-[#1a1a1a] shadow-sm dark:shadow-none border border-gray-100 dark:border-white/10 border border-gray-200 dark:border-white/20 rounded-[4px] mx-auto max-w-2xl w-full">
-              <svg className="w-16 h-16 text-[#D3AE3E]/50 mx-auto mb-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10l6 6v10a2 2 0 01-2 2z"></path><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1" d="M12 11v6"></path><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1" d="M12 17h.01"></path></svg>
-              <h4 className="text-xl font-bold text-gray-900 dark:text-white mb-3 tracking-wide">CHƯA CÓ BÀI VIẾT NÀO</h4>
+            <div className="text-center py-20 bg-[#020b0d] shadow-sm dark:shadow-none border border-gray-100 dark:border-white/10 border border-gray-200 dark:border-white/20 rounded-[4px] mx-auto max-w-2xl w-full">
+              <svg className="w-16 h-16 text-[#27d6ff]/50 mx-auto mb-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10l6 6v10a2 2 0 01-2 2z"></path><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1" d="M12 11v6"></path><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1" d="M12 17h.01"></path></svg>
+              <h4 className="text-xl font-bold text-white mb-3 tracking-wide">CHƯA CÓ BÀI VIẾT NÀO</h4>
               <p className="text-gray-500 dark:text-[#888] text-[15px] max-w-sm mx-auto">Nội dung cẩm nang đang được hệ sinh thái cập nhật. Bạn vui lòng quay lại sau nhé!</p>
             </div>
           ) : posts.map((post) => (
@@ -97,7 +97,7 @@ export default function Blog() {
                 <div className="absolute inset-0 bg-black/10 group-hover:bg-black/30 transition-colors duration-500" />
 
                 {/* Date Overlay */}
-                <div className={`absolute top-6 ${post.imageLeft ? 'right-6' : 'left-6'} bg-[#D3AE3E] text-gray-900 dark:text-white px-4 py-2  font-bold text-[13px] uppercase tracking-wider`}>
+                <div className={`absolute top-6 ${post.imageLeft ? 'right-6' : 'left-6'} bg-[#27d6ff] text-white px-4 py-2  font-bold text-[13px] uppercase tracking-wider`}>
                   {post.date}
                 </div>
               </ScrollReveal>
@@ -106,21 +106,21 @@ export default function Blog() {
               <ScrollReveal
                 animation={post.imageLeft ? 'fade-left' : 'fade-right'}
                 delay={300}
-                className={`flex flex-col justify-center p-8 md:p-16 lg:p-20 bg-white dark:bg-[#1a1a1a] shadow-sm dark:shadow-none border border-gray-100 dark:border-white/10 ${post.imageLeft ? 'order-2 md:order-2' : 'order-2 md:order-1'
+                className={`flex flex-col justify-center p-8 md:p-16 lg:p-20 bg-[#020b0d] shadow-sm dark:shadow-none border border-gray-100 dark:border-white/10 ${post.imageLeft ? 'order-2 md:order-2' : 'order-2 md:order-1'
                   }`}
               >
                 {/* Tags */}
                 <div className="flex flex-wrap gap-2 mb-6">
                   {post.tags.map((tag: string, i: number) => (
-                    <Link key={i} href="#" className="bg-gradient-to-r from-[#D3AE3E] to-[#E5C98A] text-[#131313] px-3 py-1 rounded-[2px] font-bold uppercase tracking-widest text-[10px] shadow-[0_0_10px_rgba(211,174,62,0.3)] luxury-glow hover:-translate-y-0.5 transition-transform">
+                    <Link key={i} href="#" className="bg-gradient-to-r from-[#27d6ff] to-[#E5C98A] text-[#131313] px-3 py-1 rounded-[2px] font-bold uppercase tracking-widest text-[10px] shadow-[0_0_10px_rgba(211,174,62,0.3)] luxury-glow hover:-translate-y-0.5 transition-transform">
                       {tag}
                     </Link>
                   ))}
                 </div>
 
                 {/* Title */}
-                <h3 className="font-heading text-2xl lg:text-[28px] font-bold text-gray-900 dark:text-white mb-6 leading-snug">
-                  <Link href={post.link} className="hover:text-[#D3AE3E] transition-colors">
+                <h3 className="font-heading text-2xl lg:text-[28px] font-bold text-white mb-6 leading-snug">
+                  <Link href={post.link} className="hover:text-[#27d6ff] transition-colors">
                     {post.title}
                   </Link>
                 </h3>
@@ -149,7 +149,7 @@ export default function Blog() {
 
                   <Link
                     href={post.link}
-                    className="flex items-center gap-2 text-[13px] font-bold tracking-widest uppercase text-[#D3AE3E] hover:text-gray-900 dark:hover:text-white transition-colors"
+                    className="flex items-center gap-2 text-[13px] font-bold tracking-widest uppercase text-[#27d6ff] hover:text-gray-900 dark:hover:text-white transition-colors"
                   >
                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 5l7 7-7 7M5 5l7 7-7 7"></path></svg>
                     Đọc tiếp

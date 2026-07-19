@@ -45,56 +45,33 @@ const stats = [
 
 export default function SectionConceptStats() {
   return (
-    <section className="relative z-10 w-full bg-transparent py-8 md:py-12">
-      <div className="px-4 md:px-8 max-w-[1440px] mx-auto">
-        <div 
-          className="relative w-full bg-gradient-to-r from-[#021817]/95 via-[#032624]/95 to-[#021817]/95 backdrop-blur-md border border-[#51d7c4]/20 overflow-hidden"
-          style={{
-            clipPath: 'polygon(30px 0, 100% 0, 100% calc(100% - 30px), calc(100% - 30px) 100%, 0 100%, 0 30px)'
-          }}
-        >
-          {/* Top and Bottom Glowing Edges */}
-          <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#51d7c4] to-transparent opacity-100"></div>
-          <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#51d7c4]/50 to-transparent"></div>
-          
-          {/* Container for glowing dots on chamfered corners */}
-          <div className="absolute top-0 left-0 w-12 h-12 border-t-2 border-l-2 border-[#51d7c4] opacity-50 -translate-x-[22px] -translate-y-[22px] rotate-45"></div>
-          <div className="absolute bottom-0 right-0 w-12 h-12 border-b-2 border-r-2 border-[#51d7c4] opacity-50 translate-x-[22px] translate-y-[22px] rotate-45"></div>
-
-          <div className="py-8 px-4 md:px-10 lg:px-12 w-full">
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-y-10 gap-x-3 md:gap-8 lg:gap-0 lg:divide-x lg:divide-[#51d7c4]/30">
-              {stats.map((stat, idx) => (
-                <div key={idx} className={`flex flex-col lg:flex-row items-center gap-3 lg:gap-4 xl:gap-5 group hover:scale-105 transition-transform duration-300 lg:px-4 xl:px-6 first:lg:pl-0 last:lg:pr-0 justify-start lg:justify-center text-center lg:text-left ${idx === 4 ? 'col-span-2 md:col-span-1 lg:col-span-1' : ''}`}>
-                  {/* Icon Wrapper */}
-                  <div className="relative w-14 h-14 md:w-[72px] md:h-[72px] flex items-center justify-center shrink-0">
-                    {/* Dashed outer ring */}
-                    <div className="absolute inset-0 border border-dashed border-[#51d7c4]/40 rounded-full animate-[spin_10s_linear_infinite] group-hover:border-[#51d7c4]/80 transition-colors"></div>
-                    {/* Glowing dot on the ring */}
-                    <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-1.5 h-1.5 md:w-2 md:h-2 bg-[#51d7c4] rounded-full shadow-[0_0_8px_#51d7c4]"></div>
-                    {/* Small dot on the bottom-left of the ring */}
-                    <div className="absolute bottom-1 left-2 w-1 h-1 md:w-1.5 md:h-1.5 bg-[#51d7c4] rounded-full opacity-60"></div>
-                    
-                    <div className="text-[#f8d48d] drop-shadow-[0_0_10px_rgba(248,212,141,0.5)] scale-100 md:scale-125 group-hover:scale-125 md:group-hover:scale-150 transition-transform duration-300">
-                      {stat.icon}
-                    </div>
-                  </div>
-                  
-                  {/* Text Container */}
-                  <div className="flex flex-col items-center lg:items-start w-full">
-                    <span className="text-[#f8d48d] font-bold text-[24px] md:text-[34px] leading-none mb-1.5 md:mb-2 drop-shadow-sm">
-                      {stat.value}
-                    </span>
-                    <span className="text-white text-[11px] md:text-[14px] font-bold tracking-widest uppercase mb-1 leading-snug">
-                      {stat.label}
-                    </span>
-                    <span className="text-[#51d7c4]/80 lg:text-gray-400 text-[10px] md:text-[13px] leading-tight font-medium px-2 lg:px-0">
-                      {stat.desc}
-                    </span>
-                  </div>
-                </div>
-              ))}
+    <section className="relative z-10 w-full pb-10 pt-4">
+      <div className="w-full max-w-[1920px] mx-auto px-6 lg:px-24 relative z-10 -mt-16 sm:-mt-24">
+        
+        {/* Main Glassmorphic Container */}
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 bg-[#020b0d]/70 backdrop-blur-xl border border-[#27d6ff]/20 rounded-2xl p-8 lg:p-12 w-full mx-auto shadow-[0_0_30px_rgba(39,214,255,0.05)]">
+          {stats.slice(0, 4).map((stat, idx) => (
+            <div key={idx} className="col-span-1 md:col-span-6 lg:col-span-3 flex flex-row items-center justify-start lg:justify-center gap-4 px-4 group hover:-translate-y-1 transition-transform duration-300">
+              
+              {/* Icon Wrapper (Circle with gold border) */}
+              <div className="w-12 h-12 rounded-full border border-[#f8d48d]/60 flex items-center justify-center shrink-0 text-[#f8d48d] drop-shadow-[0_0_8px_rgba(248,212,141,0.5)]">
+                {stat.icon}
+              </div>
+              
+              {/* Text Container */}
+              <div className="flex flex-col items-start w-full">
+                <span className="text-[#f8d48d] font-bold text-[22px] md:text-[24px] leading-none mb-1 drop-shadow-sm font-serif">
+                  {stat.value}
+                </span>
+                <span className="text-white text-[11px] font-bold tracking-widest uppercase mb-0.5 leading-snug">
+                  {stat.label}
+                </span>
+                <span className="text-gray-400 text-[10px] leading-tight font-medium">
+                  {stat.desc}
+                </span>
+              </div>
             </div>
-          </div>
+          ))}
         </div>
       </div>
     </section>

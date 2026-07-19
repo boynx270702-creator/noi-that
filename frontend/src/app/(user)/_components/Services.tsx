@@ -90,12 +90,12 @@ export default function Services() {
       {/* Background Overlay */}
       <div className="absolute inset-0 bg-[url('/images/common/bg-pattern.jpg')] bg-cover bg-center opacity-5" />
 
-      <div className="relative z-10 max-w-[1400px] mx-auto px-6">
+      <div className="relative z-10 max-w-[1920px] mx-auto px-6">
         
         {/* Section Header */}
         <ScrollReveal animation="fade-up" delay={100}>
           <div className="text-center mb-16">
-            <h6 className="font-label text-[#D3AE3E] text-[13px] font-semibold tracking-[4px] uppercase mb-4">
+            <h6 className="font-label text-[#27d6ff] text-[13px] font-semibold tracking-[4px] uppercase mb-4">
               What We Do
             </h6>
             <h3 className="font-heading text-4xl md:text-[40px] font-bold text-white mb-6 tracking-tight flex justify-center gap-[2px]">
@@ -125,7 +125,7 @@ export default function Services() {
                 style={{ width: `${100 / itemsToShow}%` }}
               >
                 <ScrollReveal animation="fade-up" delay={200 + (i % itemsToShow) * 150} className="h-full">
-                  <div className="group bg-[#1a1a1a] transition-all hover:bg-[#222] h-full flex flex-col">
+                  <div className="group bg-[#020b0d] transition-all hover:bg-[#222] h-full flex flex-col">
                     {/* Image Box */}
                     <Link href={item.link} className="block relative h-[260px] overflow-hidden shrink-0">
                       <div 
@@ -142,7 +142,7 @@ export default function Services() {
                       </div>
 
                       <h3 className="font-heading text-[22px] font-bold text-white mb-4 transition-colors">
-                        <Link href={item.link} className="hover:text-[#D3AE3E]">{item.title}</Link>
+                        <Link href={item.link} className="hover:text-[#27d6ff]">{item.title}</Link>
                       </h3>
                       
                       <p className="text-[#888] leading-[1.8] text-[14px] mb-8 flex-grow">
@@ -152,7 +152,7 @@ export default function Services() {
                       {/* Feature Button */}
                       <Link 
                         href={item.link}
-                        className="inline-flex items-center text-[13px] font-bold tracking-widest uppercase text-[#D3AE3E] hover:text-white transition-colors mt-auto"
+                        className="inline-flex items-center text-[13px] font-bold tracking-widest uppercase text-[#27d6ff] hover:text-white transition-colors mt-auto"
                       >
                         Show More
                       </Link>
@@ -172,8 +172,8 @@ export default function Services() {
               onClick={() => goToSlide(idx)}
               className={`h-3 rounded-full transition-all duration-300 ${
                 currentIndex === idx 
-                  ? 'w-8 bg-[#D3AE3E]' 
-                  : 'w-3 bg-white/20 hover:bg-[#D3AE3E]/50'
+                  ? 'w-8 bg-[#27d6ff]' 
+                  : 'w-3 bg-white/20 hover:bg-[#27d6ff]/50'
               }`}
               aria-label={`Go to slide ${idx + 1}`}
             />

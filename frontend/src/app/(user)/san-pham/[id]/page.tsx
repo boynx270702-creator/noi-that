@@ -101,35 +101,35 @@ export default function ProductDetail({ params }: { params: Promise<{ id: string
   if (isLoading) {
     return (
       <div className="min-h-screen flex items-center justify-center pt-24 bg-white dark:bg-[#131313]">
-        <div className="w-8 h-8 rounded-full border-2 border-[#D3AE3E] border-t-transparent animate-spin"></div>
+        <div className="w-8 h-8 rounded-full border-2 border-[#27d6ff] border-t-transparent animate-spin"></div>
       </div>
     );
   }
 
   if (!product) {
     return (
-      <div className="min-h-screen flex items-center justify-center pt-24 text-gray-900 dark:text-white">
+      <div className="min-h-screen flex items-center justify-center pt-24 text-white">
         Không tìm thấy sản phẩm.
       </div>
     );
   }
 
   return (
-    <div className="overflow-hidden relative pt-24 pb-12 md:pt-28 md:pb-16 lg:pt-32 lg:pb-24 modern-section min-h-screen text-gray-900 dark:text-white transition-colors duration-300">
+    <div className="overflow-hidden relative pt-24 pb-12 md:pt-28 md:pb-16 lg:pt-32 lg:pb-24 modern-section min-h-screen text-white transition-colors duration-300">
       <SectionStarryMotif position="random-corner" />
-      <div className="max-w-[1400px] mx-auto px-6">
+      <div className="max-w-[1440px] mx-auto px-6">
 
         {/* Breadcrumb & Back */}
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-10 border-b border-gray-200 dark:border-white/10 pb-6">
           <div className="flex flex-wrap items-center gap-x-2 gap-y-2 text-[13px] text-gray-500 dark:text-[#888] uppercase tracking-wider font-semibold">
-            <Link href="/" className="hover:text-[#D3AE3E] transition-colors whitespace-nowrap">Trang chủ</Link>
+            <Link href="/" className="hover:text-[#27d6ff] transition-colors whitespace-nowrap">Trang chủ</Link>
             <span className="text-gray-300 dark:text-gray-700">/</span>
-            <Link href="/san-pham" className="hover:text-[#D3AE3E] transition-colors whitespace-nowrap">Sản phẩm</Link>
+            <Link href="/san-pham" className="hover:text-[#27d6ff] transition-colors whitespace-nowrap">Sản phẩm</Link>
             <span className="text-gray-300 dark:text-gray-700">/</span>
-            <span className="text-gray-900 dark:text-white line-clamp-1">{product.name}</span>
+            <span className="text-white line-clamp-1">{product.name}</span>
           </div>
 
-          <Link href="/san-pham" className="hidden md:flex items-center gap-2 text-sm text-gray-500 hover:text-[#D3AE3E] transition-colors font-medium shrink-0">
+          <Link href="/san-pham" className="hidden md:flex items-center gap-2 text-sm text-gray-500 hover:text-[#27d6ff] transition-colors font-medium shrink-0">
             <ArrowLeft className="w-4 h-4" />
             Quay lại
           </Link>
@@ -151,7 +151,7 @@ export default function ProductDetail({ params }: { params: Promise<{ id: string
                 </div>
               )}
               <div className="absolute top-6 left-6 flex flex-col gap-2 z-20">
-                <span className="bg-[#D3AE3E] text-white text-[10px] font-bold uppercase tracking-widest px-3 py-1.5 shadow-sm">Mới nhất</span>
+                <span className="bg-[#27d6ff] text-white text-[10px] font-bold uppercase tracking-widest px-3 py-1.5 shadow-sm">Mới nhất</span>
                 {product.originalPrice && <span className="bg-gray-900 text-white text-[10px] font-bold uppercase tracking-widest px-3 py-1.5 shadow-sm">Sale</span>}
               </div>
 
@@ -161,7 +161,7 @@ export default function ProductDetail({ params }: { params: Promise<{ id: string
                   <div className="w-14 h-14 bg-white rounded-full p-1.5 shadow-inner flex items-center justify-center shrink-0 border border-gray-100">
                     <img src={product.unitLogo} alt={product.unitName} className="w-full h-full object-contain rounded-full" />
                   </div>
-                  <span className="text-sm font-bold text-gray-900 dark:text-white tracking-widest uppercase whitespace-nowrap">{product.unitName}</span>
+                  <span className="text-sm font-bold text-white tracking-widest uppercase whitespace-nowrap">{product.unitName}</span>
                 </div>
               )}
             </div>
@@ -187,17 +187,17 @@ export default function ProductDetail({ params }: { params: Promise<{ id: string
           {/* Product Info (Right Side) */}
           <div className="lg:col-span-5 flex flex-col">
             {product.categories && product.categories.length > 0 && (
-              <span className="inline-block px-3 py-1.5 bg-black/80 backdrop-blur-md border border-[#D3AE3E]/20 text-[#D3AE3E] text-[11px] font-bold uppercase tracking-widest w-max mb-6 rounded-[2px] luxury-glow">
+              <span className="inline-block px-3 py-1.5 bg-black/80 backdrop-blur-md border border-[#27d6ff]/20 text-[#27d6ff] text-[11px] font-bold uppercase tracking-widest w-max mb-6 rounded-[2px] luxury-glow">
                 {product.categories[0]}
               </span>
             )}
 
-            <h1 className="font-heading text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-6 leading-tight">
+            <h1 className="font-heading text-3xl lg:text-4xl font-bold text-white mb-6 leading-tight">
               {product.name}
             </h1>
 
             <div className="mb-8 flex items-end gap-4">
-              <span className="text-3xl font-bold text-[#D3AE3E]">{product.price}</span>
+              <span className="text-3xl font-bold text-[#27d6ff]">{product.price}</span>
               {product.originalPrice && (
                 <span className="text-lg text-gray-400 line-through mb-1">{product.originalPrice}</span>
               )}
@@ -211,8 +211,8 @@ export default function ProductDetail({ params }: { params: Promise<{ id: string
             {product.attributes && product.attributes.length > 0 && (
               <div className="mb-10">
                 <div className="flex items-center gap-3 mb-4">
-                  <span className="w-6 h-[2px] bg-[#D3AE3E]"></span>
-                  <h3 className="text-[11px] font-bold text-[#D3AE3E] uppercase tracking-[0.2em]">
+                  <span className="w-6 h-[2px] bg-[#27d6ff]"></span>
+                  <h3 className="text-[11px] font-bold text-[#27d6ff] uppercase tracking-[0.2em]">
                     Thông số kỹ thuật
                   </h3>
                 </div>
@@ -226,7 +226,7 @@ export default function ProductDetail({ params }: { params: Promise<{ id: string
                           : 'bg-white dark:bg-transparent'
                       } ${index !== product.attributes.length - 1 ? 'border-b border-gray-100 dark:border-white/5' : ''}`}
                     >
-                      <span className="w-[2px] h-4 bg-[#D3AE3E]/50 rounded-full mt-0.5 shrink-0"></span>
+                      <span className="w-[2px] h-4 bg-[#27d6ff]/50 rounded-full mt-0.5 shrink-0"></span>
                       <span className="w-2/5 font-semibold text-gray-700 dark:text-gray-300 shrink-0 leading-snug">
                         {attr.name}
                       </span>
@@ -248,12 +248,12 @@ export default function ProductDetail({ params }: { params: Promise<{ id: string
                   setSelectedProductImage(product.images[0] || '');
                   setIsQuoteModalOpen(true);
                 }}
-                className="flex-[2] bg-[#D3AE3E] text-white hover:bg-[#b88c45] py-3.5 px-6 rounded-[2px] font-bold uppercase tracking-widest text-[12px] transition-all duration-300 flex items-center justify-center gap-3 shadow-sm shadow-[#D3AE3E]/20 hover:shadow-sm hover:-translate-y-1"
+                className="flex-[2] bg-[#27d6ff] text-white hover:bg-[#b88c45] py-3.5 px-6 rounded-[2px] font-bold uppercase tracking-widest text-[12px] transition-all duration-300 flex items-center justify-center gap-3 shadow-sm shadow-[#27d6ff]/20 hover:shadow-sm hover:-translate-y-1"
               >
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
                 Nhận báo giá
               </button>
-              <Link href={`/tu-van?product=${product.id}`} className="flex-1 bg-transparent border-2 border-[#D3AE3E] text-[#D3AE3E] hover:bg-[#D3AE3E] hover:text-white py-3.5 px-6 rounded-[2px] font-bold uppercase tracking-widest text-[12px] text-center transition-all duration-300 flex items-center justify-center gap-2">
+              <Link href={`/tu-van?product=${product.id}`} className="flex-1 bg-transparent border-2 border-[#27d6ff] text-[#27d6ff] hover:bg-[#27d6ff] hover:text-white py-3.5 px-6 rounded-[2px] font-bold uppercase tracking-widest text-[12px] text-center transition-all duration-300 flex items-center justify-center gap-2">
                 Tư vấn
               </Link>
             </div>
@@ -274,12 +274,12 @@ export default function ProductDetail({ params }: { params: Promise<{ id: string
         {/* --- Thông tin chi tiết --- */}
         <div className="mt-24 pt-16 border-t border-gray-200 dark:border-white/10">
           <div className="flex flex-col items-center justify-center text-center mb-16">
-            <span className="text-[#D3AE3E] text-[10px] font-bold tracking-[0.2em] uppercase mb-3 flex items-center gap-2">
-              <span className="w-8 h-[1px] bg-[#D3AE3E]"></span>
+            <span className="text-[#27d6ff] text-[10px] font-bold tracking-[0.2em] uppercase mb-3 flex items-center gap-2">
+              <span className="w-8 h-[1px] bg-[#27d6ff]"></span>
               Thông tin
-              <span className="w-8 h-[1px] bg-[#D3AE3E]"></span>
+              <span className="w-8 h-[1px] bg-[#27d6ff]"></span>
             </span>
-            <h2 className="font-heading text-2xl md:text-3xl font-bold text-gray-900 dark:text-white uppercase tracking-widest">
+            <h2 className="font-heading text-2xl md:text-3xl font-bold text-white uppercase tracking-widest">
               Mô tả chi tiết
             </h2>
           </div>
@@ -287,7 +287,7 @@ export default function ProductDetail({ params }: { params: Promise<{ id: string
           {product.content ? (
             <div className="prose prose-lg dark:prose-invert max-w-none text-gray-600 dark:text-[#ccc]" dangerouslySetInnerHTML={{ __html: product.content }} />
           ) : (
-            <div className="flex flex-col items-center justify-center text-gray-400 py-12 bg-gray-50 dark:bg-[#1a1a1a] rounded-[4px] border border-gray-100 dark:border-white/5">
+            <div className="flex flex-col items-center justify-center text-gray-400 py-12 bg-[#020b0d] rounded-[4px] border border-gray-100 dark:border-white/5">
               <svg className="w-16 h-16 mb-4 text-gray-300 dark:text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
               <p className="text-sm uppercase tracking-widest font-bold">Chưa có bài viết mô tả chi tiết</p>
             </div>
@@ -297,11 +297,11 @@ export default function ProductDetail({ params }: { params: Promise<{ id: string
         {/* --- Sản phẩm liên quan --- */}
         <div className="mt-24 pt-16 border-t border-gray-200 dark:border-white/10">
           <div className="flex items-end justify-between gap-4 mb-10">
-            <h2 className="font-heading text-2xl md:text-3xl font-bold text-gray-900 dark:text-white uppercase tracking-wider leading-tight">
+            <h2 className="font-heading text-2xl md:text-3xl font-bold text-white uppercase tracking-wider leading-tight">
               Sản phẩm <br className="md:hidden" />
-              <span className="text-[#D3AE3E]">Liên quan</span>
+              <span className="text-[#27d6ff]">Liên quan</span>
             </h2>
-            <Link href="/san-pham" className="shrink-0 whitespace-nowrap text-xs md:text-sm font-bold uppercase tracking-widest text-gray-500 hover:text-[#D3AE3E] transition-colors flex items-center gap-2 pb-1 md:pb-0">
+            <Link href="/san-pham" className="shrink-0 whitespace-nowrap text-xs md:text-sm font-bold uppercase tracking-widest text-gray-500 hover:text-[#27d6ff] transition-colors flex items-center gap-2 pb-1 md:pb-0">
               Xem tất cả <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
@@ -318,18 +318,18 @@ export default function ProductDetail({ params }: { params: Promise<{ id: string
                     </div>
                   )}
                   
-                  <div className="absolute top-4 left-4 bg-[#D3AE3E] text-white text-[10px] font-bold uppercase tracking-widest px-3 py-1 shadow-md z-20">Mới nhất</div>
+                  <div className="absolute top-4 left-4 bg-[#27d6ff] text-white text-[10px] font-bold uppercase tracking-widest px-3 py-1 shadow-md z-20">Mới nhất</div>
                   
                   <div className="absolute top-4 right-4 z-20 w-11 h-11 bg-white rounded-full p-1.5 shadow-xl flex items-center justify-center group/logo border border-gray-100 hover:scale-110 transition-transform">
                     <img src={item.unitLogo} alt={item.unitName} className="w-full h-full object-contain rounded-full" />
-                    <div className="absolute top-full mt-2 right-0 bg-[#1a1a1a] text-[#D3AE3E] text-[11px] px-3 py-1.5 rounded-[2px] opacity-0 invisible group-hover/logo:opacity-100 group-hover/logo:visible whitespace-nowrap transition-all shadow-lg pointer-events-none font-bold tracking-widest uppercase border border-[#D3AE3E]/30">
+                    <div className="absolute top-full mt-2 right-0 bg-[#020b0d] text-[#27d6ff] text-[11px] px-3 py-1.5 rounded-[2px] opacity-0 invisible group-hover/logo:opacity-100 group-hover/logo:visible whitespace-nowrap transition-all shadow-lg pointer-events-none font-bold tracking-widest uppercase border border-[#27d6ff]/30">
                       {item.unitName}
                     </div>
                   </div>
                 </div>
                 <div className="p-6 flex flex-col flex-grow">
                   <div className="text-[11px] font-bold uppercase tracking-widest text-gray-400 mb-2">{item.categories.join(', ')}</div>
-                  <h3 className="font-heading text-lg font-bold text-gray-900 dark:text-white group-hover:text-[#D3AE3E] transition-colors mb-4 line-clamp-2 leading-snug">{item.title}</h3>
+                  <h3 className="font-heading text-lg font-bold text-white group-hover:text-[#27d6ff] transition-colors mb-4 line-clamp-2 leading-snug">{item.title}</h3>
                   <div className="mt-auto pt-4 border-t border-gray-100 dark:border-white/5 relative z-20">
                     <span 
                       onClick={(e) => {
@@ -339,7 +339,7 @@ export default function ProductDetail({ params }: { params: Promise<{ id: string
                         setSelectedProductImage(item.img || '');
                         setIsQuoteModalOpen(true);
                       }}
-                      className="flex items-center justify-center gap-2 w-full bg-[#FAF8F2] dark:bg-[#131313] border border-[#E5C98A]/50 dark:border-[#C7A25C]/30 text-[#C7A25C] font-bold uppercase tracking-wider text-[11px] py-3 rounded-[2px] group-hover:bg-[#C7A25C] group-hover:text-white group-hover:border-[#C7A25C] hover:bg-[#C7A25C] hover:text-white hover:border-[#C7A25C] transition-all duration-300"
+                      className="flex items-center justify-center gap-2 w-full bg-[#FAF8F2] dark:bg-[#131313] border border-[#E5C98A]/50 dark:border-[#1bbce0]/30 text-[#1bbce0] font-bold uppercase tracking-wider text-[11px] py-3 rounded-[2px] group-hover:bg-[#1bbce0] group-hover:text-white group-hover:border-[#1bbce0] hover:bg-[#1bbce0] hover:text-white hover:border-[#1bbce0] transition-all duration-300"
                     >
                       Nhận báo giá
                       <ArrowRight className="w-4 h-4" />

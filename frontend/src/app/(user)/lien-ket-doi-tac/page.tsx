@@ -57,16 +57,16 @@ export default function PartnerRegistrationPage() {
 
   return (
     <div className="overflow-hidden relative pt-[120px] pb-20 min-h-screen text-white bg-transparent">
-      <div className="container mx-auto px-6 max-w-[1400px]">
+      <div className="container mx-auto px-6 max-w-[1440px]">
         
         {/* Header Section */}
         <div className="text-center mb-16 max-w-4xl mx-auto">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-[2px] bg-[#51d7c4]/15 border-l-2 border-[#51d7c4] text-[#51d7c4] text-[11px] font-bold uppercase tracking-widest mb-4 drop-shadow-[0_0_8px_rgba(81,215,196,0.3)]">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-[2px] bg-[#27d6ff]/15 border-l-2 border-[#27d6ff] text-[#27d6ff] text-[11px] font-bold uppercase tracking-widest mb-4 drop-shadow-[0_0_8px_rgba(81,215,196,0.3)]">
             Hợp tác cùng phát triển
           </div>
           <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold mb-6 uppercase tracking-tight text-white">
             Trở thành đối tác<br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#008f82] to-[#51d7c4]">Hệ sinh thái nội thất</span>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#0a8ba8] to-[#27d6ff]">Hệ sinh thái nội thất</span>
           </h1>
           <p className="text-white/70 text-lg leading-relaxed">
             Kết nối với hàng ngàn khách hàng tiềm năng, nâng cao uy tín thương hiệu và gia tăng doanh thu thông qua hệ sinh thái minh bạch và chuyên nghiệp của chúng tôi.
@@ -82,9 +82,9 @@ export default function PartnerRegistrationPage() {
             </h2>
             
             <div className="space-y-6">
-              <div className="bg-[#021817]/40 backdrop-blur-md p-6 rounded-[4px] border border-[#51d7c4]/15 shadow-sm flex gap-4 transition-all hover:border-[#51d7c4]/50 hover:-translate-y-1">
-                <div className="w-12 h-12 bg-[#51d7c4]/10 rounded-full flex items-center justify-center shrink-0 border border-[#51d7c4]/20">
-                  <svg className="w-6 h-6 text-[#51d7c4]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+              <div className="bg-[#020b0d]/40 backdrop-blur-md p-6 rounded-[4px] border border-[#27d6ff]/15 shadow-sm flex gap-4 transition-all hover:border-[#27d6ff]/50 hover:-translate-y-1">
+                <div className="w-12 h-12 bg-[#27d6ff]/10 rounded-full flex items-center justify-center shrink-0 border border-[#27d6ff]/20">
+                  <svg className="w-6 h-6 text-[#27d6ff]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
                 </div>
                 <div>
                   <h3 className="font-bold text-lg mb-2 text-white">Tiếp cận khách hàng chất lượng</h3>
@@ -92,9 +92,9 @@ export default function PartnerRegistrationPage() {
                 </div>
               </div>
 
-              <div className="bg-[#021817]/40 backdrop-blur-md p-6 rounded-[4px] border border-[#51d7c4]/15 shadow-sm flex gap-4 transition-all hover:border-[#51d7c4]/50 hover:-translate-y-1">
-                <div className="w-12 h-12 bg-[#51d7c4]/10 rounded-full flex items-center justify-center shrink-0 border border-[#51d7c4]/20">
-                  <svg className="w-6 h-6 text-[#51d7c4]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+              <div className="bg-[#020b0d]/40 backdrop-blur-md p-6 rounded-[4px] border border-[#27d6ff]/15 shadow-sm flex gap-4 transition-all hover:border-[#27d6ff]/50 hover:-translate-y-1">
+                <div className="w-12 h-12 bg-[#27d6ff]/10 rounded-full flex items-center justify-center shrink-0 border border-[#27d6ff]/20">
+                  <svg className="w-6 h-6 text-[#27d6ff]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
                 </div>
                 <div>
                   <h3 className="font-bold text-lg mb-2 text-white">Khẳng định uy tín thương hiệu</h3>
@@ -102,9 +102,9 @@ export default function PartnerRegistrationPage() {
                 </div>
               </div>
 
-              <div className="bg-[#021817]/40 backdrop-blur-md p-6 rounded-[4px] border border-[#51d7c4]/15 shadow-sm flex gap-4 transition-all hover:border-[#51d7c4]/50 hover:-translate-y-1">
-                <div className="w-12 h-12 bg-[#51d7c4]/10 rounded-full flex items-center justify-center shrink-0 border border-[#51d7c4]/20">
-                  <svg className="w-6 h-6 text-[#51d7c4]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+              <div className="bg-[#020b0d]/40 backdrop-blur-md p-6 rounded-[4px] border border-[#27d6ff]/15 shadow-sm flex gap-4 transition-all hover:border-[#27d6ff]/50 hover:-translate-y-1">
+                <div className="w-12 h-12 bg-[#27d6ff]/10 rounded-full flex items-center justify-center shrink-0 border border-[#27d6ff]/20">
+                  <svg className="w-6 h-6 text-[#27d6ff]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
                 </div>
                 <div>
                   <h3 className="font-bold text-lg mb-2 text-white">Quy trình làm việc chuẩn hóa</h3>
@@ -113,8 +113,8 @@ export default function PartnerRegistrationPage() {
               </div>
             </div>
             
-            <div className="mt-8 p-6 bg-[#51d7c4]/5 border border-[#51d7c4]/30 rounded-[4px] shadow-[0_0_15px_rgba(81,215,196,0.05)]">
-              <h3 className="font-bold text-[#51d7c4] mb-2 uppercase tracking-wider text-sm drop-shadow-[0_0_8px_rgba(81,215,196,0.3)]">Tiêu chí tham gia:</h3>
+            <div className="mt-8 p-6 bg-[#27d6ff]/5 border border-[#27d6ff]/30 rounded-[4px] shadow-[0_0_15px_rgba(81,215,196,0.05)]">
+              <h3 className="font-bold text-[#27d6ff] mb-2 uppercase tracking-wider text-sm drop-shadow-[0_0_8px_rgba(81,215,196,0.3)]">Tiêu chí tham gia:</h3>
               <ul className="list-disc pl-5 space-y-2 text-sm text-white/70">
                 <li>Pháp nhân công ty rõ ràng, minh bạch</li>
                 <li>Có kinh nghiệm thực tiễn tối thiểu 3 năm</li>
@@ -126,55 +126,55 @@ export default function PartnerRegistrationPage() {
 
           {/* Right Column - Form */}
           <div className="w-full lg:w-7/12">
-            <div className="bg-[#021817]/40 backdrop-blur-md p-8 lg:p-10 rounded-[4px] border border-[#51d7c4]/15">
+            <div className="bg-[#020b0d]/40 backdrop-blur-md p-8 lg:p-10 rounded-[4px] border border-[#27d6ff]/15">
               <h2 className="font-heading text-2xl font-bold mb-6 text-white">Đăng ký biểu mẫu đối tác</h2>
               
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
                     <label className="block text-sm text-white/70 mb-2 font-medium">Tên Đơn vị / Công ty *</label>
-                    <input type="text" value={formData.companyName} onChange={e => setFormData({...formData, companyName: e.target.value})} className="w-full bg-[#021817]/50 border border-[#51d7c4]/20 text-white p-3 rounded-[4px] focus:border-[#51d7c4] outline-none transition-colors" placeholder="VD: Công ty TNHH Kiến trúc..." required />
+                    <input type="text" value={formData.companyName} onChange={e => setFormData({...formData, companyName: e.target.value})} className="w-full bg-[#020b0d]/50 border border-[#27d6ff]/20 text-white p-3 rounded-[4px] focus:border-[#27d6ff] outline-none transition-colors" placeholder="VD: Công ty TNHH Kiến trúc..." required />
                   </div>
                   <div>
                     <label className="block text-sm text-white/70 mb-2 font-medium">Người liên hệ *</label>
-                    <input type="text" value={formData.contactName} onChange={e => setFormData({...formData, contactName: e.target.value})} className="w-full bg-[#021817]/50 border border-[#51d7c4]/20 text-white p-3 rounded-[4px] focus:border-[#51d7c4] outline-none transition-colors" placeholder="Họ và tên" required />
+                    <input type="text" value={formData.contactName} onChange={e => setFormData({...formData, contactName: e.target.value})} className="w-full bg-[#020b0d]/50 border border-[#27d6ff]/20 text-white p-3 rounded-[4px] focus:border-[#27d6ff] outline-none transition-colors" placeholder="Họ và tên" required />
                   </div>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
                     <label className="block text-sm text-white/70 mb-2 font-medium">Số điện thoại *</label>
-                    <input type="tel" value={formData.phone} onChange={e => setFormData({...formData, phone: e.target.value})} className="w-full bg-[#021817]/50 border border-[#51d7c4]/20 text-white p-3 rounded-[4px] focus:border-[#51d7c4] outline-none transition-colors" placeholder="Số điện thoại liên hệ" required />
+                    <input type="tel" value={formData.phone} onChange={e => setFormData({...formData, phone: e.target.value})} className="w-full bg-[#020b0d]/50 border border-[#27d6ff]/20 text-white p-3 rounded-[4px] focus:border-[#27d6ff] outline-none transition-colors" placeholder="Số điện thoại liên hệ" required />
                   </div>
                   <div>
                     <label className="block text-sm text-white/70 mb-2 font-medium">Email *</label>
-                    <input type="email" value={formData.email} onChange={e => setFormData({...formData, email: e.target.value})} className="w-full bg-[#021817]/50 border border-[#51d7c4]/20 text-white p-3 rounded-[4px] focus:border-[#51d7c4] outline-none transition-colors" placeholder="Email liên hệ" required />
+                    <input type="email" value={formData.email} onChange={e => setFormData({...formData, email: e.target.value})} className="w-full bg-[#020b0d]/50 border border-[#27d6ff]/20 text-white p-3 rounded-[4px] focus:border-[#27d6ff] outline-none transition-colors" placeholder="Email liên hệ" required />
                   </div>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
                     <label className="block text-sm text-white/70 mb-2 font-medium">Khu vực hoạt động *</label>
-                    <input type="text" value={formData.location} onChange={e => setFormData({...formData, location: e.target.value})} className="w-full bg-[#021817]/50 border border-[#51d7c4]/20 text-white p-3 rounded-[4px] focus:border-[#51d7c4] outline-none transition-colors" placeholder="VD: Hà Nội, TP.HCM..." required />
+                    <input type="text" value={formData.location} onChange={e => setFormData({...formData, location: e.target.value})} className="w-full bg-[#020b0d]/50 border border-[#27d6ff]/20 text-white p-3 rounded-[4px] focus:border-[#27d6ff] outline-none transition-colors" placeholder="VD: Hà Nội, TP.HCM..." required />
                   </div>
                   <div>
                     <label className="block text-sm text-white/70 mb-2 font-medium">Số năm kinh nghiệm *</label>
-                    <input type="text" value={formData.experience} onChange={e => setFormData({...formData, experience: e.target.value})} className="w-full bg-[#021817]/50 border border-[#51d7c4]/20 text-white p-3 rounded-[4px] focus:border-[#51d7c4] outline-none transition-colors" placeholder="VD: 5 năm" required />
+                    <input type="text" value={formData.experience} onChange={e => setFormData({...formData, experience: e.target.value})} className="w-full bg-[#020b0d]/50 border border-[#27d6ff]/20 text-white p-3 rounded-[4px] focus:border-[#27d6ff] outline-none transition-colors" placeholder="VD: 5 năm" required />
                   </div>
                 </div>
 
                 <div>
                   <label className="block text-sm text-white/70 mb-2 font-medium">Link Hồ sơ năng lực (Portfolio / Fanpage / Website) *</label>
-                  <input type="url" value={formData.portfolioUrl} onChange={e => setFormData({...formData, portfolioUrl: e.target.value})} className="w-full bg-[#021817]/50 border border-[#51d7c4]/20 text-white p-3 rounded-[4px] focus:border-[#51d7c4] outline-none transition-colors" placeholder="https://..." required />
+                  <input type="url" value={formData.portfolioUrl} onChange={e => setFormData({...formData, portfolioUrl: e.target.value})} className="w-full bg-[#020b0d]/50 border border-[#27d6ff]/20 text-white p-3 rounded-[4px] focus:border-[#27d6ff] outline-none transition-colors" placeholder="https://..." required />
                 </div>
 
                 <div>
                   <label className="block text-sm text-white/70 mb-2 font-medium">Lời nhắn bổ sung</label>
-                  <textarea rows={4} value={formData.notes} onChange={e => setFormData({...formData, notes: e.target.value})} className="w-full bg-[#021817]/50 border border-[#51d7c4]/20 text-white p-3 rounded-[4px] focus:border-[#51d7c4] outline-none transition-colors resize-none" placeholder="Chia sẻ thêm về thế mạnh của đơn vị..."></textarea>
+                  <textarea rows={4} value={formData.notes} onChange={e => setFormData({...formData, notes: e.target.value})} className="w-full bg-[#020b0d]/50 border border-[#27d6ff]/20 text-white p-3 rounded-[4px] focus:border-[#27d6ff] outline-none transition-colors resize-none" placeholder="Chia sẻ thêm về thế mạnh của đơn vị..."></textarea>
                 </div>
 
                 <div className="pt-4">
-                  <button type="submit" disabled={isSubmitting} className="w-full bg-[#51d7c4] hover:bg-[#008f82] text-[#010d0c] font-black py-4 px-8 rounded-[2px] transition-colors uppercase tracking-wider text-sm flex items-center justify-center gap-2 shadow-[0_0_15px_rgba(81,215,196,0.2)]">
+                  <button type="submit" disabled={isSubmitting} className="w-full bg-[#27d6ff] hover:bg-[#0a8ba8] text-[#010d0c] font-black py-4 px-8 rounded-[2px] transition-colors uppercase tracking-wider text-sm flex items-center justify-center gap-2 shadow-[0_0_15px_rgba(81,215,196,0.2)]">
                     {isSubmitting ? (
                       <><svg className="animate-spin h-5 w-5 text-current" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle><path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg> Đang gửi...</>
                     ) : 'Gửi yêu cầu hợp tác'}

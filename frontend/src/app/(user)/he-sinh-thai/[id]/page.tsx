@@ -77,48 +77,48 @@ export default function UnitDetailPage({ params }: { params: { id: string } }) {
 
   return (
     <div className="pt-[120px] pb-20 min-h-screen text-white bg-transparent">
-      <div className="container mx-auto px-6 max-w-[1400px]">
+      <div className="container mx-auto px-6 max-w-[1440px]">
         {/* Section 1: Tổng quan đơn vị */}
         <div className="mb-16 pb-12 border-b border-[#ECE7DE] dark:border-white/10">
           <div className="flex flex-col md:flex-row gap-8 items-start">
             <div className="w-full md:w-1/3 aspect-square card dark:bg-[#1c1c1c] rounded-[4px] border border-[#ECE7DE] dark:border-white/10 flex items-center justify-center">
-              <span className="text-4xl text-[#1F1F1F]/20 dark:text-white/20 font-bold uppercase">{unit.name.substring(0, 2)}</span>
+              <span className="text-4xl text-[#1F1F1F]/20 text-white/20 font-bold uppercase">{unit.name.substring(0, 2)}</span>
             </div>
             <div className="w-full md:w-2/3">
               <span className={`inline-block text-[11px] font-bold px-4 py-1.5 rounded-[2px] uppercase tracking-widest mb-4 shadow-sm ${
-                unit.category.includes('Cao cấp') ? 'bg-gradient-to-r from-[#D3AE3E] to-[#E5C98A] text-[#131313] shadow-[0_0_15px_rgba(211,174,62,0.4)] luxury-glow' :
+                unit.category.includes('Cao cấp') ? 'bg-gradient-to-r from-[#27d6ff] to-[#E5C98A] text-[#131313] shadow-[0_0_15px_rgba(211,174,62,0.4)] luxury-glow' :
                 unit.category.includes('Trung cấp') ? 'bg-gradient-to-r from-[#e2e2e2] to-[#b4b5b5] text-[#131313] shadow-[0_0_15px_rgba(226,226,226,0.4)]' :
                 'bg-gradient-to-r from-[#cd7f32] to-[#b87333] text-white shadow-[0_0_15px_rgba(205,127,50,0.4)]'
               }`}>
                 Phân khúc {unit.category}
               </span>
               <h1 className="font-heading text-4xl font-bold mb-4">{unit.name}</h1>
-              <p className="text-[#1F1F1F]/70 dark:text-white/70 text-lg mb-8 leading-relaxed">{unit.description}</p>
+              <p className="text-[#1F1F1F]/70 text-white/70 text-lg mb-8 leading-relaxed">{unit.description}</p>
 
               <div className="grid grid-cols-2 gap-4 mb-8">
                 <div>
-                  <p className="text-[#1F1F1F]/50 dark:text-white/50 text-sm mb-1">Khu vực hoạt động</p>
+                  <p className="text-[#1F1F1F]/50 text-white/50 text-sm mb-1">Khu vực hoạt động</p>
                   <p className="font-semibold">{unit.location}</p>
                 </div>
                 <div>
-                  <p className="text-[#1F1F1F]/50 dark:text-white/50 text-sm mb-1">Kinh nghiệm</p>
+                  <p className="text-[#1F1F1F]/50 text-white/50 text-sm mb-1">Kinh nghiệm</p>
                   <p className="font-semibold">{unit.experience}</p>
                 </div>
                 <div>
-                  <p className="text-[#1F1F1F]/50 dark:text-white/50 text-sm mb-1">Loại công trình thế mạnh</p>
+                  <p className="text-[#1F1F1F]/50 text-white/50 text-sm mb-1">Loại công trình thế mạnh</p>
                   <p className="font-semibold">{unit.strengths}</p>
                 </div>
                 <div>
-                  <p className="text-[#1F1F1F]/50 dark:text-white/50 text-sm mb-1">Phong cách chủ đạo</p>
+                  <p className="text-[#1F1F1F]/50 text-white/50 text-sm mb-1">Phong cách chủ đạo</p>
                   <p className="font-semibold">{unit.style}</p>
                 </div>
               </div>
 
               <div className="flex flex-wrap gap-4">
-                <Link href={`/tu-van?unit=${unit.id}`} className="bg-[#51d7c4] hover:bg-[#008f82] text-[#010d0c] font-black py-3 px-8 rounded-[2px] transition-colors uppercase tracking-wider text-sm shadow-[0_0_15px_rgba(81,215,196,0.2)]">
+                <Link href={`/tu-van?unit=${unit.id}`} className="bg-[#27d6ff] hover:bg-[#0a8ba8] text-[#010d0c] font-black py-3 px-8 rounded-[2px] transition-colors uppercase tracking-wider text-sm shadow-[0_0_15px_rgba(81,215,196,0.2)]">
                   Kết nối với đơn vị này
                 </Link>
-                <button className="bg-transparent border border-[#51d7c4]/30 hover:bg-[#51d7c4] hover:text-[#010d0c] hover:border-[#51d7c4] text-[#51d7c4] font-bold py-3 px-8 rounded-[2px] transition-colors uppercase tracking-wider text-sm">
+                <button className="bg-transparent border border-[#27d6ff]/30 hover:bg-[#27d6ff] hover:text-[#010d0c] hover:border-[#27d6ff] text-[#27d6ff] font-bold py-3 px-8 rounded-[2px] transition-colors uppercase tracking-wider text-sm">
                   Yêu cầu báo giá sơ bộ
                 </button>
               </div>
@@ -129,12 +129,12 @@ export default function UnitDetailPage({ params }: { params: { id: string } }) {
         {/* Section 2: Dịch vụ cung cấp */}
         <div className="mb-16">
           <h2 className="font-heading text-2xl font-bold mb-6 flex items-center gap-3">
-            <span className="w-8 h-1 bg-[#C7A25C] inline-block"></span> Dịch vụ cung cấp
+            <span className="w-8 h-1 bg-[#1bbce0] inline-block"></span> Dịch vụ cung cấp
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
             {unit.services.map((svc: string, i: number) => (
               <div key={i} className="card dark:bg-[#1c1c1c] p-4 rounded-[4px] border border-[#ECE7DE] dark:border-white/5 flex items-center gap-3">
-                <i className="fa fa-check-circle text-[#C7A25C]"></i>
+                <i className="fa fa-check-circle text-[#1bbce0]"></i>
                 <span>{svc}</span>
               </div>
             ))}
@@ -144,7 +144,7 @@ export default function UnitDetailPage({ params }: { params: { id: string } }) {
         {/* Section 3: Sản phẩm tiêu biểu */}
         <div className="mb-16">
           <h2 className="font-heading text-2xl font-bold mb-6 flex items-center gap-3">
-            <span className="w-8 h-1 bg-[#C7A25C] inline-block"></span> Sản phẩm tiêu biểu
+            <span className="w-8 h-1 bg-[#1bbce0] inline-block"></span> Sản phẩm tiêu biểu
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {unit.projects.map((proj: any, i: number) => (
@@ -152,11 +152,11 @@ export default function UnitDetailPage({ params }: { params: { id: string } }) {
                 <div className="h-48 bg-gray-200 dark:bg-white/5 luxury-image-filter"></div>
                 <div className="p-6">
                   <h3 className="font-heading text-xl font-bold mb-4">{proj.name}</h3>
-                  <div className="space-y-2 text-sm text-[#1F1F1F]/70 dark:text-white/70">
-                    <p><strong className="text-[#1F1F1F] dark:text-white">Loại công trình:</strong> {proj.type}</p>
-                    <p><strong className="text-[#1F1F1F] dark:text-white">Diện tích:</strong> {proj.area}</p>
-                    <p><strong className="text-[#1F1F1F] dark:text-white">Phong cách:</strong> {proj.style}</p>
-                    <p><strong className="text-[#1F1F1F] dark:text-white">Thời gian hoàn thiện:</strong> {proj.time}</p>
+                  <div className="space-y-2 text-sm text-[#1F1F1F]/70 text-white/70">
+                    <p><strong className="text-[#1F1F1F] text-white">Loại công trình:</strong> {proj.type}</p>
+                    <p><strong className="text-[#1F1F1F] text-white">Diện tích:</strong> {proj.area}</p>
+                    <p><strong className="text-[#1F1F1F] text-white">Phong cách:</strong> {proj.style}</p>
+                    <p><strong className="text-[#1F1F1F] text-white">Thời gian hoàn thiện:</strong> {proj.time}</p>
                   </div>
                 </div>
               </div>
@@ -167,29 +167,29 @@ export default function UnitDetailPage({ params }: { params: { id: string } }) {
         {/* Section 4 & 5 & 6 */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
           <div className="card dark:bg-[#1c1c1c] p-6 rounded-[4px] border border-[#ECE7DE] dark:border-white/5">
-            <h3 className="font-heading text-lg font-bold mb-4 text-[#C7A25C]">Điểm mạnh</h3>
+            <h3 className="font-heading text-lg font-bold mb-4 text-[#1bbce0]">Điểm mạnh</h3>
             <ul className="space-y-3">
               {unit.advantages.map((adv: string, i: number) => (
                 <li key={i} className="flex items-start gap-2 text-sm">
-                  <i className="fa fa-star mt-1 text-[#1F1F1F]/30 dark:text-white/30"></i> {adv}
+                  <i className="fa fa-star mt-1 text-[#1F1F1F]/30 text-white/30"></i> {adv}
                 </li>
               ))}
             </ul>
           </div>
           <div className="card dark:bg-[#1c1c1c] p-6 rounded-[4px] border border-[#ECE7DE] dark:border-white/5">
-            <h3 className="font-heading text-lg font-bold mb-4 text-[#C7A25C]">Mức ngân sách</h3>
+            <h3 className="font-heading text-lg font-bold mb-4 text-[#1bbce0]">Mức ngân sách</h3>
             <div className="space-y-3 text-sm">
               <p><strong>Phù hợp với ngân sách:</strong><br />{unit.budget.range}</p>
               <p><strong>Dự án tối thiểu nhận triển khai:</strong><br />{unit.budget.min}</p>
-              <p className="mt-4 pt-4 border-t border-[#ECE7DE] dark:border-white/10 text-[#1F1F1F]/50 dark:text-white/50 italic">* Điều kiện áp dụng chiết khấu 5% khi kết nối qua hệ sinh thái.</p>
+              <p className="mt-4 pt-4 border-t border-[#ECE7DE] dark:border-white/10 text-[#1F1F1F]/50 text-white/50 italic">* Điều kiện áp dụng chiết khấu 5% khi kết nối qua hệ sinh thái.</p>
             </div>
           </div>
           <div className="card dark:bg-[#1c1c1c] p-6 rounded-[4px] border border-[#ECE7DE] dark:border-white/5">
-            <h3 className="font-heading text-lg font-bold mb-4 text-[#C7A25C]">Quy trình</h3>
+            <h3 className="font-heading text-lg font-bold mb-4 text-[#1bbce0]">Quy trình</h3>
             <ul className="space-y-2">
               {unit.workflow.map((step: string, i: number) => (
                 <li key={i} className="flex items-center gap-3 text-sm">
-                  <span className="w-5 h-5 rounded-full bg-[#1F1F1F]/10 dark:bg-white/10 flex items-center justify-center text-xs text-[#1F1F1F]/50 dark:text-white/50">{i + 1}</span> {step}
+                  <span className="w-5 h-5 rounded-full bg-[#1F1F1F]/10 dark:bg-white/10 flex items-center justify-center text-xs text-[#1F1F1F]/50 text-white/50">{i + 1}</span> {step}
                 </li>
               ))}
             </ul>
@@ -197,14 +197,14 @@ export default function UnitDetailPage({ params }: { params: { id: string } }) {
         </div>
 
         {/* Section 7: CTA */}
-        <div className="bg-[#51d7c4]/5 p-8 md:p-12 rounded-[4px] border border-[#51d7c4]/30 text-center">
+        <div className="bg-[#27d6ff]/5 p-8 md:p-12 rounded-[4px] border border-[#27d6ff]/30 text-center">
           <h2 className="font-heading text-2xl md:text-3xl font-bold mb-4">Bạn muốn được tư vấn xem đơn vị này có phù hợp với công trình của mình không?</h2>
           <p className="text-white/70 mb-8">Chúng tôi sẽ giúp bạn đánh giá và so sánh khách quan hoàn toàn miễn phí.</p>
           <div className="flex flex-wrap justify-center gap-4">
-            <Link href={`/tu-van?unit=${unit.id}`} className="bg-[#51d7c4] hover:bg-[#008f82] text-[#010d0c] font-black py-3 px-8 rounded-[2px] transition-colors uppercase tracking-wider text-sm shadow-[0_0_15px_rgba(81,215,196,0.2)]">
+            <Link href={`/tu-van?unit=${unit.id}`} className="bg-[#27d6ff] hover:bg-[#0a8ba8] text-[#010d0c] font-black py-3 px-8 rounded-[2px] transition-colors uppercase tracking-wider text-sm shadow-[0_0_15px_rgba(81,215,196,0.2)]">
               Nhận tư vấn đơn vị này
             </Link>
-            <Link href="/he-sinh-thai" className="bg-transparent border border-[#51d7c4]/30 hover:bg-[#51d7c4] hover:text-[#010d0c] hover:border-[#51d7c4] text-[#51d7c4] font-bold py-3 px-8 rounded-[2px] transition-colors uppercase tracking-wider text-sm">
+            <Link href="/he-sinh-thai" className="bg-transparent border border-[#27d6ff]/30 hover:bg-[#27d6ff] hover:text-[#010d0c] hover:border-[#27d6ff] text-[#27d6ff] font-bold py-3 px-8 rounded-[2px] transition-colors uppercase tracking-wider text-sm">
               So sánh với đơn vị khác
             </Link>
           </div>

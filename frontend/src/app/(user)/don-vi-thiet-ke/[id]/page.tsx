@@ -97,84 +97,84 @@ export default function UnitDetailPage({ params }: { params: Promise<{ id: strin
       {/* Local Background wrapper to fix flatness without touching global CSS */}
       <div className="absolute top-0 left-0 right-0 h-[600px] bg-[radial-gradient(circle_at_top_right,rgba(81,215,196,0.08),transparent_50%)] pointer-events-none z-0"></div>
       
-      <div className="container mx-auto px-6 max-w-[1400px] relative z-10">
+      <div className="container mx-auto px-6 max-w-[1440px] relative z-10">
         {/* Section 1: Hero Section - Premium Visual Identity */}
         <div className="mb-16 pb-16 relative">
           
           <div className="flex flex-col md:flex-row gap-12 items-center md:items-start relative z-20">
             {/* Logo Glass Card */}
-            <div className="w-full md:w-1/3 max-w-[320px] aspect-square rounded-2xl border border-[#C7A25C]/20 flex items-center justify-center p-10 bg-white/60 dark:bg-[#1A1C21]/60 backdrop-blur-xl shadow-[0_20px_60px_rgba(0,0,0,0.05)] dark:shadow-[0_20px_60px_rgba(0,0,0,0.4)] group overflow-hidden relative">
+            <div className="w-full md:w-1/3 max-w-[320px] aspect-square rounded-2xl border border-[#1bbce0]/20 flex items-center justify-center p-10 bg-white/60 dark:bg-[#1A1C21]/60 backdrop-blur-xl shadow-[0_20px_60px_rgba(0,0,0,0.05)] dark:shadow-[0_20px_60px_rgba(0,0,0,0.4)] group overflow-hidden relative">
               {/* Subtle inner glow */}
-              <div className="absolute inset-0 bg-gradient-to-br from-[#C7A25C]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div className="absolute inset-0 bg-gradient-to-br from-[#1bbce0]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               {unit.avatarUrl ? (
                 <img src={unit.avatarUrl} alt={unit.name} className="w-full h-full object-contain drop-shadow-[0_5px_15px_rgba(0,0,0,0.15)] dark:drop-shadow-[0_0_25px_rgba(255,255,255,0.5)] group-hover:scale-105 transition-transform duration-700 relative z-10" />
               ) : (
-                <span className="text-7xl font-heading font-bold text-[#C7A25C] tracking-widest relative z-10">{unit.name.substring(0, 2).toUpperCase()}</span>
+                <span className="text-7xl font-heading font-bold text-[#1bbce0] tracking-widest relative z-10">{unit.name.substring(0, 2).toUpperCase()}</span>
               )}
             </div>
 
             {/* Brand Content */}
             <div className="w-full md:w-2/3 pt-4 text-center md:text-left">
               <span className={`inline-block text-[11px] font-bold px-4 py-1.5 rounded-[2px] uppercase tracking-widest mb-6 shadow-sm ${
-                unit.category.includes('Cao cấp') ? 'bg-gradient-to-r from-[#D3AE3E] to-[#E5C98A] text-[#131313] shadow-[0_0_15px_rgba(211,174,62,0.4)] luxury-glow' :
+                unit.category.includes('Cao cấp') ? 'bg-gradient-to-r from-[#27d6ff] to-[#E5C98A] text-[#131313] shadow-[0_0_15px_rgba(211,174,62,0.4)] luxury-glow' :
                 unit.category.includes('Trung cấp') ? 'bg-gradient-to-r from-[#e2e2e2] to-[#b4b5b5] text-[#131313] shadow-[0_0_15px_rgba(226,226,226,0.4)]' :
                 'bg-gradient-to-r from-[#cd7f32] to-[#b87333] text-white shadow-[0_0_15px_rgba(205,127,50,0.4)]'
               }`}>
                 Phân khúc {unit.category}
               </span>
-              <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-[#1F1F1F] dark:text-white leading-tight tracking-tight drop-shadow-sm">{unit.name}</h1>
+              <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-[#1F1F1F] text-white leading-tight tracking-tight drop-shadow-sm">{unit.name}</h1>
               
               {/* Premium Stats - Replacing the basic text grid */}
               <div className="flex flex-wrap justify-center md:justify-start gap-3 mb-8">
                 <div className="bg-white/50 dark:bg-[#1A1C21]/50 backdrop-blur-sm border border-[#ECE7DE] dark:border-white/10 px-5 py-3 rounded-[4px] flex items-center gap-3 shadow-sm">
-                  <div className="w-8 h-8 rounded-full bg-[#C7A25C]/10 flex items-center justify-center text-[#C7A25C]"><i className="fa fa-star text-sm"></i></div>
+                  <div className="w-8 h-8 rounded-full bg-[#1bbce0]/10 flex items-center justify-center text-[#1bbce0]"><i className="fa fa-star text-sm"></i></div>
                   <div>
-                    <div className="text-sm font-bold text-[#1F1F1F] dark:text-white leading-none">Chưa có đánh giá</div>
-                    <div className="text-[#1F1F1F]/50 dark:text-white/50 text-[10px] uppercase tracking-widest mt-1">Đánh giá</div>
+                    <div className="text-sm font-bold text-[#1F1F1F] text-white leading-none">Chưa có đánh giá</div>
+                    <div className="text-[#1F1F1F]/50 text-white/50 text-[10px] uppercase tracking-widest mt-1">Đánh giá</div>
                   </div>
                 </div>
                 <div className="bg-white/50 dark:bg-[#1A1C21]/50 backdrop-blur-sm border border-[#ECE7DE] dark:border-white/10 px-5 py-3 rounded-[4px] flex items-center gap-3 shadow-sm">
-                  <div className="w-8 h-8 rounded-full bg-[#C7A25C]/10 flex items-center justify-center text-[#C7A25C]"><i className="fa fa-briefcase text-sm"></i></div>
+                  <div className="w-8 h-8 rounded-full bg-[#1bbce0]/10 flex items-center justify-center text-[#1bbce0]"><i className="fa fa-briefcase text-sm"></i></div>
                   <div>
-                    <div className="text-sm font-bold text-[#1F1F1F] dark:text-white leading-none">{unit.experience}</div>
-                    <div className="text-[#1F1F1F]/50 dark:text-white/50 text-[10px] uppercase tracking-widest mt-1">Kinh nghiệm</div>
+                    <div className="text-sm font-bold text-[#1F1F1F] text-white leading-none">{unit.experience}</div>
+                    <div className="text-[#1F1F1F]/50 text-white/50 text-[10px] uppercase tracking-widest mt-1">Kinh nghiệm</div>
                   </div>
                 </div>
                 <div className="bg-white/50 dark:bg-[#1A1C21]/50 backdrop-blur-sm border border-[#ECE7DE] dark:border-white/10 px-5 py-3 rounded-[4px] flex items-center gap-3 shadow-sm">
-                  <div className="w-8 h-8 rounded-full bg-[#C7A25C]/10 flex items-center justify-center text-[#C7A25C]"><i className="fa fa-map-marker-alt text-sm"></i></div>
+                  <div className="w-8 h-8 rounded-full bg-[#1bbce0]/10 flex items-center justify-center text-[#1bbce0]"><i className="fa fa-map-marker-alt text-sm"></i></div>
                   <div>
-                    <div className="text-sm font-bold text-[#1F1F1F] dark:text-white leading-none">{unit.location}</div>
-                    <div className="text-[#1F1F1F]/50 dark:text-white/50 text-[10px] uppercase tracking-widest mt-1">Khu vực</div>
+                    <div className="text-sm font-bold text-[#1F1F1F] text-white leading-none">{unit.location}</div>
+                    <div className="text-[#1F1F1F]/50 text-white/50 text-[10px] uppercase tracking-widest mt-1">Khu vực</div>
                   </div>
                 </div>
               </div>
 
-              <div className="text-[#1F1F1F]/70 dark:text-white/70 text-lg mb-10 leading-relaxed max-w-2xl font-medium prose dark:prose-invert" dangerouslySetInnerHTML={{ __html: unit.description }} />
+              <div className="text-[#1F1F1F]/70 text-white/70 text-lg mb-10 leading-relaxed max-w-2xl font-medium prose dark:prose-invert" dangerouslySetInnerHTML={{ __html: unit.description }} />
 
               {/* CTA Hierarchy */}
               <div className="flex flex-wrap justify-center md:justify-start items-center gap-4">
                 {/* Primary Button */}
-                <Link href={`/tu-van?unit=${unit.id}`} className="bg-gradient-to-r from-[#C7A25C] to-[#E5C98A] hover:from-[#b5924f] hover:to-[#d4ba7b] text-white font-bold py-4 px-10 rounded-[2px] transition-all uppercase tracking-wider text-sm flex items-center gap-3 shadow-[0_10px_20px_rgba(199,162,92,0.25)] hover:shadow-[0_10px_25px_rgba(199,162,92,0.4)] hover:-translate-y-1">
+                <Link href={`/tu-van?unit=${unit.id}`} className="bg-gradient-to-r from-[#1bbce0] to-[#E5C98A] hover:from-[#b5924f] hover:to-[#d4ba7b] text-white font-bold py-4 px-10 rounded-[2px] transition-all uppercase tracking-wider text-sm flex items-center gap-3 shadow-[0_10px_20px_rgba(199,162,92,0.25)] hover:shadow-[0_10px_25px_rgba(199,162,92,0.4)] hover:-translate-y-1">
                   Kết nối với đơn vị này <i className="fa fa-arrow-right"></i>
                 </Link>
                 
                 {/* Secondary Button */}
-                <button className="bg-transparent border border-[#C7A25C] text-[#C7A25C] hover:bg-[#C7A25C] hover:text-white font-bold py-4 px-8 rounded-[2px] transition-all uppercase tracking-wider text-sm shadow-sm hover:shadow-md hover:-translate-y-1">
+                <button className="bg-transparent border border-[#1bbce0] text-[#1bbce0] hover:bg-[#1bbce0] hover:text-white font-bold py-4 px-8 rounded-[2px] transition-all uppercase tracking-wider text-sm shadow-sm hover:shadow-md hover:-translate-y-1">
                   Yêu cầu báo giá
                 </button>
                 
                 {/* Tertiary Links */}
                 <div className="flex gap-4 ml-2">
                   {unit.profile && (
-                    <a href={unit.profile.startsWith('http') ? unit.profile : `https://${unit.profile}`} target="_blank" rel="noreferrer" className="text-[#1F1F1F]/60 dark:text-white/60 hover:text-[#C7A25C] dark:hover:text-[#C7A25C] font-semibold transition-colors flex items-center gap-2 text-sm uppercase tracking-wide group">
+                    <a href={unit.profile.startsWith('http') ? unit.profile : `https://${unit.profile}`} target="_blank" rel="noreferrer" className="text-[#1F1F1F]/60 text-white/60 hover:text-[#1bbce0] dark:hover:text-[#1bbce0] font-semibold transition-colors flex items-center gap-2 text-sm uppercase tracking-wide group">
                       <i className="fa fa-globe group-hover:rotate-12 transition-transform"></i>
-                      <span className="border-b border-transparent group-hover:border-[#C7A25C]">Website</span>
+                      <span className="border-b border-transparent group-hover:border-[#1bbce0]">Website</span>
                     </a>
                   )}
                   {unit.fanpage && (
-                    <a href={unit.fanpage} target="_blank" rel="noreferrer" className="text-[#1F1F1F]/60 dark:text-white/60 hover:text-[#C7A25C] dark:hover:text-[#C7A25C] font-semibold transition-colors flex items-center gap-2 text-sm uppercase tracking-wide group">
+                    <a href={unit.fanpage} target="_blank" rel="noreferrer" className="text-[#1F1F1F]/60 text-white/60 hover:text-[#1bbce0] dark:hover:text-[#1bbce0] font-semibold transition-colors flex items-center gap-2 text-sm uppercase tracking-wide group">
                       <i className="fa fa-facebook-f group-hover:rotate-12 transition-transform"></i>
-                      <span className="border-b border-transparent group-hover:border-[#C7A25C]">Fanpage</span>
+                      <span className="border-b border-transparent group-hover:border-[#1bbce0]">Fanpage</span>
                     </a>
                   )}
                 </div>
@@ -186,12 +186,12 @@ export default function UnitDetailPage({ params }: { params: Promise<{ id: strin
         {/* Section 2: Dịch vụ cung cấp */}
         <div className="mb-16">
           <h2 className="font-heading text-2xl font-bold mb-6 flex items-center gap-3">
-            <span className="w-8 h-1 bg-[#C7A25C] inline-block"></span> Dịch vụ cung cấp
+            <span className="w-8 h-1 bg-[#1bbce0] inline-block"></span> Dịch vụ cung cấp
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
             {unit.services.map((svc: string, i: number) => (
               <div key={i} className="card dark:bg-[#1c1c1c] p-4 rounded-[4px] border border-[#ECE7DE] dark:border-white/5 flex items-center gap-3">
-                <i className="fa fa-check-circle text-[#C7A25C]"></i>
+                <i className="fa fa-check-circle text-[#1bbce0]"></i>
                 <span>{svc}</span>
               </div>
             ))}
@@ -201,7 +201,7 @@ export default function UnitDetailPage({ params }: { params: Promise<{ id: strin
         {/* Section 3: Sản phẩm tiêu biểu */}
         <div className="mb-16">
           <h2 className="font-heading text-2xl font-bold mb-6 flex items-center gap-3">
-            <span className="w-8 h-1 bg-[#C7A25C] inline-block"></span> Sản phẩm tiêu biểu
+            <span className="w-8 h-1 bg-[#1bbce0] inline-block"></span> Sản phẩm tiêu biểu
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {unit.projects.length > 0 ? unit.projects.map((proj: any, i: number) => (
@@ -211,14 +211,14 @@ export default function UnitDetailPage({ params }: { params: Promise<{ id: strin
                 </div>
                 <div className="p-6">
                   <h3 className="font-heading text-xl font-bold mb-4">{proj.name}</h3>
-                  <div className="space-y-2 text-sm text-[#1F1F1F]/70 dark:text-white/70">
-                    <p><strong className="text-[#1F1F1F] dark:text-white">Loại công trình:</strong> {proj.type}</p>
-                    <p><strong className="text-[#1F1F1F] dark:text-white">Phong cách:</strong> {proj.style}</p>
+                  <div className="space-y-2 text-sm text-[#1F1F1F]/70 text-white/70">
+                    <p><strong className="text-[#1F1F1F] text-white">Loại công trình:</strong> {proj.type}</p>
+                    <p><strong className="text-[#1F1F1F] text-white">Phong cách:</strong> {proj.style}</p>
                   </div>
                 </div>
               </div>
             )) : (
-              <div className="col-span-2 text-center text-[#1F1F1F]/50 dark:text-white/50 py-12 border border-dashed border-[#ECE7DE] dark:border-white/10 rounded-[4px]">
+              <div className="col-span-2 text-center text-[#1F1F1F]/50 text-white/50 py-12 border border-dashed border-[#ECE7DE] dark:border-white/10 rounded-[4px]">
                 Sản phẩm chưa được cấu hình
               </div>
             )}
@@ -228,31 +228,31 @@ export default function UnitDetailPage({ params }: { params: Promise<{ id: strin
         {/* Section 4 & 5 & 6 */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
           <div className="card dark:bg-[#1c1c1c] p-6 rounded-[4px] border border-[#ECE7DE] dark:border-white/5">
-            <h3 className="font-heading text-lg font-bold mb-4 text-[#C7A25C]">Điểm mạnh</h3>
+            <h3 className="font-heading text-lg font-bold mb-4 text-[#1bbce0]">Điểm mạnh</h3>
             <ul className="space-y-3">
               {unit.advantages.length > 0 ? unit.advantages.map((adv: string, i: number) => (
                 <li key={i} className="flex items-start gap-2 text-sm">
-                  <i className="fa fa-star mt-1 text-[#1F1F1F]/30 dark:text-white/30"></i> {adv}
+                  <i className="fa fa-star mt-1 text-[#1F1F1F]/30 text-white/30"></i> {adv}
                 </li>
               )) : (
-                <li className="text-sm text-[#1F1F1F]/50 dark:text-white/50 italic">Không có thông tin</li>
+                <li className="text-sm text-[#1F1F1F]/50 text-white/50 italic">Không có thông tin</li>
               )}
             </ul>
           </div>
           <div className="card dark:bg-[#1c1c1c] p-6 rounded-[4px] border border-[#ECE7DE] dark:border-white/5">
-            <h3 className="font-heading text-lg font-bold mb-4 text-[#C7A25C]">Mức ngân sách</h3>
+            <h3 className="font-heading text-lg font-bold mb-4 text-[#1bbce0]">Mức ngân sách</h3>
             <div className="space-y-3 text-sm">
               <p><strong>Phù hợp với ngân sách:</strong><br />{unit.budget.range}</p>
               <p><strong>Dự án tối thiểu nhận triển khai:</strong><br />{unit.budget.min}</p>
-              <p className="mt-4 pt-4 border-t border-[#ECE7DE] dark:border-white/10 text-[#1F1F1F]/50 dark:text-white/50 italic">* Điều kiện áp dụng chiết khấu 5% khi kết nối qua hệ sinh thái.</p>
+              <p className="mt-4 pt-4 border-t border-[#ECE7DE] dark:border-white/10 text-[#1F1F1F]/50 text-white/50 italic">* Điều kiện áp dụng chiết khấu 5% khi kết nối qua hệ sinh thái.</p>
             </div>
           </div>
           <div className="card dark:bg-[#1c1c1c] p-6 rounded-[4px] border border-[#ECE7DE] dark:border-white/5">
-            <h3 className="font-heading text-lg font-bold mb-4 text-[#C7A25C]">Quy trình</h3>
+            <h3 className="font-heading text-lg font-bold mb-4 text-[#1bbce0]">Quy trình</h3>
             <ul className="space-y-2">
               {unit.workflow.map((step: string, i: number) => (
                 <li key={i} className="flex items-center gap-3 text-sm">
-                  <span className="w-5 h-5 rounded-full bg-[#1F1F1F]/10 dark:bg-white/10 flex items-center justify-center text-xs text-[#1F1F1F]/50 dark:text-white/50">{i + 1}</span> {step}
+                  <span className="w-5 h-5 rounded-full bg-[#1F1F1F]/10 dark:bg-white/10 flex items-center justify-center text-xs text-[#1F1F1F]/50 text-white/50">{i + 1}</span> {step}
                 </li>
               ))}
             </ul>
@@ -260,14 +260,14 @@ export default function UnitDetailPage({ params }: { params: Promise<{ id: strin
         </div>
 
         {/* Section 7: CTA */}
-        <div className="bg-gradient-to-r from-[#C7A25C]/10 to-transparent p-8 md:p-12 rounded-[4px] border border-[#C7A25C]/30 text-center">
+        <div className="bg-gradient-to-r from-[#1bbce0]/10 to-transparent p-8 md:p-12 rounded-[4px] border border-[#1bbce0]/30 text-center">
           <h2 className="font-heading text-2xl md:text-3xl font-bold mb-4">Bạn muốn được tư vấn xem đơn vị này có phù hợp với công trình của mình không?</h2>
-          <p className="text-[#1F1F1F]/70 dark:text-white/70 mb-8">Chúng tôi sẽ giúp bạn đánh giá và so sánh khách quan hoàn toàn miễn phí.</p>
+          <p className="text-[#1F1F1F]/70 text-white/70 mb-8">Chúng tôi sẽ giúp bạn đánh giá và so sánh khách quan hoàn toàn miễn phí.</p>
           <div className="flex flex-wrap justify-center gap-4">
-            <Link href={`/tu-van?unit=${unit.id}`} className="bg-gradient-to-r from-[#C7A25C] to-[#E5C98A] hover:from-[#b5924f] hover:to-[#d4ba7b] text-white font-bold py-4 px-10 rounded-[2px] transition-all uppercase tracking-wider text-sm flex items-center gap-3 shadow-[0_10px_20px_rgba(199,162,92,0.25)] hover:shadow-[0_10px_25px_rgba(199,162,92,0.4)] hover:-translate-y-1">
+            <Link href={`/tu-van?unit=${unit.id}`} className="bg-gradient-to-r from-[#1bbce0] to-[#E5C98A] hover:from-[#b5924f] hover:to-[#d4ba7b] text-white font-bold py-4 px-10 rounded-[2px] transition-all uppercase tracking-wider text-sm flex items-center gap-3 shadow-[0_10px_20px_rgba(199,162,92,0.25)] hover:shadow-[0_10px_25px_rgba(199,162,92,0.4)] hover:-translate-y-1">
               Nhận tư vấn đơn vị này <i className="fa fa-arrow-right"></i>
             </Link>
-            <Link href="/don-vi-thiet-ke" className="bg-transparent border border-[#ECE7DE] dark:border-white/30 hover:border-[#1F1F1F] dark:hover:border-white text-[#1F1F1F] dark:text-white font-bold py-3 px-8 rounded-[2px] transition-colors uppercase tracking-wider text-sm">
+            <Link href="/don-vi-thiet-ke" className="bg-transparent border border-[#ECE7DE] dark:border-white/30 hover:border-[#1F1F1F] dark:hover:border-white text-[#1F1F1F] text-white font-bold py-3 px-8 rounded-[2px] transition-colors uppercase tracking-wider text-sm">
               So sánh với đơn vị khác
             </Link>
           </div>

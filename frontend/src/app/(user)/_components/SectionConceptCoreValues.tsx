@@ -1,99 +1,131 @@
 import React from 'react';
+import Link from 'next/link';
 
 const values = [
   {
-    title: "TUYỂN CHỌN TINH HOA",
-    desc: "Hệ sinh thái sản phẩm cao cấp từ những thương hiệu hàng đầu thế giới.",
-    icon: (
-      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="text-[#51d7c4]"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-    )
+    num: "01",
+    title: "TƯ VẤN CHUYÊN SÂU",
+    desc: "Giải pháp tối ưu theo nhu cầu & ngân sách",
+    img: "/images/main/villa1.jpg",
+    type: "tall"
   },
   {
-    title: "THIẾT KẾ CÁ NHÂN HÓA",
-    desc: "Giải pháp thiết kế riêng biệt phù hợp với phong cách và nhu cầu của bạn.",
-    icon: (
-      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="text-[#51d7c4]"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
-    )
+    num: "02",
+    title: "SẢN PHẨM CHÍNH HÃNG",
+    desc: "Đa dạng thương hiệu quốc tế uy tín",
+    img: "/images/main/pen1.jpg",
+    type: "wide"
   },
   {
-    title: "CÔNG NGHỆ THÔNG MINH",
-    desc: "Ứng dụng công nghệ tiên tiến nâng tầm tiện nghi và trải nghiệm sống.",
-    icon: (
-      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="text-[#51d7c4]"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-    )
+    num: "03",
+    title: "THIẾT KẾ TINH TẾ",
+    desc: "Thẩm mỹ cao - Công năng hoàn hảo",
+    img: "/images/main/bed1.jpg",
+    type: "wide"
   },
   {
-    title: "TRẢI NGHIỆM TRỌN GÓI",
-    desc: "Tư vấn, thiết kế, cung cấp đến thi công và hậu mãi chuyên nghiệp.",
-    icon: (
-      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="text-[#51d7c4]"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-    )
+    num: "04",
+    title: "THI CÔNG CHUYÊN NGHIỆP",
+    desc: "Đúng tiến độ - Đúng chất lượng - Đúng cam kết",
+    img: "/images/main/office.jpg",
+    type: "tall"
   }
 ];
 
 export default function SectionConceptCoreValues() {
   return (
-    <section className="relative w-full py-16 bg-transparent z-10">
-      <div className="px-4 md:px-8 max-w-[1440px] mx-auto relative z-10">
+    <section className="relative z-10 w-full py-16 bg-transparent">
+      <div className="px-6 lg:px-24 max-w-[1920px] mx-auto relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
         
-        {/* Sci-Fi Centered Label (Restored System Theme) */}
-        <div className="mb-12 flex flex-col items-center justify-center relative w-full">
-          <div className="absolute top-1/2 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-[#51d7c4]/20 to-transparent -z-10"></div>
-          <div className="absolute top-1/2 left-0 w-[200px] h-[1px] bg-gradient-to-r from-transparent via-[#51d7c4] to-transparent -z-10 animate-[shimmer_3s_infinite_alternate]"></div>
+        {/* Left Column: Title */}
+        <div className="col-span-1 lg:col-span-3 flex flex-col justify-center relative">
+          {/* Decorative side line */}
+          <div className="absolute left-0 top-2 bottom-8 w-[3px] bg-gradient-to-b from-[#27d6ff] to-transparent rounded-full opacity-70 -ml-6 hidden lg:block"></div>
           
-          <div className="relative inline-flex items-center justify-center p-[1px] rounded-sm overflow-hidden group">
-            <div className="absolute inset-0 bg-[conic-gradient(from_90deg_at_50%_50%,transparent_0%,#51d7c4_80%,transparent_100%)] animate-[spin_10s_linear_infinite]"></div>
+          <h2 className="text-[32px] md:text-[42px] lg:text-[48px] font-bold tracking-widest uppercase mb-6 font-serif leading-[1.15] drop-shadow-[0_0_15px_rgba(39,214,255,0.3)]">
+            <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#27d6ff] to-[#0a8ba8] animate-pulse">GIÁ TRỊ</span><br />
+            <span className="text-white">VƯỢT TRỘI</span>
+          </h2>
+          <p className="text-gray-300 text-[15px] md:text-[16px] mb-8 font-medium opacity-90 leading-relaxed pr-4">
+            Lợi ích cốt lõi khi đồng hành cùng ARCViet
+          </p>
+          <Link href="#gia-tri" className="group flex items-center gap-3 text-[#27d6ff] font-bold text-[13px] tracking-widest uppercase hover:text-white transition-all w-max bg-[#27d6ff]/5 px-6 py-2.5 rounded-sm border border-[#27d6ff]/20 hover:border-[#27d6ff] hover:shadow-[0_0_15px_rgba(39,214,255,0.3)]">
+            KHÁM PHÁ THÊM
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="group-hover:translate-x-1.5 transition-transform"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </Link>
+        </div>
+
+        {/* Right Column: Cards Grid */}
+        <div className="col-span-1 lg:col-span-9 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 auto-rows-fr lg:auto-rows-[192px] h-auto">
+          
+          {/* Card 01 - Tall */}
+          <div className="col-span-1 lg:col-span-1 lg:row-span-2 min-h-[250px] lg:min-h-0 relative rounded-2xl overflow-hidden group border border-[#27d6ff]/20 hover:border-[#27d6ff]/60 transition-all shadow-lg p-6 flex flex-col">
+            <div className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" style={{ backgroundImage: `url(${values[0].img})` }} />
+            <div className="absolute inset-0 bg-[#020b0d]/70 transition-opacity duration-700" />
             
-            <div className="relative px-8 py-3 bg-[#021817]/90 backdrop-blur-md flex flex-col items-center justify-center border border-[#51d7c4]/30 shadow-[0_5px_20px_rgba(81,215,196,0.1)]">
-              <h2 className="text-[#51d7c4] text-[18px] md:text-[22px] font-bold tracking-[0.2em] uppercase mb-1 drop-shadow-[0_0_8px_rgba(81,215,196,0.4)]">
-                GIÁ TRỊ VƯỢT TRỘI DÀNH CHO BẠN
-              </h2>
-              <div className="text-[#51d7c4]/80 text-[11px] font-bold uppercase tracking-widest">
-                Lợi ích cốt lõi
+            <div className="relative z-10 flex flex-col h-full">
+              <span className="text-[#27d6ff] font-bold text-[20px] mb-2 font-serif">{values[0].num}</span>
+              <h3 className="text-white font-bold text-[16px] tracking-wider uppercase mb-2 font-serif leading-tight">{values[0].title}</h3>
+              <p className="text-gray-300 text-[12px] leading-relaxed">{values[0].desc}</p>
+              
+              <div className="mt-auto w-10 h-10 rounded-md border border-[#27d6ff]/40 flex items-center justify-center bg-[#020b0d]/60 backdrop-blur-md">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#27d6ff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
               </div>
-              <div className="absolute top-0 left-0 w-2 h-2 border-t-2 border-l-2 border-[#51d7c4]"></div>
-              <div className="absolute top-0 right-0 w-2 h-2 border-t-2 border-r-2 border-[#51d7c4]"></div>
-              <div className="absolute bottom-0 left-0 w-2 h-2 border-b-2 border-l-2 border-[#51d7c4]"></div>
-              <div className="absolute bottom-0 right-0 w-2 h-2 border-b-2 border-r-2 border-[#51d7c4]"></div>
             </div>
           </div>
-        </div>
-        
-        {/* Full width content (Restored System Theme Wrapper) */}
-        <div className="w-full relative bg-[#021817]/60 backdrop-blur-xl border-y-2 border-x border-[#51d7c4]/20 rounded-sm shadow-[0_15px_50px_rgba(81,215,196,0.1)] p-5 md:p-10 overflow-hidden">
-          <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#51d7c4]/30 to-transparent"></div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
-            {values.map((val, idx) => (
-              <div 
-                key={idx} 
-                className="group relative bg-white/95 dark:bg-white/10 backdrop-blur-md border border-[#51d7c4]/20 rounded-xl p-8 hover:shadow-[0_15px_40px_rgba(81,215,196,0.2)] hover:border-[#51d7c4]/50 hover:-translate-y-2 transition-all duration-500 overflow-hidden flex flex-col items-center text-center"
-              >
-                {/* Brighter Cards (Premium White) while keeping System Theme Sync */}
-                {/* Subtle hover accent line */}
-                <div className="absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-transparent via-[#51d7c4] to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 scale-x-0 group-hover:scale-x-100"></div>
-
-                {/* Brighter Icon Box */}
-                <div className="w-20 h-20 mb-6 rounded-full border border-[#51d7c4]/20 bg-[#f0fcf9] dark:bg-[#021817] flex items-center justify-center relative z-10 group-hover:scale-110 transition-transform duration-500 shadow-sm">
-                  <div className="absolute inset-0 border border-[#51d7c4]/40 border-dashed rounded-full opacity-0 group-hover:opacity-100 animate-[spin_6s_linear_infinite_reverse] transition-opacity duration-500"></div>
-                  <div className="absolute inset-[3px] border border-[#51d7c4]/10 rounded-full group-hover:border-[#51d7c4]/30 transition-colors duration-500"></div>
-                  <div className="relative z-10 text-[#51d7c4] drop-shadow-[0_0_8px_rgba(81,215,196,0.2)] group-hover:drop-shadow-[0_0_12px_rgba(81,215,196,0.5)] transition-all duration-300">
-                    {val.icon}
-                  </div>
-                </div>
-                
-                {/* Dark text for contrast on light background */}
-                <h4 className="text-[#032624] dark:text-[#51d7c4] font-bold text-[15px] md:text-[16px] uppercase tracking-widest leading-tight mb-3 group-hover:text-[#014f48] dark:group-hover:text-white transition-colors duration-300">
-                  {val.title}
-                </h4>
-                <p className="text-gray-600 dark:text-white/80 text-[14px] leading-relaxed font-medium">
-                  {val.desc}
-                </p>
+          {/* Card 02 - Wide */}
+          <div className="col-span-1 md:col-span-1 lg:col-span-2 lg:row-span-1 min-h-[200px] lg:min-h-0 relative rounded-2xl overflow-hidden group border border-[#27d6ff]/20 hover:border-[#27d6ff]/60 transition-all shadow-lg p-6 flex flex-col justify-center">
+            <div className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" style={{ backgroundImage: `url(${values[1].img})` }} />
+            <div className="absolute inset-0 bg-[#020b0d]/70 transition-opacity duration-700" />
+            
+            <div className="relative z-10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+              <div>
+                <span className="text-[#27d6ff] font-bold text-[20px] mb-2 font-serif block">{values[1].num}</span>
+                <h3 className="text-white font-bold text-[16px] tracking-wider uppercase mb-2 font-serif leading-tight">{values[1].title}</h3>
+                <p className="text-gray-300 text-[12px] leading-relaxed">{values[1].desc}</p>
               </div>
-            ))}
+              <div className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center shrink-0 group-hover:border-[#27d6ff] transition-all">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-white group-hover:text-[#27d6ff]"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </div>
+            </div>
+          </div>
+          
+          {/* Card 03 - Wide */}
+          <div className="col-span-1 md:col-span-1 lg:col-span-2 lg:row-span-1 min-h-[200px] lg:min-h-0 relative rounded-2xl overflow-hidden group border border-[#27d6ff]/20 hover:border-[#27d6ff]/60 transition-all shadow-lg p-6 flex flex-col justify-center">
+            <div className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" style={{ backgroundImage: `url(${values[2].img})` }} />
+            <div className="absolute inset-0 bg-[#020b0d]/70 transition-opacity duration-700" />
+            
+            <div className="relative z-10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+              <div>
+                <span className="text-[#27d6ff] font-bold text-[20px] mb-2 font-serif block">{values[2].num}</span>
+                <h3 className="text-white font-bold text-[16px] tracking-wider uppercase mb-2 font-serif leading-tight">{values[2].title}</h3>
+                <p className="text-gray-300 text-[12px] leading-relaxed">{values[2].desc}</p>
+              </div>
+              <div className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center shrink-0 group-hover:border-[#27d6ff] transition-all">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-white group-hover:text-[#27d6ff]"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </div>
+            </div>
+          </div>
+
+          {/* Card 04 - Tall */}
+          <div className="col-span-1 lg:col-span-1 lg:row-span-2 min-h-[250px] lg:min-h-0 relative rounded-2xl overflow-hidden group border border-[#27d6ff]/20 hover:border-[#27d6ff]/60 transition-all shadow-lg p-6 flex flex-col">
+            <div className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" style={{ backgroundImage: `url(${values[3].img})` }} />
+            <div className="absolute inset-0 bg-[#020b0d]/70 transition-opacity duration-700" />
+            
+            <div className="relative z-10 flex flex-col h-full">
+              <span className="text-[#27d6ff] font-bold text-[20px] mb-2 font-serif">{values[3].num}</span>
+              <h3 className="text-white font-bold text-[16px] tracking-wider uppercase mb-2 font-serif leading-tight">{values[3].title}</h3>
+              <p className="text-gray-300 text-[12px] leading-relaxed">{values[3].desc}</p>
+              
+              <div className="mt-auto w-10 h-10 rounded-md border border-[#27d6ff]/40 flex items-center justify-center bg-[#020b0d]/60 backdrop-blur-md">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#27d6ff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+              </div>
+            </div>
           </div>
 
         </div>
+
       </div>
     </section>
   );

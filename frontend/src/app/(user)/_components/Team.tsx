@@ -62,12 +62,12 @@ export default function Team() {
   return (
     <section id="Team" className="relative py-32 bg-black overflow-hidden">
       <SectionStarryMotif />
-      <div className="max-w-[1400px] mx-auto px-6">
+      <div className="max-w-[1920px] mx-auto px-6">
         
         {/* Section Header */}
         <ScrollReveal animation="fade-up" delay={100}>
           <div className="text-center mb-16">
-            <h6 className="font-label text-[#D3AE3E] text-[13px] font-semibold tracking-[4px] uppercase mb-4">
+            <h6 className="font-label text-[#27d6ff] text-[13px] font-semibold tracking-[4px] uppercase mb-4">
               Creative Team
             </h6>
             <h3 className="font-heading text-4xl md:text-[40px] font-bold text-white mb-6 tracking-tight flex justify-center gap-[2px]">
@@ -85,7 +85,7 @@ export default function Team() {
               <div className="group relative">
                 
                 {/* Image Box */}
-                <div className="relative overflow-hidden aspect-[3/4] mb-6 bg-[#1a1a1a]">
+                <div className="relative overflow-hidden aspect-[3/4] mb-6 bg-[#020b0d]">
                   <div 
                     className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
                     style={{ backgroundImage: `url(${member.img})` }}
@@ -95,7 +95,7 @@ export default function Team() {
 
                 {/* Info Box */}
                 <div className="text-center">
-                  <h5 className="text-[22px] font-bold text-white mb-1 group-hover:text-[#D3AE3E] transition-colors">
+                  <h5 className="text-[22px] font-bold text-white mb-1 group-hover:text-[#27d6ff] transition-colors">
                     {member.name}
                   </h5>
                   <p className="text-[#888] text-[13px] uppercase tracking-wider mb-4">
@@ -105,17 +105,17 @@ export default function Team() {
                   {/* Social Icons */}
                   <ul className="flex justify-center gap-4">
                     <li>
-                      <Link href={member.socials.facebook} className="text-[#666] hover:text-[#D3AE3E] transition-colors flex items-center justify-center w-8 h-8 rounded-full bg-[#1a1a1a] hover:bg-white/5">
+                      <Link href={member.socials.facebook} className="text-[#666] hover:text-[#27d6ff] transition-colors flex items-center justify-center w-8 h-8 rounded-full bg-[#020b0d] hover:bg-white/5">
                         <FacebookIcon />
                       </Link>
                     </li>
                     <li>
-                      <Link href={member.socials.twitter} className="text-[#666] hover:text-[#D3AE3E] transition-colors flex items-center justify-center w-8 h-8 rounded-full bg-[#1a1a1a] hover:bg-white/5">
+                      <Link href={member.socials.twitter} className="text-[#666] hover:text-[#27d6ff] transition-colors flex items-center justify-center w-8 h-8 rounded-full bg-[#020b0d] hover:bg-white/5">
                         <TwitterIcon />
                       </Link>
                     </li>
                     <li>
-                      <Link href={member.socials.instagram} className="text-[#666] hover:text-[#D3AE3E] transition-colors flex items-center justify-center w-8 h-8 rounded-full bg-[#1a1a1a] hover:bg-white/5">
+                      <Link href={member.socials.instagram} className="text-[#666] hover:text-[#27d6ff] transition-colors flex items-center justify-center w-8 h-8 rounded-full bg-[#020b0d] hover:bg-white/5">
                         <InstagramIcon />
                       </Link>
                     </li>

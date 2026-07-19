@@ -1,196 +1,119 @@
 import React from 'react';
 import Link from 'next/link';
-import ScrollReveal from './ScrollReveal';
+import { Play, ArrowRight, Mouse } from 'lucide-react';
 
 export default function HeroConcept() {
   return (
-    <section className="relative w-full min-h-[auto] md:min-h-[90vh] flex flex-col justify-start md:justify-center overflow-hidden">
+    <div className="relative w-full min-h-[80vh] lg:min-h-[800px] bg-transparent overflow-hidden pb-32 pt-32 lg:pt-40">
       
-      {/* Background blobs removed as requested */}
-
-      <div className="relative z-10 w-full max-w-[1440px] mx-auto px-4 md:px-8 pt-[110px] md:pt-32 pb-8 md:pb-16">
-        <div className="flex flex-col lg:flex-row items-center">
-          
-          {/* Left Content */}
-          <div className="w-full lg:w-[55%] relative z-10">
-            
-            {/* Animated Label with Sci-Fi Line and Border */}
-            <ScrollReveal animation="fade-up" delay={100} duration={800}>
-              <div className="mb-6 md:mb-10 flex items-center relative w-full">
-                {/* Animated line extending to the right */}
-                <div className="absolute top-1/2 left-0 w-[150%] max-w-[800px] h-[1px] bg-gradient-to-r from-[#51d7c4]/20 via-transparent to-transparent -z-10"></div>
-                <div className="absolute top-1/2 left-0 w-[300px] h-[1px] bg-gradient-to-r from-transparent via-[#51d7c4] to-transparent -z-10 animate-[shimmer_3s_infinite_alternate]"></div>
-                
-                <div className="relative inline-flex items-center p-[1px] rounded-sm overflow-hidden group max-w-full">
-                  {/* Rotating border */}
-                  <div className="absolute inset-0 bg-[conic-gradient(from_90deg_at_50%_50%,transparent_0%,#51d7c4_80%,transparent_100%)] animate-[spin_10s_linear_infinite]"></div>
-                  
-                  <div className="relative px-3 md:px-6 py-2.5 bg-[#021817]/70 backdrop-blur-md flex items-start md:items-center w-full">
-                    <div className="w-1.5 h-1.5 md:w-2 md:h-2 rounded-full bg-[#51d7c4] mr-2 md:mr-3 shrink-0 animate-pulse shadow-[0_0_8px_#51d7c4] mt-[6px] md:mt-0"></div>
-                    {/* On mobile: no typing animation, text wraps. On sm+: typing animation, nowrap */}
-                    <div className="overflow-hidden sm:animate-[typing_4s_steps(40,end)_infinite_alternate,blink-caret_.75s_step-end_infinite] sm:border-r-2 sm:border-[#51d7c4] pr-1">
-                      <span className="text-white drop-shadow-[0_0_8px_rgba(81,215,196,0.8)] text-[11px] md:text-[13px] font-bold tracking-[0.05em] md:tracking-[0.15em] uppercase whitespace-normal sm:whitespace-nowrap block leading-snug">
-                        Kiến tạo không gian sống thông minh & bền vững
-                      </span>
-                    </div>
-                    {/* Corner accents */}
-                    <div className="absolute top-0 left-0 w-2 h-2 border-t-2 border-l-2 border-[#51d7c4]"></div>
-                    <div className="absolute top-0 right-0 w-2 h-2 border-t-2 border-r-2 border-[#51d7c4]"></div>
-                    <div className="absolute bottom-0 left-0 w-2 h-2 border-b-2 border-l-2 border-[#51d7c4]"></div>
-                    <div className="absolute bottom-0 right-0 w-2 h-2 border-b-2 border-r-2 border-[#51d7c4]"></div>
-                  </div>
-                </div>
+      {/* Content */}
+      <div className="max-w-[1920px] mx-auto px-6 lg:px-24 relative z-10 w-full h-full flex items-center">
+        
+        <div className="grid grid-cols-12 gap-8 w-full">
+          <div className="col-span-12 lg:col-span-7 flex flex-col justify-center">
+            {/* Tagline */}
+            <div className="mb-6 flex items-center relative w-full">
+              <div className="relative inline-flex items-center px-4 py-1.5 border border-[#27d6ff]/40 rounded-full bg-transparent">
+                <span className="text-[#27d6ff] text-[10px] md:text-[11px] font-bold tracking-[0.15em] uppercase">
+                  KIẾN TẠO KHÔNG GIAN SỐNG THÔNG MINH & BỀN VỮNG
+                </span>
               </div>
-            </ScrollReveal>
+            </div>
             
-            <ScrollReveal animation="fade-up" delay={200} duration={800}>
-              <h1 className="text-[28px] sm:text-[40px] md:text-[56px] lg:text-[64px] font-bold text-gray-900 leading-[1.3] md:leading-[1.1] mb-5 tracking-tight drop-shadow-[0_2px_10px_rgba(255,255,255,0.5)]">
-                KẾT NỐI ĐÚNG<br />
-                <span className="inline-block text-transparent bg-clip-text bg-[linear-gradient(90deg,#008f82_0%,#51d7c4_50%,#008f82_100%)] bg-[length:200%_auto] animate-[gradientFlow_3s_linear_infinite] drop-shadow-none pb-1">
-                  HỆ SINH THÁI NỘI THẤT
-                </span><br />
-                CHO CÔNG TRÌNH CỦA BẠN
-              </h1>
-            </ScrollReveal>
+            {/* Main Title */}
+            <h1 className="text-[36px] sm:text-[48px] md:text-[56px] lg:text-[64px] font-bold text-white leading-[1.1] mb-6 drop-shadow-md font-serif tracking-wide">
+              KẾT NỐI ĐÚNG <br />
+              <span className="text-[#27d6ff]">HỆ SINH THÁI NỘI THẤT</span> <br />
+              CHO CÔNG TRÌNH <br />
+              CỦA BẠN
+            </h1>
             
-            <ScrollReveal animation="fade-up" delay={300} duration={800}>
-              <p className="text-gray-100 lg:text-gray-900 text-[14px] md:text-[15px] lg:text-[16px] max-w-lg mb-8 leading-[1.7] md:leading-[1.8] font-medium drop-shadow-[0_2px_5px_rgba(0,0,0,0.5)] lg:drop-shadow-none">
-                ARCVIET Living Nexus quy tụ những thương hiệu nội thất hàng đầu 
-                và giải pháp công nghệ tiên tiến, mang đến trải nghiệm sống tinh tế, 
-                thông minh và bền vững cho mọi không gian.
-              </p>
-            </ScrollReveal>
+            {/* Description */}
+            <p className="text-gray-300 text-[14px] md:text-[15px] max-w-[550px] mb-10 leading-[1.8] font-medium opacity-90">
+              ARCVIET Living Nexus quy tụ những thương hiệu nội thất hàng đầu 
+              và giải pháp công nghệ tiên tiến, mang đến trải nghiệm sống tinh tế, 
+              thông minh và bền vững cho mọi không gian.
+            </p>
             
-            <ScrollReveal animation="fade-up" delay={400} duration={800}>
-              <div className="flex flex-col sm:flex-row gap-4 items-stretch sm:items-center w-full max-w-sm sm:max-w-none">
-                {/* Primary Button */}
-                <div className="relative p-[2px] rounded-sm overflow-hidden group cursor-pointer inline-flex w-full sm:w-auto shadow-[0_0_20px_rgba(81,215,196,0.15)]">
-                  {/* Rotating conic gradient for the border */}
-                  <div className="absolute inset-0 bg-[conic-gradient(from_0deg_at_50%_50%,transparent_0%,#51d7c4_50%,transparent_100%)] animate-[spin_2s_linear_infinite]"></div>
-                  
-                  <Link href="#he-sinh-thai" className="relative flex items-center justify-between sm:justify-start gap-3 bg-gradient-to-r from-[#012624] to-[#013330] hover:from-[#023b37] hover:to-[#012624] text-white pl-5 pr-1.5 py-1.5 transition-all duration-300 h-[50px] w-full sm:w-auto">
-                    <span className="text-[12px] md:text-sm font-bold tracking-wider uppercase">KHÁM PHÁ HỆ SINH THÁI</span>
-                    
-                    {/* Icon */}
-                    <div className="w-9 h-9 rounded-sm bg-[#00100f]/80 border border-[#51d7c4]/50 flex items-center justify-center text-[#51d7c4] group-hover:bg-[#51d7c4] group-hover:text-[#00100f] transition-all shrink-0">
-                      <svg className="transform group-hover:translate-x-1 transition-transform" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                    </div>
-                  </Link>
-                </div>
-                
-                {/* Secondary Button */}
-                <Link href="#du-an" className="flex items-center justify-center gap-3 bg-white/10 hover:bg-white/20 text-white h-[50px] px-6 border border-white/20 transition-all duration-300 backdrop-blur-md rounded-sm group shadow-[0_4px_15px_rgba(0,0,0,0.1)] w-full sm:w-auto">
-                  <div className="w-4 h-4 rounded-full border-2 border-white/70 flex items-center justify-center group-hover:border-[#51d7c4] transition-colors shrink-0">
-                    <div className="w-1.5 h-1.5 rounded-full bg-white/70 group-hover:bg-[#51d7c4] group-hover:scale-110 transition-all"></div>
-                  </div>
-                  <span className="text-[12px] md:text-sm font-bold tracking-wider uppercase group-hover:text-[#51d7c4] transition-colors">XEM DỰ ÁN TIÊU BIỂU</span>
-                </Link>
+            {/* Buttons */}
+            <div className="flex flex-col sm:flex-row gap-6 items-center mb-16">
+              <Link href="#he-sinh-thai" className="group relative flex items-center justify-center gap-3 bg-gradient-to-r from-[#27d6ff] to-[#0a8ba8] text-[#020b0d] px-10 py-4 rounded-sm transition-all duration-500 font-bold text-[14px] tracking-widest uppercase w-full sm:w-auto shadow-[0_0_30px_rgba(39,214,255,0.6)] hover:shadow-[0_0_50px_rgba(39,214,255,0.8)] hover:scale-105 overflow-hidden">
+                <span className="relative z-10 flex items-center gap-2">
+                  KHÁM PHÁ HỆ SINH THÁI
+                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                </span>
+                <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-500"></div>
+              </Link>
+              
+              <Link href="#du-an" className="group relative flex items-center justify-center gap-3 bg-[#020b0d]/60 backdrop-blur-md border border-[#27d6ff]/50 text-white px-10 py-4 rounded-sm transition-all duration-500 font-bold text-[14px] tracking-widest uppercase w-full sm:w-auto shadow-[0_0_20px_rgba(39,214,255,0.2)] hover:border-[#27d6ff] hover:shadow-[0_0_30px_rgba(39,214,255,0.4)] hover:scale-105 overflow-hidden">
+                <span className="relative z-10 flex items-center gap-2">
+                  <Play className="w-5 h-5 group-hover:text-[#27d6ff] transition-colors" />
+                  XEM DỰ ÁN TIÊU BIỂU
+                </span>
+                <div className="absolute inset-0 bg-[#27d6ff]/10 translate-y-full group-hover:translate-y-0 transition-transform duration-500"></div>
+              </Link>
+            </div>
+            
+            {/* Partners */}
+            <div className="flex flex-col gap-3 pt-4">
+              <span className="text-gray-400 text-[11px]">Trusted by 2.000+ khách hàng & đối tác</span>
+              <div className="flex flex-wrap items-center gap-4 opacity-80">
+                <div className="text-white font-serif font-bold text-base uppercase tracking-wider">LACOSTE</div>
+                <div className="w-1 h-1 bg-[#27d6ff] rounded-full"></div>
+                <div className="text-white font-sans font-medium text-lg tracking-tighter">Poliform</div>
+                <div className="w-1 h-1 bg-[#27d6ff] rounded-full"></div>
+                <div className="text-white font-bold text-base tracking-widest">HÄFELE</div>
+                <div className="w-1 h-1 bg-[#27d6ff] rounded-full"></div>
+                <div className="text-white font-serif italic text-lg">GROHE</div>
+                <div className="w-1 h-1 bg-[#27d6ff] rounded-full"></div>
+                <div className="text-white font-bold text-base tracking-widest">KOHLER</div>
+                <span className="text-gray-500 font-light">+</span>
               </div>
-            </ScrollReveal>
+            </div>
           </div>
 
-          {/* Right Floating Elements (Sci-Fi Glass effect with running borders) */}
-          <div className="lg:w-[45%] mt-12 lg:mt-0 relative h-[500px] w-full hidden md:block">
+          {/* Right Floating Elements (4 Cards) */}
+          <div className="col-span-12 lg:col-span-5 relative flex flex-col justify-center gap-4 lg:gap-8 z-10 items-center lg:items-end mt-12 lg:mt-0 lg:-mt-20">
             
-            {/* Floating UI: Smart Living */}
-            <div className="absolute top-[20%] left-[10%] animate-[float_4s_ease-in-out_infinite] z-20">
-              <div className="relative">
-                {/* Connector line */}
-                <svg className="absolute -left-16 bottom-5 w-16 h-16 pointer-events-none" viewBox="0 0 64 64" fill="none">
-                  <path d="M64 45 L20 45 L0 60" stroke="#51d7c4" strokeWidth="1.5" />
-                  <circle cx="2" cy="60" r="3" fill="#51d7c4" className="animate-pulse"/>
-                </svg>
-                
-                {/* Sci-Fi Card Wrapper */}
-                <div className="relative p-[1.5px] rounded-lg overflow-hidden w-[280px]">
-                  {/* Rotating conic gradient border */}
-                  <div className="absolute inset-0 bg-[conic-gradient(from_180deg_at_50%_50%,transparent_0%,rgba(81,215,196,1)_20%,transparent_40%,transparent_60%,rgba(81,215,196,1)_80%,transparent_100%)] animate-[spin_10s_linear_infinite]"></div>
-                  
-                  {/* Inner Glass Box */}
-                  <div className="relative flex items-center justify-between bg-gradient-to-br from-[#021d1b]/70 to-[#063330]/80 backdrop-blur-xl px-5 py-4 rounded-lg shadow-[inset_0_0_20px_rgba(81,215,196,0.1),0_10px_40px_rgba(0,0,0,0.5)]">
-                    <div className="flex flex-col">
-                      <span className="text-white text-[15px] font-bold tracking-widest mb-1 font-mono">SMART_LIVING</span>
-                      <span className="text-[#51d7c4] text-[11px] font-medium tracking-wide uppercase">Cá nhân hóa</span>
-                      <span className="text-gray-300 text-[11px] font-medium tracking-wide uppercase">trải nghiệm sống</span>
-                    </div>
-                    
-                    {/* Sci-Fi Radar Icon */}
-                    <div className="w-12 h-12 rounded-full border border-[#51d7c4]/40 flex items-center justify-center relative bg-[#00100f]/50">
-                      {/* Spinning dashed ring */}
-                      <div className="absolute inset-0 border-2 border-[#51d7c4] border-dashed rounded-full opacity-60 animate-[spin_8s_linear_infinite]"></div>
-                      {/* Inner scanning effect */}
-                      <div className="absolute inset-1 rounded-full bg-[conic-gradient(from_0deg_at_50%_50%,transparent_0%,rgba(81,215,196,0.3)_100%)] animate-[spin_2s_linear_infinite]"></div>
-                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#51d7c4" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="relative z-10"><circle cx="12" cy="12" r="3"/><path d="M12 2v4"/><path d="M12 18v4"/><path d="M2 12h4"/><path d="M18 12h4"/></svg>
-                    </div>
-                  </div>
+            {[
+              { title: "SMART LIVING", sub1: "AI & IoT", sub2: "Điều khiển thông minh", icon: <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>, offsetClass: "lg:mr-12 xl:mr-20", anim: "animate-[floating_4s_ease-in-out_infinite]" },
+              { title: "TIẾT KIỆM NĂNG LƯỢNG", sub1: "Giải pháp xanh", sub2: "Tiết kiệm đến 30%", icon: <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>, offsetClass: "lg:mr-0 xl:mr-4", anim: "animate-[floating_5s_ease-in-out_infinite_0.5s]" },
+              { title: "CÁ NHÂN HÓA", sub1: "Thiết kế riêng biệt", sub2: "Theo phong cách của bạn", icon: <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2M12 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8z"/>, offsetClass: "lg:mr-16 xl:mr-32", anim: "animate-[floating_4.5s_ease-in-out_infinite_1s]" },
+              { title: "THIẾT KẾ TINH TẾ", sub1: "Thẩm mỹ & Công năng", sub2: "Hài hòa trong từng chi tiết", icon: <path d="M6 3h12l4 6-10 13L2 9Z"/>, offsetClass: "lg:mr-8 xl:mr-10", anim: "animate-[floating_5.5s_ease-in-out_infinite_1.5s]" },
+            ].map((card, idx) => (
+              <div 
+                key={idx} 
+                className={`relative flex items-center bg-[#020b0d]/70 backdrop-blur-md border border-[#27d6ff]/20 rounded-xl p-4 lg:p-5 gap-4 lg:gap-5 transform transition-transform hover:scale-105 hover:border-[#27d6ff]/50 hover:shadow-[0_0_25px_rgba(39,214,255,0.2)] cursor-default w-full max-w-[380px] ${card.offsetClass} ${card.anim}`}
+              >
+                {/* Line connector simulation - Only visible on LG */}
+                <div className="absolute -left-16 w-16 h-[1.5px] bg-gradient-to-l from-[#27d6ff]/60 to-transparent hidden lg:block"></div>
+                <div className="absolute -left-16 -ml-1.5 w-3 h-3 rounded-full border border-[#27d6ff] bg-[#020b0d] shadow-[0_0_10px_rgba(39,214,255,0.5)] hidden lg:block"></div>
+
+                {/* Icon Container */}
+                <div className="w-10 h-10 lg:w-12 lg:h-12 rounded-full border border-[#27d6ff]/40 flex items-center justify-center shrink-0 bg-[#020b0d]/50 shadow-inner">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#27d6ff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5 lg:w-[22px] lg:h-[22px]">
+                    {card.icon}
+                  </svg>
+                </div>
+
+                {/* Text Content */}
+                <div className="flex flex-col">
+                  <span className="text-white text-[13px] lg:text-[14px] font-bold tracking-widest mb-1 drop-shadow-sm">{card.title}</span>
+                  <span className="text-[#27d6ff] text-[11px] lg:text-[12px] uppercase font-medium">{card.sub1}</span>
+                  <span className="text-gray-400 text-[10px] lg:text-[11px] mt-0.5">{card.sub2}</span>
                 </div>
               </div>
-            </div>
+            ))}
 
-            {/* Floating UI: Sustainable Design */}
-            <div className="absolute bottom-[20%] right-[0%] animate-[float_5s_ease-in-out_infinite_1s] z-20">
-              <div className="relative">
-                {/* Connector line */}
-                <svg className="absolute -left-16 -top-12 w-16 h-16 pointer-events-none" viewBox="0 0 64 64" fill="none">
-                  <path d="M64 60 L30 60 L0 30" stroke="#51d7c4" strokeWidth="1.5" />
-                  <circle cx="2" cy="28" r="3" fill="#51d7c4" className="animate-pulse"/>
-                </svg>
-
-                {/* Sci-Fi Card Wrapper */}
-                <div className="relative p-[1.5px] rounded-lg overflow-hidden w-[310px]">
-                  {/* Rotating conic gradient border */}
-                  <div className="absolute inset-0 bg-[conic-gradient(from_0deg_at_50%_50%,transparent_0%,rgba(81,215,196,1)_20%,transparent_40%,transparent_60%,rgba(81,215,196,1)_80%,transparent_100%)] animate-[spin_5s_linear_infinite]"></div>
-                  
-                  {/* Inner Glass Box */}
-                  <div className="relative flex items-center justify-between bg-gradient-to-br from-[#021d1b]/70 to-[#063330]/80 backdrop-blur-xl px-5 py-4 rounded-lg shadow-[inset_0_0_20px_rgba(81,215,196,0.1),0_10px_40px_rgba(0,0,0,0.5)]">
-                    <div className="flex flex-col text-right">
-                      <span className="text-white text-[15px] font-bold tracking-widest mb-1 font-mono">SUSTAINABLE</span>
-                      <span className="text-[#51d7c4] text-[11px] font-medium tracking-wide uppercase">Vật liệu xanh</span>
-                      <span className="text-gray-300 text-[11px] font-medium tracking-wide uppercase">Bền vững tương lai</span>
-                    </div>
-                    
-                    {/* Sci-Fi Progress Ring */}
-                    <div className="relative w-14 h-14 flex items-center justify-center ml-4">
-                      {/* Outer glow ring */}
-                      <div className="absolute inset-0 rounded-full border border-[#51d7c4]/20 shadow-[0_0_15px_rgba(81,215,196,0.3)]"></div>
-                      <svg className="w-full h-full transform -rotate-90 relative z-10" viewBox="0 0 36 36">
-                        <path className="text-[#51d7c4]/10" stroke="currentColor" strokeWidth="3" fill="none" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
-                        <path className="text-[#51d7c4] animate-[dash_2s_ease-out_forwards]" stroke="currentColor" strokeWidth="3" strokeDasharray="89, 100" fill="none" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
-                      </svg>
-                      <div className="absolute text-white text-[13px] font-bold font-mono tracking-tighter">89%</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            
           </div>
         </div>
       </div>
       
-      <style dangerouslySetInnerHTML={{__html: `
-        @keyframes float {
-          0% { transform: translateY(0px); }
-          50% { transform: translateY(-15px); }
-          100% { transform: translateY(0px); }
-        }
-        @keyframes dash {
-          from { stroke-dasharray: 0, 100; }
-          to { stroke-dasharray: 89, 100; }
-        }
-        @keyframes typing {
-          from { width: 0 }
-          to { width: 100% }
-        }
-        @keyframes blink-caret {
-          from, to { border-color: transparent }
-          50% { border-color: #51d7c4; }
-        }
-        @keyframes gradientFlow {
-          0% { background-position: 0% 50%; }
-          100% { background-position: 200% 50%; }
-        }
-      `}} />
-    </section>
+      {/* Scroll indicator */}
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-70 animate-bounce">
+        <Mouse className="w-6 h-6 text-white" />
+        <span className="text-white text-[9px] font-bold tracking-widest uppercase">SCROLL</span>
+      </div>
+    </div>
   );
 }

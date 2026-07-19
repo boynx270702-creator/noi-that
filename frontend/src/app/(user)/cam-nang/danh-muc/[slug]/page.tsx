@@ -76,7 +76,7 @@ export default function CategoryArchivePage() {
 
   if (isLoading) {
     return (
-      <div className="pt-32 pb-20 min-h-screen flex items-center justify-center text-gray-900 dark:text-white">
+      <div className="pt-32 pb-20 min-h-screen flex items-center justify-center text-white">
         <div className="w-10 h-10 border-4 border-[#ce9e51] border-t-transparent rounded-full animate-spin"></div>
       </div>
     );
@@ -85,7 +85,7 @@ export default function CategoryArchivePage() {
   if (error || !category) {
     return (
       <div className="pt-32 pb-20 min-h-screen text-center">
-        <h1 className="text-4xl font-bold mb-4 text-gray-900 dark:text-white">Danh mục không tồn tại</h1>
+        <h1 className="text-4xl font-bold mb-4 text-white">Danh mục không tồn tại</h1>
         <p className="text-gray-500 mb-8">{error || 'Đường dẫn bạn truy cập có thể đã bị thay đổi.'}</p>
         <Link href="/cam-nang" className="bg-[#ce9e51] text-white px-8 py-3 rounded-[2px] font-bold uppercase tracking-wider inline-flex items-center gap-2">
           <ArrowLeft className="w-5 h-5" /> Về Cẩm Nang
@@ -95,8 +95,8 @@ export default function CategoryArchivePage() {
   }
 
   return (
-    <div className="pt-[120px] pb-24 bg-transparent dark:bg-transparent min-h-screen text-gray-900 dark:text-white">
-      <div className="container mx-auto px-6 max-w-[1200px]">
+    <div className="pt-[120px] pb-24 bg-transparent dark:bg-transparent min-h-screen text-white">
+      <div className="container mx-auto px-6 max-w-[1440px]">
         
         {/* Breadcrumb & Header */}
         <div className="text-center mb-16">
@@ -108,7 +108,7 @@ export default function CategoryArchivePage() {
             <span className="text-[#ce9e51]">{category.name}</span>
           </div>
           
-          <h1 className="font-heading text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
+          <h1 className="font-heading text-4xl md:text-5xl font-bold text-white mb-4">
             {category.name}
           </h1>
           <div className="w-16 h-1 bg-[#ce9e51] mx-auto rounded-full"></div>
@@ -120,24 +120,24 @@ export default function CategoryArchivePage() {
             <div className="w-16 h-16 mx-auto bg-gray-200 dark:bg-white/10 rounded-full flex items-center justify-center mb-4 text-gray-400">
               <i className="fa fa-folder-open text-2xl"></i>
             </div>
-            <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">Chưa có bài viết</h3>
+            <h3 className="text-xl font-bold text-white mb-2">Chưa có bài viết</h3>
             <p className="text-gray-500">Chuyên mục này hiện đang được cập nhật nội dung.</p>
           </div>
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {articles.map((article, idx) => (
-              <Link href={`/cam-nang/${article.slug || article.id}`} key={idx} className="group flex flex-col bg-gray-50 dark:bg-[#1a1a1a] rounded-[4px] overflow-hidden border border-gray-100 dark:border-white/5 hover:-translate-y-2 transition-all duration-300 shadow-sm hover:shadow-xl hover:shadow-[#ce9e51]/10">
+              <Link href={`/cam-nang/${article.slug || article.id}`} key={idx} className="group flex flex-col bg-[#020b0d] rounded-[4px] overflow-hidden border border-gray-100 dark:border-white/5 hover:-translate-y-2 transition-all duration-300 shadow-sm hover:shadow-xl hover:shadow-[#ce9e51]/10">
                 <div className="aspect-[4/3] overflow-hidden relative">
                   <img src={getThumbnail(article.thumbnail)} alt={article.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
-                  <div className="absolute top-4 left-4 bg-gradient-to-r from-[#D3AE3E] to-[#E5C98A] text-[#131313] text-[10px] font-bold uppercase tracking-widest px-3 py-1 shadow-sm">
+                  <div className="absolute top-4 left-4 bg-gradient-to-r from-[#27d6ff] to-[#E5C98A] text-[#131313] text-[10px] font-bold uppercase tracking-widest px-3 py-1 shadow-sm">
                     {article.category}
                   </div>
                 </div>
                 <div className="p-6 flex flex-col flex-1">
-                  <h3 className="font-heading font-bold text-xl text-gray-900 dark:text-white line-clamp-2 mb-3 group-hover:text-[#ce9e51] transition-colors">
+                  <h3 className="font-heading font-bold text-xl text-white line-clamp-2 mb-3 group-hover:text-[#ce9e51] transition-colors">
                     {article.title}
                   </h3>
-                  <p className="text-gray-500 dark:text-white/60 text-sm line-clamp-3 mb-6 leading-relaxed flex-1">
+                  <p className="text-gray-500 text-white/60 text-sm line-clamp-3 mb-6 leading-relaxed flex-1">
                     {article.summary || article.content?.replace(/<[^>]*>?/gm, '').substring(0, 150)}
                   </p>
                   <div className="flex items-center justify-between text-[11px] font-bold text-gray-400 uppercase tracking-widest pt-4 border-t border-gray-200 dark:border-white/5">

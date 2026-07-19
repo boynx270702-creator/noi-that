@@ -19,17 +19,17 @@ export default function HeSinhThaiPage() {
       <Section9Process />
 
       {/* CTA Chuyển sang trang Đơn vị thiết kế */}
-      <section className="relative py-32 overflow-hidden border-t border-[#51d7c4]/15 bg-[#021817]/40 backdrop-blur-md">
-        <div className="relative z-10 max-w-[1400px] mx-auto px-6 text-center">
+      <section className="relative py-32 overflow-hidden border-t border-[#27d6ff]/15 bg-[#020b0d]/40 backdrop-blur-md">
+        <div className="relative z-10 max-w-[1440px] mx-auto px-6 text-center">
           <h2 className="font-heading text-3xl md:text-5xl font-bold text-white mb-6 uppercase">
-            Khám phá Hệ sinh thái <span className="text-[#51d7c4]">30+ Đơn vị</span>
+            Khám phá Hệ sinh thái <span className="text-[#27d6ff]">30+ Đơn vị</span>
           </h2>
           <p className="text-white/70 text-lg mb-10 max-w-2xl mx-auto">
             Xem hồ sơ chi tiết, so sánh năng lực và tìm kiếm đơn vị thiết kế thi công nội thất phù hợp nhất với nhu cầu của bạn.
           </p>
           <Link
             href="/don-vi-thiet-ke"
-            className="inline-flex items-center justify-center gap-2 bg-[#51d7c4] hover:bg-[#008f82] text-[#010d0c] font-black text-[13px] uppercase tracking-[2px] py-4 px-8 rounded-[2px] shadow-[0_0_20px_rgba(81,215,196,0.3)] transition-colors"
+            className="inline-flex items-center justify-center gap-2 bg-[#27d6ff] hover:bg-[#0a8ba8] text-[#010d0c] font-black text-[13px] uppercase tracking-[2px] py-4 px-8 rounded-[2px] shadow-[0_0_20px_rgba(81,215,196,0.3)] transition-colors"
           >
             Xem danh sách đơn vị thiết kế
             <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">

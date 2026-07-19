@@ -1,77 +1,70 @@
 "use client";
 import React from 'react';
 import useEmblaCarousel from 'embla-carousel-react';
+import Link from 'next/link';
 
 const categories = [
-  { name: 'CHUNG CƯ', img: '/images/main/bed1.jpg' },
-  { name: 'NHÀ PHỐ', img: '/images/main/pen1.jpg' },
-  { name: 'VILLA', img: '/images/main/villa1.jpg' },
-  { name: 'PENTHOUSE', img: '/images/main/pen3.jpg' },
-  { name: 'VĂN PHÒNG', img: '/images/main/office.jpg' },
-  { name: 'SHOWROOM', img: '/images/main/26.jpg' },
+  { name: 'VILLA CAO CẤP', desc: 'Không gian sang trọng, đẳng cấp & tinh tế', img: '/images/main/villa1.jpg' },
+  { name: 'NHÀ PHỐ', desc: 'Hiện đại & tiện nghi', img: '/images/main/pen1.jpg' },
+  { name: 'PENTHOUSE', desc: 'Tinh hoa trên từng tầng cao', img: '/images/main/pen3.jpg' },
+  { name: 'CHUNG CƯ', desc: 'Tối ưu công năng, chuẩn phong cách', img: '/images/main/bed1.jpg' },
+  { name: 'VĂN PHÒNG', desc: 'Hiệu quả & truyền cảm hứng', img: '/images/main/office.jpg' },
+  { name: 'SHOWROOM', desc: 'Trải nghiệm thương hiệu', img: '/images/main/26.jpg' },
 ];
 
 export default function SectionConceptCategories() {
   const [emblaRef] = useEmblaCarousel({ dragFree: true, containScroll: 'trimSnaps' });
 
   return (
-    <section className="relative w-full py-16 bg-transparent z-10">
-      <div className="px-4 md:px-8 max-w-[1440px] mx-auto relative z-10">
-        {/* Sci-Fi Centered Label */}
-      <div className="mb-12 flex flex-col items-center justify-center relative w-full">
-        {/* Animated line behind */}
-        <div className="absolute top-1/2 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-[#51d7c4]/20 to-transparent -z-10"></div>
-        <div className="absolute top-1/2 left-0 w-[200px] h-[1px] bg-gradient-to-r from-transparent via-[#51d7c4] to-transparent -z-10 animate-[shimmer_3s_infinite_alternate]"></div>
+    <section className="relative w-full py-16 bg-transparent z-10 overflow-hidden">
+      <div className="px-6 lg:px-24 max-w-[1920px] mx-auto relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
         
-        <div className="relative inline-flex items-center justify-center p-[1px] rounded-sm overflow-hidden group">
-          {/* Rotating border */}
-          <div className="absolute inset-0 bg-[conic-gradient(from_90deg_at_50%_50%,transparent_0%,#51d7c4_80%,transparent_100%)] animate-[spin_10s_linear_infinite]"></div>
+        {/* Left Column: Title & Intro */}
+        <div className="col-span-1 lg:col-span-3 flex flex-col justify-center relative">
+          {/* Decorative side line */}
+          <div className="absolute left-0 top-2 bottom-8 w-[3px] bg-gradient-to-b from-[#27d6ff] to-transparent rounded-full opacity-70 -ml-6 hidden lg:block"></div>
           
-          <div className="relative px-8 py-2.5 bg-[#021817]/90 backdrop-blur-md flex flex-col items-center justify-center border border-[#51d7c4]/30 shadow-[0_5px_15px_rgba(81,215,196,0.1)]">
-            <h2 className="text-[#51d7c4] text-[18px] md:text-[22px] font-bold tracking-[0.2em] uppercase mb-1 drop-shadow-[0_0_8px_rgba(81,215,196,0.4)]">
-              DANH MỤC CÔNG TRÌNH
-            </h2>
-            <div className="text-[#51d7c4]/80 text-[11px] font-bold uppercase tracking-widest">
-              Giải pháp toàn diện
-            </div>
-            {/* Corner accents */}
-            <div className="absolute top-0 left-0 w-2 h-2 border-t-2 border-l-2 border-[#51d7c4]"></div>
-            <div className="absolute top-0 right-0 w-2 h-2 border-t-2 border-r-2 border-[#51d7c4]"></div>
-            <div className="absolute bottom-0 left-0 w-2 h-2 border-b-2 border-l-2 border-[#51d7c4]"></div>
-            <div className="absolute bottom-0 right-0 w-2 h-2 border-b-2 border-r-2 border-[#51d7c4]"></div>
-          </div>
+          <h2 className="text-[32px] md:text-[42px] lg:text-[48px] font-bold tracking-widest uppercase mb-6 font-serif leading-[1.15] drop-shadow-[0_0_15px_rgba(39,214,255,0.3)]">
+            <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#27d6ff] to-[#0a8ba8] animate-pulse">DANH MỤC</span><br />
+            <span className="text-white">CÔNG TRÌNH</span>
+          </h2>
+          <p className="text-gray-300 text-[15px] md:text-[16px] mb-8 font-medium opacity-90 leading-relaxed pr-4">
+            Giải pháp toàn diện cho mọi loại hình không gian
+          </p>
+          <Link href="#danh-muc" className="group flex items-center gap-3 text-[#27d6ff] font-bold text-[13px] tracking-widest uppercase hover:text-white transition-all w-max bg-[#27d6ff]/5 px-6 py-2.5 rounded-sm border border-[#27d6ff]/20 hover:border-[#27d6ff] hover:shadow-[0_0_15px_rgba(39,214,255,0.3)]">
+            XEM TẤT CẢ
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="group-hover:translate-x-1.5 transition-transform"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </Link>
         </div>
-      </div>
       
-      {/* Full width content */}
-      <div className="w-full relative bg-[#021817]/40 backdrop-blur-md border border-[#51d7c4]/20 rounded-sm shadow-[0_15px_40px_rgba(81,215,196,0.08)] overflow-hidden p-4">
-        {/* Subtle top glow */}
-        <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#51d7c4]/30 to-transparent"></div>
-
-        {/* Embla Carousel Viewport */}
-        <div className="overflow-hidden cursor-grab active:cursor-grabbing pb-2 pt-2" ref={emblaRef}>
-          <div className="flex gap-4">
+        {/* Right Column: Carousel */}
+        <div className="col-span-1 lg:col-span-9 overflow-hidden cursor-grab active:cursor-grabbing" ref={emblaRef}>
+          <div className="flex gap-4 lg:gap-6">
             {categories.map((cat, idx) => (
-              <div key={idx} className="flex-[0_0_220px] md:flex-[0_0_280px] h-[160px] md:h-[200px] relative rounded-sm overflow-hidden group border border-[#51d7c4]/20 hover:border-[#51d7c4]/60 hover:shadow-[0_10px_20px_rgba(81,215,196,0.15)] transition-all">
-                <div 
-                  className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110 luxury-image-filter"
-                  style={{ backgroundImage: `url(${cat.img})` }}
-                />
+              <div key={idx} className="flex-[0_0_260px] md:flex-[0_0_280px] lg:flex-[0_0_350px] h-[340px] md:h-[450px] relative rounded-[20px] p-[1.5px] bg-gradient-to-br from-[#27d6ff]/80 via-[#27d6ff]/20 to-transparent group hover:from-[#27d6ff] transition-all duration-500 shadow-[0_0_20px_rgba(39,214,255,0.1)] hover:shadow-[0_0_30px_rgba(39,214,255,0.3)] shrink-0">
                 
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-70 group-hover:opacity-90 transition-opacity duration-700" />
-                <div className="absolute inset-0 bg-[#021817]/40 group-hover:bg-[#021817]/10 transition-colors pointer-events-none" />
-                
-                <div className="absolute bottom-0 left-0 right-0 p-5 flex justify-between items-center z-10 pointer-events-none">
-                  <h3 className="text-[14px] md:text-[16px] font-bold text-white tracking-widest drop-shadow-md uppercase">{cat.name}</h3>
-                  <div className="w-8 h-8 rounded-full border border-white flex items-center justify-center text-white group-hover:bg-white group-hover:text-[#008f82] transition-all">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                <div className="relative w-full h-full rounded-[18px] overflow-hidden bg-[#020b0d]">
+                  <div 
+                    className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
+                    style={{ backgroundImage: `url(${cat.img})` }}
+                  />
+                  
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#020b0d] via-[#020b0d]/70 to-transparent opacity-95 transition-opacity duration-700" />
+                  
+                  <div className="absolute bottom-0 left-0 right-0 p-6 flex flex-col justify-end z-10 h-full pointer-events-none">
+                    <h3 className="text-[20px] md:text-[22px] font-bold text-[#f8d48d] tracking-wider uppercase mb-2 font-serif drop-shadow-md">{cat.name}</h3>
+                    <p className="text-gray-300 text-[13px] md:text-[14px] mb-2 leading-relaxed max-w-[80%] font-medium">{cat.desc}</p>
+                    
+                    <div className="absolute bottom-6 right-6 w-12 h-12 rounded-full border-[1.5px] border-[#27d6ff]/80 flex items-center justify-center text-white bg-[#020b0d]/60 backdrop-blur-md shadow-[0_0_15px_rgba(39,214,255,0.4),inset_0_0_10px_rgba(39,214,255,0.2)] group-hover:bg-[#27d6ff]/20 group-hover:border-[#27d6ff] transition-all duration-300 pointer-events-auto cursor-pointer">
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="group-hover:translate-x-1 transition-transform drop-shadow-md"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </div>
                   </div>
                 </div>
               </div>
             ))}
           </div>
         </div>
-      </div>
+
       </div>
     </section>
   );

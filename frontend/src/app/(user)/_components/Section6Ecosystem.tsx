@@ -85,13 +85,13 @@ const TIERS = [
 function CheckList({ items, title }: { items: string[], title: string }) {
   return (
     <div className="mb-8">
-      <h4 className="text-[#C7A25C] font-bold text-[13px] uppercase tracking-wider mb-4 border-b border-[#ECE7DE] dark:border-white/10 pb-2">
+      <h4 className="text-[#1bbce0] font-bold text-[13px] uppercase tracking-wider mb-4 border-b border-[#ECE7DE] dark:border-white/10 pb-2">
         {title}
       </h4>
       <ul className="flex flex-col gap-3">
         {items.map((item, i) => (
           <li key={i} className="flex items-start gap-2">
-            <svg className="w-4 h-4 text-[#1F1F1F]/50 dark:text-white/50 shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
+            <svg className="w-4 h-4 text-[#1F1F1F]/50 text-white/50 shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
             <span className="text-gray-600 dark:text-[#999] text-[14px] leading-relaxed">{item}</span>
           </li>
         ))}
@@ -104,18 +104,18 @@ export default function Section6Ecosystem() {
   return (
     <section id="Ecosystem" className="relative py-32 bg-transparent dark:bg-transparent overflow-hidden">
       <SectionStarryMotif />
-      <div className="relative z-10 max-w-[1400px] mx-auto px-6">
+      <div className="relative z-10 max-w-[1920px] mx-auto px-6">
 
         {/* Section Header */}
         <ScrollReveal animation="fade-up" delay={100}>
           <div className="text-center mb-16">
-            <h6 className="font-label text-[#C7A25C] text-[13px] font-semibold tracking-[4px] uppercase mb-4">
+            <h6 className="font-label text-[#1bbce0] text-[13px] font-semibold tracking-[4px] uppercase mb-4">
               Hệ Sinh Thái 30 Đơn Vị
             </h6>
-            <h2 className="font-heading text-3xl md:text-5xl font-bold text-[#1F1F1F] dark:text-white mb-6 uppercase">
-              Chia Theo <span className="text-[#C7A25C]">3 Phân Khúc</span> Rõ Ràng
+            <h2 className="font-heading text-3xl md:text-5xl font-bold text-[#1F1F1F] text-white mb-6 uppercase">
+              Chia Theo <span className="text-[#1bbce0]">3 Phân Khúc</span> Rõ Ràng
             </h2>
-            <div className="w-16 h-[2px] bg-[#C7A25C] mx-auto mb-6" />
+            <div className="w-16 h-[2px] bg-[#1bbce0] mx-auto mb-6" />
             <p className="text-gray-600 dark:text-[#999] max-w-3xl mx-auto leading-relaxed text-[15px] md:text-[16px]">
               Mỗi đơn vị trong hệ sinh thái có thế mạnh riêng về phong cách thiết kế, loại công trình, năng lực thi công và mức ngân sách phù hợp. Khách hàng sẽ được tư vấn để kết nối với nhóm đơn vị phù hợp nhất.
             </p>
@@ -128,19 +128,19 @@ export default function Section6Ecosystem() {
             <ScrollReveal key={index} animation="fade-up" delay={200 + index * 150} className="h-full relative mt-4 flex flex-col">
 
               {tier.highlight && (
-                <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-[#C7A25C] text-white text-[11px] font-bold px-4 py-1.5 uppercase tracking-wider whitespace-nowrap z-30 shadow-[0_0_20px_rgba(206,158,81,0.5)]">
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-[#1bbce0] text-white text-[11px] font-bold px-4 py-1.5 uppercase tracking-wider whitespace-nowrap z-30 shadow-[0_0_20px_rgba(206,158,81,0.5)]">
                   Phổ biến nhất
                 </div>
               )}
 
               <SpotlightCard 
-                className={`h-full flex flex-col transition-all duration-500 hover:-translate-y-2 flex-grow ${tier.highlight ? 'border-2 border-[#C7A25C] shadow-[0_0_30px_rgba(206,158,81,0.1)]' : ''}`}
+                className={`h-full flex flex-col transition-all duration-500 hover:-translate-y-2 flex-grow ${tier.highlight ? 'border-2 border-[#1bbce0] shadow-[0_0_30px_rgba(206,158,81,0.1)]' : ''}`}
                 innerClassName="flex flex-col flex-grow"
               >
 
                 {/* Header */}
-                <div className={`p-8 text-center border-b ${tier.highlight ? 'border-[#C7A25C]/20' : 'border-[#ECE7DE] dark:border-white/5'} bg-transparent relative z-10`}>
-                  <h3 className="font-heading text-2xl lg:text-3xl font-bold text-[#1F1F1F] dark:text-white">
+                <div className={`p-8 text-center border-b ${tier.highlight ? 'border-[#1bbce0]/20' : 'border-[#ECE7DE] dark:border-white/5'} bg-transparent relative z-10`}>
+                  <h3 className="font-heading text-2xl lg:text-3xl font-bold text-[#1F1F1F] text-white">
                     {tier.title}
                   </h3>
                 </div>
@@ -156,8 +156,8 @@ export default function Section6Ecosystem() {
                     <Link
                       href="#Form"
                       className={`block w-full py-4 text-center font-bold uppercase tracking-wider text-[13px] transition-colors ${tier.highlight
-                          ? 'bg-[#C7A25C] text-white hover:bg-transparent hover:text-[#C7A25C] border-2 border-[#C7A25C]'
-                          : 'bg-transparent text-[#1F1F1F] dark:text-white border border-[#ECE7DE] dark:border-white/10 hover:border-[#C7A25C] hover:text-[#C7A25C]'
+                          ? 'bg-[#1bbce0] text-white hover:bg-transparent hover:text-[#1bbce0] border-2 border-[#1bbce0]'
+                          : 'bg-transparent text-[#1F1F1F] text-white border border-[#ECE7DE] dark:border-white/10 hover:border-[#1bbce0] hover:text-[#1bbce0]'
                         }`}
                     >
                       Nhận tư vấn nhóm này

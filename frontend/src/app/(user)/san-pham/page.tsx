@@ -25,19 +25,19 @@ function CustomSelect({ label, options, value, onChange }: { label: string, opti
       <label className="block text-sm text-white/50 mb-2 font-medium">{label}</label>
       <div className="relative">
         <div
-          className={`bg-[#021817]/50 border ${isOpen ? 'border-[#51d7c4]' : 'border-[#51d7c4]/20'} text-white p-3 rounded-[2px] cursor-pointer flex justify-between items-center transition-colors hover:border-[#51d7c4]/50 h-[46px]`}
+          className={`bg-[#020b0d]/50 border ${isOpen ? 'border-[#27d6ff]' : 'border-[#27d6ff]/20'} text-white p-3 rounded-[2px] cursor-pointer flex justify-between items-center transition-colors hover:border-[#27d6ff]/50 h-[46px]`}
           onClick={() => setIsOpen(!isOpen)}
         >
           <span className="text-sm line-clamp-1">{selectedLabel}</span>
-          <svg className={`w-4 h-4 ml-2 flex-shrink-0 transition-transform ${isOpen ? 'rotate-180 text-[#51d7c4]' : 'text-white/50'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path></svg>
+          <svg className={`w-4 h-4 ml-2 flex-shrink-0 transition-transform ${isOpen ? 'rotate-180 text-[#27d6ff]' : 'text-white/50'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path></svg>
         </div>
 
         {isOpen && (
-          <div className="absolute z-50 w-full mt-2 bg-[#021817] shadow-lg border border-[#51d7c4]/20 rounded-[2px] py-2 animate-fadeInDown max-h-[300px] overflow-y-auto">
+          <div className="absolute z-50 w-full mt-2 bg-[#020b0d] shadow-lg border border-[#27d6ff]/20 rounded-[2px] py-2 animate-fadeInDown max-h-[300px] overflow-y-auto">
             {options.map((opt) => (
               <div
                 key={opt.value}
-                className={`px-4 py-2 text-sm cursor-pointer transition-colors ${value === opt.value ? 'bg-[#51d7c4]/15 text-[#51d7c4] font-medium' : 'text-white/80 hover:bg-white/5 hover:text-[#51d7c4]'}`}
+                className={`px-4 py-2 text-sm cursor-pointer transition-colors ${value === opt.value ? 'bg-[#27d6ff]/15 text-[#27d6ff] font-medium' : 'text-white/80 hover:bg-white/5 hover:text-[#27d6ff]'}`}
                 onClick={() => {
                   onChange(opt.value);
                   setIsOpen(false);
@@ -204,14 +204,14 @@ export default function SanPhamPage() {
 
   return (
     <div className="overflow-hidden relative pt-[120px] pb-20 min-h-screen text-white bg-transparent">
-      <div className="container mx-auto px-6 max-w-[1400px]">
+      <div className="container mx-auto px-6 max-w-[1440px]">
         <div className="flex flex-col items-center justify-center text-center mb-16">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-[2px] bg-[#51d7c4]/15 border-l-2 border-[#51d7c4] text-[#51d7c4] text-[11px] font-bold uppercase tracking-widest mb-4 drop-shadow-[0_0_8px_rgba(81,215,196,0.3)] mx-auto">
-            <span className="w-2 h-2 rounded-[2px] bg-[#51d7c4] animate-pulse"></span>
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-[2px] bg-[#27d6ff]/15 border-l-2 border-[#27d6ff] text-[#27d6ff] text-[11px] font-bold uppercase tracking-widest mb-4 drop-shadow-[0_0_8px_rgba(81,215,196,0.3)] mx-auto">
+            <span className="w-2 h-2 rounded-[2px] bg-[#27d6ff] animate-pulse"></span>
             Nội Thất Cao Cấp
           </div>
           <h1 className="w-full uppercase font-heading text-4xl md:text-5xl font-bold text-white leading-tight mb-4">
-            Tất cả <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#008f82] to-[#51d7c4]">Sản Phẩm</span>
+            Tất cả <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#0a8ba8] to-[#27d6ff]">Sản Phẩm</span>
           </h1>
           <p className="text-white/70 text-base md:text-lg max-w-3xl mx-auto">
             Khám phá những sản phẩm nội thất cao cấp của chúng tôi, nơi từng đường nét đều được thiết kế và chế tác tinh xảo, mang lại một không gian sống đậm chất nghệ thuật và hoàn mỹ.
@@ -219,7 +219,7 @@ export default function SanPhamPage() {
         </div>
 
         {/* Filters Scaffold */}
-        <div className="bg-[#021817]/40 backdrop-blur-md p-6 rounded-[2px] mb-12 border border-[#51d7c4]/20 flex flex-wrap gap-4 items-end relative z-[60] shadow-[0_15px_40px_rgba(81,215,196,0.05)]">
+        <div className="bg-[#020b0d]/40 backdrop-blur-md p-6 rounded-[2px] mb-12 border border-[#27d6ff]/20 flex flex-wrap gap-4 items-end relative z-[60] shadow-[0_15px_40px_rgba(81,215,196,0.05)]">
           <CustomSelect
             label="Loại công trình"
             value={activeFilters.type}
@@ -242,7 +242,7 @@ export default function SanPhamPage() {
           <div className="flex-1 min-w-[200px]">
             <button
               onClick={() => setActiveFilters({ type: '*', unit: '*', price: '*' })}
-              className="w-full bg-[#51d7c4] hover:bg-[#008f82] text-[#010d0c] font-black py-3 px-6 rounded-[2px] transition-colors uppercase tracking-wider text-sm h-[46px] mt-2 shadow-[0_0_15px_rgba(81,215,196,0.2)]"
+              className="w-full bg-[#27d6ff] hover:bg-[#0a8ba8] text-[#010d0c] font-black py-3 px-6 rounded-[2px] transition-colors uppercase tracking-wider text-sm h-[46px] mt-2 shadow-[0_0_15px_rgba(81,215,196,0.2)]"
             >
               Xóa bộ lọc
             </button>
@@ -263,7 +263,7 @@ export default function SanPhamPage() {
             ))}
           </div>
         ) : products.length === 0 ? (
-          <div className="text-center py-20 bg-[#021817]/40 backdrop-blur-md rounded-[4px] border border-[#51d7c4]/15">
+          <div className="text-center py-20 bg-[#020b0d]/40 backdrop-blur-md rounded-[4px] border border-[#27d6ff]/15">
             <h3 className="text-2xl font-bold mb-4 text-white">Không tìm thấy sản phẩm nào</h3>
             <p className="text-white/60">Vui lòng thử chọn danh mục khác.</p>
           </div>
@@ -271,8 +271,8 @@ export default function SanPhamPage() {
           <>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
               {products.map((item, index) => (
-                <Link href={item.link} key={`${item.id}-${index}`} className="group flex flex-col bg-[#021817]/40 backdrop-blur-md border border-[#51d7c4]/10 rounded-[2px] overflow-hidden hover:shadow-[0_0_30px_rgba(81,215,196,0.15)] hover:-translate-y-2 transition-all duration-500 relative">
-                  <div className="aspect-[4/3] relative overflow-hidden bg-[#021817]/40 border-b border-[#51d7c4]/10">
+                <Link href={item.link} key={`${item.id}-${index}`} className="group flex flex-col bg-[#020b0d]/40 backdrop-blur-md border border-[#27d6ff]/10 rounded-[2px] overflow-hidden hover:shadow-[0_0_30px_rgba(81,215,196,0.15)] hover:-translate-y-2 transition-all duration-500 relative">
+                  <div className="aspect-[4/3] relative overflow-hidden bg-[#020b0d]/40 border-b border-[#27d6ff]/10">
                     {item.img ? (
                       <img src={item.img} alt={item.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
                     ) : (
@@ -281,19 +281,19 @@ export default function SanPhamPage() {
                       </div>
                     )}
                     
-                    <div className="absolute top-4 left-4 bg-[#51d7c4] text-[#010d0c] text-[10px] font-bold uppercase tracking-widest px-3 py-1 shadow-md z-20">Mới nhất</div>
+                    <div className="absolute top-4 left-4 bg-[#27d6ff] text-[#010d0c] text-[10px] font-bold uppercase tracking-widest px-3 py-1 shadow-md z-20">Mới nhất</div>
                     
-                    <div className="absolute top-4 right-4 z-20 w-11 h-11 bg-[#021817]/80 rounded-full p-1.5 shadow-xl flex items-center justify-center group/logo border border-[#51d7c4]/20 hover:scale-110 transition-transform">
+                    <div className="absolute top-4 right-4 z-20 w-11 h-11 bg-[#020b0d]/80 rounded-full p-1.5 shadow-xl flex items-center justify-center group/logo border border-[#27d6ff]/20 hover:scale-110 transition-transform">
                       <img src={item.unitLogo} alt={item.unitName} className="w-full h-full object-contain rounded-full" />
-                      <div className="absolute top-full mt-2 right-0 bg-[#021817] text-[#51d7c4] text-[11px] px-3 py-1.5 rounded-[2px] opacity-0 invisible group-hover/logo:opacity-100 group-hover/logo:visible whitespace-nowrap transition-all shadow-lg pointer-events-none font-bold tracking-widest uppercase border border-[#51d7c4]/30">
+                      <div className="absolute top-full mt-2 right-0 bg-[#020b0d] text-[#27d6ff] text-[11px] px-3 py-1.5 rounded-[2px] opacity-0 invisible group-hover/logo:opacity-100 group-hover/logo:visible whitespace-nowrap transition-all shadow-lg pointer-events-none font-bold tracking-widest uppercase border border-[#27d6ff]/30">
                         {item.unitName}
                       </div>
                     </div>
                   </div>
                   <div className="p-6 flex flex-col flex-grow">
-                    <div className="text-[11px] font-bold uppercase tracking-widest text-[#51d7c4]/60 mb-2">{item.categories.join(', ')}</div>
-                    <h3 className="font-heading text-lg font-bold text-white group-hover:text-[#51d7c4] transition-colors mb-4 line-clamp-2 leading-snug">{item.title}</h3>
-                    <div className="mt-auto pt-4 border-t border-[#51d7c4]/10 relative z-20">
+                    <div className="text-[11px] font-bold uppercase tracking-widest text-[#27d6ff]/60 mb-2">{item.categories.join(', ')}</div>
+                    <h3 className="font-heading text-lg font-bold text-white group-hover:text-[#27d6ff] transition-colors mb-4 line-clamp-2 leading-snug">{item.title}</h3>
+                    <div className="mt-auto pt-4 border-t border-[#27d6ff]/10 relative z-20">
                       <span 
                         onClick={(e) => {
                           e.preventDefault();
@@ -302,7 +302,7 @@ export default function SanPhamPage() {
                           setSelectedProductImage(item.img);
                           setIsQuoteModalOpen(true);
                         }}
-                        className="flex items-center justify-center gap-2 w-full bg-white/5 border border-[#51d7c4]/30 text-[#51d7c4] font-black uppercase tracking-wider text-[11px] py-3 rounded-[2px] group-hover:bg-[#51d7c4] group-hover:text-[#010d0c] group-hover:border-[#51d7c4] hover:bg-[#51d7c4] hover:text-[#010d0c] hover:border-[#51d7c4] transition-all duration-300 shadow-[inset_0_0_10px_rgba(81,215,196,0.05)]"
+                        className="flex items-center justify-center gap-2 w-full bg-white/5 border border-[#27d6ff]/30 text-[#27d6ff] font-black uppercase tracking-wider text-[11px] py-3 rounded-[2px] group-hover:bg-[#27d6ff] group-hover:text-[#010d0c] group-hover:border-[#27d6ff] hover:bg-[#27d6ff] hover:text-[#010d0c] hover:border-[#27d6ff] transition-all duration-300 shadow-[inset_0_0_10px_rgba(81,215,196,0.05)]"
                       >
                         Nhận báo giá
                         <ArrowRight className="w-4 h-4" />
@@ -316,10 +316,10 @@ export default function SanPhamPage() {
             {/* Infinite Scroll Loader */}
             <div ref={loaderRef} className="py-12 flex justify-center items-center w-full">
               {isLoadingMore && (
-                <div className="flex gap-2 items-center text-[#51d7c4]">
-                  <span className="w-2 h-2 rounded-full bg-[#51d7c4] animate-bounce"></span>
-                  <span className="w-2 h-2 rounded-full bg-[#51d7c4] animate-bounce delay-100"></span>
-                  <span className="w-2 h-2 rounded-full bg-[#51d7c4] animate-bounce delay-200"></span>
+                <div className="flex gap-2 items-center text-[#27d6ff]">
+                  <span className="w-2 h-2 rounded-full bg-[#27d6ff] animate-bounce"></span>
+                  <span className="w-2 h-2 rounded-full bg-[#27d6ff] animate-bounce delay-100"></span>
+                  <span className="w-2 h-2 rounded-full bg-[#27d6ff] animate-bounce delay-200"></span>
                 </div>
               )}
             </div>

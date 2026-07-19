@@ -32,13 +32,13 @@ export default function SectionPolicies() {
   return (
     <section className="overflow-hidden py-24 bg-transparent dark:bg-transparent modern-section relative border-t border-[#ECE7DE] dark:border-white/20">
       <SectionStarryMotif />
-      <div className="max-w-[1400px] mx-auto px-6">
+      <div className="max-w-[1920px] mx-auto px-6">
         <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-[2px] bg-[#C7A25C]/10 border border-[#C7A25C]/20 text-[#A67C00] dark:text-[#FFD700] text-xs font-bold uppercase tracking-wider mb-4 luxury-glow">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-[2px] bg-[#1bbce0]/10 border border-[#1bbce0]/20 text-[#A67C00] dark:text-[#FFD700] text-xs font-bold uppercase tracking-wider mb-4 luxury-glow">
             Cam kết chất lượng
           </div>
-          <h2 className="font-heading text-3xl md:text-5xl font-bold text-[#1F1F1F] dark:text-white mb-6 uppercase">
-            Lý Do <span className="text-[#C7A25C]">Khách Hàng</span> Lựa Chọn
+          <h2 className="font-heading text-3xl md:text-5xl font-bold text-[#1F1F1F] text-white mb-6 uppercase">
+            Lý Do <span className="text-[#1bbce0]">Khách Hàng</span> Lựa Chọn
           </h2>
           <p className="text-gray-500 dark:text-[#888] max-w-2xl mx-auto text-lg">
             Chúng tôi không chỉ cung cấp sản phẩm nội thất, chúng tôi trao gửi sự an tâm và cam kết gắn bó dài lâu.
@@ -47,13 +47,13 @@ export default function SectionPolicies() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {POLICIES.map((policy) => (
-            <div key={policy.id} className="card dark:bg-[#1a1a1a] border border-[#ECE7DE] dark:border-white/20 p-8 hover:border-[#C7A25C]/50 hover:-translate-y-2 transition-all duration-300 luxury-glow group">
-              <div className="w-16 h-16 bg-[#C7A25C]/10 rounded-[4px] flex items-center justify-center mb-6 text-[#C7A25C] group-hover:bg-[#C7A25C] group-hover:text-white transition-colors rotate-3 group-hover:-rotate-3 duration-300">
+            <div key={policy.id} className="card bg-[#020b0d] border border-[#ECE7DE] dark:border-white/20 p-8 hover:border-[#1bbce0]/50 hover:-translate-y-2 transition-all duration-300 luxury-glow group">
+              <div className="w-16 h-16 bg-[#1bbce0]/10 rounded-[4px] flex items-center justify-center mb-6 text-[#1bbce0] group-hover:bg-[#1bbce0] group-hover:text-white transition-colors rotate-3 group-hover:-rotate-3 duration-300">
                 <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d={policy.icon} />
                 </svg>
               </div>
-              <h3 className="font-heading text-xl font-bold text-[#1F1F1F] dark:text-white mb-4 group-hover:text-[#C7A25C] transition-colors">{policy.title}</h3>
+              <h3 className="font-heading text-xl font-bold text-[#1F1F1F] text-white mb-4 group-hover:text-[#1bbce0] transition-colors">{policy.title}</h3>
               <p className="text-gray-500 dark:text-[#888] leading-relaxed text-sm">
                 {policy.desc}
               </p>

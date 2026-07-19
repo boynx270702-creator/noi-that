@@ -160,7 +160,7 @@ export default function HeroSlider() {
 
       {/* ── Caption Content (Centered) ── */}
       <div className="absolute inset-0 z-20 flex items-center justify-center pointer-events-none">
-        <div className="container mx-auto px-6 md:px-20 max-w-[1400px]">
+        <div className="container mx-auto px-6 md:px-20 max-w-[1920px]">
           <AnimatePresence mode="wait">
             <motion.div
               key={current}
@@ -168,10 +168,10 @@ export default function HeroSlider() {
               initial="hidden"
               animate="show"
               exit="exit"
-              className="max-w-[1400px] mx-auto text-center flex flex-col items-center justify-center pointer-events-auto"
+              className="max-w-[1920px] mx-auto text-center flex flex-col items-center justify-center pointer-events-auto"
             >
 
-              <motion.p variants={itemVariants} className="text-[#D3AE3E] text-[12px] md:text-[14px] font-bold tracking-[0.3em] uppercase mb-6 drop-shadow-md">
+              <motion.p variants={itemVariants} className="text-[#27d6ff] text-[12px] md:text-[14px] font-bold tracking-[0.3em] uppercase mb-6 drop-shadow-md">
                 {SLIDES[current].subtitle}
               </motion.p>
 
@@ -190,7 +190,7 @@ export default function HeroSlider() {
                 </h3>
               </motion.div>
 
-              <motion.div variants={itemVariants} className="w-24 h-[2px] bg-gradient-to-r from-transparent via-[#D3AE3E] to-transparent mb-8" />
+              <motion.div variants={itemVariants} className="w-24 h-[2px] bg-gradient-to-r from-transparent via-[#27d6ff] to-transparent mb-8" />
 
               <motion.p variants={itemVariants} className="text-white/90 text-[16px] md:text-[18px] leading-[1.8] max-w-3xl mb-12 drop-shadow-md">
                 {SLIDES[current].text}
@@ -220,10 +220,10 @@ export default function HeroSlider() {
       {/* ── Social Icons ── */}
       <div className="hidden lg:flex absolute left-8 top-1/2 -translate-y-1/2 z-[35] flex-col items-center gap-5">
         <div className="w-[1px] h-[60px] bg-gradient-to-b from-transparent to-white/30 mb-2"></div>
-        <a href="https://www.facebook.com/profile.php?id=61591340093069" target="_blank" rel="noreferrer" className="flex items-center justify-center w-10 h-10 rounded-full border border-white/20 text-white hover:text-[#D3AE3E] hover:border-[#D3AE3E] bg-white/5 backdrop-blur-sm transition-all duration-500 hover:scale-110">
+        <a href="https://www.facebook.com/profile.php?id=61591340093069" target="_blank" rel="noreferrer" className="flex items-center justify-center w-10 h-10 rounded-full border border-white/20 text-white hover:text-[#27d6ff] hover:border-[#27d6ff] bg-white/5 backdrop-blur-sm transition-all duration-500 hover:scale-110">
           <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" /></svg>
         </a>
-        <a href="mailto:arcvietlivingnexus@gmail.com" className="flex items-center justify-center w-10 h-10 rounded-full border border-white/20 text-white hover:text-[#D3AE3E] hover:border-[#D3AE3E] bg-white/5 backdrop-blur-sm transition-all duration-500 hover:scale-110">
+        <a href="mailto:arcvietlivingnexus@gmail.com" className="flex items-center justify-center w-10 h-10 rounded-full border border-white/20 text-white hover:text-[#27d6ff] hover:border-[#27d6ff] bg-white/5 backdrop-blur-sm transition-all duration-500 hover:scale-110">
           <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24"><rect width="20" height="16" x="2" y="4" rx="2" /><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" /></svg>
         </a>
         <div className="w-[1px] h-[60px] bg-gradient-to-t from-transparent to-white/30 mt-2"></div>

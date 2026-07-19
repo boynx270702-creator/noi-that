@@ -49,12 +49,12 @@ export default function SectionPartners() {
     <section className="py-20 relative bg-[#f9f9f9] dark:bg-[#111111] border-t border-[#ECE7DE] dark:border-white/5 overflow-hidden">
       <div className="absolute inset-0 bg-[url('/images/common/noise.png')] opacity-[0.03] mix-blend-overlay pointer-events-none z-0"></div>
       <SectionStarryMotif />
-      <div className="container mx-auto px-6 max-w-[1400px] relative z-10">
+      <div className="container mx-auto px-6 max-w-[1920px] relative z-10">
         <div className="text-center mb-12">
-          <h2 className="font-heading text-sm md:text-base font-semibold text-[#D3AE3E] uppercase tracking-[0.2em] mb-2">
+          <h2 className="font-heading text-sm md:text-base font-semibold text-[#27d6ff] uppercase tracking-[0.2em] mb-2">
             Các đối tác chính
           </h2>
-          <p className="text-gray-400 dark:text-white/40 text-sm">Hệ sinh thái hơn 30 đối tác chuyên nghiệp hàng đầu</p>
+          <p className="text-gray-400 text-white/40 text-sm">Hệ sinh thái hơn 30 đối tác chuyên nghiệp hàng đầu</p>
         </div>
 
         {/* Grid for logos */}
@@ -62,32 +62,32 @@ export default function SectionPartners() {
           {isLoading ? (
              [1, 2, 3, 4, 5, 6].map(i => <div key={i} className="h-[140px] animate-pulse bg-gray-200 dark:bg-white/5 rounded-[4px] border border-gray-100 dark:border-white/10"></div>)
           ) : partners.map((partner) => (
-            <Link href={`/don-vi-thiet-ke/${partner.id}`} key={partner.id} className="flex flex-col items-center justify-center p-6 card dark:bg-[#1a1a1a] dark:hover:bg-white/10 border border-[#ECE7DE] dark:border-white/20 hover:border-[#C7A25C]/50 transition-all duration-300 group cursor-pointer hover:-translate-y-1 hover:shadow-lg luxury-glow rounded-[4px]">
-              <div className="w-20 h-20 mb-4 text-gray-400 dark:text-white/40 group-hover:text-[#C7A25C] transition-all rounded-full overflow-hidden border border-[#ECE7DE] dark:border-white/10 flex items-center justify-center bg-white shadow-sm p-2 shadow-[0_5px_15px_rgba(0,0,0,0.05)] dark:shadow-[0_5px_15px_rgba(0,0,0,0.3)]">
+            <Link href={`/don-vi-thiet-ke/${partner.id}`} key={partner.id} className="flex flex-col items-center justify-center p-6 card bg-[#020b0d] dark:hover:bg-white/10 border border-[#ECE7DE] dark:border-white/20 hover:border-[#1bbce0]/50 transition-all duration-300 group cursor-pointer hover:-translate-y-1 hover:shadow-lg luxury-glow rounded-[4px]">
+              <div className="w-20 h-20 mb-4 text-gray-400 text-white/40 group-hover:text-[#1bbce0] transition-all rounded-full overflow-hidden border border-[#ECE7DE] dark:border-white/10 flex items-center justify-center bg-white shadow-sm p-2 shadow-[0_5px_15px_rgba(0,0,0,0.05)] dark:shadow-[0_5px_15px_rgba(0,0,0,0.3)]">
                 {getAvatarUrl(partner.avatar) ? (
                   <img src={getAvatarUrl(partner.avatar)} alt={partner.name} className="w-full h-full object-contain filter drop-shadow-[0_0_2px_rgba(150,150,150,0.8)] dark:drop-shadow-[0_0_2px_rgba(255,255,255,0.8)]" />
                 ) : (
-                  <span className="text-xl font-heading font-bold text-[#D3AE3E]">{partner.name.substring(0, 2).toUpperCase()}</span>
+                  <span className="text-xl font-heading font-bold text-[#27d6ff]">{partner.name.substring(0, 2).toUpperCase()}</span>
                 )}
               </div>
-              <h3 className="font-heading font-bold text-[#1F1F1F] dark:text-white tracking-wider text-center line-clamp-1">{partner.name}</h3>
+              <h3 className="font-heading font-bold text-[#1F1F1F] text-white tracking-wider text-center line-clamp-1">{partner.name}</h3>
               
               {/* Segment Badge */}
               <div className={`mt-2 inline-block text-[9px] font-bold px-2 py-0.5 rounded-[2px] uppercase tracking-widest shadow-sm ${
-                (partner.segment || '').includes('cao-cap') ? 'bg-gradient-to-r from-[#D3AE3E] to-[#E5C98A] text-[#131313]' :
+                (partner.segment || '').includes('cao-cap') ? 'bg-gradient-to-r from-[#27d6ff] to-[#E5C98A] text-[#131313]' :
                 (partner.segment || '').includes('trung-cap') ? 'bg-gradient-to-r from-[#e2e2e2] to-[#b4b5b5] text-[#131313]' :
                 'bg-gradient-to-r from-[#cd7f32] to-[#b87333] text-white'
               }`}>
                 {(partner.segment || '').includes('cao-cap') ? 'Cao cấp' : (partner.segment || '').includes('trung-cap') ? 'Trung cấp' : 'Cơ bản'}
               </div>
               
-              <p className="text-[10px] text-gray-400 dark:text-white/40 uppercase tracking-widest mt-2 text-center line-clamp-1" title={partner.shortDescription || 'Đối tác'}>{partner.shortDescription || 'Đối tác'}</p>
+              <p className="text-[10px] text-gray-400 text-white/40 uppercase tracking-widest mt-2 text-center line-clamp-1" title={partner.shortDescription || 'Đối tác'}>{partner.shortDescription || 'Đối tác'}</p>
             </Link>
           ))}
         </div>
         
         <div className="mt-12 text-center">
-          <Link href="/don-vi-thiet-ke" className="inline-flex items-center gap-2 text-[12px] font-bold uppercase tracking-widest text-[#1F1F1F] dark:text-white hover:text-[#C7A25C] dark:hover:text-[#C7A25C] transition-colors group px-6 py-3 border border-gray-200 dark:border-white/20 hover:border-[#C7A25C] rounded-[2px]">
+          <Link href="/don-vi-thiet-ke" className="inline-flex items-center gap-2 text-[12px] font-bold uppercase tracking-widest text-[#1F1F1F] text-white hover:text-[#1bbce0] dark:hover:text-[#1bbce0] transition-colors group px-6 py-3 border border-gray-200 dark:border-white/20 hover:border-[#1bbce0] rounded-[2px]">
             Xem tất cả đối tác
             <ArrowRight className="w-4 h-4 group-hover:translate-x-2 transition-transform" />
           </Link>

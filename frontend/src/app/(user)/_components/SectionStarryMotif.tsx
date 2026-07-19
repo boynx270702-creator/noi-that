@@ -199,7 +199,7 @@ export default function SectionStarryMotif({ variant, position = 'full', particl
     <motion.div
       ref={containerRef}
       style={{ '--mx': smX, '--my': smY } as any}
-      className="absolute inset-0 pointer-events-none z-0 overflow-hidden opacity-100 dark:opacity-90 transition-opacity duration-1000 text-[#51d7c4] dark:text-[#51d7c4] [--star-white:#ffffff] dark:[--star-white:#51d7c4]"
+      className="absolute inset-0 pointer-events-none z-0 overflow-hidden opacity-100 dark:opacity-90 transition-opacity duration-1000 text-[#27d6ff] dark:text-[#27d6ff] [--star-white:#ffffff] dark:[--star-white:#27d6ff]"
     >
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-currentColor/15 dark:from-currentColor/20 via-transparent to-transparent opacity-90"></div>
 

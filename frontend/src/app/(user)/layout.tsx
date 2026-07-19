@@ -8,8 +8,7 @@ import ClientToaster from './_components/ClientToaster';
 
 export default function UserLayout({ children }: { children: React.ReactNode }) {
   return (
-    <div className="dark min-h-screen flex flex-col relative bg-gradient-to-b from-[#021817] via-[#022b26] to-[#004f47] text-white overflow-x-hidden">
-      <SectionStarryMotif />
+    <div className="dark min-h-screen flex flex-col relative bg-[#020b0d] text-white overflow-x-hidden">
       <div className="relative z-10 flex flex-col min-h-screen">
         <Header />
         <main className="flex-grow">

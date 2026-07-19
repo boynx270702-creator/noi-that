@@ -49,19 +49,19 @@ export default function Section2Problem() {
       <ArchitecturalAccent variant="overlapping-squares" className="bottom-10 right-10 w-64 h-64 opacity-50" />
 
       {/* Background Decor */}
-      <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-[#ECE7DE]/50 dark:from-[#1a1a1a] to-transparent opacity-50 pointer-events-none" />
+      <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-[#ECE7DE]/50 dark:from-[#020b0d] to-transparent opacity-50 pointer-events-none" />
 
-      <div className="relative z-10 max-w-[1400px] mx-auto px-6">
+      <div className="relative z-10 max-w-[1920px] mx-auto px-6">
         {/* Section Header */}
         <ScrollReveal animation="fade-up" delay={100}>
           <div className="max-w-4xl mb-20">
-            <h6 className="font-label text-[#C7A25C] text-[13px] font-semibold tracking-[4px] uppercase mb-4">
+            <h6 className="font-label text-[#1bbce0] text-[13px] font-semibold tracking-[4px] uppercase mb-4">
               Vấn đề thường gặp
             </h6>
-            <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold text-[#1F1F1F] dark:text-white mb-8 leading-[1.2]">
+            <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold text-[#1F1F1F] text-white mb-8 leading-[1.2]">
               Tự thuê đơn vị nội thất bên ngoài thường tốn thời gian, khó so sánh và dễ gặp rủi ro
             </h2>
-            <div className="w-16 h-[2px] bg-[#C7A25C] mb-8" />
+            <div className="w-16 h-[2px] bg-[#1bbce0] mb-8" />
             <p className="text-gray-600 dark:text-[#999] leading-relaxed text-[15px] md:text-[17px]">
               Khi làm nội thất, khách hàng thường phải tự tìm đơn vị, tự hỏi báo giá, tự đánh giá năng lực và tự theo dõi quá trình thi công. Điều này dễ khiến khách hàng mất nhiều thời gian, chọn sai đơn vị hoặc phát sinh chi phí ngoài dự kiến.
             </p>
@@ -77,7 +77,7 @@ export default function Section2Problem() {
               delay={200 + index * 100}
               className={`relative group overflow-hidden rounded-[2px] ${problem.colSpan}`}
             >
-              <div className="h-full card rounded-[2px] dark:bg-[#131313] border border-[#ECE7DE] dark:border-white/5 hover:border-[#C7A25C]/50 transition-all duration-500 p-8 md:p-10 flex flex-col justify-between min-h-[300px]">
+              <div className="h-full card rounded-[2px] dark:bg-[#131313] border border-[#ECE7DE] dark:border-white/5 hover:border-[#1bbce0]/50 transition-all duration-500 p-8 md:p-10 flex flex-col justify-between min-h-[300px]">
 
                 {/* Optional Background Image for some blocks */}
                 {problem.bgImg && (
@@ -93,11 +93,11 @@ export default function Section2Problem() {
                 <div className="relative z-10">
                   <div
                     className="text-transparent text-6xl md:text-7xl font-bold mb-6 group-hover:-translate-y-2 transition-all duration-500 inline-block drop-shadow-sm"
-                    style={{ WebkitTextStroke: '1px #C7A25C' }}
+                    style={{ WebkitTextStroke: '1px #1bbce0' }}
                   >
                     {problem.num}
                   </div>
-                  <h3 className="font-heading text-xl md:text-2xl font-bold text-[#1F1F1F] dark:text-white mb-4 group-hover:text-[#C7A25C] transition-colors leading-snug">
+                  <h3 className="font-heading text-xl md:text-2xl font-bold text-[#1F1F1F] text-white mb-4 group-hover:text-[#1bbce0] transition-colors leading-snug">
                     {problem.title}
                   </h3>
                   <p className="text-gray-500 dark:text-[#888] leading-relaxed text-[15px]">

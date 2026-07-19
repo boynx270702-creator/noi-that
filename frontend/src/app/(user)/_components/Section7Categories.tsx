@@ -34,18 +34,18 @@ export default function Section7Categories() {
       />
       <ArchitecturalAccent variant="overlapping-circles" className="top-10 right-10 w-56 h-56 opacity-50" />
 
-      <div className="relative z-10 max-w-[1400px] mx-auto px-6">
+      <div className="relative z-10 max-w-[1920px] mx-auto px-6">
 
         {/* Section Header */}
         <ScrollReveal animation="fade-up" delay={100}>
           <div className="text-center mb-16">
-            <h6 className="font-label text-[#C7A25C] text-[13px] font-semibold tracking-[4px] uppercase mb-4">
+            <h6 className="font-label text-[#1bbce0] text-[13px] font-semibold tracking-[4px] uppercase mb-4">
               Các Loại Công Trình Hỗ Trợ
             </h6>
-            <h2 className="font-heading text-3xl md:text-5xl font-bold text-[#1F1F1F] dark:text-white mb-6 uppercase">
-              Phù hợp với <span className="text-[#C7A25C]">nhiều loại công trình</span> khác nhau
+            <h2 className="font-heading text-3xl md:text-5xl font-bold text-[#1F1F1F] text-white mb-6 uppercase">
+              Phù hợp với <span className="text-[#1bbce0]">nhiều loại công trình</span> khác nhau
             </h2>
-            <div className="w-16 h-[2px] bg-[#C7A25C] mx-auto mb-6" />
+            <div className="w-16 h-[2px] bg-[#1bbce0] mx-auto mb-6" />
             <p className="text-[#999] max-w-4xl mx-auto leading-relaxed text-[15px] md:text-[17px]">
               Dù khách hàng cần hoàn thiện một căn hộ nhỏ, cải tạo nhà phố, thiết kế villa hay triển khai công trình thương mại, hệ sinh thái đều có nhóm đơn vị phù hợp theo ngân sách, phong cách và mức độ phức tạp của dự án.
             </p>
@@ -61,14 +61,14 @@ export default function Section7Categories() {
               delay={100 + (index % 4) * 100}
               className={`${cat.size} h-full w-full`}
             >
-              <div className="group relative w-full h-full overflow-hidden bg-[#FFFFFF] dark:bg-[#1a1a1a] shadow-sm dark:shadow-none border border-[#ECE7DE] dark:border-white/10 rounded-[2px] cursor-pointer">
+              <div className="group relative w-full h-full overflow-hidden bg-[#FFFFFF] bg-[#020b0d] shadow-sm dark:shadow-none border border-[#ECE7DE] dark:border-white/10 rounded-[2px] cursor-pointer">
                 {/* Background Image */}
                 <div
                   className="absolute inset-0 bg-cover bg-center transition-all duration-1000 group-hover:scale-110 luxury-image-filter"
                   style={{ backgroundImage: `url(${cat.img})` }}
                 />
                 {/* Luxury Inner Border Accent */}
-                <div className="absolute inset-3 border border-[#D3AE3E]/30 z-20 pointer-events-none transition-all duration-500 group-hover:inset-4 group-hover:border-[#D3AE3E]/60 rounded-[2px]"></div>
+                <div className="absolute inset-3 border border-[#27d6ff]/30 z-20 pointer-events-none transition-all duration-500 group-hover:inset-4 group-hover:border-[#27d6ff]/60 rounded-[2px]"></div>
 
                 {/* Luxury Cream Overlay for Light Mode */}
                 <div
@@ -87,7 +87,7 @@ export default function Section7Categories() {
                   <h3 className="font-heading text-[16px] md:text-[18px] font-medium text-white uppercase tracking-[4px] translate-y-4 group-hover:translate-y-0 transition-transform duration-500 drop-shadow-sm">
                     {cat.name}
                   </h3>
-                  <div className="h-[1px] w-12 bg-[#C7A25C] mt-4 opacity-0 group-hover:opacity-100 transition-all duration-500 delay-100 transform -translate-x-4 group-hover:translate-x-0" />
+                  <div className="h-[1px] w-12 bg-[#1bbce0] mt-4 opacity-0 group-hover:opacity-100 transition-all duration-500 delay-100 transform -translate-x-4 group-hover:translate-x-0" />
                 </div>
               </div>
             </ScrollReveal>

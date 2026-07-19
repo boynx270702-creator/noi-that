@@ -31,19 +31,19 @@ function CustomSelect({ label, options, value, onChange }: { label: string, opti
       <label className="block text-sm text-white/50 mb-2 font-medium">{label}</label>
       <div className="relative">
         <div
-          className={`bg-[#021817]/50 border ${isOpen ? 'border-[#51d7c4]' : 'border-[#51d7c4]/20'} text-white p-3 rounded-[2px] cursor-pointer flex justify-between items-center transition-colors hover:border-[#51d7c4]/50`}
+          className={`bg-[#020b0d]/50 border ${isOpen ? 'border-[#27d6ff]' : 'border-[#27d6ff]/20'} text-white p-3 rounded-[2px] cursor-pointer flex justify-between items-center transition-colors hover:border-[#27d6ff]/50`}
           onClick={() => { setIsOpen(!isOpen); setSearchTerm(''); }}
         >
           <span className="text-sm truncate">{selectedLabel}</span>
-          <svg className={`w-4 h-4 transition-transform ${isOpen ? 'rotate-180 text-[#51d7c4]' : 'text-white/50'} flex-shrink-0`} fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path></svg>
+          <svg className={`w-4 h-4 transition-transform ${isOpen ? 'rotate-180 text-[#27d6ff]' : 'text-white/50'} flex-shrink-0`} fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path></svg>
         </div>
 
         {isOpen && (
-          <div className="absolute z-50 w-full mt-2 bg-[#021817] shadow-lg border border-[#51d7c4]/20 rounded-[2px] py-2 max-h-[300px] overflow-y-auto animate-fadeInDown">
-            <div className="px-3 pb-2 sticky top-0 bg-[#021817] z-10 border-b border-[#51d7c4]/10">
+          <div className="absolute z-50 w-full mt-2 bg-[#020b0d] shadow-lg border border-[#27d6ff]/20 rounded-[2px] py-2 max-h-[300px] overflow-y-auto animate-fadeInDown">
+            <div className="px-3 pb-2 sticky top-0 bg-[#020b0d] z-10 border-b border-[#27d6ff]/10">
               <input 
                 type="text" 
-                className="w-full bg-[#021817]/50 border border-[#51d7c4]/20 rounded-[2px] px-3 py-2 text-sm text-white focus:outline-none focus:border-[#51d7c4]"
+                className="w-full bg-[#020b0d]/50 border border-[#27d6ff]/20 rounded-[2px] px-3 py-2 text-sm text-white focus:outline-none focus:border-[#27d6ff]"
                 placeholder="Tìm kiếm..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
@@ -54,7 +54,7 @@ function CustomSelect({ label, options, value, onChange }: { label: string, opti
             {filteredOptions.length > 0 ? filteredOptions.map((opt) => (
               <div
                 key={opt.value}
-                className={`px-4 py-2 text-sm cursor-pointer transition-colors ${value === opt.value ? 'bg-[#51d7c4]/10 text-[#51d7c4] font-medium' : 'text-white/80 hover:bg-white/5 hover:text-[#51d7c4]'}`}
+                className={`px-4 py-2 text-sm cursor-pointer transition-colors ${value === opt.value ? 'bg-[#27d6ff]/10 text-[#27d6ff] font-medium' : 'text-white/80 hover:bg-white/5 hover:text-[#27d6ff]'}`}
                 onClick={() => {
                   onChange(opt.value);
                   setIsOpen(false);
@@ -93,12 +93,12 @@ export default function DonViThietKePage() {
   const getCategoryStyles = (category: string) => {
     const lower = category?.toLowerCase() || '';
     if (lower.includes('cao cấp') || lower.includes('cao-cap')) {
-      return 'bg-gradient-to-r from-[#008f82] to-[#51d7c4] text-[#010d0c] shadow-[0_0_15px_rgba(81,215,196,0.4)] luxury-glow font-bold';
+      return 'bg-gradient-to-r from-[#0a8ba8] to-[#27d6ff] text-[#010d0c] shadow-[0_0_15px_rgba(81,215,196,0.4)] luxury-glow font-bold';
     }
     if (lower.includes('trung cấp') || lower.includes('trung-cap')) {
-      return 'bg-gradient-to-r from-[#004f47] to-[#008f82] text-white shadow-[0_0_15px_rgba(0,143,130,0.4)] font-bold';
+      return 'bg-gradient-to-r from-[#004f47] to-[#0a8ba8] text-white shadow-[0_0_15px_rgba(0,143,130,0.4)] font-bold';
     }
-    return 'bg-gradient-to-r from-[#021817] to-[#004f47] text-white/90 shadow-[0_0_15px_rgba(2,24,23,0.4)] border border-[#51d7c4]/20';
+    return 'bg-gradient-to-r from-[#021817] to-[#004f47] text-white/90 shadow-[0_0_15px_rgba(2,24,23,0.4)] border border-[#27d6ff]/20';
   };
 
   const [isLoading, setIsLoading] = useState(true);
@@ -198,11 +198,11 @@ export default function DonViThietKePage() {
 
   return (
     <div className="min-h-screen pt-[120px] pb-20 relative bg-transparent text-white">
-      <div className="container mx-auto px-6 max-w-[1400px]">
+      <div className="container mx-auto px-6 max-w-[1440px]">
         {/* Header */}
-        <div className="text-center mb-16 relative overflow-hidden p-10 rounded-[4px] bg-[#021817]/40 backdrop-blur-md border border-[#51d7c4]/20 shadow-[0_15px_40px_rgba(81,215,196,0.05)]">
+        <div className="text-center mb-16 relative overflow-hidden p-10 rounded-[4px] bg-[#020b0d]/40 backdrop-blur-md border border-[#27d6ff]/20 shadow-[0_15px_40px_rgba(81,215,196,0.05)]">
           <div className="relative z-10">
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-[2px] bg-gradient-to-r from-[#51d7c4]/20 to-transparent border-l-2 border-[#51d7c4] text-[#51d7c4] text-[11px] font-bold uppercase tracking-widest mb-4 drop-shadow-[0_0_8px_rgba(81,215,196,0.4)]">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-[2px] bg-gradient-to-r from-[#27d6ff]/20 to-transparent border-l-2 border-[#27d6ff] text-[#27d6ff] text-[11px] font-bold uppercase tracking-widest mb-4 drop-shadow-[0_0_8px_rgba(81,215,196,0.4)]">
               Đơn vị thi công
             </div>
             <h1 className="font-heading text-4xl md:text-5xl font-bold text-white mb-6 uppercase">Hệ sinh thái đơn vị thi công</h1>
@@ -211,7 +211,7 @@ export default function DonViThietKePage() {
         </div>
 
         {/* Filters Scaffold */}
-        <div id="phan-khuc" className="bg-[#021817]/40 backdrop-blur-md p-6 rounded-[4px] mb-12 border border-[#51d7c4]/20 flex flex-wrap gap-4 items-end relative z-[60]">
+        <div id="phan-khuc" className="bg-[#020b0d]/40 backdrop-blur-md p-6 rounded-[4px] mb-12 border border-[#27d6ff]/20 flex flex-wrap gap-4 items-end relative z-[60]">
           <div className="flex-1 min-w-[200px]">
             <label className="block text-sm text-white/50 mb-2 font-medium">Tìm kiếm</label>
             <div className="relative">
@@ -220,7 +220,7 @@ export default function DonViThietKePage() {
                 placeholder="Tên đơn vị, mô tả..." 
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full bg-[#021817]/50 border border-[#51d7c4]/20 text-white p-3 rounded-[2px] focus:outline-none focus:border-[#51d7c4] transition-colors text-sm h-[46px]"
+                className="w-full bg-[#020b0d]/50 border border-[#27d6ff]/20 text-white p-3 rounded-[2px] focus:outline-none focus:border-[#27d6ff] transition-colors text-sm h-[46px]"
               />
               <svg className="absolute right-3 top-3.5 w-4 h-4 text-white/50" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
             </div>
@@ -250,33 +250,33 @@ export default function DonViThietKePage() {
           {isLoading ? (
             <div className="col-span-3 text-center text-white/50 py-10">Đang tải danh sách đơn vị...</div>
           ) : filteredUnits.length === 0 ? (
-            <div className="col-span-1 md:col-span-2 lg:col-span-3 bg-[#021817]/40 backdrop-blur-md border border-[#51d7c4]/15 rounded-[4px] p-16 text-center flex flex-col items-center justify-center min-h-[400px]">
-              <div className="w-24 h-24 bg-[#51d7c4]/10 text-[#51d7c4] rounded-full flex items-center justify-center text-4xl mb-6 shadow-[0_0_30px_rgba(81,215,196,0.15)]">
+            <div className="col-span-1 md:col-span-2 lg:col-span-3 bg-[#020b0d]/40 backdrop-blur-md border border-[#27d6ff]/15 rounded-[4px] p-16 text-center flex flex-col items-center justify-center min-h-[400px]">
+              <div className="w-24 h-24 bg-[#27d6ff]/10 text-[#27d6ff] rounded-full flex items-center justify-center text-4xl mb-6 shadow-[0_0_30px_rgba(81,215,196,0.15)]">
                 <i className="fa fa-building"></i>
               </div>
               <h3 className="font-heading text-2xl font-bold text-white mb-4">Chưa có đối tác nào</h3>
               <p className="text-white/60 max-w-md mx-auto text-lg">Không tìm thấy đơn vị nào phù hợp với bộ lọc hiện tại của bạn.</p>
             </div>
           ) : filteredUnits.map((unit) => (
-            <div key={unit.id} className="bg-[#021817]/40 backdrop-blur-md rounded-[4px] overflow-hidden group border border-[#51d7c4]/10 hover:border-[#51d7c4]/40 hover:-translate-y-1 transition-all shadow-[0_0_20px_rgba(81,215,196,0.05)] hover:shadow-[0_0_30px_rgba(81,215,196,0.15)] relative">
+            <div key={unit.id} className="bg-[#020b0d]/40 backdrop-blur-md rounded-[4px] overflow-hidden group border border-[#27d6ff]/10 hover:border-[#27d6ff]/40 hover:-translate-y-1 transition-all shadow-[0_0_20px_rgba(81,215,196,0.05)] hover:shadow-[0_0_30px_rgba(81,215,196,0.15)] relative">
               <Link href={`/don-vi-thiet-ke/${unit.id}`} className="absolute inset-0 z-40" aria-label={`Xem chi tiết hồ sơ ${unit.name}`}></Link>
-              <div className="h-[240px] relative overflow-hidden flex items-center justify-center bg-[#021817]/40 border-b border-[#51d7c4]/10">
+              <div className="h-[240px] relative overflow-hidden flex items-center justify-center bg-[#020b0d]/40 border-b border-[#27d6ff]/10">
                 {/* Subtle Grid Background */}
                 <div className="absolute inset-0 bg-[url('/images/common/noise.png')] opacity-[0.03] mix-blend-overlay pointer-events-none z-0"></div>
                 <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] z-0"></div>
                 
                 {/* Luxury Corner Accents */}
-                <div className="absolute top-0 left-0 w-8 h-8 border-t-2 border-l-2 border-[#51d7c4] opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-30"></div>
-                <div className="absolute bottom-0 right-0 w-8 h-8 border-b-2 border-r-2 border-[#51d7c4] opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-30"></div>
+                <div className="absolute top-0 left-0 w-8 h-8 border-t-2 border-l-2 border-[#27d6ff] opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-30"></div>
+                <div className="absolute bottom-0 right-0 w-8 h-8 border-b-2 border-r-2 border-[#27d6ff] opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-30"></div>
                 
                 {/* Avatar Display */}
                 {unit.avatarUrl ? (
-                  <div className="w-[180px] h-[120px] md:w-[220px] md:h-[140px] bg-[#021817]/60 backdrop-blur-sm rounded-[4px] shadow-[0_10px_30px_rgba(0,0,0,0.3)] flex items-center justify-center p-4 relative z-20 group-hover:scale-105 transition-transform duration-500 border border-[#51d7c4]/10">
+                  <div className="w-[180px] h-[120px] md:w-[220px] md:h-[140px] bg-[#020b0d]/60 backdrop-blur-sm rounded-[4px] shadow-[0_10px_30px_rgba(0,0,0,0.3)] flex items-center justify-center p-4 relative z-20 group-hover:scale-105 transition-transform duration-500 border border-[#27d6ff]/10">
                     <img src={unit.avatarUrl} alt={unit.name} className="max-w-full max-h-full object-contain drop-shadow-[0_2px_8px_rgba(0,0,0,0.15)] dark:drop-shadow-[0_0_15px_rgba(255,255,255,0.4)] transition-transform duration-500" />
                   </div>
                 ) : (
-                  <div className="w-[180px] h-[120px] md:w-[220px] md:h-[140px] bg-gradient-to-br from-[#021817] to-[#004f47] rounded-[4px] shadow-lg flex items-center justify-center p-6 relative z-20 group-hover:scale-105 transition-transform duration-500 border border-[#51d7c4]/15">
-                    <span className="text-5xl font-heading font-bold text-[#51d7c4] tracking-widest">{unit.name.substring(0, 2).toUpperCase()}</span>
+                  <div className="w-[180px] h-[120px] md:w-[220px] md:h-[140px] bg-gradient-to-br from-[#021817] to-[#004f47] rounded-[4px] shadow-lg flex items-center justify-center p-6 relative z-20 group-hover:scale-105 transition-transform duration-500 border border-[#27d6ff]/15">
+                    <span className="text-5xl font-heading font-bold text-[#27d6ff] tracking-widest">{unit.name.substring(0, 2).toUpperCase()}</span>
                   </div>
                 )}
                 
@@ -292,15 +292,15 @@ export default function DonViThietKePage() {
 
                 <div className="space-y-2 mb-6 text-sm text-white/80">
                   <div className="flex items-start">
-                    <i className="fa fa-building mt-1 w-5 text-[#51d7c4]"></i>
+                    <i className="fa fa-building mt-1 w-5 text-[#27d6ff]"></i>
                     <span><strong>Hạng mục:</strong> {unit.strengths}</span>
                   </div>
                   <div className="flex items-start">
-                    <i className="fa fa-paint-brush mt-1 w-5 text-[#51d7c4]"></i>
+                    <i className="fa fa-paint-brush mt-1 w-5 text-[#27d6ff]"></i>
                     <span><strong>Lĩnh vực:</strong> {unit.style}</span>
                   </div>
                   <div className="flex items-start">
-                    <i className="fa fa-map-marker-alt mt-1 w-5 text-[#51d7c4]"></i>
+                    <i className="fa fa-map-marker-alt mt-1 w-5 text-[#27d6ff]"></i>
                     <span><strong>Khu vực:</strong> {unit.location}</span>
                   </div>
                 </div>
@@ -312,9 +312,9 @@ export default function DonViThietKePage() {
                         e.preventDefault();
                         router.push(`/don-vi-thiet-ke/so-sanh?ids=${unit.id}`);
                       }}
-                      className="flex-1 flex items-center justify-center gap-2 bg-transparent border border-[#51d7c4]/30 hover:bg-[#51d7c4] hover:border-[#51d7c4] text-[#51d7c4] hover:text-[#010d0c] font-bold py-3 px-4 rounded-[2px] transition-all duration-300 uppercase tracking-wider text-xs group/cb shadow-[0_4px_15px_rgba(81,215,196,0.05)] hover:shadow-[0_4px_15px_rgba(81,215,196,0.3)]"
+                      className="flex-1 flex items-center justify-center gap-2 bg-transparent border border-[#27d6ff]/30 hover:bg-[#27d6ff] hover:border-[#27d6ff] text-[#27d6ff] hover:text-[#010d0c] font-bold py-3 px-4 rounded-[2px] transition-all duration-300 uppercase tracking-wider text-xs group/cb shadow-[0_4px_15px_rgba(81,215,196,0.05)] hover:shadow-[0_4px_15px_rgba(81,215,196,0.3)]"
                     >
-                      <svg className="w-4 h-4 text-[#51d7c4] group-hover/cb:text-[#010d0c] transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" /></svg>
+                      <svg className="w-4 h-4 text-[#27d6ff] group-hover/cb:text-[#010d0c] transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" /></svg>
                       So sánh
                     </button>
                     {unit.fanpage && (
@@ -323,7 +323,7 @@ export default function DonViThietKePage() {
                       </a>
                     )}
                   </div>
-                  <Link href={`/tu-van?unit=${unit.id}`} className="text-center block w-full bg-[#51d7c4] hover:bg-[#008f82] text-[#010d0c] font-black py-3 px-4 rounded-[2px] transition-colors uppercase tracking-wider text-xs shadow-[0_0_15px_rgba(81,215,196,0.2)]">
+                  <Link href={`/tu-van?unit=${unit.id}`} className="text-center block w-full bg-[#27d6ff] hover:bg-[#0a8ba8] text-[#010d0c] font-black py-3 px-4 rounded-[2px] transition-colors uppercase tracking-wider text-xs shadow-[0_0_15px_rgba(81,215,196,0.2)]">
                     Nhận tư vấn
                   </Link>
                 </div>

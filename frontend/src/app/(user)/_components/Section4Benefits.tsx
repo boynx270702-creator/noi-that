@@ -91,18 +91,18 @@ export default function Section4Benefits() {
       <SectionStarryMotif />
       <ArchitecturalAccent variant="overlapping-rectangles" className="top-10 left-10 w-56 h-56 opacity-50" />
       
-      <div className="relative z-10 max-w-[1400px] mx-auto px-6">
+      <div className="relative z-10 max-w-[1920px] mx-auto px-6">
         
         {/* Section Header */}
         <ScrollReveal animation="fade-up" delay={100}>
           <div className="text-center mb-16">
-            <h6 className="font-label text-[#C7A25C] text-[13px] font-semibold tracking-[4px] uppercase mb-4">
+            <h6 className="font-label text-[#1bbce0] text-[13px] font-semibold tracking-[4px] uppercase mb-4">
               Lợi Ích Nổi Bật
             </h6>
-            <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold text-[#1F1F1F] dark:text-white mb-6 leading-tight max-w-4xl mx-auto">
-              Không chỉ tiết kiệm 5% — quan trọng hơn là <span className="text-[#C7A25C]">chọn đúng đơn vị</span> và kiểm soát được rủi ro thi công
+            <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold text-[#1F1F1F] text-white mb-6 leading-tight max-w-4xl mx-auto">
+              Không chỉ tiết kiệm 5% — quan trọng hơn là <span className="text-[#1bbce0]">chọn đúng đơn vị</span> và kiểm soát được rủi ro thi công
             </h2>
-            <div className="w-16 h-[2px] bg-[#C7A25C] mx-auto mb-6" />
+            <div className="w-16 h-[2px] bg-[#1bbce0] mx-auto mb-6" />
             <p className="text-gray-600 dark:text-[#999] max-w-3xl mx-auto leading-relaxed text-[15px] md:text-[16px]">
               Chiết khấu 5% chỉ là một phần lợi ích. Giá trị lớn hơn là khách hàng được hỗ trợ trong toàn bộ quá trình lựa chọn đơn vị, định hướng ngân sách, kiểm soát rủi ro và giám sát quá trình triển khai.
             </p>
@@ -123,7 +123,7 @@ export default function Section4Benefits() {
                     onClick={() => setActiveTab(benefit)}
                     className={`w-full text-left px-6 py-5  font-bold text-[14px] uppercase tracking-wider transition-all duration-300 border-l-4 ${
                       isActive 
-                        ? 'border-[#C7A25C] bg-white dark:bg-[#1a1a1a] text-[#C7A25C]' 
+                        ? 'border-[#1bbce0] bg-[#020b0d] text-[#1bbce0]' 
                         : 'border-transparent text-gray-500 dark:text-[#888] hover:bg-white dark:hover:bg-[#131313] hover:text-[#1F1F1F] dark:hover:text-white hover:border-[#ECE7DE] dark:hover:border-white/20'
                     }`}
                   >
@@ -141,25 +141,25 @@ export default function Section4Benefits() {
                 
                 {/* Decorative BG Icon */}
                 <div className="absolute -right-10 -bottom-10 opacity-5 group-hover:opacity-10 group-hover:scale-110 transition-all duration-700 pointer-events-none">
-                  <div className="text-[200px] font-bold text-[#1F1F1F] dark:text-white leading-none">{activeTab.id}</div>
+                  <div className="text-[200px] font-bold text-[#1F1F1F] text-white leading-none">{activeTab.id}</div>
                 </div>
 
                 <div className="relative z-10">
-                  <h3 className="font-heading text-2xl lg:text-3xl font-bold text-[#1F1F1F] dark:text-white mb-4 leading-snug">
+                  <h3 className="font-heading text-2xl lg:text-3xl font-bold text-[#1F1F1F] text-white mb-4 leading-snug">
                     {activeTab.title}
                   </h3>
                   <p className="text-gray-600 dark:text-[#999] leading-[1.8] text-[15px] mb-8 pb-8 border-b border-[#ECE7DE] dark:border-white/10">
                     {activeTab.desc}
                   </p>
 
-                  <h4 className="text-[#C7A25C] font-bold text-lg mb-6 uppercase tracking-wider">
+                  <h4 className="text-[#1bbce0] font-bold text-lg mb-6 uppercase tracking-wider">
                     Giá trị nhận được
                   </h4>
                   <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-4">
                     {activeTab.values.map((value, index) => (
                       <li key={index} className="flex items-start gap-3">
-                        <svg className="w-5 h-5 text-[#C7A25C] shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
-                        <span className="text-[#1F1F1F]/80 dark:text-white/80 text-[15px] leading-relaxed">
+                        <svg className="w-5 h-5 text-[#1bbce0] shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
+                        <span className="text-[#1F1F1F]/80 text-white/80 text-[15px] leading-relaxed">
                           {value}
                         </span>
                       </li>

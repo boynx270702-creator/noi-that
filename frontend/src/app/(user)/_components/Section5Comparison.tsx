@@ -51,17 +51,17 @@ export default function Section5Comparison() {
   return (
     <section className="relative py-32 bg-transparent dark:bg-transparent overflow-hidden border-y border-[#ECE7DE] dark:border-white/5">
       <SectionStarryMotif />
-      <div className="relative z-10 max-w-[1400px] mx-auto px-6">
+      <div className="relative z-10 max-w-[1920px] mx-auto px-6">
         {/* Section Header */}
         <ScrollReveal animation="fade-up" delay={100}>
           <div className="text-center mb-16">
-            <h6 className="font-label text-[#C7A25C] text-[13px] font-semibold tracking-[4px] uppercase mb-4">
+            <h6 className="font-label text-[#1bbce0] text-[13px] font-semibold tracking-[4px] uppercase mb-4">
               Tạo Sự Khác Biệt
             </h6>
-            <h2 className="font-heading text-3xl md:text-5xl font-bold text-[#1F1F1F] dark:text-white mb-6 uppercase max-w-4xl mx-auto">
-              Làm qua hệ sinh thái <span className="text-[#C7A25C]">khác gì</span> so với tự thuê ngoài?
+            <h2 className="font-heading text-3xl md:text-5xl font-bold text-[#1F1F1F] text-white mb-6 uppercase max-w-4xl mx-auto">
+              Làm qua hệ sinh thái <span className="text-[#1bbce0]">khác gì</span> so với tự thuê ngoài?
             </h2>
-            <div className="w-16 h-[2px] bg-[#C7A25C] mx-auto mb-6" />
+            <div className="w-16 h-[2px] bg-[#1bbce0] mx-auto mb-6" />
           </div>
         </ScrollReveal>
 
@@ -72,9 +72,9 @@ export default function Section5Comparison() {
             {COMPARISON_DATA.map((row, index) => (
               <SpotlightCard key={index} className="p-5">
                 {/* Decorative glow */}
-                <div className="absolute top-0 right-0 w-32 h-32 bg-[#C7A25C]/5 blur-3xl rounded-full pointer-events-none" />
+                <div className="absolute top-0 right-0 w-32 h-32 bg-[#1bbce0]/5 blur-3xl rounded-full pointer-events-none" />
 
-                <h3 className="font-heading text-[#1F1F1F] dark:text-white font-bold text-[16px] border-b border-[#ECE7DE] dark:border-white/10 pb-3 mb-4 relative z-10">
+                <h3 className="font-heading text-[#1F1F1F] text-white font-bold text-[16px] border-b border-[#ECE7DE] dark:border-white/10 pb-3 mb-4 relative z-10">
                   {row.feature}
                 </h3>
 
@@ -87,10 +87,10 @@ export default function Section5Comparison() {
                     </div>
                   </div>
 
-                  <div className="bg-[#C7A25C]/10 p-4 rounded-[4px] border border-[#C7A25C]/20">
-                    <span className="text-[#C7A25C] text-[11px] font-bold uppercase tracking-widest mb-2 block">Qua hệ sinh thái</span>
-                    <div className="flex items-start gap-2 text-[#1F1F1F] dark:text-white text-[14px] font-medium leading-relaxed">
-                      <svg className="w-5 h-5 text-[#C7A25C] shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M5 13l4 4L19 7"></path></svg>
+                  <div className="bg-[#1bbce0]/10 p-4 rounded-[4px] border border-[#1bbce0]/20">
+                    <span className="text-[#1bbce0] text-[11px] font-bold uppercase tracking-widest mb-2 block">Qua hệ sinh thái</span>
+                    <div className="flex items-start gap-2 text-[#1F1F1F] text-white text-[14px] font-medium leading-relaxed">
+                      <svg className="w-5 h-5 text-[#1bbce0] shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M5 13l4 4L19 7"></path></svg>
                       <span>{row.ecosystem}</span>
                     </div>
                   </div>
@@ -104,13 +104,13 @@ export default function Section5Comparison() {
             <table className="w-full border-collapse bg-[#FFFFFF] dark:bg-[#131313] border border-[#ECE7DE] dark:border-white/10 rounded-[4px] overflow-hidden shadow-[0_10px_40px_-10px_rgba(0,0,0,0.08)] dark:shadow-none">
               <thead>
                 <tr>
-                  <th className="w-[20%] p-6 text-left text-[#1F1F1F] dark:text-white font-bold text-[16px] border-b border-[#ECE7DE] dark:border-white/10 modern-section">
+                  <th className="w-[20%] p-6 text-left text-[#1F1F1F] text-white font-bold text-[16px] border-b border-[#ECE7DE] dark:border-white/10 modern-section">
                     Tiêu chí
                   </th>
                   <th className="w-[40%] p-6 text-center text-gray-500 dark:text-[#888] font-bold text-[16px] border-b border-[#ECE7DE] dark:border-white/10 bg-[#FFFFFF] dark:bg-[#0a0a0a]/50">
                     Tự thuê ngoài
                   </th>
-                  <th className="w-[40%] p-6 text-center text-[#C7A25C] font-bold text-[18px] border-b-2 border-[#C7A25C] bg-[#C7A25C]/10">
+                  <th className="w-[40%] p-6 text-center text-[#1bbce0] font-bold text-[18px] border-b-2 border-[#1bbce0] bg-[#1bbce0]/10">
                     Qua hệ sinh thái của chúng tôi
                   </th>
                 </tr>
@@ -118,7 +118,7 @@ export default function Section5Comparison() {
               <tbody>
                 {COMPARISON_DATA.map((row, index) => (
                   <tr key={index} className="group transition-colors">
-                    <td className="p-6 text-[#1F1F1F]/90 dark:text-white/90 text-[15px] font-semibold border-b border-[#ECE7DE] dark:border-white/5 bg-[#FFFFFF] dark:bg-[#0a0a0a] group-hover:bg-[#F8F6F2] dark:group-hover:bg-[#1a1a1a]">
+                    <td className="p-6 text-[#1F1F1F]/90 text-white/90 text-[15px] font-semibold border-b border-[#ECE7DE] dark:border-white/5 bg-[#FFFFFF] dark:bg-[#0a0a0a] group-hover:bg-[#F8F6F2] dark:group-hover:bg-[#020b0d]">
                       {row.feature}
                     </td>
                     <td className="p-6 text-center text-gray-500 dark:text-[#888] text-[15px] border-b border-[#ECE7DE] dark:border-white/5 bg-[#FFFFFF] dark:bg-[#0a0a0a]/50 group-hover:bg-[#F8F6F2] dark:group-hover:bg-[#131313] leading-relaxed">
@@ -127,9 +127,9 @@ export default function Section5Comparison() {
                         <span>{row.outside}</span>
                       </div>
                     </td>
-                    <td className="p-6 text-center text-[#1F1F1F] dark:text-white text-[16px] border-b border-[#ECE7DE] dark:border-white/5 bg-[#C7A25C]/5 group-hover:bg-[#C7A25C]/20 transition-colors leading-relaxed font-medium">
+                    <td className="p-6 text-center text-[#1F1F1F] text-white text-[16px] border-b border-[#ECE7DE] dark:border-white/5 bg-[#1bbce0]/5 group-hover:bg-[#1bbce0]/20 transition-colors leading-relaxed font-medium">
                       <div className="flex items-center justify-center gap-2">
-                        <svg className="w-5 h-5 text-[#C7A25C] shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M5 13l4 4L19 7"></path></svg>
+                        <svg className="w-5 h-5 text-[#1bbce0] shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M5 13l4 4L19 7"></path></svg>
                         <span>{row.ecosystem}</span>
                       </div>
                     </td>

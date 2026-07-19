@@ -80,7 +80,7 @@ export default function ArticleDetail() {
   if (isLoading) {
     return (
       <div className="overflow-hidden relative pt-[120px] pb-20 min-h-screen flex justify-center text-white bg-transparent">
-        <div className="w-12 h-12 border-4 border-[#51d7c4]/30 border-t-[#51d7c4] rounded-full animate-spin mt-20"></div>
+        <div className="w-12 h-12 border-4 border-[#27d6ff]/30 border-t-[#27d6ff] rounded-full animate-spin mt-20"></div>
       </div>
     );
   }
@@ -88,10 +88,10 @@ export default function ArticleDetail() {
   if (error || !article) {
     return (
       <div className="pt-[120px] pb-20 min-h-screen text-white bg-transparent">
-        <div className="max-w-[1400px] mx-auto px-6 text-center pt-20">
+        <div className="max-w-[1440px] mx-auto px-6 text-center pt-20">
           <h1 className="text-4xl font-bold mb-4 text-white">Không tìm thấy bài viết</h1>
           <p className="text-white/60 mb-8">{error || 'Bài viết có thể đã bị xóa hoặc đường dẫn không hợp lệ.'}</p>
-          <Link href="/cam-nang" className="bg-[#51d7c4] text-[#010d0c] font-black px-8 py-3 rounded-[2px] uppercase tracking-wider inline-flex items-center gap-2 shadow-[0_0_15px_rgba(81,215,196,0.2)]">
+          <Link href="/cam-nang" className="bg-[#27d6ff] text-[#010d0c] font-black px-8 py-3 rounded-[2px] uppercase tracking-wider inline-flex items-center gap-2 shadow-[0_0_15px_rgba(81,215,196,0.2)]">
             <ArrowLeft className="w-5 h-5" /> Về Cẩm Nang
           </Link>
         </div>
@@ -109,43 +109,43 @@ export default function ArticleDetail() {
     <div className="relative overflow-hidden pt-[120px] pb-20 min-h-screen text-white bg-transparent">
       {/* Ambient Light Blobs for WOW Effect */}
       <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
-        <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] rounded-full bg-[#51d7c4]/15 blur-[120px]" />
-        <div className="absolute top-[40%] right-[-10%] w-[30%] h-[50%] rounded-full bg-[#51d7c4]/10 blur-[100px]" />
-        <div className="absolute bottom-[-10%] left-[20%] w-[50%] h-[40%] rounded-full bg-[#51d7c4]/10 blur-[150px]" />
+        <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] rounded-full bg-[#27d6ff]/15 blur-[120px]" />
+        <div className="absolute top-[40%] right-[-10%] w-[30%] h-[50%] rounded-full bg-[#27d6ff]/10 blur-[100px]" />
+        <div className="absolute bottom-[-10%] left-[20%] w-[50%] h-[40%] rounded-full bg-[#27d6ff]/10 blur-[150px]" />
       </div>
 
-      <div className="relative z-10 max-w-[1400px] mx-auto px-6">
+      <div className="relative z-10 max-w-[1440px] mx-auto px-6">
 
         {/* Breadcrumb */}
         <div className="flex items-center gap-2 text-[13px] text-gray-500 dark:text-[#888] uppercase tracking-wider font-semibold mb-8">
-          <Link href="/" className="hover:text-[#D3AE3E] transition-colors">Trang chủ</Link>
+          <Link href="/" className="hover:text-[#27d6ff] transition-colors">Trang chủ</Link>
           <span className="text-gray-300 dark:text-gray-700">/</span>
-          <Link href="/cam-nang" className="hover:text-[#D3AE3E] transition-colors">Cẩm nang</Link>
+          <Link href="/cam-nang" className="hover:text-[#27d6ff] transition-colors">Cẩm nang</Link>
           <span className="text-gray-300 dark:text-gray-700">/</span>
-          <span className="text-gray-900 dark:text-white truncate">{article.title}</span>
+          <span className="text-white truncate">{article.title}</span>
         </div>
 
         {/* Article Header */}
         <header className="mb-12">
-          <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-[2px] bg-gradient-to-r from-[#C7A25C]/20 to-transparent border-l-2 border-[#C7A25C] text-[#A67C00] dark:text-[#FFD700] text-[11px] font-bold uppercase tracking-widest mb-6 luxury-glow">
+          <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-[2px] bg-gradient-to-r from-[#1bbce0]/20 to-transparent border-l-2 border-[#1bbce0] text-[#A67C00] dark:text-[#FFD700] text-[11px] font-bold uppercase tracking-widest mb-6 luxury-glow">
             {article.category || 'Tin tức'}
           </span>
 
-          <h1 className="font-heading text-3xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6 leading-tight">
+          <h1 className="font-heading text-3xl md:text-5xl font-bold text-white mb-6 leading-tight">
             {article.title}
           </h1>
 
           <div className="flex flex-wrap items-center gap-6 text-sm text-gray-500 dark:text-[#888] pb-8 border-b border-gray-200 dark:border-white/10">
             <div className="flex items-center gap-2">
-              <User className="w-4 h-4 text-[#D3AE3E]" />
+              <User className="w-4 h-4 text-[#27d6ff]" />
               {article.author || 'Admin'}
             </div>
             <div className="flex items-center gap-2">
-              <Calendar className="w-4 h-4 text-[#D3AE3E]" />
+              <Calendar className="w-4 h-4 text-[#27d6ff]" />
               {formattedDate}
             </div>
             <div className="flex items-center gap-2">
-              <Eye className="w-4 h-4 text-[#D3AE3E]" />
+              <Eye className="w-4 h-4 text-[#27d6ff]" />
               {article.views || 0} lượt xem
             </div>
           </div>
@@ -162,7 +162,7 @@ export default function ArticleDetail() {
 
         {/* Summary */}
         {article.summary && (
-          <div className="mb-10 text-xl text-gray-700 dark:text-[#ccc] font-medium leading-relaxed border-l-4 border-[#D3AE3E] pl-6 py-2 italic">
+          <div className="mb-10 text-xl text-gray-700 dark:text-[#ccc] font-medium leading-relaxed border-l-4 border-[#27d6ff] pl-6 py-2 italic">
             {article.summary}
           </div>
         )}
@@ -171,13 +171,13 @@ export default function ArticleDetail() {
         <article
           className="prose prose-lg dark:prose-invert max-w-none text-gray-600 dark:text-[#bbb] 
                      prose-headings:font-heading prose-headings:font-bold prose-headings:text-gray-900 dark:prose-headings:text-white 
-                     prose-a:text-[#D3AE3E] prose-a:no-underline hover:prose-a:underline
+                     prose-a:text-[#27d6ff] prose-a:no-underline hover:prose-a:underline
                      prose-img:rounded-[4px] prose-img:shadow-sm
-                     prose-li:marker:text-[#D3AE3E] prose-ul:list-disc prose-ol:list-decimal
-                     prose-blockquote:border-l-[#D3AE3E] prose-blockquote:bg-[#FAF8F2] dark:prose-blockquote:bg-[#1a1a1a] prose-blockquote:py-3 prose-blockquote:px-6 prose-blockquote:rounded-r-[4px] prose-blockquote:text-gray-800 dark:prose-blockquote:text-gray-300 prose-blockquote:font-medium prose-blockquote:shadow-sm
+                     prose-li:marker:text-[#27d6ff] prose-ul:list-disc prose-ol:list-decimal
+                     prose-blockquote:border-l-[#27d6ff] prose-blockquote:bg-[#FAF8F2] dark:prose-blockquote:bg-[#020b0d] prose-blockquote:py-3 prose-blockquote:px-6 prose-blockquote:rounded-r-[4px] prose-blockquote:text-gray-800 dark:prose-blockquote:text-gray-300 prose-blockquote:font-medium prose-blockquote:shadow-sm
                      prose-table:border-collapse prose-table:w-full prose-table:rounded-[4px] prose-table:overflow-hidden prose-table:shadow-sm
-                     prose-th:bg-[#FAF8F2] dark:prose-th:bg-[#1a1a1a] prose-th:text-gray-900 dark:prose-th:text-[#D3AE3E] prose-th:font-bold prose-th:p-4 prose-th:text-left prose-th:border-b-2 prose-th:border-[#D3AE3E]/30
-                     prose-td:p-4 prose-td:border-b prose-td:border-[#D3AE3E]/10 prose-td:text-gray-700 dark:prose-td:text-gray-300
+                     prose-th:bg-[#FAF8F2] dark:prose-th:bg-[#020b0d] prose-th:text-gray-900 dark:prose-th:text-[#27d6ff] prose-th:font-bold prose-th:p-4 prose-th:text-left prose-th:border-b-2 prose-th:border-[#27d6ff]/30
+                     prose-td:p-4 prose-td:border-b prose-td:border-[#27d6ff]/10 prose-td:text-gray-700 dark:prose-td:text-gray-300
                      prose-tr:transition-colors hover:prose-tr:bg-[#FAF8F2]/50 dark:hover:prose-tr:bg-white/5"
           dangerouslySetInnerHTML={{ __html: article.content || '<p>Nội dung đang được cập nhật...</p>' }}
         />
@@ -186,11 +186,11 @@ export default function ArticleDetail() {
         <div className="mt-16 pt-8 border-t border-gray-200 dark:border-white/10 flex items-center gap-4">
           <Tag className="w-5 h-5 text-gray-400" />
           <div className="flex flex-wrap gap-2">
-            <span className="px-3 py-1 bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-white/10 text-gray-600 dark:text-[#ccc] text-sm rounded-[4px] hover:text-[#D3AE3E] transition-colors cursor-pointer">
+            <span className="px-3 py-1 bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-white/10 text-gray-600 dark:text-[#ccc] text-sm rounded-[4px] hover:text-[#27d6ff] transition-colors cursor-pointer">
               {article.category || 'Xu hướng'}
             </span>
             {tagsList.map((tag: string, idx: number) => (
-              <span key={idx} className="px-3 py-1 bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-white/10 text-gray-600 dark:text-[#ccc] text-sm rounded-[4px] hover:text-[#D3AE3E] transition-colors cursor-pointer">
+              <span key={idx} className="px-3 py-1 bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-white/10 text-gray-600 dark:text-[#ccc] text-sm rounded-[4px] hover:text-[#27d6ff] transition-colors cursor-pointer">
                 {tag}
               </span>
             ))}
@@ -202,9 +202,9 @@ export default function ArticleDetail() {
       {/* Related Articles */}
       {relatedArticles.length > 0 && (
         <div className="mt-24 pt-20 modern-section border-t border-gray-200 dark:border-white/5">
-          <div className="max-w-[1400px] mx-auto px-6">
-            <h3 className="font-heading text-3xl font-bold text-gray-900 dark:text-white mb-10 uppercase tracking-wider text-center">
-              Bài viết <span className="text-[#D3AE3E]">Liên quan</span>
+          <div className="max-w-[1440px] mx-auto px-6">
+            <h3 className="font-heading text-3xl font-bold text-white mb-10 uppercase tracking-wider text-center">
+              Bài viết <span className="text-[#27d6ff]">Liên quan</span>
             </h3>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -212,18 +212,18 @@ export default function ArticleDetail() {
                 <Link href={`/cam-nang/${rel.slug || rel.id}`} key={rel.id} className="group modern-section rounded-[4px] overflow-hidden border border-gray-100 dark:border-white/5 hover:-translate-y-2 transition-transform duration-300 shadow-sm">
                   <div className="aspect-[16/9] overflow-hidden relative">
                     <img src={rel.thumbnail || '/images/blog/post-2.jpg'} alt={rel.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
-                    <div className="absolute top-4 left-4 bg-[#D3AE3E] text-white text-[10px] font-bold uppercase tracking-widest px-2 py-1">
+                    <div className="absolute top-4 left-4 bg-[#27d6ff] text-white text-[10px] font-bold uppercase tracking-widest px-2 py-1">
                       {rel.category}
                     </div>
                   </div>
                   <div className="p-6">
-                    <h4 className="font-heading text-xl font-bold text-gray-900 dark:text-white group-hover:text-[#D3AE3E] transition-colors mb-3 line-clamp-2">
+                    <h4 className="font-heading text-xl font-bold text-white group-hover:text-[#27d6ff] transition-colors mb-3 line-clamp-2">
                       {rel.title}
                     </h4>
                     <p className="text-gray-500 dark:text-[#888] text-sm line-clamp-2 mb-4">
                       {rel.summary || rel.content?.replace(/<[^>]*>?/gm, '') || 'Đang cập nhật...'}
                     </p>
-                    <span className="text-[#D3AE3E] text-[13px] font-bold uppercase tracking-wider flex items-center gap-2">
+                    <span className="text-[#27d6ff] text-[13px] font-bold uppercase tracking-wider flex items-center gap-2">
                       Đọc tiếp <ArrowRight className="w-4 h-4" />
                     </span>
                   </div>
